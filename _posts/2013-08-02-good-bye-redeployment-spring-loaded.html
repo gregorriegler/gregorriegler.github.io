@@ -1,0 +1,15 @@
+---
+layout: post
+title: Good Bye Redeployment. spring-loaded, an Opensource Classreloader
+date: '2013-08-02T21:56:00.000+02:00'
+author: Gregor
+tags:
+- Java
+- Spring
+- Web Development
+modified_time: '2013-10-15T21:07:27.177+02:00'
+blogger_id: tag:blogger.com,1999:blog-1178805312154210159.post-5045338719338447740
+blogger_orig_url: http://www.beabetterdeveloper.com/2013/08/good-bye-redeployment-spring-loaded.html
+---
+
+Redeem yourself from hot deployments and OutOfMemoryException. <a href="https://github.com/SpringSource/spring-loaded">spring-loaded</a> is an opensource classreloader and a promising alternative to <a href="http://zeroturnaround.com/software/jrebel/">JRebel</a>. It does not offer as many features as JRebel does, and it does not support any framework just yet. Nevertheless, its a great tool that can save the time you are waiting for that servletcontainer to restart again.<br /><br />What it can do:<br /><ul><li>add/modify/delete methods/fields/constructors</li><li>modify annotations on types/methods/fields/constructors</li><li>add/remove/change values in enum types </li></ul>What it cant:<br /><ul><li>support framework specific changes like Spring MVC @RequestMappings</li><li>change log configuration on the fly</li></ul>It is not getting the attention that it deserves, so give it a try.<br /><br />Just download from <a href="https://github.com/SpringSource/spring-loaded">github</a> already, and add the following to your JVM parameters:<br /><pre><code>java -javaagent:&lt;pathTo&gt;/springloaded-{VERSION}.jar -noverify</code></pre>

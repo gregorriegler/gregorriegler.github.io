@@ -1,0 +1,15 @@
+---
+layout: post
+title: Sessions, a Pitfall.
+date: '2013-11-28T23:17:00.000+01:00'
+author: Gregor
+tags:
+- REST
+- Session
+- Stateless
+modified_time: '2013-12-02T22:50:00.117+01:00'
+blogger_id: tag:blogger.com,1999:blog-1178805312154210159.post-4078815946181857627
+blogger_orig_url: http://www.beabetterdeveloper.com/2013/11/sessions-pitfall.html
+---
+
+I got asked quite often, why one shouldn't use sessions and whats so bad about them. In this post i want to sum up my thoughts and experiences.<br /><br /><h3>Sessions produce unnecessary complexity </h3>The term bugfoot is a combination of bug and bigfoot. It's used for a bug that appears only once and is not reproducable. A bugfoot tells you that something is wrong, and that it will probably come up again. But you cannot fix it, because you don't know the cause.<br /><br />If you want bugfoots in your software, just use sessions. Sooner or later you'll happen to see one.<br /><br /><h3>Sessions don't scale </h3>Lets say you are a professional chess player, and you'd like to play  multiple people at the same time. If you'd try to remember every game  and your strategy on it, you'll hit your capacity rather quick. Now  imagine you were not remembering anything of those games, and you were just rereading the chessboard  on every move. You could literally play 1.000.000 people at the same  time, and it wouldn't make any difference to you. <br /><br />Now draw an analogy to your server. If your application gets a lot of load, you might have to distribute it to different servers. If you were using sessions, you'd suddenly had to replicate all sessions to all servers. The system would become even more complex and error prone.<br /><br /><h3>Sessionstate cannot be bookmarkable nor cachable</h3>Did you try to bookmark your shopping cart? Nah, of course you can't because it's empty as soon as the session runs out. Imagine a shop that actually allowed you to bookmark your cart. Like<br /><ul><li>http://example.com/carts/1337 or</li><li>http://example.com/cart?products=[{id:1, amount: 1}]</li></ul>How wonderful that would be.<br /><br /><h3>Conclusion</h3>You want a simple system that is easy to test and whose bugs are easy to reproduce. State leads to the opposite. HTTP was never ever ment to be stateful and it should have stayed this way. <br /><br />If you want some rest, follow these two rules<br /><ul><li>Keep all application state (not resource state) on the client </li><li>Keep all shared state (not session state) on the server</li></ul>
