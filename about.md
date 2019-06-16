@@ -14,7 +14,7 @@ I learned creating good software the hard way.
 
 * In 2010 i wrote my own ORM and it didn't support lazy loading. I think you can imagine what the performance was like. I learned a lot doing it, but thats the only positive aspect i can think of.
 
-* In 2011 i was maintaining a prototype-turned-production incident management system for public transport. It was stuffed with commented out code, and i was afraid to delete it for weeks. Gosh, i should have deleted it right away.
+* In 2011 i was maintaining a prototype-turned-production incident management system for public transport. It was stuffed with commented out code, and i was afraid to delete it for weeks. Gosh, i should have deleted it right away. It was in this project that i learned feeling more comfortable in throwing code away.
 
 * In 2012 i wrote a 3-figure page long scope statement that got signed by the customer. Turned out it was as worthy as a toiletpaper just a few days later.
 
