@@ -1,6 +1,11 @@
 ---
 layout: post
 title:  "simplistic tdd setup for typescript with mocha and chai"
+tags: 
+- TDD
+- Typescript
+- mocha
+- chai
 ---
 
 i was doing a little bit of tdd in typescript recently and the setup always took me way too long. 
