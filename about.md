@@ -1,7 +1,8 @@
 ---
 layout: page
-title: About
+title: about
 sidebar_link: true
+sidebar_sort_order: 0
 ---
 
 I learned creating good software the hard way. 
