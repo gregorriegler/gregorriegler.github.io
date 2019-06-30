@@ -49,6 +49,13 @@ body {
     .back-arrow { margin-right: 0.5rem; }
 
   }
+
+  .icon {
+    svg {
+      width: 30px;
+      min-width: 30px;
+    }
+  }
 }
 
 // Container is flexbox as well -- we want content div to stretch and fill
