@@ -19,7 +19,7 @@ Here is the result: [https://github.com/gregorriegler/seamer](https://github.com
 
 Seamer is a refactoring tool for java that helps you get complex methods under test in order to make safe refactorings.
 
-###How does it work?
+### How does it work?
 Basically you just wrap a complex method with a lambda and the seamer will then record all your invocations including 
 input arguments and return values, serialize and persist them. 
 You can later replay those invocations to make sure everything still works. 
