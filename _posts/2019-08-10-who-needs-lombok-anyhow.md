@@ -88,8 +88,7 @@ I recommend using an intellij live template again.
 private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger($CLASS$.class);
 ```
 
-The result:
-!(/assets/img/log_live_template.gif)
+![Logger via live template](/assets/img/log_live_template.gif)
 
 ### @Builder
 I really like the builder generation plugins that are freely available on the intellij plugin market.
