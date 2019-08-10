@@ -31,7 +31,7 @@ And there i am, left without a need for accessors.
 ### @AllArgsConstructor introduces connascence of position
 This awful annotation couples the order of your fields to the order of its generated constructor arguments.
 So when you reorder your fields, you effectively break your code.
-That's some awful [connascence of position](https://en.wikipedia.org/wiki/Connascence#Connascence_of_Position_(CoP)) right there. 
+That's an awful [connascence of position](https://en.wikipedia.org/wiki/Connascence#Connascence_of_Position_(CoP)) right there. 
 
 ### Bi-directional object relations cause stack overflows 
 So when you use Lomboks _equals_, _hashCode_ or _toString_ implementations, it is interresting that bi-directional associations will cause a stack overflow.
