@@ -51,6 +51,9 @@ When i tried migrating a java 1.8 project that used lombok to java 11, i ran int
 And despite the [known issues](https://stackoverflow.com/questions/53866929/unable-to-use-lombok-with-java-11) and [fixes](https://github.com/rzwitserloot/lombok/issues/1723) that i found on the internet, i was not able to get it to work again within 2 hours of trying.
 Delombok to the rescue. 
 
+__update:__ seems like i ran into a similar issue like [this](https://github.com/rzwitserloot/lombok/issues/1723), trying to upgrade to java 11. 
+
+
 ## If lombok is so bad, what are the alternatives?
 We can just fall back to explicit pojo code. Some libs, ide features and plugins will help us out with the boilerplate. 
 
