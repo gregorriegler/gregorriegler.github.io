@@ -41,7 +41,9 @@ Delombok
 
 alternatives:
 eq, hashcode with live templates and apache reflect utils,
+
 log via live template
+[img/log_live_template.gif]
 public final fields on data
 no setters on entities & value
 builder with inner builder plugin
