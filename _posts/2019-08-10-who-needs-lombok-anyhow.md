@@ -101,7 +101,7 @@ However, i prefer the __Inner Builder__ plugin.
 
 ## A case for Delombok
 Thankfully, there is this nice little feature called delombok.
-It will transform all your former lombok annotations into the ugly boiler plate they created behind the scenes,
+It will transform all your former lombok annotations into the ugly boilerplate they created behind the scenes,
 so you can completely get rid of it.
 Don't expect a beautiful outcome though, the generated code will contain a lot of `@SuppressWarnings("all")`.
 Also, the delombok feature of my intellij plugin caused my ide to freeze.
