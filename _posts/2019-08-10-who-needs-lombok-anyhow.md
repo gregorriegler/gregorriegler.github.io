@@ -10,6 +10,9 @@ It is the thing that makes behaviour non-transparent.
 It makes you fire up your debugger, because you don't actually understand what is going on behind the scenes.
 There should be no _behind the scenes_.
 Everything should be as explicit as possible, for economic reasons.
+> Magic is a feature with non-compositional semantics that succeeds in making the common case easy, at the cost of making the uncommon cases surprising, impossible, or ridiculously complex.
+>
+>~ John A De Goes
 
 ### @Data, @Getter and @Setter are a design smell
 When i design the objects of my domain i want to avoid accessors.
