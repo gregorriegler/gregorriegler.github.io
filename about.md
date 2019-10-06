@@ -5,9 +5,13 @@ sidebar_link: true
 sidebar_sort_order: 0
 ---
 
+I am a software engineer with 12+ years of experience in the industry, where i have been working as a developer, lead developer, technical team lead and software architect.
+I am passionate about my profession, which is why i enjoy continuous learning and practice.
+ 
+
 I learned creating good software the hard way. 
 
-### Mistakes were made
+### Mistakes have been made
 
 * In 2007 i built websites by writing inline css in html in php in js in html in a php file. It was ajax, well sorta :-).
 
