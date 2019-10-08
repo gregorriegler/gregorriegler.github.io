@@ -98,6 +98,8 @@ the things we estimate are typically not the things that cause most of our effor
 the things we estimate are naturally known things.
 but it is about the things we don't know, that make the effort.
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Does this seem about right? <a href="https://t.co/PEtgTBX9eM">pic.twitter.com/PEtgTBX9eM</a></p>&mdash; Oluf Nissen (@GeekTieGuy) <a href="https://twitter.com/GeekTieGuy/status/1176895878478450688?ref_src=twsrc%5Etfw">September 25, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 ## derived principles?
 - less people involved -> smaller teams.
 - less distance between people.
