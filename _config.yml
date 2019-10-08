@@ -28,6 +28,7 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-paginate
+  - jekyll-twitter-plugin
 
 exclude:
   - Gemfile
