@@ -97,7 +97,6 @@ if they are similar to code, just not as refined - shouldn't we refactor them, t
 the things we estimate are typically not the things that cause most of our effort.
 the things we estimate are naturally known things.
 but it is about the things we don't know, that make the effort.
-{% twitter https://twitter.com/GeekTieGuy/status/1176895878478450688 %}
 
 ## derived principles?
 - less people involved -> smaller teams.
