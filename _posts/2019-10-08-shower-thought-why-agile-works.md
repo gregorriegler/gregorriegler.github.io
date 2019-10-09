@@ -15,7 +15,7 @@ tags:
 <p>we've seen developers doing mob programming, having a small group of people working at the same time, on the same problem and on the same computer, and it has worked out well for them.</p>  
 <p>we've seen developers spending their work time in learning and practice, and it has worked out well for them.</p>  
 <p>we've seen developers quit doing estimates, and it has worked out well for them.</p>  
-<p>we've seen developers managing to deliver useful versions of early and often.</p>  
+<p>we've seen developers managing to deliver useful versions early and often.</p>  
 <p>we've seen developers managing to deliver value to their customers every single day.</p>  
 <p>we've seen organizations giving power to their development teams, and it has worked out well for them.</p>  
 <p>we didn't expect those things to work out this way - yet here we are.</p>
