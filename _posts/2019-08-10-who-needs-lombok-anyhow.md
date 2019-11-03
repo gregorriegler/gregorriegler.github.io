@@ -43,11 +43,11 @@ All I am saying is, that if Lombok was just a little bit smarter, it could proba
 
 The bad thing is not the stack overflow. It's the fact that it is hidden behind an annotation.
 
-### The Lombok plugin will hit your cpu
-If you don't use the lombok plugin, lombok will cause you a lot of red code lines.
-If you do use the lombok plugin, it will hit your cpu quite hard.
-I know one project where it caused the autocomplete drop down to load 15 seconds in specific areas of the code.
-And this happened on an i7 processor with plenty of ram and an ssd. 
+### The Lombok plugin might hit your cpu
+If you do use lombok annotations excessively and have a lot of pojos in your code base, the lombok plugin might hit your cpu.
+I had one project where it caused the autocomplete drop down to load several seconds in specific areas of the code.
+The problem was gone once i deactivated the plugin.
+To be fair: Maybe it was just a temporary problem with the plugin that has already been addressed. 
 
 ### Compatibility issues with Java versions greater than 8 
 When i tried migrating a java 1.8 project that used lombok to java 11, i ran into issues.
@@ -57,7 +57,7 @@ Delombok to the rescue.
 __update:__ seems like i ran into a similar issue like [this](https://github.com/rzwitserloot/lombok/issues/1723), trying to upgrade to java 11. 
 
 
-## If lombok is so bad, what are the alternatives?
+## Without lombok, what are the alternatives?
 We can just fall back to explicit pojo code. Some libs, ide features and plugins will help us out with the boilerplate. 
 
 ### equals and hashcode
