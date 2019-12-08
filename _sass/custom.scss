@@ -1,0 +1,25 @@
+header h1.post-title {
+  display: inline-block;
+  background-color: $sidebar-bg-color;
+  color: white;
+  margin-left: -6rem;
+  margin-bottom: 2rem !important;
+  padding-left: 6rem;
+  padding-right: 3rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  border-radius: 3rem;
+}
+
+header h1.page-title {
+  display: inline-block;
+  background-color: $sidebar-bg-color;
+  color: white;
+  margin-left: -6rem;
+  margin-bottom: 2rem !important;
+  padding-left: 6rem;
+  padding-right: 3rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  border-radius: 3rem;
+}

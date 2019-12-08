@@ -4,6 +4,7 @@ layout: default
 
 <div class="content">
   {% for post in paginator.posts %}
+  {% unless post.categories contains 'refactoring-java' %}
   <article class="post-body">
     <h2 class="post-title">
       <a href="{{ site.baseurl }}{{ post.url }}">
@@ -34,6 +35,7 @@ layout: default
 
     <p><br /><a class="comments_link" href="{{ site.baseurl }}{{ post.url }}#comments">to the comments</a></p>
   </article>
+  {% endunless %}
   {% endfor %}
 
   {% include pagination-older.html %}
