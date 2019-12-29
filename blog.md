@@ -1,6 +1,6 @@
 ---
 layout: page
-title: archive
+title: blog
 sidebar_link: true
 sidebar_sort_order: 1
 ---
