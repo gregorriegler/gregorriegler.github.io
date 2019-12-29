@@ -21,13 +21,16 @@ author:
   name:           'Gregor Riegler'
   url:            http://gregorriegler.com
 
-paginate:         6
-paginate_path: "/blog/page:num/"
+pagination:
+  enabled: true
+  debug: false
+  per_page: 5
+  permalink: "/blog/page:num/"
 
 plugins:
   - jekyll-feed
   - jekyll-gist
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-twitter-plugin
 
 exclude:
