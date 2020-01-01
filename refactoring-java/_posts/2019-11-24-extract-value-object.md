@@ -9,6 +9,5 @@ A value object is a reusable, immutable object that does not only encapsulate a 
 Identifying and extracting those value objects improve the cohesion in our code, and avoids duplication.
 Suppose i created a new component that consumed an already existing value object, i would be able to reuse the values methods instead of implementing duplicated code by accident.
 
-[the code on my GitHub](https://github.com/gregorriegler/refactoring-extract-value-object)
-
 {% include youtube-player.html id="xLSJk1OcAhA" %}
+[the code on my GitHub](https://github.com/gregorriegler/refactoring-extract-value-object)

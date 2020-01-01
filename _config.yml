@@ -21,7 +21,7 @@ author:
   name:           'Gregor Riegler'
   url:            http://gregorriegler.com
 
-paginate:         6
+paginate:         8
 paginate_path: "/blog/page:num/"
 
 plugins:
