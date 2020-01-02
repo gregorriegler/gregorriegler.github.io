@@ -45,6 +45,7 @@ exclude:
   - .gitignore
   - run.sh
   - '*.iml'
+  - vendor
 
 permalink:        /:year/:month/:day/:title.html
 
