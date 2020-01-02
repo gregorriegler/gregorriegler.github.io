@@ -11,7 +11,7 @@
 
   <title>
     
-      Gregor Riegler
+      Gregor Riegler &middot; Gregor Riegler
     
   </title>
 
@@ -35,12 +35,17 @@
 </head>
 
 
-  <body class="default home">
+  <body class="default">
 
     <div id="sidebar">
   <header>
     <div class="site-title">
       <a href="/">
+        
+          <span class="back-arrow icon"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+</svg></span>
         
         Gregor Riegler
       </a>
@@ -60,11 +65,19 @@
   
 
   
-
+    
   
 
   
+    
+  
 
+  
+    
+  
+
+  
+    
   
 
   
@@ -111,11 +124,19 @@
   
 
   
-
+    
   
 
   
+    
+  
 
+  
+    
+  
+
+  
+    
   
 
   
@@ -604,11 +625,106 @@ So i had to use the <a href="http://anthonywhitford.com/lombok.maven/lombok-mave
   </article>
   
   
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2019/07/23/refactoring-tool-seamer.html">
+        seamer: a refactoring tool for java
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">23 Jul 2019</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <p>Just recently i was refactoring some very messy legacy java code and i stumbled upon this really long and complex method.
+I had to refactor it but there were no tests, no safety net, what so ever. 
+It had so many different paths that adding unit tests would have been a tedious endeavour.</p>
+
+<p>“Would be nice if had something like <a href="https://github.com/testdouble/suture">suture</a>”, i thought.
+So i decided to just code it real quick.</p>
+
+<p>Here is the result: <a href="https://github.com/gregorriegler/seamer">https://github.com/gregorriegler/seamer</a>.</p>
+
+<p>Seamer is a refactoring tool for java that helps you get complex methods under test in order to make safe refactorings.</p>
+
+<h3 id="how-does-it-work">How does it work?</h3>
+<p>Basically you just wrap a complex method with a lambda and the seamer will then record all your invocations including 
+input arguments and return values, serialize and persist them. 
+You can later replay those invocations to make sure everything still works.</p>
+
+<p>Seamer provides an api for you to make suggestions on the arguments you want to pass in. 
+The tool will shuffle your suggestions and execute given arguments in all possible combinations.
+Or you can just let it run, click around in your application, and record real values.</p>
+
+<p>When you are confident with the data you have recorded, go ahead and start your refactorings. 
+Replay the seamer regularly to make sure everything still works.</p>
+
+<p>If you have ideas for further improvements, feel free to do so, or just make a pull request.</p>
+
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br /><a class="comments_link" href="/2019/07/23/refactoring-tool-seamer.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2019/06/30/tdd-setup-typescript-mocha-chai.html">
+        simplistic tdd setup for typescript with mocha and chai
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">30 Jun 2019</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <p>i was doing a little bit of tdd in typescript recently and the setup always took me way too long. 
+i was trying to do things right. i didn’t want any magic in my setup, everything i added should have a purpose. 
+i wanted it to be simplistic but working. this is my outcome.</p>
+
+<p><a href="https://github.com/gregorriegler/tdd-setup-typescript-mocha-chai">https://github.com/gregorriegler/tdd-setup-typescript-mocha-chai</a></p>
+
+<p>feel free to use, or improve it.</p>
+
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br /><a class="comments_link" href="/2019/06/30/tdd-setup-typescript-mocha-chai.html#comments">to the comments</a></p>
+  </article>
+  
+  
 
   
 <div class="pagination">
   <a class="pagination-item older"
-     href="/blog/page2/">
+     href="/blog/page/2/index.html">
     Older
   </a>
 </div>
