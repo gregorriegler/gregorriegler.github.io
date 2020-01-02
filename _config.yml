@@ -93,8 +93,6 @@ exclude:
   - Makefile
   - README.md
   - .gitignore
-  - run.sh
-  - '*.iml'
 
 permalink:        /:year/:month/:day/:title.html
 
