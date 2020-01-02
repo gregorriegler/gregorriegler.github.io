@@ -8,11 +8,9 @@ sidebar_sort_order: 4
 {% for post in site.posts %}
 {% if post.categories contains 'refactoring-java' %}
 <article class="post-body">
-    <h2 class="post-title">
-        <a href="{{ site.baseurl }}{{ post.url }}">
-            {{ post.title }}
-        </a>
-    </h2>
+    <h3>
+        {{ post.title }}
+    </h3>
     {% include post-meta.html post=post %}
 
     {{ post.content }}
