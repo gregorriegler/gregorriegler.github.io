@@ -30,6 +30,13 @@ plugins:
   - jekyll-paginate
   - jekyll-twitter-plugin
 
+plugins_dir: ./_plugins
+
+jekyll_get:
+  - data: github
+    json: 'https://api.github.com/users/gregorriegler/repos'
+    cache: false
+
 exclude:
   - Gemfile
   - Gemfile.lock
