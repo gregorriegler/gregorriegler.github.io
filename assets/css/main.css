@@ -169,6 +169,7 @@ a svg {
   vertical-align: middle; }
 
 .license {
+  margin-top: 2em;
   font-size: 55%; }
 
 .highlight .hll {
@@ -527,15 +528,14 @@ body {
 /* -----------------------------------------------------------
   Mobile view
 ----------------------------------------------------------- */
-#sidebar header ~ *, #sidebar header ~ nav, #sidebar p.lead {
-  display: none; }
-
 .container > header {
   color: white;
   background: transparent;
-  margin: -1.5rem 2rem 2rem; }
+  margin: 2rem 2rem 2rem; }
   .container > header h1, .container > header h2 {
     color: inherit; }
+    .container > header h1.post-title, .container > header h2.post-title {
+      margin-bottom: 0rem; }
     .container > header h1:last-child, .container > header h2:last-child {
       margin-bottom: 0; }
 
@@ -838,7 +838,6 @@ header h1.post-title {
   background-color: #202020;
   color: white;
   margin-left: -6rem;
-  margin-bottom: 2rem !important;
   padding-left: 6rem;
   padding-right: 3rem;
   padding-top: .5rem;
@@ -850,12 +849,14 @@ header h1.page-title {
   background-color: #202020;
   color: white;
   margin-left: -6rem;
-  margin-bottom: 2rem !important;
   padding-left: 6rem;
   padding-right: 3rem;
   padding-top: .5rem;
   padding-bottom: .5rem;
   border-radius: 3rem; }
+
+.container > .content {
+  padding-top: 1rem; }
 
 .comments_link {
   margin-top: 20px;
