@@ -11,7 +11,7 @@
 
   <title>
     
-      Gregor Riegler
+      shower thoughts on agility &middot; Gregor Riegler
     
   </title>
 
@@ -35,7 +35,7 @@
 </head>
 
 
-  <body class="default">
+  <body class="post">
 
     <div id="sidebar">
   <header>
@@ -311,25 +311,217 @@
 </div>
 
     <main class="container">
-      <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+      <header>
+  <h1 class="post-title">shower thoughts on agility</h1>
+</header>
+<div class="content">
+  <div class="post-meta">
+  <span class="post-date">08 Oct 2019</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
 
-<div class="container">
-  <h1>404</h1>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <div class="post-body">
+    <h2 id="unexpected">unexpected</h2>
+
+<p>we've seen developers writing unit tests, and it has worked out well for them.</p>
+<p>we've seen developers writing those unit tests before writing any production code, and it has worked out well for them.</p>
+<p>we've seen developers spending time in improving the code, without getting any new feature done, and it has worked out well for them.</p>
+<p>we've seen developers doing pair programming - costing twice as much to solve the same problem? - and it has worked out well for them.</p>
+<p>we've seen developers doing mob programming, having a small group of people working at the same time, on the same problem and on the same computer, and it has worked out well for them.</p>
+<p>we've seen developers spending their work time in learning and practice, and it has worked out well for them.</p>
+<p>we've seen developers quit doing estimates, and it has worked out well for them.</p>
+<p>we've seen developers managing to deliver useful versions early and often.</p>
+<p>we've seen developers managing to deliver value to their customers every single day.</p>
+<p>we've seen organizations giving power to their development teams, and it has worked out well for them.</p>
+<p>we didn't expect those things to work out this way - yet here we are.</p>
+
+<p>this is very refreshing in my opinion, and i am very interested in exploring why those things worked out the way they did.<br />
+it seems like we really suck at predicting what would work and what wouldn’t.<br />
+but if we are so bad at those predictions, shouldn’t we just try things out?</p>
+
+<h2 id="the-industrial-age">the industrial age</h2>
+<p>first of all, i believe that our thinking has been stuck in the industrial age of <a href="https://en.wikipedia.org/wiki/Frederick_Winslow_Taylor">taylorism</a> and militarism, and that these ideas have shaped our way of thinking, teaching, working and just everything, up until today.
+taylorism might have worked well in factories, where every new produced thing was exactly the same, and it was finished at some point.
+this however seems not to be the case with software.
+software is never the same, and if it was you’d reuse it.
+software is never finished, it keeps changing and improving.
+software development is just fundamentally different to factory work.
+it is about knowledge, communication, experimentation, discovery and learning.</p>
+
+<h2 id="knowledge-refineries">knowledge refineries</h2>
+<p>software starts with somebody having a need.
+this need unfolds in an idea, a vision.
+in a traditional world this vision leads to the creation of requirements.
+the requirements are used to create specifications.
+the specifications guide the writing of the code.
+each of these steps could be seen as refinements of knowledge.
+the knowledge starts very vague and becomes gradually more specific until it ends in code.
+the knowledge is transferred, refined, stored, and it decays (thanks to Alex Bolboacă <a href="https://twitter.com/alexboly">@alexboly</a> for this <a href="https://mozaicworks.com/blog/software-engineering/knowledge-refinery/">observation</a>).</p>
+
+<h2 id="the-risk-of-bugs">the risk of bugs</h2>
+<p>in a traditional world, those refinements are done by different people of different skills with distance among them.
+we know that communication is lossy, and that the devil is in the details.
+needs are often lost in communication, resulting in instructions without context.
+instructions without context are likely the source of speculative assumptions.
+bugs may not only occur in code, but in specification, requirements, and ideas as well.
+thus each refinement step has a risk of bugs.
+the amount of people involved, and the distance between those people increase the risk of bugs.
+the amount of refinement steps in the process, and the length of interval between them, increase the risk of bugs.
+the damage of bugs in early stages of the development process grows if left undiscovered.
+the damage of bugs is reduced when the code is in a maintainable state.
+one way to discover bugs early, and to prevent them from doing lots of damage, is continuous feedback.
+the faster the feedback, the smaller the risk.
+a waterfall process hides bugs until the last possible moment, it maximizes the risk of bugs, and the damage those bugs inflict.</p>
+
+<h2 id="code-as-a-byproduct">code as a byproduct</h2>
+<p>if software development is so much about discovering bugs, maybe code is just a byproduct.
+the real product would be the learning, and the discovery of a bug-free vision.</p>
+
+<h2 id="the-many-minds-problem">the many minds problem</h2>
+<p>too many cooks spoil the broth, and it’s the same with code.
+different programmers have different opinions, styles and knowledge.
+many disconnected minds working on the same system can only make it unnecessarily complex.
+code is duplicated, when the existing implementation is not known or disliked.
+styles of design in areas of the code deviate from one another.
+programmers of all levels of experience have a hard time creating quality output, while quality output has a lot of attributes.
+mob programming helps solving these issues in an attempt to create a single mind of many.</p>
+
+<h2 id="storing-knowledge">storing knowledge</h2>
+<p>storing knowledge in brains is risky as brains are bad at remembering details.
+knowledge stored in just a single brain is even more risky, as it gets lost in fluctuation (<a href="https://en.wikipedia.org/wiki/Bus_factor">bus factor</a>).
+documentation quickly becomes dated. facts change, but no one updates the documentation.
+the only trustworthy long term store for knowledge is the code, as it never gets old. same with executable specification in the form of tests that change with the code.</p>
+
+<h2 id="transferring-knowledge-meetings">transferring knowledge: meetings</h2>
+<p>when programmers get in the zone, their short-term memories become stuffed with details about a specific problem and the code.
+meetings often cause damage by tearing programmers out of this context, which took a long time to setup in the first place.
+to make things worse, the details discussed in those meetings are typically unrelated to the programmers recent context.
+so, not only will the programmer spend a lot of time getting back into the zone after the meeting, also parts of the knowledge gained within the meeting will get lost in that process anyhow.</p>
+
+<h2 id="transferring-knowledge-email">transferring knowledge: email</h2>
+<p>a good way to avoid lossy communication is to have the recipient repeat in their own words what they have understood.
+the sender then has immediate feedback if there was a misunderstanding or not.
+email does not provide this way of feedback, it is typically ‘send and forget’, sometimes even disregarded.</p>
+
+<h2 id="knowledge-refactoring">knowledge refactoring</h2>
+<p>refactoring is a vital practice to make code more comprehensible, and to discover bugs.
+but what about requirements and specification?
+if they are similar to code, just not as refined - shouldn’t we refactor them, too?</p>
+
+<h2 id="estimation">estimation</h2>
+<p>the things we estimate are typically not the things that cause most of our effort.
+the things we estimate are naturally known things.
+but it is about the things we don’t know, that make the effort.</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Does this seem about right? <a href="https://t.co/PEtgTBX9eM">pic.twitter.com/PEtgTBX9eM</a></p>&mdash; Oluf Nissen (@GeekTieGuy) <a href="https://twitter.com/GeekTieGuy/status/1176895878478450688?ref_src=twsrc%5Etfw">September 25, 2019</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2 id="derived-principles">derived principles?</h2>
+<ul>
+  <li>less people involved -&gt; smaller teams.</li>
+  <li>less distance between people.</li>
+  <li>write code together.</li>
+  <li>continuous collaboration, share knowledge.</li>
+  <li>continuous and fast feedback using smaller batches.</li>
+  <li>idea to code as soon as possible.</li>
+  <li>avoid meetings and emails.</li>
+  <li>avoid estimation.</li>
+  <li>have the courage to question input.</li>
+</ul>
+
+
+    
+
+
+
+<div class="post-tags">
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">agile</span>
+    </span>
+  
+</div>
+  </div>
+
+  
+  <section class="comments" id="comments">
+    <h2>Comments</h2>
+    
+  <div id="disqus_thread">
+  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
+  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
+  *  https://disqus.com/admin/universalcode/#configuration-variables
+  */
+  var disqus_config = function () {
+    this.page.url = "http://gregorriegler.com/2019/10/08/shower-thought-why-agile-works.html";
+    this.page.identifier = "" ||
+                           "http://gregorriegler.com/2019/10/08/shower-thought-why-agile-works.html";
+  }
+  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//gregorriegler.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+
+  loadDisqusComments();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+  </noscript>
+
+
+
+  </section>
+
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/2020/01/01/testing-legacy-cli.html">
+            testing a legacy cli app
+            <small>01 Jan 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2019/12/17/embellishment-to-decorator.html">
+            embellishment to decorator
+            <small>17 Dec 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2019/12/08/lift-up-conditional.html">
+            lift up conditional
+            <small>08 Dec 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
+
 </div>
 
     </main>

@@ -11,7 +11,7 @@
 
   <title>
     
-      Gregor Riegler
+      About the „Is TDD Dead?“ discussion &middot; Gregor Riegler
     
   </title>
 
@@ -35,7 +35,7 @@
 </head>
 
 
-  <body class="default">
+  <body class="post">
 
     <div id="sidebar">
   <header>
@@ -311,25 +311,136 @@
 </div>
 
     <main class="container">
-      <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+      <header>
+  <h1 class="post-title">About the „Is TDD Dead?“ discussion</h1>
+</header>
+<div class="content">
+  <div class="post-meta">
+  <span class="post-date">03 Jun 2014</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
 
-<div class="container">
-  <h1>404</h1>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <div class="post-body">
+    It did not take long after <a href="http://pragdave.me/blog/2014/03/04/time-to-kill-agile/">Agile</a> died that TDD joined its party. If you havent noticed, <a href="https://twitter.com/dhh">David Heinemeier Hansson</a> put up quite a <a href="http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html">rant</a><b> </b>against TDD on his blog leading to a lot of discussion - also on Twitter. Finally they ended up doing a live online discussion regularely featuring <a href="https://twitter.com/KentBeck">Kent Beck</a>, <a href="https://twitter.com/martinfowler">Martin Fowler</a> and David not (yet) involving the TDD advocate <a href="https://twitter.com/unclebobmartin">Robert C. Martin</a> aka uncle bob. If you haven't watched it live, here is the initial <a href="https://www.youtube.com/watch?v=z9quxZsLcfo">30min discussion of the series on Youtube</a>. I really recommend the whole series.<br /><br />I think this topic and the ongoing discussion is very valueable to our craft because it is the kind of questioning and critical thinking that evolve what we do and how good we are at it. Even if we have a strong faith in something, we should not be afraid to question it, ever.<br /><br />I get davids points, however i do not entirely agree with all of his concerns. I want to share my thoughts in this blogpost.<br /><br /><blockquote class="tr_bq"><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><i><b>„Test induced design damage“</b></i></span></span></blockquote>A good design is a design that makes the software easy to change. I think this is something we all agree about. While TDD generally puts a lot of good pressure on the design, if you're not careful you're going to couple the tests tightly to the structure of your code. In this case even refactorings might force us to touch a lot of test-code aswell. You don't want that to happen. Tests should be the enabler of refactoring. I've happened to experience lots of applications that were so small that sociable unittests with reduced mocking and integration tests were just perfect. The value of this approach was that it was very easy to change/refactor production code without touching test-code. TDD does not solve these design problems, TDD does not design for you. TDD is just a design tool, but you are still the designer. Testing is engineering. Look for advantages, make tradeoffs. Trying to minimize mocking can definitely pay off. <br /><blockquote class="tr_bq"><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><i><b><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><i><b>„</b></i></span></span>To Test first, or not to Test first</b></i></span></span><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><i><b>“</b></i></span></span></blockquote>The point is, you do not want to verify if the code is working manually. You'd have to do it way too often, and it would just take too long. You want to be able to fiddle with the code, and do small changes frequently, without having to try everything out manually. You want to do it automated and the feedback should be instant. So i see no point in 1. writing code, 2. trying it out, and then 3. writing a test. Why not write the test in the first place? Also, we tend to be very flaccid on writing a test for something that we have found to be working, because we tend to become euphoric about our success quickly which makes us tired of digging in details later. Other than that, the actual writing of the test first forces us to think about the problem to an extent that makes us recognize hidden details. These details are better be known before we start writing the code.<br /><br /><blockquote class="tr_bq"><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><b><i><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><i><b>„</b></i></span></span>TDD is so widespread nowadays</i></b></span></span><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><i><b>“</b></i></span></span></blockquote>I was laughing when i noticed that there are actually people who believe that everyone does tdd nowadays. Sadly, TDD, or lets say developer testing is in fact unused and/or undiscovered in many places. I've happened to see it missed in programming education and also software companies. Sometimes, it was even unwelcome. If you were using any kind of developer testing in these places, you were a pioneer. There is still plenty of work to do on this topic.<br /><br />The bottom line is, automated developer testing is good. We need it. We were silly if we didn't.
+    
+
+
+
+<div class="post-tags">
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">Automation</span>
+    </span>
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">Design</span>
+    </span>
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">TDD</span>
+    </span>
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">Test</span>
+    </span>
+  
+</div>
+  </div>
+
+  
+  <section class="comments" id="comments">
+    <h2>Comments</h2>
+    
+  <div id="disqus_thread">
+  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
+  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
+  *  https://disqus.com/admin/universalcode/#configuration-variables
+  */
+  var disqus_config = function () {
+    this.page.url = "http://gregorriegler.com/2014/06/03/about-is-tdd-dead-discussion.html";
+    this.page.identifier = "" ||
+                           "http://gregorriegler.com/2014/06/03/about-is-tdd-dead-discussion.html";
+  }
+  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//gregorriegler.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+
+  loadDisqusComments();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+  </noscript>
+
+
+
+  </section>
+
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/2020/01/01/testing-legacy-cli.html">
+            testing a legacy cli app
+            <small>01 Jan 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2019/12/17/embellishment-to-decorator.html">
+            embellishment to decorator
+            <small>17 Dec 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2019/12/08/lift-up-conditional.html">
+            lift up conditional
+            <small>08 Dec 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
+
 </div>
 
     </main>

@@ -11,7 +11,7 @@
 
   <title>
     
-      Gregor Riegler
+      Good Bye Redeployment. spring-loaded, an Opensource Classreloader &middot; Gregor Riegler
     
   </title>
 
@@ -35,7 +35,7 @@
 </head>
 
 
-  <body class="default">
+  <body class="post">
 
     <div id="sidebar">
   <header>
@@ -311,25 +311,127 @@
 </div>
 
     <main class="container">
-      <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+      <header>
+  <h1 class="post-title">Good Bye Redeployment. spring-loaded, an Opensource Classreloader</h1>
+</header>
+<div class="content">
+  <div class="post-meta">
+  <span class="post-date">02 Aug 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
 
-<div class="container">
-  <h1>404</h1>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <div class="post-body">
+    Redeem yourself from hot deployments and OutOfMemoryException. <a href="https://github.com/SpringSource/spring-loaded">spring-loaded</a> is an opensource classreloader and a promising alternative to <a href="http://zeroturnaround.com/software/jrebel/">JRebel</a>. It does not offer as many features as JRebel does, and it does not support any framework just yet. Nevertheless, its a great tool that can save the time you are waiting for that servletcontainer to restart again.<br /><br />What it can do:<br /><ul><li>add/modify/delete methods/fields/constructors</li><li>modify annotations on types/methods/fields/constructors</li><li>add/remove/change values in enum types </li></ul>What it cant:<br /><ul><li>support framework specific changes like Spring MVC @RequestMappings</li><li>change log configuration on the fly</li></ul>It is not getting the attention that it deserves, so give it a try.<br /><br />Just download from <a href="https://github.com/SpringSource/spring-loaded">github</a> already, and add the following to your JVM parameters:<br /><pre><code>java -javaagent:&lt;pathTo&gt;/springloaded-{VERSION}.jar -noverify</code></pre>
+    
+
+
+
+<div class="post-tags">
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">Java</span>
+    </span>
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">Spring</span>
+    </span>
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">Web Development</span>
+    </span>
+  
+</div>
+  </div>
+
+  
+  <section class="comments" id="comments">
+    <h2>Comments</h2>
+    
+  <div id="disqus_thread">
+  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
+  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
+  *  https://disqus.com/admin/universalcode/#configuration-variables
+  */
+  var disqus_config = function () {
+    this.page.url = "http://gregorriegler.com/2013/08/02/good-bye-redeployment-spring-loaded.html";
+    this.page.identifier = "" ||
+                           "http://gregorriegler.com/2013/08/02/good-bye-redeployment-spring-loaded.html";
+  }
+  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//gregorriegler.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+
+  loadDisqusComments();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+  </noscript>
+
+
+
+  </section>
+
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/2020/01/01/testing-legacy-cli.html">
+            testing a legacy cli app
+            <small>01 Jan 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2019/12/17/embellishment-to-decorator.html">
+            embellishment to decorator
+            <small>17 Dec 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2019/12/08/lift-up-conditional.html">
+            lift up conditional
+            <small>08 Dec 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
+
 </div>
 
     </main>

@@ -11,7 +11,7 @@
 
   <title>
     
-      Gregor Riegler
+      Sessions, a Pitfall. &middot; Gregor Riegler
     
   </title>
 
@@ -35,7 +35,7 @@
 </head>
 
 
-  <body class="default">
+  <body class="post">
 
     <div id="sidebar">
   <header>
@@ -311,25 +311,127 @@
 </div>
 
     <main class="container">
-      <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+      <header>
+  <h1 class="post-title">Sessions, a Pitfall.</h1>
+</header>
+<div class="content">
+  <div class="post-meta">
+  <span class="post-date">28 Nov 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
 
-<div class="container">
-  <h1>404</h1>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <div class="post-body">
+    I got asked quite often, why one shouldn't use sessions and whats so bad about them. In this post i want to sum up my thoughts and experiences.<br /><br /><h3>Sessions produce unnecessary complexity </h3>The term bugfoot is a combination of bug and bigfoot. It's used for a bug that appears only once and is not reproducable. A bugfoot tells you that something is wrong, and that it will probably come up again. But you cannot fix it, because you don't know the cause.<br /><br />If you want bugfoots in your software, just use sessions. Sooner or later you'll happen to see one.<br /><br /><h3>Sessions don't scale </h3>Lets say you are a professional chess player, and you'd like to play  multiple people at the same time. If you'd try to remember every game  and your strategy on it, you'll hit your capacity rather quick. Now  imagine you were not remembering anything of those games, and you were just rereading the chessboard  on every move. You could literally play 1.000.000 people at the same  time, and it wouldn't make any difference to you. <br /><br />Now draw an analogy to your server. If your application gets a lot of load, you might have to distribute it to different servers. If you were using sessions, you'd suddenly had to replicate all sessions to all servers. The system would become even more complex and error prone.<br /><br /><h3>Sessionstate cannot be bookmarkable nor cachable</h3>Did you try to bookmark your shopping cart? Nah, of course you can't because it's empty as soon as the session runs out. Imagine a shop that actually allowed you to bookmark your cart. Like<br /><ul><li>http://example.com/carts/1337 or</li><li>http://example.com/cart?products=[{id:1, amount: 1}]</li></ul>How wonderful that would be.<br /><br /><h3>Conclusion</h3>You want a simple system that is easy to test and whose bugs are easy to reproduce. State leads to the opposite. HTTP was never ever ment to be stateful and it should have stayed this way. <br /><br />If you want some rest, follow these two rules<br /><ul><li>Keep all application state (not resource state) on the client </li><li>Keep all shared state (not session state) on the server</li></ul>
+    
+
+
+
+<div class="post-tags">
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">REST</span>
+    </span>
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">Session</span>
+    </span>
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">Stateless</span>
+    </span>
+  
+</div>
+  </div>
+
+  
+  <section class="comments" id="comments">
+    <h2>Comments</h2>
+    
+  <div id="disqus_thread">
+  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
+  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
+  *  https://disqus.com/admin/universalcode/#configuration-variables
+  */
+  var disqus_config = function () {
+    this.page.url = "http://gregorriegler.com/2013/11/28/sessions-pitfall.html";
+    this.page.identifier = "" ||
+                           "http://gregorriegler.com/2013/11/28/sessions-pitfall.html";
+  }
+  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//gregorriegler.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+
+  loadDisqusComments();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+  </noscript>
+
+
+
+  </section>
+
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/2020/01/01/testing-legacy-cli.html">
+            testing a legacy cli app
+            <small>01 Jan 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2019/12/17/embellishment-to-decorator.html">
+            embellishment to decorator
+            <small>17 Dec 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2019/12/08/lift-up-conditional.html">
+            lift up conditional
+            <small>08 Dec 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
+
 </div>
 
     </main>

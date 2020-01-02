@@ -11,7 +11,7 @@
 
   <title>
     
-      Gregor Riegler
+      Who Needs Lombok Anyhow &middot; Gregor Riegler
     
   </title>
 
@@ -35,7 +35,7 @@
 </head>
 
 
-  <body class="default">
+  <body class="post">
 
     <div id="sidebar">
   <header>
@@ -311,25 +311,214 @@
 </div>
 
     <main class="container">
-      <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+      <header>
+  <h1 class="post-title">Who Needs Lombok Anyhow</h1>
+</header>
+<div class="content">
+  <div class="post-meta">
+  <span class="post-date">10 Aug 2019</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
 
-<div class="container">
-  <h1>404</h1>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+  <div class="post-body">
+    <p>Java is quite a verbose language and annotations can solve almost any problem.
+Right? - What a dangerous combination that is.</p>
+
+<p>I understand it, totally. I’m lazy too.
+But other than saving all that boilerplate, have you considered the repercussions?</p>
+
+<h3 id="magic-is-harmful">Magic is harmful</h3>
+<p>I don’t want any magic in my code. 
+It is the thing that makes behaviour non-transparent.
+It makes you fire up your debugger, because you don’t actually understand what is going on behind the scenes.
+There should be no <em>behind the scenes</em>.
+Everything should be as explicit as possible, for economic reasons.</p>
+<blockquote>
+  <p>Magic is a feature with non-compositional semantics that succeeds in making the common case easy, at the cost of making the uncommon cases surprising, impossible, or ridiculously complex.</p>
+
+  <p>~ John A De Goes</p>
+</blockquote>
+
+<h3 id="data-getter-and-setter-are-a-design-smell">@Data, @Getter and @Setter are a design smell</h3>
+<p>When i design the objects of my domain i want to avoid accessors.
+I want those objects to represent a set of behaviours on nicely encapsulated data. 
+I’ll occasionally have some public fields on my <em>Value Objects</em>, but that’s about it. 
+Why would i want getters or setters on these objects? They are a backdoor to the data that ought to be modified through specific methods. 
+This smells like <a href="https://refactoring.guru/smells/feature-envy">Feature Envy</a> and <a href="https://martinfowler.com/bliki/AnemicDomainModel.html">Anemic Domain Model</a>.</p>
+
+<p>Also, setters work against my intention of making most of my objects immutable.
+After all, immutable objects are easier to refactor.</p>
+
+<p>So where do i need accessors then?
+Maybe on my data transfer objects?
+Why would i want to go the length of making fields private and creating accessors on a structure that is solely data?
+Does this kind of information hiding provide <em>any</em> value? To me, it is just clutter.
+<code class="highlighter-rouge">public final</code> fields without accessors are a much cleaner solution here imho.
+And there i am, left without a need for accessors.</p>
+
+<h3 id="allargsconstructor-introduces-connascence-of-position">@AllArgsConstructor introduces connascence of position</h3>
+<p>This awful annotation couples the order of your fields to the order of its generated constructor arguments.
+So when you reorder your fields, you effectively break your code.
+That’s an awful <a href="https://en.wikipedia.org/wiki/Connascence#Connascence_of_Position_(CoP)">connascence of position</a> right there.</p>
+
+<h3 id="bi-directional-object-relations-cause-stack-overflows">Bi-directional object relations cause stack overflows</h3>
+<p>So when you use Lomboks <em>equals</em>, <em>hashCode</em> or <em>toString</em> implementations, it is interresting that bi-directional associations will cause a stack overflow.
+I’m not saying bi-directional associations are desirable, or that those stack overflows aren’t obvious.
+All I am saying is, that if Lombok was just a little bit smarter, it could probably have avoided those.</p>
+
+<p>The bad thing is not the stack overflow. It’s the fact that it is hidden behind an annotation.</p>
+
+<h3 id="the-lombok-plugin-might-hit-your-cpu">The Lombok plugin might hit your cpu</h3>
+<p>If you do use lombok annotations excessively and have a lot of pojos in your code base, the lombok plugin might hit your cpu.
+I had one project where it caused the autocomplete drop down to load several seconds in specific areas of the code.
+The problem was gone once i deactivated the plugin.
+To be fair: Maybe it was just a temporary problem with the plugin that has already been addressed.</p>
+
+<h3 id="compatibility-issues-with-java-versions-greater-than-8">Compatibility issues with Java versions greater than 8</h3>
+<p>When i tried migrating a java 1.8 project that used lombok to java 11, i ran into issues.
+And despite the <a href="https://stackoverflow.com/questions/53866929/unable-to-use-lombok-with-java-11">known issues</a> and <a href="https://github.com/rzwitserloot/lombok/issues/1723">fixes</a> that i found on the internet, i was not able to get it to work again within 2 hours of trying.
+Delombok to the rescue.</p>
+
+<p><strong>update:</strong> seems like i ran into a similar issue like <a href="https://github.com/rzwitserloot/lombok/issues/1723">this</a>, trying to upgrade to java 11.</p>
+
+<h2 id="without-lombok-what-are-the-alternatives">Without lombok, what are the alternatives?</h2>
+<p>We can just fall back to explicit pojo code. Some libs, ide features and plugins will help us out with the boilerplate.</p>
+
+<h3 id="equals-and-hashcode">equals and hashcode</h3>
+<p>For value objects, where you want all fields included, the apache commons lang <a href="http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/EqualsBuilder.html">EqualsBuilder</a> and <a href="http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/HashCodeBuilder.html">HashCodeBuilder</a> come in handy.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Override
+public boolean equals(Object that) {
+    return EqualsBuilder.reflectionEquals(this, that);
+}
+ 
+@Override
+public int hashCode() {
+    return HashCodeBuilder.reflectionHashCode(this);
+}
+</code></pre></div></div>
+
+<p>maybe even use an intellij live template like this:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Override
+public boolean equals(Object that) {
+    return org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals(this, that);
+}
+
+@Override
+public int hashCode() {
+    return org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode(this);
+}
+</code></pre></div></div>
+
+<h3 id="slf4j">@Slf4j</h3>
+<p>I recommend using an intellij live template again.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// just put in 'className()' for the $CLASS$ variable
+private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger($CLASS$.class);
+</code></pre></div></div>
+
+<p><img src="/assets/img/log_live_template.gif" alt="Logger via live template" /></p>
+
+<h3 id="builder">@Builder</h3>
+<p>I really like the builder generation plugins that are freely available on the intellij plugin market.</p>
+
+<ul>
+  <li><a href="https://plugins.jetbrains.com/plugin/7354-innerbuilder">Inner Builder</a></li>
+  <li><a href="https://plugins.jetbrains.com/plugin/6585-builder-generator">Builder Generator</a></li>
+</ul>
+
+<p>Also, there is a new <a href="https://www.jetbrains.com/help/idea/replace-constructor-with-builder.html"><strong>Replace Constructor with Builder</strong></a> refactoring available now.
+However, i prefer the <strong>Inner Builder</strong> plugin.</p>
+
+<h2 id="a-case-for-delombok">A case for Delombok</h2>
+<p>Thankfully, there is this nice little feature called delombok.
+It will transform all your former lombok annotations into the ugly boilerplate they created behind the scenes,
+so you can completely get rid of it.
+Don’t expect a beautiful outcome though, the generated code will contain a lot of <code class="highlighter-rouge">@SuppressWarnings("all")</code>.
+Also, the delombok feature of my intellij plugin caused my ide to freeze.
+So i had to use the <a href="http://anthonywhitford.com/lombok.maven/lombok-maven-plugin/usage.html">Lombok Maven Plugin</a> instead, it worked just fine.</p>
+
+    
+
+
+
+<div class="post-tags">
+  
+</div>
+  </div>
+
+  
+  <section class="comments" id="comments">
+    <h2>Comments</h2>
+    
+  <div id="disqus_thread">
+  </div>
+  <script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW
+  *  TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT:s
+  *  https://disqus.com/admin/universalcode/#configuration-variables
+  */
+  var disqus_config = function () {
+    this.page.url = "http://gregorriegler.com/2019/08/10/who-needs-lombok-anyhow.html";
+    this.page.identifier = "" ||
+                           "http://gregorriegler.com/2019/08/10/who-needs-lombok-anyhow.html";
+  }
+  function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//gregorriegler.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  }
+
+  loadDisqusComments();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus</a>.
+  </noscript>
+
+
+
+  </section>
+
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/2020/01/01/testing-legacy-cli.html">
+            testing a legacy cli app
+            <small>01 Jan 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2019/12/17/embellishment-to-decorator.html">
+            embellishment to decorator
+            <small>17 Dec 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2019/12/08/lift-up-conditional.html">
+            lift up conditional
+            <small>08 Dec 2019</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
+
 </div>
 
     </main>
