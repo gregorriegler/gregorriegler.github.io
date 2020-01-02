@@ -81,7 +81,7 @@ body {
 // Hide lead paragraph in sidebar
 #sidebar {
   header ~ *, header ~ nav, p.lead {
-    display: none;
+    //display: none;
   }
 }
 
@@ -89,12 +89,16 @@ body {
 .container > header {
   color: $sidebar-title-color;
   background: transparent;
-  margin: ($heading-spacing - $section-spacing)
+  margin: 2rem
           $section-spacing
           $section-spacing;
 
   h1, h2 {
     color: inherit;
+
+    &.post-title {
+      margin-bottom: 0rem;
+    }
 
     &:last-child {
       margin-bottom: 0;

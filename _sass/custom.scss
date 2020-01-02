@@ -3,7 +3,6 @@ header h1.post-title {
   background-color: $sidebar-bg-color;
   color: white;
   margin-left: -6rem;
-  margin-bottom: 2rem !important;
   padding-left: 6rem;
   padding-right: 3rem;
   padding-top: .5rem;
@@ -16,10 +15,13 @@ header h1.page-title {
   background-color: $sidebar-bg-color;
   color: white;
   margin-left: -6rem;
-  margin-bottom: 2rem !important;
   padding-left: 6rem;
   padding-right: 3rem;
   padding-top: .5rem;
   padding-bottom: .5rem;
   border-radius: 3rem;
+}
+
+.container > .content {
+  padding-top: 1rem;
 }
