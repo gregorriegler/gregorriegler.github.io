@@ -330,6 +330,99 @@
       <div class="content">
   
   
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2020/01/12/yet-another-explanation-about-object-orientation.html">
+        yet another explanation about object orientation
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">12 Jan 2020</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/xlMg1a1flYA" frameborder="0" allowfullscreen=""></iframe></div>
+
+<h3 id="informationstate-and-behaviour">information/state and behaviour</h3>
+<p>I like to think of software as a universe of state and behaviour.
+State, whether mutable or immutable, is represented in the form of parameters, return values, vars, fields, files and so on and so forth.
+Those have many different traits to them.
+For example: vars, fields and files are location based, while parameters and return values are flow based. 
+But they are all state.</p>
+
+<p>Behaviour is represented in the form of functions that operate on that state. 
+There is no behaviour without state.
+Try to imagine a program that had no state.
+No Vars.
+No Input.
+No Output.
+Not even lambdas… they generate state.
+We can’t even print a damn thing without passing a string state.</p>
+
+<h3 id="cohesion">cohesion</h3>
+<p>Some state is related.
+If we’d increase the cohesion and move related state closer to each other and behaviour towards the state it operates on, groups are emerging.
+Groups of related parts.
+Groups of state and behaviour.</p>
+
+<h3 id="encapsulation">encapsulation</h3>
+<p>We can wrap them in capsules, which come in many different forms. 
+Functions, classes, packages, modules, processes and even servers are all kinds of capsules.
+For each capsule we define a minimum viable interface.
+The encapsulation serves the purpose of defining usable units that hide their internals which are irrelevant to the outside world.</p>
+
+<h3 id="objects">objects</h3>
+<p>We are defining Objects - behavioural capsules that interact with each other at runtime.
+So a function is a form of an object.
+An instance is a form of an object.
+A module is a form of an object.
+And even a microservice is a form of an object.</p>
+
+<h3 id="coupling">coupling</h3>
+<p>Each object is in some way coupled to the neighbours it interacts with.
+Coupling prevents independent changeability.
+Objects which are strongly coupled to one another cannot be changed independently of each other.
+The size of an objects public interface correlates with the strength of this coupling.
+The more we close the capsule, the more details we hide, the smaller the interface will be, thus the weaker the coupling will turn out.</p>
+
+<h4 id="feature-envy">feature envy</h4>
+<p>Sometimes, an object accidentally operates on the state of another object. 
+We call that a ‘Feature Envy’, as the object envies the other object.
+This increases the coupling between the two.
+We can resolve this situation by moving the behaviour to the object that holds the state.</p>
+
+<h3 id="dependency">dependency</h3>
+<p>When an object knows about another, we call that a dependency. 
+But don’t confuse ‘knows’ with ‘controls’, those are different things.
+An object can control another object without even knowing it.</p>
+
+<h4 id="dependency-inversion">dependency inversion</h4>
+<p>This is called dependency inversion.
+Think about a AAA battery. It provides power, but it has no idea who it provides power to.
+The form of the battery, AAA, is its interface. 
+The flashlight knows the battery, it implements its interface.
+And even though the battery knows nothing about the flashlight, the former controls the latter.</p>
+
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br /><a class="comments_link" href="/2020/01/12/yet-another-explanation-about-object-orientation.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
   
   
   
@@ -624,62 +717,6 @@ So i had to use the <a href="http://anthonywhitford.com/lombok.maven/lombok-mave
     
 
     <p><br /><a class="comments_link" href="/2019/08/10/who-needs-lombok-anyhow.html#comments">to the comments</a></p>
-  </article>
-  
-  
-  
-  <article class="post-body">
-    <h2 class="post-title">
-      <a href="/2019/07/23/refactoring-tool-seamer.html">
-        seamer: a refactoring tool for java
-      </a>
-    </h2>
-    <div class="post-meta">
-  <span class="post-date">23 Jul 2019</span>
-  <span class="post-categories">
-    
-  </span>
-</div>
-
-
-    
-      <p>Just recently i was refactoring some very messy legacy java code and i stumbled upon this really long and complex method.
-I had to refactor it but there were no tests, no safety net, what so ever. 
-It had so many different paths that adding unit tests would have been a tedious endeavour.</p>
-
-<p>“Would be nice if had something like <a href="https://github.com/testdouble/suture">suture</a>”, i thought.
-So i decided to just code it real quick.</p>
-
-<p>Here is the result: <a href="https://github.com/gregorriegler/seamer">https://github.com/gregorriegler/seamer</a>.</p>
-
-<p>Seamer is a refactoring tool for java that helps you get complex methods under test in order to make safe refactorings.</p>
-
-<h3 id="how-does-it-work">How does it work?</h3>
-<p>Basically you just wrap a complex method with a lambda and the seamer will then record all your invocations including 
-input arguments and return values, serialize and persist them. 
-You can later replay those invocations to make sure everything still works.</p>
-
-<p>Seamer provides an api for you to make suggestions on the arguments you want to pass in. 
-The tool will shuffle your suggestions and execute given arguments in all possible combinations.
-Or you can just let it run, click around in your application, and record real values.</p>
-
-<p>When you are confident with the data you have recorded, go ahead and start your refactorings. 
-Replay the seamer regularly to make sure everything still works.</p>
-
-<p>If you have ideas for further improvements, feel free to do so, or just make a pull request.</p>
-
-
-    
-
-    
-      
-      
-      
-
-      
-    
-
-    <p><br /><a class="comments_link" href="/2019/07/23/refactoring-tool-seamer.html#comments">to the comments</a></p>
   </article>
   
   

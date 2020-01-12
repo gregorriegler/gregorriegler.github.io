@@ -11,7 +11,7 @@
 
   <title>
     
-      Modern Web Development &middot; Gregor Riegler
+      yet another explanation about object orientation &middot; Gregor Riegler
     
   </title>
 
@@ -328,11 +328,11 @@
 
     <main class="container">
       <header>
-  <h1 class="post-title">Modern Web Development</h1>
+  <h1 class="post-title">yet another explanation about object orientation</h1>
 </header>
 <div class="content">
   <div class="post-meta">
-  <span class="post-date">08 Jul 2013</span>
+  <span class="post-date">12 Jan 2020</span>
   <span class="post-categories">
     
   </span>
@@ -340,7 +340,69 @@
 
 
   <div class="post-body">
-    In the last few years web technology has lived through rapid growth and heavy change. We went from frames to table layouts, to column layouts, to responsive layouts. From html4 to xhtml &amp; flash to html5. From heavy server to rich client. From rpc to soap to rest. From sql to nosql and big data. From MVC to MVP and so on. In the following post i want to describe what has become state-of-the-art from my perspective.<br /><br /><h3>A Backend is a REST api&nbsp; </h3>Every backend should be seen as a REST api and every controller as another resource. You want to analyze your problem domain, find your resources and design proper paths for them. They become the M in your MVC Architecture. Developing a webapplication first, and adding an extra REST api later on has to be considered an antipattern. If you do make a REST api, you want to consequently use it yourself, making your frontend its first consumer. This procedure allows you to smoothly add different kinds of clients  later on, such as a mobile app or even a desktop application. It's also  the foundation to integrate your applications features into other  applications.<br /><br /><h3>Separate your Frontend</h3>The days when you made up a form using jsp with a jstl form validation are fading. You don't want to mix client with server technology anymore. The V and C of MVC has shifted over to the client and your backend just represents the Model. You want your frontend to be completely separated using client technology only (html/css/js) and consuming your REST api. GUI logic, building and aligning proper html elements can be achieved within javascript. The most appropriate content-type for information exchange between the backend and frontend would be json or even xml.<br /><br /><h3>Rich Client &amp; Hail JavaScript</h3>The MVC pattern is nowadays implemented on the client side using javascript and it's fellow frameworks. There is no full-blown complete javascript framework that can achieve everything out of the box, but there are tons of smaller libs solving atomic tasks. This should not be considered bad or overwhelming, but advantageous. It causes a great variety of tools that focus on solving single problems outright. <a href="http://documentcloud.github.io/backbone/">Backbone</a> is a popular mvc framework built upon <a href="http://underscorejs.org/">underscore</a>, a js library delivering great utility with remarkable functional programming features. A template engine like <a href="http://mustache.github.io/">mustache</a> or <a href="http://handlebarsjs.com/">handlebars</a> could be added and <a href="http://requirejs.org/">requirejs</a> would manage the dependencies within your modules. Of course, a dom manipulator like <a href="http://jquery.com/">jquery</a> cannot be left out. The trend is leading towards <a href="http://en.wikipedia.org/wiki/Single-page_application">SPA</a>'s (Single Page Applications) with heavy <a href="http://en.wikipedia.org/wiki/AJAJ">AJAJ</a><a href="http://en.wikipedia.org/wiki/Ajax_%28programming%29">/AJAX</a>, routing through html <a href="http://en.wikipedia.org/wiki/HTML_element#Anchor">#anchors</a> representing bookmarkable view-states.<br /><br /><h3>Implement a Buildprocess for your Frontend</h3>As Browsers are continously increasing javascript performance and adding more and more support for html5, frontends have become complex and sophisticated. You now want to add a build process for your frontend, compiling all your js and css files. You want to deliver only a single minified js file to the browser. Other than that we don't break the DRY principle writing styles anymore. We use dynamic stylesheet languages like <a href="http://lesscss.org/">less</a> to make our styles smarter and cleaner and compile them to css in our build process. <a href="http://nodejs.org/">Node</a> and <a href="https://developer.mozilla.org/en-US/docs/Rhino">rhino</a> are possible engine candidates to build your frontend. While node is much faster, it requires an easy installation on the build server. Rhino runs in a jvm, thus not requiring an installation. You can add it to your project as a maven dependency. <br /><br /><h3>Mobile Web &amp; Responsive Design</h3>Mobile devices are becoming more powerful in terms of hardware whilst html5 support is also rapidly increasing  on mobile browsers. Html5 could potentially make native mobile applications obsolete one day. Localstorage, SQL, Geolocation, Multimedia, Camera Access, Web Sockets, Graphics, Touch Events, WebGL, Filesystem Access, Notifications and many more are all features to be completely available to mobile html5 webapplications one day, hopefully working on all devices. So far, we have been developing multiple applications for android/ios/windows mobile and so on, being an economic nightmare.<br />Mobile clients have gained a substantial amount in web consumership, and cannot be ignored anymore. Therefor you want to make your GUI <a href="http://en.wikipedia.org/wiki/Responsive_design">reponsive</a>, beeing able to scale down to smaller display-resolutions. Wise companies have even started designing userinterfaces for the smallest resolution before even thinking of a desktop resolution. This makes scaling more easy, since the other way round is harder and tends to force painfull workarounds. <a href="http://twitter.github.io/bootstrap/">Bootstrap</a> is one of many libraries that help you make your gui responsive. You can use <a href="http://www.initializr.com/">initializr</a> to get started.<br /><br /><h3><a href="http://www.gwtproject.org/">GWT</a> or <a href="http://www.zkoss.org/">ZK Framework</a>? Use Neither!</h3>GWT/ZK are trying do deliver a framework that makes it possible to develop modern ajax web applications using Java only. So they are basically building a java wrapper for frontend technology. Other than that, they deliver a huge amount of components. BUT ... i'd like to question their philosophy for many reasons.<br /><ul><li>They Both produce quite bad html code making you end in an element and dom-id nightmare that gets hard or even impossible to test, debug and style. Html5 allows to write short, clean and readable code, organized way better. You want to write html yourself.</li><li>Their AJAX calls are not based on the REST api that you need. If you want a REST api, you may have to write that again. RPC is GWT's primary communication-technology and i am really concerned about that. But you can still make a REST api work with GWT if you like to.</li><li>They keep you away from the technology that you are actually producing. Tiny customizations can get hard or even impossible in the end. You are basically giving up control and limiting your possibilities. This might in many cases lead to dead ends, that are based on the framework, not the technology. GWT helps to overcome this problem offering JSNI.</li><li>They are never up to date. While browsers are evolving rapidly, new features have to be implemented in the Java-Wrapper before you can even use them, delaying your up-to-dateness.</li><li>I doubt that wrapping native front-end technology is a good idea, and i don't see a reason for doing it. One pro GWT argument might be: it's generating optimized JS code.</li></ul>In the end they make it easier to build webapplications for former java.awt/swing developers, who have no to little knowhow on html/css/js.<br />They defintively have their place right now and aren't a bad choice in some cases.<br /><br />
+    <div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/xlMg1a1flYA" frameborder="0" allowfullscreen=""></iframe></div>
+
+<h3 id="informationstate-and-behaviour">information/state and behaviour</h3>
+<p>I like to think of software as a universe of state and behaviour.
+State, whether mutable or immutable, is represented in the form of parameters, return values, vars, fields, files and so on and so forth.
+Those have many different traits to them.
+For example: vars, fields and files are location based, while parameters and return values are flow based. 
+But they are all state.</p>
+
+<p>Behaviour is represented in the form of functions that operate on that state. 
+There is no behaviour without state.
+Try to imagine a program that had no state.
+No Vars.
+No Input.
+No Output.
+Not even lambdas… they generate state.
+We can’t even print a damn thing without passing a string state.</p>
+
+<h3 id="cohesion">cohesion</h3>
+<p>Some state is related.
+If we’d increase the cohesion and move related state closer to each other and behaviour towards the state it operates on, groups are emerging.
+Groups of related parts.
+Groups of state and behaviour.</p>
+
+<h3 id="encapsulation">encapsulation</h3>
+<p>We can wrap them in capsules, which come in many different forms. 
+Functions, classes, packages, modules, processes and even servers are all kinds of capsules.
+For each capsule we define a minimum viable interface.
+The encapsulation serves the purpose of defining usable units that hide their internals which are irrelevant to the outside world.</p>
+
+<h3 id="objects">objects</h3>
+<p>We are defining Objects - behavioural capsules that interact with each other at runtime.
+So a function is a form of an object.
+An instance is a form of an object.
+A module is a form of an object.
+And even a microservice is a form of an object.</p>
+
+<h3 id="coupling">coupling</h3>
+<p>Each object is in some way coupled to the neighbours it interacts with.
+Coupling prevents independent changeability.
+Objects which are strongly coupled to one another cannot be changed independently of each other.
+The size of an objects public interface correlates with the strength of this coupling.
+The more we close the capsule, the more details we hide, the smaller the interface will be, thus the weaker the coupling will turn out.</p>
+
+<h4 id="feature-envy">feature envy</h4>
+<p>Sometimes, an object accidentally operates on the state of another object. 
+We call that a ‘Feature Envy’, as the object envies the other object.
+This increases the coupling between the two.
+We can resolve this situation by moving the behaviour to the object that holds the state.</p>
+
+<h3 id="dependency">dependency</h3>
+<p>When an object knows about another, we call that a dependency. 
+But don’t confuse ‘knows’ with ‘controls’, those are different things.
+An object can control another object without even knowing it.</p>
+
+<h4 id="dependency-inversion">dependency inversion</h4>
+<p>This is called dependency inversion.
+Think about a AAA battery. It provides power, but it has no idea who it provides power to.
+The form of the battery, AAA, is its interface. 
+The flashlight knows the battery, it implements its interface.
+And even though the battery knows nothing about the flashlight, the former controls the latter.</p>
+
+
     
 
 
@@ -353,106 +415,7 @@
     <path d="M0 0h24v24H0z" fill="none"/>
     <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
 </svg>
-      </span>&nbsp;<span class="tag-name">Frontend</span>
-    </span>
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">Responsive</span>
-    </span>
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">REST</span>
-    </span>
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">AJAX</span>
-    </span>
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">Rich Client</span>
-    </span>
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">AJAJ</span>
-    </span>
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">Web Development</span>
-    </span>
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">JavaScript</span>
-    </span>
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">Backend</span>
-    </span>
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">Html5</span>
-    </span>
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">GWT</span>
-    </span>
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">ZK</span>
+      </span>&nbsp;<span class="tag-name">oo, software design</span>
     </span>
   
 </div>
@@ -473,9 +436,9 @@
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "http://gregorriegler.com/2013/07/08/modern-web-development.html";
+    this.page.url = "http://gregorriegler.com/2020/01/12/yet-another-explanation-about-object-orientation.html";
     this.page.identifier = "" ||
-                           "http://gregorriegler.com/2013/07/08/modern-web-development.html";
+                           "http://gregorriegler.com/2020/01/12/yet-another-explanation-about-object-orientation.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
@@ -501,15 +464,6 @@
     
       <li>
         <h3>
-          <a href="/2020/01/12/yet-another-explanation-about-object-orientation.html">
-            yet another explanation about object orientation
-            <small>12 Jan 2020</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
           <a href="/2020/01/06/refactoring-to-mvc.html">
             refactoring to mvc
             <small>06 Jan 2020</small>
@@ -522,6 +476,15 @@
           <a href="/2020/01/01/testing-legacy-cli.html">
             testing a legacy cli app
             <small>01 Jan 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2019/12/17/embellishment-to-decorator.html">
+            embellishment to decorator
+            <small>17 Dec 2019</small>
           </a>
         </h3>
       </li>
