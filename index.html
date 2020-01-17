@@ -397,11 +397,11 @@ We can resolve this situation by moving the behaviour to the object that holds t
 
 <h3 id="dependency">dependency</h3>
 <p>When an object knows about another, we call that a dependency. 
-But don’t confuse ‘knows’ with ‘controls’, those are different things.
-An object can control another object without even knowing it.</p>
+But don’t confuse ‘knows’ with ‘controls’, those are different things.</p>
 
 <h4 id="dependency-inversion">dependency inversion</h4>
-<p>This is called dependency inversion.
+<p>An object can control another object without even knowing it.
+This is called dependency inversion.
 Think about a AAA battery. It provides power, but it has no idea who it provides power to.
 The form of the battery, AAA, is its interface. 
 The flashlight knows the battery, it implements its interface.
