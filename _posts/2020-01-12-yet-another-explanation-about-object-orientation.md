@@ -64,9 +64,9 @@ We can resolve this situation by moving the behaviour to the object that holds t
 ### dependency
 When an object knows about another, we call that a dependency. 
 But don't confuse 'knows' with 'controls', those are different things.
-An object can control another object without even knowing it.
 
 #### dependency inversion
+An object can control another object without even knowing it.
 This is called dependency inversion.
 Think about a AAA battery. It provides power, but it has no idea who it provides power to.
 The form of the battery, AAA, is its interface. 
