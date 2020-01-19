@@ -1,7 +1,7 @@
 ---
 layout: post
 category: refactoring-java
-title: 'refactoring to mvc'
+title: 'refactoring to mvc (coffee machine part 2)'
 date: 2020-01-06
 ---
 

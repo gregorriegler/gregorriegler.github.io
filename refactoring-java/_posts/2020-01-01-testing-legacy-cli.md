@@ -1,7 +1,7 @@
 ---
 layout: post
 category: refactoring-java
-title: 'testing a legacy cli app'
+title: 'testing a legacy cli app (coffee machine part 1)'
 date: 2020-01-01
 ---
 
