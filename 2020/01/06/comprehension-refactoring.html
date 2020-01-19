@@ -11,7 +11,7 @@
 
   <title>
     
-      Master the unpredictable &middot; Gregor Riegler
+      comprehension refactoring (coffee machine part 3) &middot; Gregor Riegler
     
   </title>
 
@@ -328,51 +328,40 @@
 
     <main class="container">
       <header>
-  <h1 class="post-title">Master the unpredictable</h1>
+  <h1 class="post-title">comprehension refactoring (coffee machine part 3)</h1>
 </header>
 <div class="content">
   <div class="post-meta">
-  <span class="post-date">08 May 2013</span>
+  <span class="post-date">06 Jan 2020</span>
   <span class="post-categories">
+    
+      &bull;
+
+      
+      
+      
+
+      
+        refactoring-java
+      
     
   </span>
 </div>
 
 
   <div class="post-body">
-    Have you ever come to work on a Project that you cant quite overlook? Are Requirements not yet clear or changing fast? Here are some tips to get along.<br /><br /><h3>Use Tracer Bullets</h3>Don't specify your software to death. Just grab your best idea, and give it a shot. Tracer Bullets are similar to Prototypes with one very important difference. Prototypes are built to proove something, and then be thrown away. They are not intended for real production. Even some drawing on a paper could be a prototype. A Tracer Bullet might get thrown away, but it is not intended to in the first place. It is developed as stable, clean and complete as needed, to use it for real production. A Tracer Bullet that hits its target, becomes a trunk.<br /><br /><h3>Develop Leaves first</h3>What do i mean with a leaf? Leaves are small exchangable software components or modules, that can be written independently, tested in isolation, and sometimes even run autonomous. They only perform a very specific task, not more. Find the leaves in your Project, and start developing the leaf with the highest risk.<br /><br /><h3>Dont Reinvent the Wheel</h3>99% of the problems that you face in your project have already been solved. Solving these by yourself can easily become a waste of time. Even the most trivial seeming problems are not trivial at all. Underestimating those is the issue in the first place, nevertheless it happens all the time. Well, its just logical to understimate the unsolved as you cannot know all the details until you solved it yourself. Analysing the problemdomain, concepting and realizing a solution can be a great way to learn, but is not very beneficial. Its in fact a risk, since it can lead to misconception or become a timeconsuming task that exceed your resources. You might even have to throw away your first attempts. Also, your outcome would be buggy, whereas established opensource software is usually stable thanks to its brave communities.<br />"Make or Buy" was a common phrase. I think it should be "Make or Find" by now, since opensource got really big. Rather invest your time into research opensource, and stay skeptical with what you find. When you compare 3rd party software, consider<br /><ul><li><b>Stability</b>: Is it still beta, or did it have some stable releases yet? Who is the organization behind? Is the code clean and tested?</li><li><b>Activity</b>: Can you find out how many developers this software has? When was the last commit? How frequently do they release a new build?</li><li><b>Support</b>: Does it offer a good documentation? How about examples? Is there a public Issue Tracker? How many issues have been submitted yet and how many have been solved? Is there a Forum, literature, and a big community? Are there any big names that use this software?</li><li><b>Critisism</b>: Is there anything bad that you should know in the first place? Search for reliable critiques and comparisons.</li></ul><br /><ul></ul><h3>Estimation is a waste of time</h3>Every hour that you invest in estimation, could also be invested in producing real outcome. Your estimation will be inaccurate anyway. When requirements change, you even have to change your estimations. If you have to estimate, because the business needs it, try to split your project into smaller independent parts first, and multiply your estimation with a risk factor (times two for example). In the end you`ll need it.<br /><br /><br />
+    <p>I am doing a little bit of comprehension refactoring on the model of the coffee machine.
+When doing comprehension refactoring, we study the code and keep our eyes open for design smells.
+We start renaming things and move stuff around so the code becomes more reasonable for us.</p>
+
+<div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/ACILWh3qx1E" frameborder="0" allowfullscreen=""></iframe></div>
+<p><a href="https://www.youtube.com/redirect?q=https%3A%2F%2Fgithub.com%2Fgregorriegler%2Fcoffeemachine-kata&amp;redir_token=xioPUXrgmPu_YF2dTvJ1FPIbqVh8MTU3Nzk4NjEzNEAxNTc3ODk5NzM0&amp;event=video_description&amp;v=qHGc373a998">The code on my GitHub</a></p>
+
     
 
 
 
 <div class="post-tags">
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">Stability</span>
-    </span>
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">Tracer Bullets</span>
-    </span>
-  
-    <span>
-      <span class="icon">
-        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
-</svg>
-      </span>&nbsp;<span class="tag-name">Estimation</span>
-    </span>
   
 </div>
   </div>
@@ -392,9 +381,9 @@
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "http://gregorriegler.com/2013/05/08/master-unpredictable.html";
+    this.page.url = "http://gregorriegler.com/2020/01/06/comprehension-refactoring.html";
     this.page.identifier = "" ||
-                           "http://gregorriegler.com/2013/05/08/master-unpredictable.html";
+                           "http://gregorriegler.com/2020/01/06/comprehension-refactoring.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
@@ -429,8 +418,8 @@
     
       <li>
         <h3>
-          <a href="/2020/01/06/comprehension-refactoring.html">
-            comprehension refactoring (coffee machine part 3)
+          <a href="/2020/01/06/refactoring-to-mvc.html">
+            refactoring to mvc (coffee machine part 2)
             <small>06 Jan 2020</small>
           </a>
         </h3>
@@ -438,9 +427,9 @@
     
       <li>
         <h3>
-          <a href="/2020/01/06/refactoring-to-mvc.html">
-            refactoring to mvc (coffee machine part 2)
-            <small>06 Jan 2020</small>
+          <a href="/2020/01/01/testing-legacy-cli.html">
+            testing a legacy cli app (coffee machine part 1)
+            <small>01 Jan 2020</small>
           </a>
         </h3>
       </li>
