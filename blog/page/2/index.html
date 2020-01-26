@@ -332,6 +332,145 @@
   
   <article class="post-body">
     <h2 class="post-title">
+      <a href="/2019/10/08/shower-thought-why-agile-works.html">
+        shower thoughts on agility
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">08 Oct 2019</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <h2 id="unexpected">unexpected</h2>
+
+<p>we've seen developers writing unit tests, and it has worked out well for them.</p>
+<p>we've seen developers writing those unit tests before writing any production code, and it has worked out well for them.</p>
+<p>we've seen developers spending time in improving the code, without getting any new feature done, and it has worked out well for them.</p>
+<p>we've seen developers doing pair programming - costing twice as much to solve the same problem? - and it has worked out well for them.</p>
+<p>we've seen developers doing mob programming, having a small group of people working at the same time, on the same problem and on the same computer, and it has worked out well for them.</p>
+<p>we've seen developers spending their work time in learning and practice, and it has worked out well for them.</p>
+<p>we've seen developers quit doing estimates, and it has worked out well for them.</p>
+<p>we've seen developers managing to deliver useful versions early and often.</p>
+<p>we've seen developers managing to deliver value to their customers every single day.</p>
+<p>we've seen organizations giving power to their development teams, and it has worked out well for them.</p>
+<p>we didn't expect those things to work out this way - yet here we are.</p>
+
+<p>this is very refreshing in my opinion, and i am very interested in exploring why those things worked out the way they did.<br />
+it seems like we really suck at predicting what would work and what wouldn’t.<br />
+but if we are so bad at those predictions, shouldn’t we just try things out?</p>
+
+<h2 id="the-industrial-age">the industrial age</h2>
+<p>first of all, i believe that our thinking has been stuck in the industrial age of <a href="https://en.wikipedia.org/wiki/Frederick_Winslow_Taylor">taylorism</a> and militarism, and that these ideas have shaped our way of thinking, teaching, working and just everything, up until today.
+taylorism might have worked well in factories, where every new produced thing was exactly the same, and it was finished at some point.
+this however seems not to be the case with software.
+software is never the same, and if it was you’d reuse it.
+software is never finished, it keeps changing and improving.
+software development is just fundamentally different to factory work.
+it is about knowledge, communication, experimentation, discovery and learning.</p>
+
+<h2 id="knowledge-refineries">knowledge refineries</h2>
+<p>software starts with somebody having a need.
+this need unfolds in an idea, a vision.
+in a traditional world this vision leads to the creation of requirements.
+the requirements are used to create specifications.
+the specifications guide the writing of the code.
+each of these steps could be seen as refinements of knowledge.
+the knowledge starts very vague and becomes gradually more specific until it ends in code.
+the knowledge is transferred, refined, stored, and it decays (thanks to Alex Bolboacă <a href="https://twitter.com/alexboly">@alexboly</a> for this <a href="https://mozaicworks.com/blog/software-engineering/knowledge-refinery/">observation</a>).</p>
+
+<h2 id="the-risk-of-bugs">the risk of bugs</h2>
+<p>in a traditional world, those refinements are done by different people of different skills with distance among them.
+we know that communication is lossy, and that the devil is in the details.
+needs are often lost in communication, resulting in instructions without context.
+instructions without context are likely the source of speculative assumptions.
+bugs may not only occur in code, but in specification, requirements, and ideas as well.
+thus each refinement step has a risk of bugs.
+the amount of people involved, and the distance between those people increase the risk of bugs.
+the amount of refinement steps in the process, and the length of interval between them, increase the risk of bugs.
+the damage of bugs in early stages of the development process grows if left undiscovered.
+the damage of bugs is reduced when the code is in a maintainable state.
+one way to discover bugs early, and to prevent them from doing lots of damage, is continuous feedback.
+the faster the feedback, the smaller the risk.
+a waterfall process hides bugs until the last possible moment, it maximizes the risk of bugs, and the damage those bugs inflict.</p>
+
+<h2 id="code-as-a-byproduct">code as a byproduct</h2>
+<p>if software development is so much about discovering bugs, maybe code is just a byproduct.
+the real product would be the learning, and the discovery of a bug-free vision.</p>
+
+<h2 id="the-many-minds-problem">the many minds problem</h2>
+<p>too many cooks spoil the broth, and it’s the same with code.
+different programmers have different opinions, styles and knowledge.
+many disconnected minds working on the same system can only make it unnecessarily complex.
+code is duplicated, when the existing implementation is not known or disliked.
+styles of design in areas of the code deviate from one another.
+programmers of all levels of experience have a hard time creating quality output, while quality output has a lot of attributes.
+mob programming helps solving these issues in an attempt to create a single mind of many.</p>
+
+<h2 id="storing-knowledge">storing knowledge</h2>
+<p>storing knowledge in brains is risky as brains are bad at remembering details.
+knowledge stored in just a single brain is even more risky, as it gets lost in fluctuation (<a href="https://en.wikipedia.org/wiki/Bus_factor">bus factor</a>).
+documentation quickly becomes dated. facts change, but no one updates the documentation.
+the only trustworthy long term store for knowledge is the code, as it never gets old. same with executable specification in the form of tests that change with the code.</p>
+
+<h2 id="transferring-knowledge-meetings">transferring knowledge: meetings</h2>
+<p>when programmers get in the zone, their short-term memories become stuffed with details about a specific problem and the code.
+meetings often cause damage by tearing programmers out of this context, which took a long time to setup in the first place.
+to make things worse, the details discussed in those meetings are typically unrelated to the programmers recent context.
+so, not only will the programmer spend a lot of time getting back into the zone after the meeting, also parts of the knowledge gained within the meeting will get lost in that process anyhow.</p>
+
+<h2 id="transferring-knowledge-email">transferring knowledge: email</h2>
+<p>a good way to avoid lossy communication is to have the recipient repeat in their own words what they have understood.
+the sender then has immediate feedback if there was a misunderstanding or not.
+email does not provide this way of feedback, it is typically ‘send and forget’, sometimes even disregarded.</p>
+
+<h2 id="knowledge-refactoring">knowledge refactoring</h2>
+<p>refactoring is a vital practice to make code more comprehensible, and to discover bugs.
+but what about requirements and specification?
+if they are similar to code, just not as refined - shouldn’t we refactor them, too?</p>
+
+<h2 id="estimation">estimation</h2>
+<p>the things we estimate are typically not the things that cause most of our effort.
+the things we estimate are naturally known things.
+but it is about the things we don’t know, that make the effort.</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Does this seem about right? <a href="https://t.co/PEtgTBX9eM">pic.twitter.com/PEtgTBX9eM</a></p>&mdash; Oluf Nissen (@GeekTieGuy) <a href="https://twitter.com/GeekTieGuy/status/1176895878478450688?ref_src=twsrc%5Etfw">September 25, 2019</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2 id="derived-principles">derived principles?</h2>
+<ul>
+  <li>less people involved -&gt; smaller teams.</li>
+  <li>less distance between people.</li>
+  <li>write code together.</li>
+  <li>continuous collaboration, share knowledge.</li>
+  <li>continuous and fast feedback using smaller batches.</li>
+  <li>idea to code as soon as possible.</li>
+  <li>avoid meetings and emails.</li>
+  <li>avoid estimation.</li>
+  <li>have the courage to question input.</li>
+</ul>
+
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br /><a class="comments_link" href="/2019/10/08/shower-thought-why-agile-works.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
       <a href="/2019/08/10/who-needs-lombok-anyhow.html">
         Who Needs Lombok Anyhow
       </a>
@@ -759,37 +898,6 @@ This is why our work is very creative.<br /><br />Sometimes we make good decisio
     
 
     <p><br /><a class="comments_link" href="/2013/10/15/boost-up-your-development-speed.html#comments">to the comments</a></p>
-  </article>
-  
-  
-  
-  <article class="post-body">
-    <h2 class="post-title">
-      <a href="/2013/08/28/are-you-really-agile.html">
-        Agility demands good Software Design
-      </a>
-    </h2>
-    <div class="post-meta">
-  <span class="post-date">28 Aug 2013</span>
-  <span class="post-categories">
-    
-  </span>
-</div>
-
-
-    
-      From what i have seen, Agile Software Development is widely misinterpreted nowadays. Many people think to be agile, they just need a process like scrum to define a framework of sprints and iterations. They will sprint until they exhaust and change until they stagnate. But when you'd ask them what principles of objectoriented design are, they'd answer: "Aww yes, we use classes". And when you'd asked them if they did test driven development, they'd reply: "Ahh, this is the thing where you write tests first, isn't it?". Bottom line, people think to be agile without caring about good software design. But in the end, the most important thing is what nobody cares about. It is the agility of the software that they are producing. So if you want to be agile, a process and a mindset is not enough. You need to keep your software agile. By that i mean, you need to keep the design of the software as clean and flexible as possible, to be able to apply any future changes at minimal cost. Software design of course includes your source code. In the end, you are only as agile as your software is.<br /><br /><h3><b><span style="font-weight: bold;">Why Agile?</span></b></h3>A customer does not know what he wants in the first place. He might have a rough idea, but thats it. We cant even blame him for that, because the actual problem that we are supposed to solve is influenced by so many factors and opinions that it is almost impossible to define the best solution right away. Other than that, miscommunication will most likely make things worse. To solve these issues we start small, and deliver fast. Seeing the first result, the customer can verify if we are on track or not. He can check if we have understood, or if he himself made a bad call. He might recognize things that he hasnt thought of before. Delivering repeatedly and iteratively like that, our software will more likely be useful and accepted by the customer in the end. It will more likely lead our project to success. Of course we will have to deal with changes more often, which is why we have to make the software itself agile. In the end it is the software which needs to be changeable, not us.<br /><br /><h3>What it takes </h3>Not only does an agile development process put our software under frequent change, it also demands progress at a fast and steady pace. These facts can quickly cause our software to rot if we don't watch out. And when it does, we get slowed down even more and changes suddenly become impossible. So we'd better not forget about the most important part in agile software development: Keeping our software design as agile as possible, from high-level architecture to the very code itself. Sadly, this gets ignored way too often, and many agile projects fail because of it. They fail because they chose to go faster by neglecting quality, and they quickly rush into a deadend of code rot leading to stagnation. So please remember: It is the Software you  are building that needs to be agile in order to adapt to change defined by the customer. It is the software that needs to be agile in order to react to change with minimal effort. Rushing is not gonna make your software agile. Rushing is not gonna make YOU agile. Agility comes hand in hand with quality. And high quality is not even slow, hell no. Good quality done right makes you go even faster.<br /><br /><h3>So what is Agile Software Design? </h3>Agile Software Design is what makes your software as clean and flexible as you need it to be. It demands deliberate adoption of discovered and well established design patterns and principles of objectoriented programming. This is not easy. In fact it's hard, it's very hard. Even if you are really good and experienced at it, you might fail at some point, having to rethink many of your previous design decisions. Agile Software Design is not something that you can rush. It needs time and deliberateness. But it will pay off in the long term by making you progress at a more constant pace, which will in fact be much faster than it would be without agile design. The graphic below should clarify how quick ignorant rushing can slow you down tremendously. The graphic is not based on statistics, but on experience.<br /><a href="http://2.bp.blogspot.com/-Qv435IVYgcY/Ug9ZKdN7nfI/AAAAAAAAAGs/PHxz3r2oMDU/s1600/agile_vs_rush.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-Qv435IVYgcY/Ug9ZKdN7nfI/AAAAAAAAAGs/PHxz3r2oMDU/s1600/agile_vs_rush.png" /></a><br />Agile Software Design does not end at high-level architecture. It goes on with coding. Bad code can quickly make your project more clumsy than a bad high-level design could. So the devil is in the details.<br /><br /><h3>What can you do to make your Software Design more Agile?</h3><b>From a Managers perspective?</b> Trust your Developers, don't push them. Invest in experience and expertise.<br /><br /><b>From a developers perspective?</b> First of all, learn the principles and patterns of objectoriented programming - not just in theory. Being good at those needs lots of practice. There are plenty of books for this:<br /><ul><li><a href="http://www.amazon.com/Design-Patterns-Elements-Object-Oriented-ebook/dp/B000SEIBB8">Design Patterns: Elements of Reusable Object-Oriented Software</a>,</li><li><a href="http://www.amazon.com/Software-Development-Principles-Patterns-Practices/dp/0135974445/ref=sr_1_cc_1?s=aps&amp;ie=UTF8&amp;qid=1377428897&amp;sr=1-1-catcorr&amp;keywords=agile+software+development+principles+patterns+and+practices">Agile Software Development, principles, patterns and practices</a></li></ul>and many more.<br /><br />Keep your code clean - don't underestimate this! When you are programming, you spend more time reading code, than writing code. Thus you want to minimize the time you have to read code by making it more readable. It's not a secret how clean code looks like. Take a look at <a href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code</a>.<br />Other than that, use the right practices like<br /><br /><h3><b><span style="font-weight: bold;">Test Driven Development&nbsp;&nbsp;</span></b></h3>Just do it already. And if you don't know how, go on and start learning. I have heard numerous opinions of TDD where people said<br /><ul><li>"Unittests are too expensive. The Customer wont pay for that."</li><li>"Unittests slow us down, we needed to write more code in that time."</li><li>"I don't know. I'm pretty good at programming, Test-First feels needlessly hard and awkward."</li></ul>But these are just subjective opinions of people who are not experienced in TDD.<br />TDD should in fact boost your longterm development speed if you are doing it right. I have not seen a single project in my life that has been as small and simple as that it would not have taken a significant profit from a TDD approach. And i have in fact seen very simple ones. The thing is, you have to test it anyways. What else would speed up your testing more than to automate it? Also, TDD significantly reduces the amount of time you have to spend debugging which already eats up lots of your time - at least more than you'd think. Other than that those tests<br /><ul><li>become a reliable documentation of your code,</li><li>allow you to fearlessly clean up your code,</li><li>force you to think of the problem before thinking of the actual solution, which will improve your initial draft,</li><li>enforce decoupling of components, which will make your design more agile.</li></ul><h3><span style="font-weight: bold;">Pair Programming</span></h3>It's not only that 4 eyes will see more defects than 2 eyes do, but also that the transfer of knowledge is taking place. You want all developers to learn from each other to become equally valuable. And you always want more than one person to know a specific module to improve the <a href="http://en.wikipedia.org/wiki/Bus_factor">truck factor</a>. Heck yeah, some people even do <a href="http://mobprogramming.org/">mobprogramming</a> - Seriously.<br /><br /><h3><span style="font-weight: bold;">Collective Code Ownership</span></h3>Don't allow one guy to own that modules code. All code on the project must belong to everybody. Everyone is allowed and invited to view, question and improve everyones code. This might be hard for some people, and might provoke conflicts, but it is absolutely mandatory to make the code better.<br /><br /><h3><span style="font-weight: bold;">Code Reviews</span></h3>Constantly review code changes. It is the only way to stay up to date, and it will reveal code smell. You need to reveal code smell, because if you don't, you will get stuck.<br /><br /><h3><span style="font-weight: bold;">Refactoring</span></h3>Refactor often. Everytime you see something that could be refactored, you need to do it right on the spot. The earlier you do it, the more time you save. So if you do it right then, you save the most possible amount of time.<br /><br /><br /><b>tl;dr: You are just as agile as your software design, which of course includes code. High speed does not demand low quality. It doesn't work like that. In fact high quality is needed to allow high speed. Agile design evolves high quality. </b><br /><b><br /></b>
-    
-
-    
-      
-      
-      
-
-      
-    
-
-    <p><br /><a class="comments_link" href="/2013/08/28/are-you-really-agile.html#comments">to the comments</a></p>
   </article>
   
   

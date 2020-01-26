@@ -1,4 +1,88 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://gregorriegler.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://gregorriegler.com/" rel="alternate" type="text/html" /><updated>2020-01-19T17:31:05+00:00</updated><id>http://gregorriegler.com/feed.xml</id><title type="html">Gregor Riegler</title><subtitle>merciless refactorer</subtitle><author><name>Gregor Riegler</name></author><entry><title type="html">yet another explanation about object orientation</title><link href="http://gregorriegler.com/2020/01/12/yet-another-explanation-about-object-orientation.html" rel="alternate" type="text/html" title="yet another explanation about object orientation" /><published>2020-01-12T00:00:00+00:00</published><updated>2020-01-12T00:00:00+00:00</updated><id>http://gregorriegler.com/2020/01/12/yet-another-explanation-about-object-orientation</id><content type="html" xml:base="http://gregorriegler.com/2020/01/12/yet-another-explanation-about-object-orientation.html">&lt;div class=&quot;embed-container&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/xlMg1a1flYA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="http://gregorriegler.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://gregorriegler.com/" rel="alternate" type="text/html" /><updated>2020-01-26T21:42:40+00:00</updated><id>http://gregorriegler.com/feed.xml</id><title type="html">Gregor Riegler</title><subtitle>merciless refactorer</subtitle><author><name>Gregor Riegler</name></author><entry><title type="html">becoming a keyboard ninja</title><link href="http://gregorriegler.com/2020/01/26/becoming-a-keyboard-ninja.html" rel="alternate" type="text/html" title="becoming a keyboard ninja" /><published>2020-01-26T00:00:00+00:00</published><updated>2020-01-26T00:00:00+00:00</updated><id>http://gregorriegler.com/2020/01/26/becoming-a-keyboard-ninja</id><content type="html" xml:base="http://gregorriegler.com/2020/01/26/becoming-a-keyboard-ninja.html">&lt;div class=&quot;embed-container&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/xqZpHknfr2E&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Hi, i’m Gregor, and I want to help you become better at coding.
+Here are some tips to improve your keyboard utilization.
+If you are already very good at it, this might not be for you.&lt;/p&gt;
+
+&lt;h3 id=&quot;keep-your-eyes-on-the-street&quot;&gt;keep your eyes on the street&lt;/h3&gt;
+&lt;p&gt;It is our most important tool because of it’s relatively high throughput.
+This throughput not only determines our speed, it also affects the quality of our output.
+Let me explain:
+As coders we’re switching between different views and modes.
+We’re mostly looking at the code from a bird’s eye perspective, just reading and thinking. 
+As soon as we have decided on the changes we want to make, our focus tightens.
+We’re now more concerned which button to click next, which menu to open.
+Using the mouse is terribly slow.
+It breaks our flow of thought.
+We’re not watching the street, we’re looking at the stick shift.
+Fluent keyboard utilization can help us keep our eyes on the street.
+It frees our minds and helps us make fewer mistakes.
+We can not only drive faster, but also safer.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-better-is-easy&quot;&gt;getting better is easy!&lt;/h3&gt;
+&lt;p&gt;Just lower your expectations.
+There is no need to get to 0% mouse usage right away.
+Start small, but start now! 
+The following tips should help you get started.&lt;/p&gt;
+
+&lt;h3 id=&quot;tip-1-buy-a-keyboard-youll-want-to-use&quot;&gt;tip #1: buy a keyboard you’ll want to use&lt;/h3&gt;
+&lt;p&gt;Do yourself a favour and buy a good keyboard of your choice.
+After all, you’re a programmer and this is your most important tool.
+It will be much easier to get better, once you own a keyboard you enjoy working with.
+One you’ll &lt;strong&gt;want&lt;/strong&gt; to use.
+Maybe a mechanical one, maybe a slim one, whatever suits you.&lt;/p&gt;
+
+&lt;h3 id=&quot;tip-2-use-a-powerful-editor&quot;&gt;tip #2: use a powerful editor&lt;/h3&gt;
+&lt;p&gt;It should have support for code navigation, refactoring and other coding related stuff. 
+Could be an IDE, could be a lightweight editor that has a healthy plugin ecosystem.&lt;/p&gt;
+
+&lt;h3 id=&quot;tip-3-plugins-may-help&quot;&gt;tip #3: plugins may help&lt;/h3&gt;
+&lt;p&gt;Search for plugins that assist you in learning keystrokes.
+Like the &lt;a href=&quot;https://plugins.jetbrains.com/plugin/9792-key-promoter-x&quot;&gt;Key Promoter X&lt;/a&gt; for IntelliJ.
+There is also &lt;a href=&quot;https://marketplace.eclipse.org/content/mousefeed&quot;&gt;Mousefeed&lt;/a&gt; for Eclipse, 
+and &lt;a href=&quot;http://plugins.netbeans.org/plugin/55751/key-promoter&quot;&gt;Keypromoter&lt;/a&gt; for Netbeans, which do a similar thing. 
+They will assist you by showing the keystroke you could have pressed, whenever you used the mouse. 
+Also they will count and show you how often you used the mouse for that command.&lt;/p&gt;
+
+&lt;h3 id=&quot;tip-4-start-small&quot;&gt;tip #4: start small&lt;/h3&gt;
+&lt;p&gt;Don’t try and learn everything at once.
+You gotta start small. 
+Choose ~4 keystrokes or combos you want to learn first, and focus only on them while working on the code you are usually working on.
+You will soon start doing them unconsciously. 
+This is when you are ready for the next ones.&lt;/p&gt;
+
+&lt;h3 id=&quot;tip-5-prepare-a-cheat-sheet&quot;&gt;tip #5: prepare a cheat sheet&lt;/h3&gt;
+&lt;p&gt;Prepare yourself a cheat sheet, so you can quickly look up the shortcuts you are working on.
+Maybe you’ll find a nice print out online, or even create one yourself.
+There is the &lt;a href=&quot;http://blog.code-cop.org/p/shortcut-search.html&quot;&gt;code cops shortcut search&lt;/a&gt; for example.&lt;/p&gt;
+
+&lt;h3 id=&quot;tip-6-be-gone-mouse&quot;&gt;tip #6: be gone, mouse!&lt;/h3&gt;
+&lt;p&gt;If it does not work out, and you keep grabbing the mouse out of habit, move it to the other side of your keyboard.
+So when you try and grab it, it won’t be there.
+This is also a good tip if you’re advanced and you feel like ditching the mouse anyhow.&lt;/p&gt;
+
+&lt;h3 id=&quot;tip-7-pair-with-others&quot;&gt;tip #7: pair with others&lt;/h3&gt;
+&lt;p&gt;You can’t practice tricks you didn’t know existed.
+Pair- and mob- programming will help you find inspiration.
+I learned some of the most valuable shortcuts from pairing with others.&lt;/p&gt;
+
+&lt;h3 id=&quot;tip-8-rtfm&quot;&gt;tip #8: RTFM&lt;/h3&gt;
+&lt;p&gt;Also, it might be worth it to study your editors documentation. 
+Some of the actions I adopted are ones i found there. 
+For example: The ‘Search and Replace Duplicates’ refactoring.&lt;/p&gt;
+
+&lt;h3 id=&quot;tip-9-extend-your-keymap&quot;&gt;tip #9: extend your keymap&lt;/h3&gt;
+&lt;p&gt;Some of the actions you frequently use might not even have a keystroke assigned by default.
+I for example like to split my tabs when doing TDD.
+So I can see my tests on the left, and production code on the right.
+The ‘Move Tab to the Right’ action however did not have a keystroke assigned by default. 
+I had to do this myself.
+Expect your editors keymap to be imperfect. 
+Think outside the box, and adapt the tool according to your need.&lt;/p&gt;
+
+&lt;p&gt;I hope these tips will help you utilize your keyboard more. 
+So you can keep your eyes on the street, and increase both your throughput and quality of output.&lt;/p&gt;</content><author><name>Gregor Riegler</name></author><category term="efficiency" /><summary type="html">Hi, i’m Gregor, and I want to help you become better at coding. Here are some tips to improve your keyboard utilization. If you are already very good at it, this might not be for you. keep your eyes on the street It is our most important tool because of it’s relatively high throughput. This throughput not only determines our speed, it also affects the quality of our output. Let me explain: As coders we’re switching between different views and modes. We’re mostly looking at the code from a bird’s eye perspective, just reading and thinking. As soon as we have decided on the changes we want to make, our focus tightens. We’re now more concerned which button to click next, which menu to open. Using the mouse is terribly slow. It breaks our flow of thought. We’re not watching the street, we’re looking at the stick shift. Fluent keyboard utilization can help us keep our eyes on the street. It frees our minds and helps us make fewer mistakes. We can not only drive faster, but also safer. getting better is easy! Just lower your expectations. There is no need to get to 0% mouse usage right away. Start small, but start now! The following tips should help you get started. tip #1: buy a keyboard you’ll want to use Do yourself a favour and buy a good keyboard of your choice. After all, you’re a programmer and this is your most important tool. It will be much easier to get better, once you own a keyboard you enjoy working with. One you’ll want to use. Maybe a mechanical one, maybe a slim one, whatever suits you. tip #2: use a powerful editor It should have support for code navigation, refactoring and other coding related stuff. Could be an IDE, could be a lightweight editor that has a healthy plugin ecosystem. tip #3: plugins may help Search for plugins that assist you in learning keystrokes. Like the Key Promoter X for IntelliJ. There is also Mousefeed for Eclipse, and Keypromoter for Netbeans, which do a similar thing. They will assist you by showing the keystroke you could have pressed, whenever you used the mouse. Also they will count and show you how often you used the mouse for that command. tip #4: start small Don’t try and learn everything at once. You gotta start small. Choose ~4 keystrokes or combos you want to learn first, and focus only on them while working on the code you are usually working on. You will soon start doing them unconsciously. This is when you are ready for the next ones. tip #5: prepare a cheat sheet Prepare yourself a cheat sheet, so you can quickly look up the shortcuts you are working on. Maybe you’ll find a nice print out online, or even create one yourself. There is the code cops shortcut search for example. tip #6: be gone, mouse! If it does not work out, and you keep grabbing the mouse out of habit, move it to the other side of your keyboard. So when you try and grab it, it won’t be there. This is also a good tip if you’re advanced and you feel like ditching the mouse anyhow. tip #7: pair with others You can’t practice tricks you didn’t know existed. Pair- and mob- programming will help you find inspiration. I learned some of the most valuable shortcuts from pairing with others. tip #8: RTFM Also, it might be worth it to study your editors documentation. Some of the actions I adopted are ones i found there. For example: The ‘Search and Replace Duplicates’ refactoring. tip #9: extend your keymap Some of the actions you frequently use might not even have a keystroke assigned by default. I for example like to split my tabs when doing TDD. So I can see my tests on the left, and production code on the right. The ‘Move Tab to the Right’ action however did not have a keystroke assigned by default. I had to do this myself. Expect your editors keymap to be imperfect. Think outside the box, and adapt the tool according to your need. I hope these tips will help you utilize your keyboard more. So you can keep your eyes on the street, and increase both your throughput and quality of output.</summary></entry><entry><title type="html">yet another explanation about object orientation</title><link href="http://gregorriegler.com/2020/01/12/yet-another-explanation-about-object-orientation.html" rel="alternate" type="text/html" title="yet another explanation about object orientation" /><published>2020-01-12T00:00:00+00:00</published><updated>2020-01-12T00:00:00+00:00</updated><id>http://gregorriegler.com/2020/01/12/yet-another-explanation-about-object-orientation</id><content type="html" xml:base="http://gregorriegler.com/2020/01/12/yet-another-explanation-about-object-orientation.html">&lt;div class=&quot;embed-container&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/xlMg1a1flYA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;informationstate-and-behaviour&quot;&gt;information/state and behaviour&lt;/h3&gt;
 &lt;p&gt;I like to think of software as a universe of state and behaviour.
@@ -103,110 +187,4 @@ Suppose i created a new component that consumed an already existing value object
 As a result we can more easily and independently change each of the resulting phases.&lt;/p&gt;
 
 &lt;div class=&quot;embed-container&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/sIceCgI6QO0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/gregorriegler/refactoring-split-phase&quot;&gt;the code on my GitHub&lt;/a&gt;&lt;/p&gt;</content><author><name>Gregor Riegler</name></author><category term="refactoring-java" /><summary type="html">In a split phase refactoring, we split a tangled piece of code that does more than one thing into distinguished phases that only do a single thing. As a result we can more easily and independently change each of the resulting phases.</summary></entry><entry><title type="html">shower thoughts on agility</title><link href="http://gregorriegler.com/2019/10/08/shower-thought-why-agile-works.html" rel="alternate" type="text/html" title="shower thoughts on agility" /><published>2019-10-08T00:00:00+00:00</published><updated>2019-10-08T00:00:00+00:00</updated><id>http://gregorriegler.com/2019/10/08/shower-thought-why-agile-works</id><content type="html" xml:base="http://gregorriegler.com/2019/10/08/shower-thought-why-agile-works.html">&lt;h2 id=&quot;unexpected&quot;&gt;unexpected&lt;/h2&gt;
-
-&lt;p&gt;we've seen developers writing unit tests, and it has worked out well for them.&lt;/p&gt;
-&lt;p&gt;we've seen developers writing those unit tests before writing any production code, and it has worked out well for them.&lt;/p&gt;
-&lt;p&gt;we've seen developers spending time in improving the code, without getting any new feature done, and it has worked out well for them.&lt;/p&gt;
-&lt;p&gt;we've seen developers doing pair programming - costing twice as much to solve the same problem? - and it has worked out well for them.&lt;/p&gt;
-&lt;p&gt;we've seen developers doing mob programming, having a small group of people working at the same time, on the same problem and on the same computer, and it has worked out well for them.&lt;/p&gt;
-&lt;p&gt;we've seen developers spending their work time in learning and practice, and it has worked out well for them.&lt;/p&gt;
-&lt;p&gt;we've seen developers quit doing estimates, and it has worked out well for them.&lt;/p&gt;
-&lt;p&gt;we've seen developers managing to deliver useful versions early and often.&lt;/p&gt;
-&lt;p&gt;we've seen developers managing to deliver value to their customers every single day.&lt;/p&gt;
-&lt;p&gt;we've seen organizations giving power to their development teams, and it has worked out well for them.&lt;/p&gt;
-&lt;p&gt;we didn't expect those things to work out this way - yet here we are.&lt;/p&gt;
-
-&lt;p&gt;this is very refreshing in my opinion, and i am very interested in exploring why those things worked out the way they did.&lt;br /&gt;
-it seems like we really suck at predicting what would work and what wouldn’t.&lt;br /&gt;
-but if we are so bad at those predictions, shouldn’t we just try things out?&lt;/p&gt;
-
-&lt;h2 id=&quot;the-industrial-age&quot;&gt;the industrial age&lt;/h2&gt;
-&lt;p&gt;first of all, i believe that our thinking has been stuck in the industrial age of &lt;a href=&quot;https://en.wikipedia.org/wiki/Frederick_Winslow_Taylor&quot;&gt;taylorism&lt;/a&gt; and militarism, and that these ideas have shaped our way of thinking, teaching, working and just everything, up until today.
-taylorism might have worked well in factories, where every new produced thing was exactly the same, and it was finished at some point.
-this however seems not to be the case with software.
-software is never the same, and if it was you’d reuse it.
-software is never finished, it keeps changing and improving.
-software development is just fundamentally different to factory work.
-it is about knowledge, communication, experimentation, discovery and learning.&lt;/p&gt;
-
-&lt;h2 id=&quot;knowledge-refineries&quot;&gt;knowledge refineries&lt;/h2&gt;
-&lt;p&gt;software starts with somebody having a need.
-this need unfolds in an idea, a vision.
-in a traditional world this vision leads to the creation of requirements.
-the requirements are used to create specifications.
-the specifications guide the writing of the code.
-each of these steps could be seen as refinements of knowledge.
-the knowledge starts very vague and becomes gradually more specific until it ends in code.
-the knowledge is transferred, refined, stored, and it decays (thanks to Alex Bolboacă &lt;a href=&quot;https://twitter.com/alexboly&quot;&gt;@alexboly&lt;/a&gt; for this &lt;a href=&quot;https://mozaicworks.com/blog/software-engineering/knowledge-refinery/&quot;&gt;observation&lt;/a&gt;).&lt;/p&gt;
-
-&lt;h2 id=&quot;the-risk-of-bugs&quot;&gt;the risk of bugs&lt;/h2&gt;
-&lt;p&gt;in a traditional world, those refinements are done by different people of different skills with distance among them.
-we know that communication is lossy, and that the devil is in the details.
-needs are often lost in communication, resulting in instructions without context.
-instructions without context are likely the source of speculative assumptions.
-bugs may not only occur in code, but in specification, requirements, and ideas as well.
-thus each refinement step has a risk of bugs.
-the amount of people involved, and the distance between those people increase the risk of bugs.
-the amount of refinement steps in the process, and the length of interval between them, increase the risk of bugs.
-the damage of bugs in early stages of the development process grows if left undiscovered.
-the damage of bugs is reduced when the code is in a maintainable state.
-one way to discover bugs early, and to prevent them from doing lots of damage, is continuous feedback.
-the faster the feedback, the smaller the risk.
-a waterfall process hides bugs until the last possible moment, it maximizes the risk of bugs, and the damage those bugs inflict.&lt;/p&gt;
-
-&lt;h2 id=&quot;code-as-a-byproduct&quot;&gt;code as a byproduct&lt;/h2&gt;
-&lt;p&gt;if software development is so much about discovering bugs, maybe code is just a byproduct.
-the real product would be the learning, and the discovery of a bug-free vision.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-many-minds-problem&quot;&gt;the many minds problem&lt;/h2&gt;
-&lt;p&gt;too many cooks spoil the broth, and it’s the same with code.
-different programmers have different opinions, styles and knowledge.
-many disconnected minds working on the same system can only make it unnecessarily complex.
-code is duplicated, when the existing implementation is not known or disliked.
-styles of design in areas of the code deviate from one another.
-programmers of all levels of experience have a hard time creating quality output, while quality output has a lot of attributes.
-mob programming helps solving these issues in an attempt to create a single mind of many.&lt;/p&gt;
-
-&lt;h2 id=&quot;storing-knowledge&quot;&gt;storing knowledge&lt;/h2&gt;
-&lt;p&gt;storing knowledge in brains is risky as brains are bad at remembering details.
-knowledge stored in just a single brain is even more risky, as it gets lost in fluctuation (&lt;a href=&quot;https://en.wikipedia.org/wiki/Bus_factor&quot;&gt;bus factor&lt;/a&gt;).
-documentation quickly becomes dated. facts change, but no one updates the documentation.
-the only trustworthy long term store for knowledge is the code, as it never gets old. same with executable specification in the form of tests that change with the code.&lt;/p&gt;
-
-&lt;h2 id=&quot;transferring-knowledge-meetings&quot;&gt;transferring knowledge: meetings&lt;/h2&gt;
-&lt;p&gt;when programmers get in the zone, their short-term memories become stuffed with details about a specific problem and the code.
-meetings often cause damage by tearing programmers out of this context, which took a long time to setup in the first place.
-to make things worse, the details discussed in those meetings are typically unrelated to the programmers recent context.
-so, not only will the programmer spend a lot of time getting back into the zone after the meeting, also parts of the knowledge gained within the meeting will get lost in that process anyhow.&lt;/p&gt;
-
-&lt;h2 id=&quot;transferring-knowledge-email&quot;&gt;transferring knowledge: email&lt;/h2&gt;
-&lt;p&gt;a good way to avoid lossy communication is to have the recipient repeat in their own words what they have understood.
-the sender then has immediate feedback if there was a misunderstanding or not.
-email does not provide this way of feedback, it is typically ‘send and forget’, sometimes even disregarded.&lt;/p&gt;
-
-&lt;h2 id=&quot;knowledge-refactoring&quot;&gt;knowledge refactoring&lt;/h2&gt;
-&lt;p&gt;refactoring is a vital practice to make code more comprehensible, and to discover bugs.
-but what about requirements and specification?
-if they are similar to code, just not as refined - shouldn’t we refactor them, too?&lt;/p&gt;
-
-&lt;h2 id=&quot;estimation&quot;&gt;estimation&lt;/h2&gt;
-&lt;p&gt;the things we estimate are typically not the things that cause most of our effort.
-the things we estimate are naturally known things.
-but it is about the things we don’t know, that make the effort.&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Does this seem about right? &lt;a href=&quot;https://t.co/PEtgTBX9eM&quot;&gt;pic.twitter.com/PEtgTBX9eM&lt;/a&gt;&lt;/p&gt;&amp;mdash; Oluf Nissen (@GeekTieGuy) &lt;a href=&quot;https://twitter.com/GeekTieGuy/status/1176895878478450688?ref_src=twsrc%5Etfw&quot;&gt;September 25, 2019&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;h2 id=&quot;derived-principles&quot;&gt;derived principles?&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;less people involved -&amp;gt; smaller teams.&lt;/li&gt;
-  &lt;li&gt;less distance between people.&lt;/li&gt;
-  &lt;li&gt;write code together.&lt;/li&gt;
-  &lt;li&gt;continuous collaboration, share knowledge.&lt;/li&gt;
-  &lt;li&gt;continuous and fast feedback using smaller batches.&lt;/li&gt;
-  &lt;li&gt;idea to code as soon as possible.&lt;/li&gt;
-  &lt;li&gt;avoid meetings and emails.&lt;/li&gt;
-  &lt;li&gt;avoid estimation.&lt;/li&gt;
-  &lt;li&gt;have the courage to question input.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Gregor Riegler</name></author><category term="agile" /><summary type="html">unexpected we've seen developers writing unit tests, and it has worked out well for them. we've seen developers writing those unit tests before writing any production code, and it has worked out well for them. we've seen developers spending time in improving the code, without getting any new feature done, and it has worked out well for them. we've seen developers doing pair programming - costing twice as much to solve the same problem? - and it has worked out well for them. we've seen developers doing mob programming, having a small group of people working at the same time, on the same problem and on the same computer, and it has worked out well for them. we've seen developers spending their work time in learning and practice, and it has worked out well for them. we've seen developers quit doing estimates, and it has worked out well for them. we've seen developers managing to deliver useful versions early and often. we've seen developers managing to deliver value to their customers every single day. we've seen organizations giving power to their development teams, and it has worked out well for them. we didn't expect those things to work out this way - yet here we are. this is very refreshing in my opinion, and i am very interested in exploring why those things worked out the way they did. it seems like we really suck at predicting what would work and what wouldn’t. but if we are so bad at those predictions, shouldn’t we just try things out? the industrial age first of all, i believe that our thinking has been stuck in the industrial age of taylorism and militarism, and that these ideas have shaped our way of thinking, teaching, working and just everything, up until today. taylorism might have worked well in factories, where every new produced thing was exactly the same, and it was finished at some point. this however seems not to be the case with software. software is never the same, and if it was you’d reuse it. software is never finished, it keeps changing and improving. software development is just fundamentally different to factory work. it is about knowledge, communication, experimentation, discovery and learning. knowledge refineries software starts with somebody having a need. this need unfolds in an idea, a vision. in a traditional world this vision leads to the creation of requirements. the requirements are used to create specifications. the specifications guide the writing of the code. each of these steps could be seen as refinements of knowledge. the knowledge starts very vague and becomes gradually more specific until it ends in code. the knowledge is transferred, refined, stored, and it decays (thanks to Alex Bolboacă @alexboly for this observation). the risk of bugs in a traditional world, those refinements are done by different people of different skills with distance among them. we know that communication is lossy, and that the devil is in the details. needs are often lost in communication, resulting in instructions without context. instructions without context are likely the source of speculative assumptions. bugs may not only occur in code, but in specification, requirements, and ideas as well. thus each refinement step has a risk of bugs. the amount of people involved, and the distance between those people increase the risk of bugs. the amount of refinement steps in the process, and the length of interval between them, increase the risk of bugs. the damage of bugs in early stages of the development process grows if left undiscovered. the damage of bugs is reduced when the code is in a maintainable state. one way to discover bugs early, and to prevent them from doing lots of damage, is continuous feedback. the faster the feedback, the smaller the risk. a waterfall process hides bugs until the last possible moment, it maximizes the risk of bugs, and the damage those bugs inflict. code as a byproduct if software development is so much about discovering bugs, maybe code is just a byproduct. the real product would be the learning, and the discovery of a bug-free vision. the many minds problem too many cooks spoil the broth, and it’s the same with code. different programmers have different opinions, styles and knowledge. many disconnected minds working on the same system can only make it unnecessarily complex. code is duplicated, when the existing implementation is not known or disliked. styles of design in areas of the code deviate from one another. programmers of all levels of experience have a hard time creating quality output, while quality output has a lot of attributes. mob programming helps solving these issues in an attempt to create a single mind of many. storing knowledge storing knowledge in brains is risky as brains are bad at remembering details. knowledge stored in just a single brain is even more risky, as it gets lost in fluctuation (bus factor). documentation quickly becomes dated. facts change, but no one updates the documentation. the only trustworthy long term store for knowledge is the code, as it never gets old. same with executable specification in the form of tests that change with the code. transferring knowledge: meetings when programmers get in the zone, their short-term memories become stuffed with details about a specific problem and the code. meetings often cause damage by tearing programmers out of this context, which took a long time to setup in the first place. to make things worse, the details discussed in those meetings are typically unrelated to the programmers recent context. so, not only will the programmer spend a lot of time getting back into the zone after the meeting, also parts of the knowledge gained within the meeting will get lost in that process anyhow. transferring knowledge: email a good way to avoid lossy communication is to have the recipient repeat in their own words what they have understood. the sender then has immediate feedback if there was a misunderstanding or not. email does not provide this way of feedback, it is typically ‘send and forget’, sometimes even disregarded. knowledge refactoring refactoring is a vital practice to make code more comprehensible, and to discover bugs. but what about requirements and specification? if they are similar to code, just not as refined - shouldn’t we refactor them, too? estimation the things we estimate are typically not the things that cause most of our effort. the things we estimate are naturally known things. but it is about the things we don’t know, that make the effort. Does this seem about right? pic.twitter.com/PEtgTBX9eM&amp;mdash; Oluf Nissen (@GeekTieGuy) September 25, 2019 derived principles? less people involved -&amp;gt; smaller teams. less distance between people. write code together. continuous collaboration, share knowledge. continuous and fast feedback using smaller batches. idea to code as soon as possible. avoid meetings and emails. avoid estimation. have the courage to question input.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://github.com/gregorriegler/refactoring-split-phase&quot;&gt;the code on my GitHub&lt;/a&gt;&lt;/p&gt;</content><author><name>Gregor Riegler</name></author><category term="refactoring-java" /><summary type="html">In a split phase refactoring, we split a tangled piece of code that does more than one thing into distinguished phases that only do a single thing. As a result we can more easily and independently change each of the resulting phases.</summary></entry></feed>
