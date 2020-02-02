@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "yet another explanation about object orientation"
+title:  "maybe a different view on object orientation"
 tags: 
 - oo, software design 
 ---
