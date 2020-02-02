@@ -10,5 +10,3 @@ i am passionate about technical excellence because **you're only as agile as you
 i love continuous learning, sharing, experimenting and practice.
 
 i feel home at oo embedding fp concepts, tdd, refactoring, simple design, evolutionary design, clean code, rest, trunk based development, automation, continuous integration and deployment.
-
-languages and frameworks are important as well, but i don't consider them as important. i consider them as implementation details.
