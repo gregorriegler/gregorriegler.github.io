@@ -11,7 +11,7 @@
 
   <title>
     
-      Between the lines &middot; Gregor Riegler
+      replace derived with query (coffee machine part 4) &middot; Gregor Riegler
     
   </title>
 
@@ -328,26 +328,38 @@
 
     <main class="container">
       <header>
-  <h1 class="post-title">Between the lines</h1>
+  <h1 class="post-title">replace derived with query (coffee machine part 4)</h1>
 </header>
 <div class="content">
   <div class="post-meta">
-  <span class="post-date">19 Dec 2014</span>
+  <span class="post-date">02 Feb 2020</span>
   <span class="post-categories">
+    
+      &bull;
+
+      
+      
+      
+
+      
+        refactoring-java
+      
     
   </span>
 </div>
 
 
   <div class="post-body">
-    As coders we are constantly making decisions. This is what we do, it is our duty. Our decisions have a lot of impact.
-They affect the success of the project or product.
-They affect all stakes of the software, the users that are going to use it, and in enterprise even the company behind the employees that are going to use it.
-And of course they affect our own and/or our companies reputation.
-They affect what problems we face when we engage upcoming tasks, our co-workers future mood and even our own.
-Bad decisions can easily make us suffer.<br /><br />
-What we do is not a routine, ever. We might have patterns, practices, principles and experience. Yet still, every new decision that we make has a unique context.
-This is why our work is very creative.<br /><br />Sometimes we make good decisions and sometimes we make bad ones. This is true for all types of coders from juniors to masters. Sometimes we make bad decisions because we just don't know any better, due to a lack of programming-, technology- or domainknowledge. And sometimes we make bad decisions because we are being put under pressure.<br /><br />Bad decisions are expensive and dangerous. They produce technical debt, and it is not uncommon that they lead us to even more bad decisions. Slowly but surely this burden becomes heavier. It cost us time, energy and money. In extreme cases it gets so expensive that it would be favorable to completely start over.<br /><br />Willingly or not, because of the decisions we make, we coders are in great power. We are leaders, and we can easily steer towards failure. We are not just the ones to write lines. We are not just code monkeys. We are the ones who design the heart of the Software and bear great responsibility.<br /><br />When everyone gets mad because of a problem, maybe a date or even a deadline, we coders are the ones to stay strong. We are the ones to keep calm, and disillusion the others. We know the code, so we know the truth. If we don't stand up, whoelse should?<br /><br />It is hard to act professionally and responsible at any time, but it's mostly a good choice. Thankfully, code is very forgivingly in its nature. We can change it, thus allowing us to revert our decisions. We should value this changeability in the code. We should even take action to improve it. Maybe that'd be a good choice!?<br /><br />I would like to end this post with a quote by&nbsp;<a href="https://twitter.com/WoodyZuill">@WoodyZuill</a>:<br /><blockquote class="tr_bq"><span style="color: #292f33; font-family: Helvetica Neue, Helvetica, Arial, sans-serif;"><span style="line-height: 22px; white-space: pre-wrap;">„</span></span><span style="background-color: white; color: #292f33; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 22px; white-space: pre-wrap;">Be the programmer you want to see in the world.</span><span style="color: #292f33; font-family: Helvetica Neue, Helvetica, Arial, sans-serif;"><span style="line-height: 22px; white-space: pre-wrap;">“</span></span></blockquote>
+    <p>A derived field is similar to a cache in the sense that you have to actively maintain its state throughout everything that is happening in your domain.
+So it is similarly complex to cache invalidation.
+We can replace it with a query method, and get rid of the complication.
+This doesn’t mean we can’t add caching to the query method later. 
+We can easily add this cross-cutting concern later on using <a href="https://stackoverflow.com/a/27549948">memoization</a> or a decorator pattern if we really need it.</p>
+
+<div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/eXElxR1_qOo" frameborder="0" allowfullscreen=""></iframe></div>
+
+<p><a href="https://github.com/gregorriegler/coffeemachine-kata">The code on my GitHub</a></p>
+
     
 
 
@@ -372,9 +384,9 @@ This is why our work is very creative.<br /><br />Sometimes we make good decisio
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "http://gregorriegler.com/2014/12/19/between-lines.html";
+    this.page.url = "http://gregorriegler.com/2020/02/02/replace-derived-field-with-query-method.html";
     this.page.identifier = "" ||
-                           "http://gregorriegler.com/2014/12/19/between-lines.html";
+                           "http://gregorriegler.com/2020/02/02/replace-derived-field-with-query-method.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
@@ -400,15 +412,6 @@ This is why our work is very creative.<br /><br />Sometimes we make good decisio
     
       <li>
         <h3>
-          <a href="/2020/02/02/replace-derived-field-with-query-method.html">
-            replace derived with query (coffee machine part 4)
-            <small>02 Feb 2020</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
           <a href="/2020/01/26/becoming-a-keyboard-ninja.html">
             becoming a keyboard ninja
             <small>26 Jan 2020</small>
@@ -421,6 +424,15 @@ This is why our work is very creative.<br /><br />Sometimes we make good decisio
           <a href="/2020/01/12/yet-another-explanation-about-object-orientation.html">
             maybe a different view on object orientation
             <small>12 Jan 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2020/01/06/comprehension-refactoring.html">
+            comprehension refactoring (coffee machine part 3)
+            <small>06 Jan 2020</small>
           </a>
         </h3>
       </li>

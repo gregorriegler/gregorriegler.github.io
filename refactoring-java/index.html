@@ -333,6 +333,42 @@
 <div class="content">
   
 
+<article class="post-body">
+    <h3>
+        replace derived with query (coffee machine part 4)
+    </h3>
+    <div class="post-meta">
+  <span class="post-date">02 Feb 2020</span>
+  <span class="post-categories">
+    
+      &bull;
+
+      
+      
+      
+
+      
+        refactoring-java
+      
+    
+  </span>
+</div>
+
+
+    <p>A derived field is similar to a cache in the sense that you have to actively maintain its state throughout everything that is happening in your domain.
+So it is similarly complex to cache invalidation.
+We can replace it with a query method, and get rid of the complication.
+This doesn’t mean we can’t add caching to the query method later. 
+We can easily add this cross-cutting concern later on using <a href="https://stackoverflow.com/a/27549948">memoization</a> or a decorator pattern if we really need it.</p>
+
+<div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/eXElxR1_qOo" frameborder="0" allowfullscreen=""></iframe></div>
+
+<p><a href="https://github.com/gregorriegler/coffeemachine-kata">The code on my GitHub</a></p>
+
+</article>
+
+
+
 
 
 
