@@ -6,6 +6,9 @@ sidebar_sort_order: 0
 ---
 
 i am a software crafter with ~15 years of experience.
-i have been working as a developer, tech lead and software architect, but i mostly like to help others become better.
-i enjoy reading tech books, watching tech talks, visiting/running code retreats, continuous learning and practice.
-i do have a passion for technical agile practices, and i learned creating good software the hard way. 
+i am passionate about technical excellence because **you're only as agile as your code** is.
+i love continuous learning, sharing, experimenting and practice.
+
+i feel home at oo embedding fp concepts, tdd, refactoring, simple design, evolutionary design, clean code, rest, trunk based development, automation, continuous integration and deployment.
+
+languages and frameworks are important as well, but i don't consider them as important. i consider them as implementation details.
