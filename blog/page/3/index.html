@@ -332,6 +332,37 @@
   
   <article class="post-body">
     <h2 class="post-title">
+      <a href="/2013/11/28/sessions-pitfall.html">
+        Sessions, a Pitfall.
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">28 Nov 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      I got asked quite often, why one shouldn't use sessions and whats so bad about them. In this post i want to sum up my thoughts and experiences.<br /><br /><h3>Sessions produce unnecessary complexity </h3>The term bugfoot is a combination of bug and bigfoot. It's used for a bug that appears only once and is not reproducable. A bugfoot tells you that something is wrong, and that it will probably come up again. But you cannot fix it, because you don't know the cause.<br /><br />If you want bugfoots in your software, just use sessions. Sooner or later you'll happen to see one.<br /><br /><h3>Sessions don't scale </h3>Lets say you are a professional chess player, and you'd like to play  multiple people at the same time. If you'd try to remember every game  and your strategy on it, you'll hit your capacity rather quick. Now  imagine you were not remembering anything of those games, and you were just rereading the chessboard  on every move. You could literally play 1.000.000 people at the same  time, and it wouldn't make any difference to you. <br /><br />Now draw an analogy to your server. If your application gets a lot of load, you might have to distribute it to different servers. If you were using sessions, you'd suddenly had to replicate all sessions to all servers. The system would become even more complex and error prone.<br /><br /><h3>Sessionstate cannot be bookmarkable nor cachable</h3>Did you try to bookmark your shopping cart? Nah, of course you can't because it's empty as soon as the session runs out. Imagine a shop that actually allowed you to bookmark your cart. Like<br /><ul><li>http://example.com/carts/1337 or</li><li>http://example.com/cart?products=[{id:1, amount: 1}]</li></ul>How wonderful that would be.<br /><br /><h3>Conclusion</h3>You want a simple system that is easy to test and whose bugs are easy to reproduce. State leads to the opposite. HTTP was never ever ment to be stateful and it should have stayed this way. <br /><br />If you want some rest, follow these two rules<br /><ul><li>Keep all application state (not resource state) on the client </li><li>Keep all shared state (not session state) on the server</li></ul>
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br /><a class="comments_link" href="/2013/11/28/sessions-pitfall.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
       <a href="/2013/10/15/boost-up-your-development-speed.html">
         Boost your development speed
       </a>
@@ -605,37 +636,6 @@
     
 
     <p><br /><a class="comments_link" href="/2013/05/21/the-art-of-naming.html#comments">to the comments</a></p>
-  </article>
-  
-  
-  
-  <article class="post-body">
-    <h2 class="post-title">
-      <a href="/2013/05/08/master-unpredictable.html">
-        Master the unpredictable
-      </a>
-    </h2>
-    <div class="post-meta">
-  <span class="post-date">08 May 2013</span>
-  <span class="post-categories">
-    
-  </span>
-</div>
-
-
-    
-      Have you ever come to work on a Project that you cant quite overlook? Are Requirements not yet clear or changing fast? Here are some tips to get along.<br /><br /><h3>Use Tracer Bullets</h3>Don't specify your software to death. Just grab your best idea, and give it a shot. Tracer Bullets are similar to Prototypes with one very important difference. Prototypes are built to proove something, and then be thrown away. They are not intended for real production. Even some drawing on a paper could be a prototype. A Tracer Bullet might get thrown away, but it is not intended to in the first place. It is developed as stable, clean and complete as needed, to use it for real production. A Tracer Bullet that hits its target, becomes a trunk.<br /><br /><h3>Develop Leaves first</h3>What do i mean with a leaf? Leaves are small exchangable software components or modules, that can be written independently, tested in isolation, and sometimes even run autonomous. They only perform a very specific task, not more. Find the leaves in your Project, and start developing the leaf with the highest risk.<br /><br /><h3>Dont Reinvent the Wheel</h3>99% of the problems that you face in your project have already been solved. Solving these by yourself can easily become a waste of time. Even the most trivial seeming problems are not trivial at all. Underestimating those is the issue in the first place, nevertheless it happens all the time. Well, its just logical to understimate the unsolved as you cannot know all the details until you solved it yourself. Analysing the problemdomain, concepting and realizing a solution can be a great way to learn, but is not very beneficial. Its in fact a risk, since it can lead to misconception or become a timeconsuming task that exceed your resources. You might even have to throw away your first attempts. Also, your outcome would be buggy, whereas established opensource software is usually stable thanks to its brave communities.<br />"Make or Buy" was a common phrase. I think it should be "Make or Find" by now, since opensource got really big. Rather invest your time into research opensource, and stay skeptical with what you find. When you compare 3rd party software, consider<br /><ul><li><b>Stability</b>: Is it still beta, or did it have some stable releases yet? Who is the organization behind? Is the code clean and tested?</li><li><b>Activity</b>: Can you find out how many developers this software has? When was the last commit? How frequently do they release a new build?</li><li><b>Support</b>: Does it offer a good documentation? How about examples? Is there a public Issue Tracker? How many issues have been submitted yet and how many have been solved? Is there a Forum, literature, and a big community? Are there any big names that use this software?</li><li><b>Critisism</b>: Is there anything bad that you should know in the first place? Search for reliable critiques and comparisons.</li></ul><br /><ul></ul><h3>Estimation is a waste of time</h3>Every hour that you invest in estimation, could also be invested in producing real outcome. Your estimation will be inaccurate anyway. When requirements change, you even have to change your estimations. If you have to estimate, because the business needs it, try to split your project into smaller independent parts first, and multiply your estimation with a risk factor (times two for example). In the end you`ll need it.<br /><br /><br />
-    
-
-    
-      
-      
-      
-
-      
-    
-
-    <p><br /><a class="comments_link" href="/2013/05/08/master-unpredictable.html#comments">to the comments</a></p>
   </article>
   
   

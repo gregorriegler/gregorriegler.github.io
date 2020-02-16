@@ -332,6 +332,8 @@
   
   
   
+  
+  
   <article class="post-body">
     <h2 class="post-title">
       <a href="/2019/10/08/shower-thought-why-agile-works.html">
@@ -838,37 +840,6 @@ This is why our work is very creative.<br /><br />Sometimes we make good decisio
     
 
     <p><br /><a class="comments_link" href="/2013/12/20/an-annotation-nightmare.html#comments">to the comments</a></p>
-  </article>
-  
-  
-  
-  <article class="post-body">
-    <h2 class="post-title">
-      <a href="/2013/11/28/sessions-pitfall.html">
-        Sessions, a Pitfall.
-      </a>
-    </h2>
-    <div class="post-meta">
-  <span class="post-date">28 Nov 2013</span>
-  <span class="post-categories">
-    
-  </span>
-</div>
-
-
-    
-      I got asked quite often, why one shouldn't use sessions and whats so bad about them. In this post i want to sum up my thoughts and experiences.<br /><br /><h3>Sessions produce unnecessary complexity </h3>The term bugfoot is a combination of bug and bigfoot. It's used for a bug that appears only once and is not reproducable. A bugfoot tells you that something is wrong, and that it will probably come up again. But you cannot fix it, because you don't know the cause.<br /><br />If you want bugfoots in your software, just use sessions. Sooner or later you'll happen to see one.<br /><br /><h3>Sessions don't scale </h3>Lets say you are a professional chess player, and you'd like to play  multiple people at the same time. If you'd try to remember every game  and your strategy on it, you'll hit your capacity rather quick. Now  imagine you were not remembering anything of those games, and you were just rereading the chessboard  on every move. You could literally play 1.000.000 people at the same  time, and it wouldn't make any difference to you. <br /><br />Now draw an analogy to your server. If your application gets a lot of load, you might have to distribute it to different servers. If you were using sessions, you'd suddenly had to replicate all sessions to all servers. The system would become even more complex and error prone.<br /><br /><h3>Sessionstate cannot be bookmarkable nor cachable</h3>Did you try to bookmark your shopping cart? Nah, of course you can't because it's empty as soon as the session runs out. Imagine a shop that actually allowed you to bookmark your cart. Like<br /><ul><li>http://example.com/carts/1337 or</li><li>http://example.com/cart?products=[{id:1, amount: 1}]</li></ul>How wonderful that would be.<br /><br /><h3>Conclusion</h3>You want a simple system that is easy to test and whose bugs are easy to reproduce. State leads to the opposite. HTTP was never ever ment to be stateful and it should have stayed this way. <br /><br />If you want some rest, follow these two rules<br /><ul><li>Keep all application state (not resource state) on the client </li><li>Keep all shared state (not session state) on the server</li></ul>
-    
-
-    
-      
-      
-      
-
-      
-    
-
-    <p><br /><a class="comments_link" href="/2013/11/28/sessions-pitfall.html#comments">to the comments</a></p>
   </article>
   
   
