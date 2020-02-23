@@ -335,6 +335,46 @@
 
 <article class="post-body">
     <h3>
+        humble object
+    </h3>
+    <div class="post-meta">
+  <span class="post-date">23 Feb 2020</span>
+  <span class="post-categories">
+    
+      &bull;
+
+      
+      
+      
+
+      
+        refactoring-java
+      
+    
+  </span>
+</div>
+
+
+    <p>The <a href="http://xunitpatterns.com/Humble%20Object.html">Humble Object Pattern</a> is used to separate code that is hard to test from code that is easy to test.
+We typically apply this at the boundary where we interact with code we don’t own. 
+For example a framework.
+We make our own code testable by moving the code that interacts with the third party code to a humble object.
+It does so little we don’t have to test it.</p>
+
+<blockquote>
+  <p><a href="http://jmock.org/oopsla2004.pdf">Only Mock Types You Own</a></p>
+</blockquote>
+
+<div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/sqZrjps449A" frameborder="0" allowfullscreen=""></iframe></div>
+
+<p><a href="https://github.com/gregorriegler/dependency-breaker-kata">The code on my GitHub</a></p>
+
+</article>
+
+
+
+<article class="post-body">
+    <h3>
         break time dependency
     </h3>
     <div class="post-meta">
