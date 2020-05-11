@@ -3,9 +3,7 @@ layout: post
 title: "Outside-In TDD a Consumer"
 tags: 
 - TDD
-- TDD aiymi
-- Consumer Driven Contracts
-- Contract Testing 
+- Consumer Driven Contracts 
 ---
 
 ### Consumer Driven Contracts
