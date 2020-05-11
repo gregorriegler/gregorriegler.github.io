@@ -498,7 +498,7 @@ And we are finished.
 We drove a clean client code from writing Consumer Tests.
 We used the tests to fiddle around with technical implementation detail.
 Once we had tested more cases, we aligned their implementations to extract common code.
-The design we arrived at is a little different from the one had originally anticipated.
+The design we arrived at is a little different from the one we had originally anticipated.
 
 You can find the code on my [github](https://github.com/gregorriegler/cdc-example-typescript).
 
