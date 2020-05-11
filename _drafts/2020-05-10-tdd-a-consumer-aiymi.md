@@ -66,9 +66,9 @@ it("finds a single book", () => {
 ```
 This would make a failing test, and a nice design that hides the technical details as desired.
 At the same time it puts us at a great distance from a working code.
-All the http handling code will have to go to the not yet existing `Books` object. 
+All the HTTP handling code will have to go to the not yet existing `Books` object. 
 And where does the base url belong?
-How would we even go about making a http request?
+How would we even go about making a HTTP request?
 How would we deserialize the content? 
 Solving all of this to get the test green might take some time. 
 Are we even confident in the design, or is it not a bit premature? 
