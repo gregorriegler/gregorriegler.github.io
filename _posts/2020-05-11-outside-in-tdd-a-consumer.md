@@ -7,7 +7,7 @@ tags:
 ---
 
 ### Consumer Driven Contracts
-[Consumer Driven Contracts](https://martinfowler.com/articles/consumerDrivenContracts.html) (CDC) is a pattern that takes [Outside-In TDD](https://8thlight.com/blog/georgina-mcfadyen/2016/06/27/inside-out-tdd-vs-outside-in.html) across boundaries, and is frequently used in Micro Services Architectures.
+[Consumer Driven Contracts](https://martinfowler.com/articles/consumerDrivenContracts.html) (CDC) is a pattern that takes [Outside-In TDD](https://8thlight.com/blog/georgina-mcfadyen/2016/06/27/inside-out-tdd-vs-outside-in.html) across boundaries, and is frequently used in Micro Service Architectures.
 Note that TDD is not primarily a testing process, but a design technique.
 The same is true for Consumer Driven Contracts where Consumers drive the capabilities of Producers by expressing a clear need.
 This ties service evolution to business value.
