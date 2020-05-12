@@ -496,9 +496,12 @@ Let’s create a type for the book.</p>
 <p>Run the tests =&gt; <strong><span style="color:green">Green</span></strong>.</p>
 
 <h3 id="sticking-to-the-robustness-principle">Sticking To The Robustness Principle</h3>
-<p>The Robustness Principle says that we should be conservative in sending stuff but liberal in receiving it.
-The goal of this is to reduce the risk for messages to fail.
-Consumers should be tolerant to API change, able to survive most of it. 
+<blockquote>
+  <p>⚠ The Robustness Principle says that we should be conservative in sending stuff but liberal in receiving it.
+The goal of this is to reduce the risk for messages to fail.</p>
+</blockquote>
+
+<p>Consumers should be tolerant to API change, able to survive most of it. 
 They should only be concerned with the Resources, Methods and Fields they actually consume, and treat even them with care.</p>
 
 <p>In the existing solution a new arriving field would cause the message to fail. <br />
