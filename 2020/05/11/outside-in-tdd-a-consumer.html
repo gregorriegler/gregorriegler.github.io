@@ -460,7 +460,7 @@ These details don’t concern us, they will be hidden once we’re finished.</p>
 <p>Run the tests =&gt; <strong><span style="color:red">Red</span></strong>.</p>
 
 <h3 id="make-it-green">Make it Green</h3>
-<p>Let’s find the simplest way to make the test green by writing all implementation code into the test.</p>
+<p>Let’s find the simplest way to make the test green by writing all implementation code inside the test.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">finds a single book</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// bent is just a http client</span>
