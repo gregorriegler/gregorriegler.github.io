@@ -81,7 +81,7 @@ Meaning we would start and implement the HTTP call within the test.
 This approach puts us closer to the technical details. 
 It allows us to fiddle around, and prevents us from designing prematurely.
 Later, when we experience duplication, we can extract the implementation code from the test to emerge a more mature design. 
-Some would call it [TDD as if you meant it](https://gojko.net/2009/02/27/thought-provoking-tdd-exercise-at-the-software-craftsmanship-conference/) (TDD aiymi).
+Some would call this [TDD as if you meant it](https://gojko.net/2009/02/27/thought-provoking-tdd-exercise-at-the-software-craftsmanship-conference/) (TDD aiymi).
 
 ### A Failing Test
 We start by defining our final expectation, that is the book data as a result.
