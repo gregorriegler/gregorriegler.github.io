@@ -402,10 +402,10 @@ What do we assert?</p>
 <p>We could try to design the client code by <a href="https://wiki.c2.com/?WishfulThinking">wishful thinking</a>.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">finds a single book</span><span class="dl">"</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="c1">// represents the producer</span>
-    <span class="kd">let</span> <span class="nx">books</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Books</span><span class="p">()</span> 
+    <span class="kd">const</span> <span class="nx">books</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Books</span><span class="p">()</span> 
 
     <span class="c1">// executes the http call and does json deserialization</span>
-    <span class="kd">let</span> <span class="nx">book</span> <span class="o">=</span> <span class="nx">books</span><span class="p">.</span><span class="nx">byId</span><span class="p">(</span><span class="nx">bookId</span><span class="p">)</span> 
+    <span class="kd">const</span> <span class="nx">book</span> <span class="o">=</span> <span class="nx">books</span><span class="p">.</span><span class="nx">byId</span><span class="p">(</span><span class="nx">bookId</span><span class="p">)</span> 
     
     <span class="nx">expect</span><span class="p">(</span><span class="nx">book</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">deeply</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="nx">expectedBook</span><span class="p">)</span>
 <span class="p">})</span>
@@ -455,9 +455,9 @@ These details don’t concern us, they will be hidden once we’re finished.</p>
 <span class="c1">// ... boilerplate ...</span>
 
 <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">finds a single book</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://localhost:1234/books/1</span><span class="dl">"</span>
+    <span class="kd">const</span> <span class="nx">url</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://localhost:1234/books/1</span><span class="dl">"</span>
     
-    <span class="kd">let</span> <span class="nx">result</span> <span class="c1">// ??</span>
+    <span class="kd">const</span> <span class="nx">result</span> <span class="c1">// ??</span>
 
     <span class="nx">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">deep</span><span class="p">.</span><span class="nx">eq</span><span class="p">({</span><span class="na">self</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span><span class="p">,</span> <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Title</span><span class="dl">"</span><span class="p">})</span>
 <span class="p">})</span>
@@ -471,7 +471,7 @@ These details don’t concern us, they will be hidden once we’re finished.</p>
     <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span> <span class="c1">// bent is just a http client</span>
     <span class="kd">const</span> <span class="nx">getJSON</span> <span class="o">=</span> <span class="nx">bent</span><span class="p">(</span><span class="dl">"</span><span class="s2">json</span><span class="dl">"</span><span class="p">)</span>
 
-    <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getJSON</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:1234/books/1</span><span class="dl">"</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getJSON</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:1234/books/1</span><span class="dl">"</span><span class="p">)</span>
 
     <span class="nx">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">deep</span><span class="p">.</span><span class="nx">eq</span><span class="p">({</span><span class="na">self</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span><span class="p">,</span> <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Title</span><span class="dl">"</span><span class="p">})</span>
 <span class="p">})</span>
@@ -493,7 +493,7 @@ Let’s create a type for the book.</p>
         <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
     <span class="p">}</span>
 
-    <span class="kd">let</span> <span class="na">result</span><span class="p">:</span> <span class="nx">Book</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getJSON</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:1234/books/1</span><span class="dl">"</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="na">result</span><span class="p">:</span> <span class="nx">Book</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getJSON</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:1234/books/1</span><span class="dl">"</span><span class="p">)</span>
 
     <span class="nx">expect</span><span class="p">(</span><span class="nx">result</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">deep</span><span class="p">.</span><span class="nx">eq</span><span class="p">({</span><span class="na">self</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span><span class="p">,</span> <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Title</span><span class="dl">"</span><span class="p">})</span>
 <span class="p">})</span>
@@ -537,16 +537,14 @@ So let’s</p>
         <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
     <span class="p">}</span>
 
-    <span class="kd">function</span> <span class="nx">decodeBook</span><span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
-            <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
+        <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
+        <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
+    <span class="p">});</span>
 
-    <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getJSON</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:1234/books/1</span><span class="dl">"</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getJSON</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:1234/books/1</span><span class="dl">"</span><span class="p">)</span>
 
-    <span class="kd">let</span> <span class="na">book</span><span class="p">:</span> <span class="nx">Book</span> <span class="o">=</span> <span class="nx">decodeBook</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="na">book</span><span class="p">:</span> <span class="nx">Book</span> <span class="o">=</span> <span class="nx">decodeBook</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
 
     <span class="nx">expect</span><span class="p">(</span><span class="nx">book</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">deep</span><span class="p">.</span><span class="nx">eq</span><span class="p">({</span><span class="na">self</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span><span class="p">,</span> <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Title</span><span class="dl">"</span><span class="p">})</span>
 <span class="p">})</span>
@@ -578,6 +576,7 @@ Shouldn’t have to change much, should we?</p>
 
 
 <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">finds nothing</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
     <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
 
     <span class="nx">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
@@ -585,15 +584,13 @@ Shouldn’t have to change much, should we?</p>
         <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
     <span class="p">}</span>
 
-    <span class="kd">function</span> <span class="nx">decodeBook</span><span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
-            <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
+        <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
+        <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
+    <span class="p">});</span>
 
     <span class="kd">const</span> <span class="nx">getStream</span> <span class="o">=</span> <span class="nx">bent</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:1234/books/3</span><span class="dl">"</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span>
-    <span class="kd">let</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">()</span>
+    <span class="kd">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">()</span>
     <span class="kd">let</span> <span class="na">book</span><span class="p">:</span><span class="nx">Option</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
@@ -616,6 +613,7 @@ The two tests look quite different now.</p>
 <p>Before we can extract it as production code we need to adapt both tests to match each other.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">finds a single book</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">,</span> <span class="nx">some</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
     <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
 
     <span class="nx">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
@@ -623,15 +621,13 @@ The two tests look quite different now.</p>
         <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
     <span class="p">}</span>
 
-    <span class="kd">function</span> <span class="nx">decodeBook</span><span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
-            <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
+        <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
+        <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
+    <span class="p">});</span>
 
     <span class="kd">const</span> <span class="nx">getStream</span> <span class="o">=</span> <span class="nx">bent</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:1234</span><span class="dl">"</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span>
-    <span class="kd">let</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span><span class="p">)</span>
     <span class="kd">let</span> <span class="na">book</span><span class="p">:</span><span class="nx">Option</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
@@ -647,6 +643,7 @@ The two tests look quite different now.</p>
 <span class="c1">// ...</span>
 
 <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">finds nothing</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">,</span> <span class="nx">some</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
     <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
 
     <span class="nx">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
@@ -654,15 +651,13 @@ The two tests look quite different now.</p>
         <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
     <span class="p">}</span>
 
-    <span class="kd">function</span> <span class="nx">decodeBook</span><span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
-            <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
+        <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
+        <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
+    <span class="p">});</span>
 
     <span class="kd">const</span> <span class="nx">getStream</span> <span class="o">=</span> <span class="nx">bent</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:1234</span><span class="dl">"</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span>
-    <span class="kd">let</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="dl">"</span><span class="s2">/books/3</span><span class="dl">"</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="dl">"</span><span class="s2">/books/3</span><span class="dl">"</span><span class="p">)</span>
     <span class="kd">let</span> <span class="na">book</span><span class="p">:</span><span class="nx">Option</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
@@ -683,28 +678,27 @@ The implementation code is now the same in both cases: Finding a book, and not f
 We can finally start and extract the duplicated parts out of the tests.
 Let’s begin with the Book type, and the <code class="highlighter-rouge">decodeBook</code> function.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">,</span> <span class="nx">some</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
+<span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
 
 <span class="nx">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">self</span><span class="p">:</span> <span class="nx">string</span>
     <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">decodeBook</span><span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
-        <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
+    <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
+    <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
+<span class="p">});</span>
 
 <span class="c1">// ...</span>
 
 <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">finds a single book</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://localhost:1234</span><span class="dl">"</span>
-    <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span>
+    <span class="kd">const</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://localhost:1234</span><span class="dl">"</span>
+    <span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span>
     
     <span class="kd">const</span> <span class="nx">getStream</span> <span class="o">=</span> <span class="nx">bent</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span>
-    <span class="kd">let</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
     <span class="kd">let</span> <span class="na">book</span><span class="p">:</span><span class="nx">Option</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
@@ -720,11 +714,11 @@ Let’s begin with the Book type, and the <code class="highlighter-rouge">decode
 <span class="c1">// ...</span>
 
 <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">finds nothing</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://localhost:1234</span><span class="dl">"</span>
-    <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/books/3</span><span class="dl">"</span>
+    <span class="kd">const</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://localhost:1234</span><span class="dl">"</span>
+    <span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/books/3</span><span class="dl">"</span>
     
     <span class="kd">const</span> <span class="nx">getStream</span> <span class="o">=</span> <span class="nx">bent</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span>
-    <span class="kd">let</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
     <span class="kd">let</span> <span class="na">book</span><span class="p">:</span><span class="nx">Option</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
@@ -742,23 +736,22 @@ Let’s begin with the Book type, and the <code class="highlighter-rouge">decode
 <p>Note how I as well extracted both the <code class="highlighter-rouge">baseUrl</code> and <code class="highlighter-rouge">path</code> variables inside the tests.
 This allows us to further extract the function that does the actual request.</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">,</span> <span class="nx">some</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
+<span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
 
 <span class="nx">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">self</span><span class="p">:</span> <span class="nx">string</span>
     <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
 <span class="p">}</span>
 
-<span class="kd">function</span> <span class="nx">decodeBook</span><span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
-        <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
+    <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
+    <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
+<span class="p">});</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">findBook</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">path</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Option</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">getStream</span> <span class="o">=</span> <span class="nx">bent</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span>
-    <span class="kd">let</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
     <span class="kd">let</span> <span class="na">book</span><span class="p">:</span> <span class="nx">Option</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
@@ -773,10 +766,10 @@ This allows us to further extract the function that does the actual request.</p>
 <span class="c1">// ...</span>
 
 <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">finds a single book</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://localhost:1234</span><span class="dl">"</span>
-    <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span>
+    <span class="kd">const</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://localhost:1234</span><span class="dl">"</span>
+    <span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span>
 
-    <span class="kd">let</span> <span class="nx">book</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">findBook</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">,</span> <span class="nx">path</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">book</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">findBook</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">,</span> <span class="nx">path</span><span class="p">)</span>
 
     <span class="nx">expect</span><span class="p">(</span><span class="nx">book</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">deep</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="nx">some</span><span class="p">({</span><span class="na">self</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span><span class="p">,</span> <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Title</span><span class="dl">"</span><span class="p">}))</span>
 <span class="p">})</span>
@@ -784,10 +777,10 @@ This allows us to further extract the function that does the actual request.</p>
 <span class="c1">// ...</span>
 
 <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">finds nothing</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://localhost:1234</span><span class="dl">"</span>
-    <span class="kd">let</span> <span class="nx">path</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/books/3</span><span class="dl">"</span>
+    <span class="kd">const</span> <span class="nx">baseUrl</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://localhost:1234</span><span class="dl">"</span>
+    <span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">/books/3</span><span class="dl">"</span>
 
-    <span class="kd">let</span> <span class="nx">book</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">findBook</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">,</span> <span class="nx">path</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">book</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">findBook</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">,</span> <span class="nx">path</span><span class="p">)</span>
 
     <span class="nx">expect</span><span class="p">(</span><span class="nx">book</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">none</span><span class="p">)</span>
 <span class="p">})</span>
@@ -811,17 +804,15 @@ The final result looks like this:</p>
         <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
     <span class="p">}</span>
 
-    <span class="kd">function</span> <span class="nx">decodeBook</span><span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
-            <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
+        <span class="na">self</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nb">self</span><span class="p">,</span>
+        <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
+    <span class="p">});</span>
 
     <span class="k">return</span> <span class="p">{</span>
         <span class="na">requestBook</span><span class="p">:</span> <span class="k">async</span> <span class="p">(</span><span class="na">path</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Option</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
             <span class="kd">const</span> <span class="nx">getStream</span> <span class="o">=</span> <span class="nx">bent</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span>
-            <span class="kd">let</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
+            <span class="kd">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
                 <span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">received </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">stream</span><span class="p">.</span><span class="nx">status</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="k">await</span> <span class="nx">stream</span><span class="p">.</span><span class="nx">text</span><span class="p">())</span>
                 <span class="k">return</span> <span class="nx">none</span>
@@ -839,7 +830,7 @@ The final result looks like this:</p>
 <span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">createBookClient</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:1234</span><span class="dl">"</span><span class="p">)</span>
 
 <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">finds a single book</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">book</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">requestBook</span><span class="p">(</span><span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">book</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">requestBook</span><span class="p">(</span><span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span><span class="p">)</span>
 
     <span class="nx">expect</span><span class="p">(</span><span class="nx">book</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">deep</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="nx">some</span><span class="p">({</span><span class="na">self</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/books/1</span><span class="dl">"</span><span class="p">,</span> <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Title</span><span class="dl">"</span><span class="p">}))</span>
 <span class="p">})</span>
@@ -847,7 +838,7 @@ The final result looks like this:</p>
 <span class="c1">// ...</span>
 
 <span class="nx">it</span><span class="p">(</span><span class="dl">"</span><span class="s2">finds nothing</span><span class="dl">"</span><span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">book</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">requestBook</span><span class="p">(</span><span class="dl">"</span><span class="s2">/books/3</span><span class="dl">"</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">book</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">requestBook</span><span class="p">(</span><span class="dl">"</span><span class="s2">/books/3</span><span class="dl">"</span><span class="p">)</span>
 
     <span class="nx">expect</span><span class="p">(</span><span class="nx">book</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">none</span><span class="p">)</span>
 <span class="p">})</span>
