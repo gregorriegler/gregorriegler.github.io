@@ -121,7 +121,7 @@ it("finds a single book", async () => {
 Run the tests => **<span style="color:red">Red</span>**.
 
 ### Make it Green
-Let's find the simplest way to make the test green by writing all implementation code into the test.
+Let's find the simplest way to make the test green by writing all implementation code inside the test.
 
 ```typescript
 it("finds a single book", async () => {
