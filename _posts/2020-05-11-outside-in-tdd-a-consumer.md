@@ -159,8 +159,9 @@ it("finds a single book", async () => {
 Run the tests => **<span style="color:green">Green</span>**.
 
 ### Sticking To The Robustness Principle
-The Robustness Principle says that we should be conservative in sending stuff but liberal in receiving it.
+> ⚠ The Robustness Principle says that we should be conservative in sending stuff but liberal in receiving it.
 The goal of this is to reduce the risk for messages to fail.
+
 Consumers should be tolerant to API change, able to survive most of it. 
 They should only be concerned with the Resources, Methods and Fields they actually consume, and treat even them with care.
 
