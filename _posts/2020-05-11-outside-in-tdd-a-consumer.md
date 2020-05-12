@@ -48,7 +48,7 @@ const requestASingleBook = {
 }
 ```
 
-### Options, Options, Options
+### Choices, Choices, Choices
 We can now start writing the actual Consumer Test.
 But where do we start? 
 What do we assert?
