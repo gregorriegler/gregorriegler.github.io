@@ -24,7 +24,7 @@ The client code should represent the remote service within our boundary and hide
 ### Defining A First Contract
 We're building a Book Store, so we need a Book Catalogue as a Producer.
 It should serve the Book's information.
-Let's start with a happy path for finding a single book.
+Let's start with a happy path for finding a single Book.
 This is what the Producer Mock would look like using [Pact JS](https://github.com/pact-foundation/pact-js).
 The definition of this Mock as well generates the Contract.
 I'm skipping the boilerplate, you can look it up in my [github](https://github.com/gregorriegler/cdc-example-typescript).
