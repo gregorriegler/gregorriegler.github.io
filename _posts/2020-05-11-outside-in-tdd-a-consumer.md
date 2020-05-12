@@ -57,10 +57,10 @@ We could try to design the client code by [wishful thinking](https://wiki.c2.com
 ```typescript
 it("finds a single book", () => {
     // represents the producer
-    let books = new Books() 
+    const books = new Books() 
 
     // executes the http call and does json deserialization
-    let book = books.byId(bookId) 
+    const book = books.byId(bookId) 
     
     expect(book).to.deeply.eq(expectedBook)
 })
@@ -111,9 +111,9 @@ const requestASingleBook = {
 // ... boilerplate ...
 
 it("finds a single book", async () => {
-    let url = "http://localhost:1234/books/1"
+    const url = "http://localhost:1234/books/1"
     
-    let result // ??
+    const result // ??
 
     expect(result).to.deep.eq({self: "/books/1", title: "Title"})
 })
@@ -128,7 +128,7 @@ it("finds a single book", async () => {
     const bent = require("bent") // bent is just a http client
     const getJSON = bent("json")
 
-    let result = await getJSON("http://localhost:1234/books/1")
+    const result = await getJSON("http://localhost:1234/books/1")
 
     expect(result).to.deep.eq({self: "/books/1", title: "Title"})
 })
@@ -151,7 +151,7 @@ it("finds a single book", async () => {
         title: string
     }
 
-    let result: Book = await getJSON("http://localhost:1234/books/1")
+    const result: Book = await getJSON("http://localhost:1234/books/1")
 
     expect(result).to.deep.eq({self: "/books/1", title: "Title"})
 })
@@ -192,16 +192,14 @@ it("finds a single book", async () => {
         title: string
     }
 
-    function decodeBook(object): Book {
-        return {
-            self: object.self,
-            title: object.title
-        }
-    }
+    const decodeBook = (object): Book => ({
+        self: object.self,
+        title: object.title
+    });
 
-    let response = await getJSON("http://localhost:1234/books/1")
+    const response = await getJSON("http://localhost:1234/books/1")
 
-    let book: Book = decodeBook(response)
+    const book: Book = decodeBook(response)
 
     expect(book).to.deep.eq({self: "/books/1", title: "Title"})
 })
@@ -234,6 +232,7 @@ const requestANonExistingBook = {
 
 
 it("finds nothing", async () => {
+    import {none, Option} from "fp-ts/lib/Option"
     const bent = require("bent")
 
     type Book = {
@@ -241,15 +240,13 @@ it("finds nothing", async () => {
         title: string
     }
 
-    function decodeBook(object): Book {
-        return {
-            self: object.self,
-            title: object.title
-        }
-    }
+    const decodeBook = (object): Book => ({
+        self: object.self,
+        title: object.title
+    });
 
     const getStream = bent("http://localhost:1234/books/3", 200, 404)
-    let stream = await getStream()
+    const stream = await getStream()
     let book:Option<Book>
 
     if (stream.status !== 200) {
@@ -273,6 +270,7 @@ Before we can extract it as production code we need to adapt both tests to match
 
 ```typescript
 it("finds a single book", async () => {
+    import {none, Option, some} from "fp-ts/lib/Option"
     const bent = require("bent")
 
     type Book = {
@@ -280,15 +278,13 @@ it("finds a single book", async () => {
         title: string
     }
 
-    function decodeBook(object): Book {
-        return {
-            self: object.self,
-            title: object.title
-        }
-    }
+    const decodeBook = (object): Book => ({
+        self: object.self,
+        title: object.title
+    });
 
     const getStream = bent("http://localhost:1234", 200, 404)
-    let stream = await getStream("/books/1")
+    const stream = await getStream("/books/1")
     let book:Option<Book>
 
     if (stream.status !== 200) {
@@ -304,6 +300,7 @@ it("finds a single book", async () => {
 // ...
 
 it("finds nothing", async () => {
+    import {none, Option, some} from "fp-ts/lib/Option"
     const bent = require("bent")
 
     type Book = {
@@ -311,15 +308,13 @@ it("finds nothing", async () => {
         title: string
     }
 
-    function decodeBook(object): Book {
-        return {
-            self: object.self,
-            title: object.title
-        }
-    }
+    const decodeBook = (object): Book => ({
+        self: object.self,
+        title: object.title
+    });
 
     const getStream = bent("http://localhost:1234", 200, 404)
-    let stream = await getStream("/books/3")
+    const stream = await getStream("/books/3")
     let book:Option<Book>
 
     if (stream.status !== 200) {
@@ -341,6 +336,7 @@ We can finally start and extract the duplicated parts out of the tests.
 Let's begin with the Book type, and the `decodeBook` function.
 
 ```typescript
+import {none, Option, some} from "fp-ts/lib/Option"
 const bent = require("bent")
 
 type Book = {
@@ -348,21 +344,19 @@ type Book = {
     title: string
 }
 
-function decodeBook(object): Book {
-    return {
-        self: object.self,
-        title: object.title
-    }
-}
+const decodeBook = (object): Book => ({
+    self: object.self,
+    title: object.title
+});
 
 // ...
 
 it("finds a single book", async () => {
-    let baseUrl = "http://localhost:1234"
-    let path = "/books/1"
+    const baseUrl = "http://localhost:1234"
+    const path = "/books/1"
     
     const getStream = bent(baseUrl, 200, 404)
-    let stream = await getStream(path)
+    const stream = await getStream(path)
     let book:Option<Book>
 
     if (stream.status !== 200) {
@@ -378,11 +372,11 @@ it("finds a single book", async () => {
 // ...
 
 it("finds nothing", async () => {
-    let baseUrl = "http://localhost:1234"
-    let path = "/books/3"
+    const baseUrl = "http://localhost:1234"
+    const path = "/books/3"
     
     const getStream = bent(baseUrl, 200, 404)
-    let stream = await getStream(path)
+    const stream = await getStream(path)
     let book:Option<Book>
 
     if (stream.status !== 200) {
@@ -401,6 +395,7 @@ Note how I as well extracted both the `baseUrl` and `path` variables inside the 
 This allows us to further extract the function that does the actual request.
 
 ```typescript
+import {none, Option, some} from "fp-ts/lib/Option"
 const bent = require("bent")
 
 type Book = {
@@ -408,16 +403,14 @@ type Book = {
     title: string
 }
 
-function decodeBook(object): Book {
-    return {
-        self: object.self,
-        title: object.title
-    }
-}
+const decodeBook = (object): Book => ({
+    self: object.self,
+    title: object.title
+});
 
 async function findBook(baseUrl: string, path: string): Promise<Option<Book>> {
     const getStream = bent(baseUrl, 200, 404)
-    let stream = await getStream(path)
+    const stream = await getStream(path)
     let book: Option<Book>
 
     if (stream.status !== 200) {
@@ -432,10 +425,10 @@ async function findBook(baseUrl: string, path: string): Promise<Option<Book>> {
 // ...
 
 it("finds a single book", async () => {
-    let baseUrl = "http://localhost:1234"
-    let path = "/books/1"
+    const baseUrl = "http://localhost:1234"
+    const path = "/books/1"
 
-    let book = await findBook(baseUrl, path)
+    const book = await findBook(baseUrl, path)
 
     expect(book).to.deep.eq(some({self: "/books/1", title: "Title"}))
 })
@@ -443,10 +436,10 @@ it("finds a single book", async () => {
 // ...
 
 it("finds nothing", async () => {
-    let baseUrl = "http://localhost:1234"
-    let path = "/books/3"
+    const baseUrl = "http://localhost:1234"
+    const path = "/books/3"
 
-    let book = await findBook(baseUrl, path)
+    const book = await findBook(baseUrl, path)
 
     expect(book).to.equal(none)
 })
@@ -471,17 +464,15 @@ export function createBookClient(baseUrl: string) {
         title: string
     }
 
-    function decodeBook(object): Book {
-        return {
-            self: object.self,
-            title: object.title
-        }
-    }
+    const decodeBook = (object): Book => ({
+        self: object.self,
+        title: object.title
+    });
 
     return {
         requestBook: async (path: string): Promise<Option<Book>> => {
             const getStream = bent(baseUrl, 200, 404)
-            let stream = await getStream(path)
+            const stream = await getStream(path)
             if (stream.status !== 200) {
                 log("received " + stream.status + " " + await stream.text())
                 return none
@@ -499,7 +490,7 @@ import {createBookClient} from "./book-client"
 const client = createBookClient("http://localhost:1234")
 
 it("finds a single book", async () => {
-    let book = await client.requestBook("/books/1")
+    const book = await client.requestBook("/books/1")
 
     expect(book).to.deep.eq(some({self: "/books/1", title: "Title"}))
 })
@@ -507,7 +498,7 @@ it("finds a single book", async () => {
 // ...
 
 it("finds nothing", async () => {
-    let book = await client.requestBook("/books/3")
+    const book = await client.requestBook("/books/3")
 
     expect(book).to.equal(none)
 })
