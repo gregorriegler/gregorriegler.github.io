@@ -334,7 +334,7 @@ it("finds nothing", async () => {
 ```
 Run the tests => **<span style="color:green">Green</span>**.
 
-### Extract Production Code
+### Extract Duplication
 Ok, great. 
 The implementation code is now the same in both cases: Finding a book, and not finding it.
 We can finally start and extract the duplicated parts out of the tests.
