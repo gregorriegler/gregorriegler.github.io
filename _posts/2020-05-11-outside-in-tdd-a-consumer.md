@@ -7,7 +7,7 @@ tags:
 ---
 
 ### Consumer Driven Contracts
-[Consumer Driven Contracts](https://martinfowler.com/articles/consumerDrivenContracts.html) (CDC) is a pattern that takes [Outside-In TDD](https://8thlight.com/blog/georgina-mcfadyen/2016/06/27/inside-out-tdd-vs-outside-in.html) across boundaries, and is frequently used in Micro Services Architectures.
+[Consumer Driven Contracts](https://martinfowler.com/articles/consumerDrivenContracts.html) (CDC) is a pattern that takes [Outside-In TDD](https://8thlight.com/blog/georgina-mcfadyen/2016/06/27/inside-out-tdd-vs-outside-in.html) across boundaries, and is frequently used in Micro Service Architectures.
 Note that TDD is not primarily a testing process, but a design technique.
 The same is true for Consumer Driven Contracts where Consumers drive the capabilities of Producers by expressing a clear need.
 This ties service evolution to business value.
@@ -24,7 +24,7 @@ The client code should represent the remote service within our boundary and hide
 ### Defining A First Contract
 We're building a Book Store, so we need a Book Catalogue as a Producer.
 It should serve the Book's information.
-Let's start with a happy path for finding a single book.
+Let's start with a happy path for finding a single Book.
 This is what the Producer Mock would look like using [Pact JS](https://github.com/pact-foundation/pact-js).
 The definition of this Mock as well generates the Contract.
 I'm skipping the boilerplate, you can look it up in my [github](https://github.com/gregorriegler/cdc-example-typescript).
@@ -48,7 +48,7 @@ const requestASingleBook = {
 }
 ```
 
-### Options, Options, Options
+### Choices, Choices, Choices
 We can now start writing the actual Consumer Test.
 But where do we start? 
 What do we assert?
@@ -57,10 +57,10 @@ We could try to design the client code by [wishful thinking](https://wiki.c2.com
 ```typescript
 it("finds a single book", () => {
     // represents the producer
-    let books = new Books() 
+    const books = new Books() 
 
     // executes the http call and does json deserialization
-    let book = books.byId(bookId) 
+    const book = books.byId(bookId) 
     
     expect(book).to.deeply.eq(expectedBook)
 })
@@ -81,7 +81,7 @@ Meaning we would start and implement the HTTP call within the test.
 This approach puts us closer to the technical details. 
 It allows us to fiddle around, and prevents us from designing prematurely.
 Later, when we experience duplication, we can extract the implementation code from the test to emerge a more mature design. 
-Some would call it [TDD as if you meant it](https://gojko.net/2009/02/27/thought-provoking-tdd-exercise-at-the-software-craftsmanship-conference/) (TDD aiymi).
+Some would call this [TDD as if you meant it](https://gojko.net/2009/02/27/thought-provoking-tdd-exercise-at-the-software-craftsmanship-conference/) (TDD aiymi).
 
 ### A Failing Test
 We start by defining our final expectation, that is the book data as a result.
@@ -111,9 +111,9 @@ const requestASingleBook = {
 // ... boilerplate ...
 
 it("finds a single book", async () => {
-    let url = "http://localhost:1234/books/1"
+    const url = "http://localhost:1234/books/1"
     
-    let result // ??
+    const result // ??
 
     expect(result).to.deep.eq({self: "/books/1", title: "Title"})
 })
@@ -121,14 +121,14 @@ it("finds a single book", async () => {
 Run the tests => **<span style="color:red">Red</span>**.
 
 ### Make it Green
-Let's find the simplest way to make the test green by writing all implementation code into the test.
+Let's find the simplest way to make the test green by writing all implementation code inside the test.
 
 ```typescript
 it("finds a single book", async () => {
     const bent = require("bent") // bent is just a http client
     const getJSON = bent("json")
 
-    let result = await getJSON("http://localhost:1234/books/1")
+    const result = await getJSON("http://localhost:1234/books/1")
 
     expect(result).to.deep.eq({self: "/books/1", title: "Title"})
 })
@@ -151,7 +151,7 @@ it("finds a single book", async () => {
         title: string
     }
 
-    let result: Book = await getJSON("http://localhost:1234/books/1")
+    const result: Book = await getJSON("http://localhost:1234/books/1")
 
     expect(result).to.deep.eq({self: "/books/1", title: "Title"})
 })
@@ -159,8 +159,9 @@ it("finds a single book", async () => {
 Run the tests => **<span style="color:green">Green</span>**.
 
 ### Sticking To The Robustness Principle
-The Robustness Principle says that we should be conservative in sending stuff but liberal in receiving it.
+> ⚠ The Robustness Principle says that we should be conservative in sending stuff but liberal in receiving it.
 The goal of this is to reduce the risk for messages to fail.
+
 Consumers should be tolerant to API change, able to survive most of it. 
 They should only be concerned with the Resources, Methods and Fields they actually consume, and treat even them with care.
 
@@ -191,16 +192,14 @@ it("finds a single book", async () => {
         title: string
     }
 
-    function decodeBook(object): Book {
-        return {
-            self: object.self,
-            title: object.title
-        }
-    }
+    const decodeBook = (object): Book => ({
+        self: object.self,
+        title: object.title
+    });
 
-    let response = await getJSON("http://localhost:1234/books/1")
+    const response = await getJSON("http://localhost:1234/books/1")
 
-    let book: Book = decodeBook(response)
+    const book: Book = decodeBook(response)
 
     expect(book).to.deep.eq({self: "/books/1", title: "Title"})
 })
@@ -233,6 +232,7 @@ const requestANonExistingBook = {
 
 
 it("finds nothing", async () => {
+    import {none, Option} from "fp-ts/lib/Option"
     const bent = require("bent")
 
     type Book = {
@@ -240,15 +240,13 @@ it("finds nothing", async () => {
         title: string
     }
 
-    function decodeBook(object): Book {
-        return {
-            self: object.self,
-            title: object.title
-        }
-    }
+    const decodeBook = (object): Book => ({
+        self: object.self,
+        title: object.title
+    });
 
     const getStream = bent("http://localhost:1234/books/3", 200, 404)
-    let stream = await getStream()
+    const stream = await getStream()
     let book:Option<Book>
 
     if (stream.status !== 200) {
@@ -272,6 +270,7 @@ Before we can extract it as production code we need to adapt both tests to match
 
 ```typescript
 it("finds a single book", async () => {
+    import {none, Option, some} from "fp-ts/lib/Option"
     const bent = require("bent")
 
     type Book = {
@@ -279,15 +278,13 @@ it("finds a single book", async () => {
         title: string
     }
 
-    function decodeBook(object): Book {
-        return {
-            self: object.self,
-            title: object.title
-        }
-    }
+    const decodeBook = (object): Book => ({
+        self: object.self,
+        title: object.title
+    });
 
     const getStream = bent("http://localhost:1234", 200, 404)
-    let stream = await getStream("/books/1")
+    const stream = await getStream("/books/1")
     let book:Option<Book>
 
     if (stream.status !== 200) {
@@ -303,6 +300,7 @@ it("finds a single book", async () => {
 // ...
 
 it("finds nothing", async () => {
+    import {none, Option, some} from "fp-ts/lib/Option"
     const bent = require("bent")
 
     type Book = {
@@ -310,15 +308,13 @@ it("finds nothing", async () => {
         title: string
     }
 
-    function decodeBook(object): Book {
-        return {
-            self: object.self,
-            title: object.title
-        }
-    }
+    const decodeBook = (object): Book => ({
+        self: object.self,
+        title: object.title
+    });
 
     const getStream = bent("http://localhost:1234", 200, 404)
-    let stream = await getStream("/books/3")
+    const stream = await getStream("/books/3")
     let book:Option<Book>
 
     if (stream.status !== 200) {
@@ -333,13 +329,14 @@ it("finds nothing", async () => {
 ```
 Run the tests => **<span style="color:green">Green</span>**.
 
-### Extract Production Code
+### Extract Duplication
 Ok, great. 
 The implementation code is now the same in both cases: Finding a book, and not finding it.
 We can finally start and extract the duplicated parts out of the tests.
 Let's begin with the Book type, and the `decodeBook` function.
 
 ```typescript
+import {none, Option, some} from "fp-ts/lib/Option"
 const bent = require("bent")
 
 type Book = {
@@ -347,21 +344,19 @@ type Book = {
     title: string
 }
 
-function decodeBook(object): Book {
-    return {
-        self: object.self,
-        title: object.title
-    }
-}
+const decodeBook = (object): Book => ({
+    self: object.self,
+    title: object.title
+});
 
 // ...
 
 it("finds a single book", async () => {
-    let baseUrl = "http://localhost:1234"
-    let path = "/books/1"
+    const baseUrl = "http://localhost:1234"
+    const path = "/books/1"
     
     const getStream = bent(baseUrl, 200, 404)
-    let stream = await getStream(path)
+    const stream = await getStream(path)
     let book:Option<Book>
 
     if (stream.status !== 200) {
@@ -377,11 +372,11 @@ it("finds a single book", async () => {
 // ...
 
 it("finds nothing", async () => {
-    let baseUrl = "http://localhost:1234"
-    let path = "/books/3"
+    const baseUrl = "http://localhost:1234"
+    const path = "/books/3"
     
     const getStream = bent(baseUrl, 200, 404)
-    let stream = await getStream(path)
+    const stream = await getStream(path)
     let book:Option<Book>
 
     if (stream.status !== 200) {
@@ -400,6 +395,7 @@ Note how I as well extracted both the `baseUrl` and `path` variables inside the 
 This allows us to further extract the function that does the actual request.
 
 ```typescript
+import {none, Option, some} from "fp-ts/lib/Option"
 const bent = require("bent")
 
 type Book = {
@@ -407,16 +403,14 @@ type Book = {
     title: string
 }
 
-function decodeBook(object): Book {
-    return {
-        self: object.self,
-        title: object.title
-    }
-}
+const decodeBook = (object): Book => ({
+    self: object.self,
+    title: object.title
+});
 
 async function findBook(baseUrl: string, path: string): Promise<Option<Book>> {
     const getStream = bent(baseUrl, 200, 404)
-    let stream = await getStream(path)
+    const stream = await getStream(path)
     let book: Option<Book>
 
     if (stream.status !== 200) {
@@ -431,10 +425,10 @@ async function findBook(baseUrl: string, path: string): Promise<Option<Book>> {
 // ...
 
 it("finds a single book", async () => {
-    let baseUrl = "http://localhost:1234"
-    let path = "/books/1"
+    const baseUrl = "http://localhost:1234"
+    const path = "/books/1"
 
-    let book = await findBook(baseUrl, path)
+    const book = await findBook(baseUrl, path)
 
     expect(book).to.deep.eq(some({self: "/books/1", title: "Title"}))
 })
@@ -442,10 +436,10 @@ it("finds a single book", async () => {
 // ...
 
 it("finds nothing", async () => {
-    let baseUrl = "http://localhost:1234"
-    let path = "/books/3"
+    const baseUrl = "http://localhost:1234"
+    const path = "/books/3"
 
-    let book = await findBook(baseUrl, path)
+    const book = await findBook(baseUrl, path)
 
     expect(book).to.equal(none)
 })
@@ -470,17 +464,15 @@ export function createBookClient(baseUrl: string) {
         title: string
     }
 
-    function decodeBook(object): Book {
-        return {
-            self: object.self,
-            title: object.title
-        }
-    }
+    const decodeBook = (object): Book => ({
+        self: object.self,
+        title: object.title
+    });
 
     return {
         requestBook: async (path: string): Promise<Option<Book>> => {
             const getStream = bent(baseUrl, 200, 404)
-            let stream = await getStream(path)
+            const stream = await getStream(path)
             if (stream.status !== 200) {
                 log("received " + stream.status + " " + await stream.text())
                 return none
@@ -498,7 +490,7 @@ import {createBookClient} from "./book-client"
 const client = createBookClient("http://localhost:1234")
 
 it("finds a single book", async () => {
-    let book = await client.requestBook("/books/1")
+    const book = await client.requestBook("/books/1")
 
     expect(book).to.deep.eq(some({self: "/books/1", title: "Title"}))
 })
@@ -506,7 +498,7 @@ it("finds a single book", async () => {
 // ...
 
 it("finds nothing", async () => {
-    let book = await client.requestBook("/books/3")
+    const book = await client.requestBook("/books/3")
 
     expect(book).to.equal(none)
 })
