@@ -483,9 +483,9 @@ Let’s create a type for the book.</p>
     <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
     <span class="kd">const</span> <span class="nx">getJSON</span> <span class="o">=</span> <span class="nx">bent</span><span class="p">(</span><span class="dl">"</span><span class="s2">json</span><span class="dl">"</span><span class="p">)</span>
 
-    <span class="nx">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="na">self</span><span class="p">:</span> <span class="nx">string</span>
-        <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
+    <span class="kd">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">self</span><span class="p">:</span> <span class="kr">string</span>
+        <span class="na">title</span><span class="p">:</span> <span class="kr">string</span>
     <span class="p">}</span>
 
     <span class="kd">const</span> <span class="na">result</span><span class="p">:</span> <span class="nx">Book</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getJSON</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:1234/books/1</span><span class="dl">"</span><span class="p">)</span>
@@ -527,9 +527,9 @@ So let’s</p>
     <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
     <span class="kd">const</span> <span class="nx">getJSON</span> <span class="o">=</span> <span class="nx">bent</span><span class="p">(</span><span class="dl">"</span><span class="s2">json</span><span class="dl">"</span><span class="p">)</span>
 
-    <span class="nx">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="na">self</span><span class="p">:</span> <span class="nx">string</span>
-        <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
+    <span class="kd">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">self</span><span class="p">:</span> <span class="kr">string</span>
+        <span class="na">title</span><span class="p">:</span> <span class="kr">string</span>
     <span class="p">}</span>
 
     <span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
@@ -574,9 +574,9 @@ Shouldn’t have to change much, should we?</p>
     <span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
     <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
 
-    <span class="nx">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="na">self</span><span class="p">:</span> <span class="nx">string</span>
-        <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
+    <span class="kd">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">self</span><span class="p">:</span> <span class="kr">string</span>
+        <span class="na">title</span><span class="p">:</span> <span class="kr">string</span>
     <span class="p">}</span>
 
     <span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
@@ -611,9 +611,9 @@ The two tests look quite different now.</p>
     <span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">,</span> <span class="nx">some</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
     <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
 
-    <span class="nx">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="na">self</span><span class="p">:</span> <span class="nx">string</span>
-        <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
+    <span class="kd">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">self</span><span class="p">:</span> <span class="kr">string</span>
+        <span class="na">title</span><span class="p">:</span> <span class="kr">string</span>
     <span class="p">}</span>
 
     <span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
@@ -641,9 +641,9 @@ The two tests look quite different now.</p>
     <span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">,</span> <span class="nx">some</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
     <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
 
-    <span class="nx">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="na">self</span><span class="p">:</span> <span class="nx">string</span>
-        <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
+    <span class="kd">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">self</span><span class="p">:</span> <span class="kr">string</span>
+        <span class="na">title</span><span class="p">:</span> <span class="kr">string</span>
     <span class="p">}</span>
 
     <span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
@@ -676,9 +676,9 @@ Let’s begin with the Book type, and the <code class="highlighter-rouge">decode
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">,</span> <span class="nx">some</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
 <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
 
-<span class="nx">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">self</span><span class="p">:</span> <span class="nx">string</span>
-    <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
+<span class="kd">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">self</span><span class="p">:</span> <span class="kr">string</span>
+    <span class="na">title</span><span class="p">:</span> <span class="kr">string</span>
 <span class="p">}</span>
 
 <span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
@@ -734,9 +734,9 @@ This allows us to further extract the function that does the actual request.</p>
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">,</span> <span class="nx">some</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
 <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
 
-<span class="nx">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">self</span><span class="p">:</span> <span class="nx">string</span>
-    <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
+<span class="kd">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">self</span><span class="p">:</span> <span class="kr">string</span>
+    <span class="na">title</span><span class="p">:</span> <span class="kr">string</span>
 <span class="p">}</span>
 
 <span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
@@ -744,7 +744,7 @@ This allows us to further extract the function that does the actual request.</p>
     <span class="na">title</span><span class="p">:</span> <span class="nx">object</span><span class="p">.</span><span class="nx">title</span>
 <span class="p">});</span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">findBook</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">path</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Option</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">findBook</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">path</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Option</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;&gt;</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">getStream</span> <span class="o">=</span> <span class="nx">bent</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span>
     <span class="kd">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
     <span class="kd">let</span> <span class="na">book</span><span class="p">:</span> <span class="nx">Option</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;</span>
@@ -793,10 +793,10 @@ The final result looks like this:</p>
 <span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">,</span> <span class="nx">some</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
 <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
 
-<span class="k">export</span> <span class="kd">function</span> <span class="nx">createBookClient</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="na">self</span><span class="p">:</span> <span class="nx">string</span>
-        <span class="na">title</span><span class="p">:</span> <span class="nx">string</span>
+<span class="k">export</span> <span class="kd">function</span> <span class="nx">createBookClient</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">type</span> <span class="nx">Book</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">self</span><span class="p">:</span> <span class="kr">string</span>
+        <span class="na">title</span><span class="p">:</span> <span class="kr">string</span>
     <span class="p">}</span>
 
     <span class="kd">const</span> <span class="nx">decodeBook</span> <span class="o">=</span> <span class="p">(</span><span class="nx">object</span><span class="p">):</span> <span class="nx">Book</span> <span class="o">=&gt;</span> <span class="p">({</span>
@@ -805,7 +805,7 @@ The final result looks like this:</p>
     <span class="p">});</span>
 
     <span class="k">return</span> <span class="p">{</span>
-        <span class="na">requestBook</span><span class="p">:</span> <span class="k">async</span> <span class="p">(</span><span class="na">path</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Option</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="na">requestBook</span><span class="p">:</span> <span class="k">async</span> <span class="p">(</span><span class="na">path</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Option</span><span class="o">&lt;</span><span class="nx">Book</span><span class="o">&gt;&gt;</span> <span class="o">=&gt;</span> <span class="p">{</span>
             <span class="kd">const</span> <span class="nx">getStream</span> <span class="o">=</span> <span class="nx">bent</span><span class="p">(</span><span class="nx">baseUrl</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span>
             <span class="kd">const</span> <span class="nx">stream</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">getStream</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">status</span> <span class="o">!==</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
