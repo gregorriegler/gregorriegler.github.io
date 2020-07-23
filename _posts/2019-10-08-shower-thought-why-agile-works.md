@@ -43,7 +43,7 @@ each of these steps could be seen as refinements of knowledge.
 the knowledge starts very vague and becomes gradually more specific until it ends in code.
 the knowledge is transferred, refined, stored, and it decays (thanks to Alex Bolboacă [@alexboly](https://twitter.com/alexboly) for this [observation](https://mozaicworks.com/blog/software-engineering/knowledge-refinery/)).
 
-## the risk of bugs
+## the risk for bugs
 in a traditional world, those refinements are done by different people of different skills with distance among them.
 we know that communication is lossy, and that the devil is in the details.
 needs are often lost in communication, resulting in instructions without context.
