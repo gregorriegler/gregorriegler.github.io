@@ -85,11 +85,7 @@ But the proposed way of having those packages on the top level obfuscates what t
 
 [^SeparationOfConcerns]: [Separation Of Concerns](https://wiki.c2.com/?SeparationOfConcerns)
 
-## Level 1
-
-This level contains ar
-
-### Package by Feature
+## Level 1: Package by Feature
 
 ![Package by Feature](/assets/modularity/modularity_level1.svg){:width="25%" .textwrap}
 
@@ -102,7 +98,7 @@ A code within one feature knows about the internals of another feature and has a
 For Example: Feature A may fetch data from the Repository of Feature B, or use its business logic. 
 So there is still some coupling going on.
 
-#### Features, but Layered inside
+## Level 1: Features, but Layered inside
 
 ![Features, but layered inside](/assets/modularity/modularity_level1_layered.svg){:width="25%" .textwrap}
 
