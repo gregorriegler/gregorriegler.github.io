@@ -25,3 +25,25 @@ header h1.page-title {
 .container > .content {
   padding-top: 1rem;
 }
+
+.textwrap {
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.clear {
+  clear: both;
+}
+
+h2,h3,h4 {
+  clear: both;
+}
+
+article {
+  clear: both;
+}
+
+.footnotes {
+  clear: both;
+}

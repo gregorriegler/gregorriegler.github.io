@@ -8,7 +8,7 @@
   {% endif %}
 {% endfor %}
 
-<div class="post-tags">
+<div class="post-tags clear">
   {% for tag in include.post.tags %}
     {% if tags_page %}
     <a href="{{ site.baseurl }}{{ tags_page.url }}#{{ tag | slugify }}">
