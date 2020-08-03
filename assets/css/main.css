@@ -859,6 +859,7 @@ header h1.page-title {
 
 .textwrap {
   float: right;
+  margin-top: 10px;
   margin-left: 20px;
   margin-bottom: 20px; }
 
