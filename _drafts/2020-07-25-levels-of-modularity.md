@@ -101,7 +101,7 @@ Monoliths with high cohesion.
 ![Package by Feature](/assets/modularity/modularity_level1.svg){:width="25%" .textwrap}
 
 Package by Feature is much more desirable. 
-It puts the names of features like Order, Cart and User at the top level which are screaming: "I am a Shop!". 
+It puts the names of features like Order, Cart and User at the top level which are screaming[^ScreamingArchitecture]: "I am a Shop!".
 It helps us to quickly find the code we need to change. 
 As the cohesion is increased, we typically just have to touch a single top level package when changing a feature. 
 There is no *information hiding[^InformationHiding]* going on between the features though. 
@@ -110,6 +110,7 @@ For Example: Feature A may fetch data from the Repository of Feature B, or use i
 So there is still coupling going on.
 
 [^InformationHiding]: [Information Hiding](https://wiki.c2.com/?InformationHiding) 
+[^ScreamingArchitecture]: [Screaming Architecture](http://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html)
 
 ### Level 1: Features, but layered inside
 
