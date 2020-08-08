@@ -34,6 +34,16 @@ So we like to find the sweet spot.
 
 ![Distributed Monolith](/assets/modularity/modularity_level99_distributed_monolith.svg){:width="25%" .textwrap}
 
+<div class="table-wrapper" markdown="block">
+
+| Drawing                       | What it means                                                |
+| :---------------------------- | ------------------------------------------------------------ |
+| Grey Box with Black Border    | The Unit of Deployment                                       |
+| Colored Circles               | This is Code. The Color represents what the Code is doing work for. Every Color signifies another Feature / Behaviour. |
+| Lines connecting Things       | Dependencies                                                 |
+
+</div>
+
 The structure tells that there has been an attempt to decompose the system into services.
 But what it apparently does is it tears apart cohesive pieces of software and puts thick walls between them. 
 None of the parts is able to perform useful work on its own. They have a strong coupling with their dependencies. 
@@ -52,15 +62,6 @@ How did we get there?
 [^ShotgunSurgery]: [Shotgun Surgery](https://refactoring.guru/smells/shotgun-surgery): A design smell where one has to make lot's of changes in various places to change a single feature.
 
 [^ConwaysLaw]: [Conways Law](https://en.wikipedia.org/wiki/Conway%27s_law): Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.
-
-#### Legend for the Graphics
-
-| Drawing                       | What it means                                                |
-| :---------------------------- | ------------------------------------------------------------ |
-| Grey Box with Black Border    | The Unit of Deployment                                       |
-| Colored Circles               | This is Code. The Color represents what the Code is doing work for. Every Color signifies another Feature / Behaviour. |
-| Lines connecting Things       | Dependencies                                                 |
-
 
 ## Level 0
 
@@ -182,11 +183,15 @@ But it comes at a cost and a lot of pain:
 
 ## Conclusion
 
-The **Levels of Modularity** provide a model to help reason about an architecture and decide where to go from there. The higher the level, the more modular an architecture is.
+The **Levels of Modularity** provide a model to reason about an architecture and help decide on where you want to go. 
+The higher the level, the more modular an architecture is.
 
-Also, we may use the **Levels of Modularity** as a cook book to refactor to a more modular architecture. We want to go level by level incrementally. 
+Also, we may use the **Levels of Modularity** as a cook book to refactor to a more modular architecture. 
+We want to go level by level incrementally. 
 
-To get from a *Big Ball of Mud (Level 0)* to a *Modular Monolith (Level 2)*, we first want to find the features and collect them in distinct packages to arrive at *Package by Feature (Level 1)*. Only then would we decouple the feature packages to finally arrive at a *Modular Monolith (Level 2)*. We may even apply the *Strangler Pattern[^StranglerPattern]* and carry one feature through all Levels before attempting the next one.
+To get from a *Big Ball of Mud (Level 0)* to a *Modular Monolith (Level 2)*, we first want to find the features and collect them in distinct packages to arrive at *Package by Feature (Level 1)*. 
+Only then would we decouple the feature packages to finally arrive at a *Modular Monolith (Level 2)*. 
+We may even apply the *Strangler Pattern[^StranglerPattern]* and carry one feature at a time through all levels.
 
 [^StranglerPattern]: [Strangler Pattern](https://martinfowler.com/bliki/StranglerFigApplication.html): An approach to improve a big system by improving one sub-system at a time until there is no sub-system left to improve.
 
