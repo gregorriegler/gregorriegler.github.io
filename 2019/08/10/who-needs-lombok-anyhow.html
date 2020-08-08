@@ -380,7 +380,7 @@ After all, immutable objects are easier to refactor.</p>
 Maybe on my data transfer objects?
 Why would i want to go the length of making fields private and creating accessors on a structure that is solely data?
 Does this kind of information hiding provide <em>any</em> value? To me, it is just clutter.
-<code class="highlighter-rouge">public final</code> fields without accessors are a much cleaner solution here imho.
+<code class="language-plaintext highlighter-rouge">public final</code> fields without accessors are a much cleaner solution here imho.
 And there i am, left without a need for accessors.</p>
 
 <h3 id="allargsconstructor-introduces-connascence-of-position">@AllArgsConstructor introduces connascence of position</h3>
@@ -413,7 +413,7 @@ Delombok to the rescue.</p>
 
 <h3 id="equals-and-hashcode">equals and hashcode</h3>
 <p>For value objects, where you want all fields included, the apache commons lang <a href="http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/EqualsBuilder.html">EqualsBuilder</a> and <a href="http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/HashCodeBuilder.html">HashCodeBuilder</a> come in handy.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Override
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Override
 public boolean equals(Object that) {
     return EqualsBuilder.reflectionEquals(this, that);
 }
@@ -425,7 +425,7 @@ public int hashCode() {
 </code></pre></div></div>
 
 <p>maybe even use an intellij live template like this:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Override
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Override
 public boolean equals(Object that) {
     return org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals(this, that);
 }
@@ -438,7 +438,7 @@ public int hashCode() {
 
 <h3 id="slf4j">@Slf4j</h3>
 <p>I recommend using an intellij live template again.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// just put in 'className()' for the $CLASS$ variable
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// just put in 'className()' for the $CLASS$ variable
 private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger($CLASS$.class);
 </code></pre></div></div>
 
@@ -459,7 +459,7 @@ However, i prefer the <strong>Inner Builder</strong> plugin.</p>
 <p>Thankfully, there is this nice little feature called delombok.
 It will transform all your former lombok annotations into the ugly boilerplate they created behind the scenes,
 so you can completely get rid of it.
-Don’t expect a beautiful outcome though, the generated code will contain a lot of <code class="highlighter-rouge">@SuppressWarnings("all")</code>.
+Don’t expect a beautiful outcome though, the generated code will contain a lot of <code class="language-plaintext highlighter-rouge">@SuppressWarnings("all")</code>.
 Also, the delombok feature of my intellij plugin caused my ide to freeze.
 So i had to use the <a href="http://anthonywhitford.com/lombok.maven/lombok-maven-plugin/usage.html">Lombok Maven Plugin</a> instead, it worked just fine.</p>
 
@@ -515,6 +515,15 @@ So i had to use the <a href="http://anthonywhitford.com/lombok.maven/lombok-mave
     
       <li>
         <h3>
+          <a href="/2020/08/08/levels-of-modularity.html">
+            Levels of Modularity
+            <small>08 Aug 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2020/05/11/outside-in-tdd-a-consumer.html">
             Outside-In TDD a Consumer
             <small>11 May 2020</small>
@@ -526,15 +535,6 @@ So i had to use the <a href="http://anthonywhitford.com/lombok.maven/lombok-mave
         <h3>
           <a href="/2020/02/23/subclass-and-override.html">
             subclass and override
-            <small>23 Feb 2020</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2020/02/23/humble-object.html">
-            humble object
             <small>23 Feb 2020</small>
           </a>
         </h3>

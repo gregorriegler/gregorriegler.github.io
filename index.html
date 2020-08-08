@@ -340,6 +340,270 @@
   
   <article class="post-body">
     <h2 class="post-title">
+      <a href="/2020/08/08/levels-of-modularity.html">
+        Levels of Modularity
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">08 Aug 2020</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <p><a href="https://code-cop.org/">Peter &lt;Code Cop&gt; Kofler</a> and I recently facilitated a refactoring workshop where we guided our participants to incrementally extract a microservice from a monolith. Similar workshops were mostly about the technology side of things and neglected the coding part which we found was sad. So we obviously decided to focus on <strong>hands on coding</strong> and to practice the refactoring steps needed for this task.</p>
+
+<p>We identified several milestones in this refactoring exercise which we then laid out as the <strong>‘Levels of Modularity’</strong>.
+Each level represents a different kind of architecture that shows stronger or weaker modularity.</p>
+
+<p>The model helps us to reason about our current architecture and decide where we want to go.
+But most interestingly it acts as a play book how to extract a microservice.
+It is feasible to go through each level and gradually increase the modularity in an attempt to extract the microservice.</p>
+
+<h2 id="modularity-is-about-controlling-the-scope-of-change">Modularity is about controlling the scope of change</h2>
+<p>Modularity is the property of a system to which degree it is composed of modules. 
+Modularity is recursive - Modules may be further decomposed into submodules.
+A module is a cohesive, loosely coupled, encapsulated and composable piece of software that does one thing.<br />
+I don’t see modularity and its characteristics as absolutes. 
+I rather see nuances and trade offs.
+But it is all about controlling the scope of change.</p>
+
+<ul>
+  <li>Cohesion tells whether code that changes for the same reason, is put closely. We aim for high cohesion.</li>
+  <li>Coupling tells to which degree a change in one part of the system affects another. 
+Usually we aim for loose coupling so that we can change things independently. 
+But the decoupling may come with a burden, which forces us to make trade offs. 
+So we like to find the sweet spot.</li>
+</ul>
+
+<h2 id="level--1-the-distributed-monolith">Level -1: The Distributed Monolith</h2>
+
+<p><img src="/assets/modularity/modularity_level99_distributed_monolith.svg" alt="Distributed Monolith" width="25%" class="textwrap" /></p>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Drawing</th>
+        <th>What it means</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Grey Box with Black Border</td>
+        <td>The Unit of Deployment</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">Colored Circles</td>
+        <td>This is Code. The Color represents what the Code is doing work for. Every Color signifies another Feature / Behaviour.</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">Lines connecting Things</td>
+        <td>Dependencies</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<p>The structure tells that there has been an attempt to decompose the system into services.
+But what it apparently does is it tears apart cohesive pieces of software and puts thick walls between them. 
+None of the parts is able to perform useful work on its own. They have a strong coupling with their dependencies. 
+<em>Shotgun Surgery<sup id="fnref:ShotgunSurgery" role="doc-noteref"><a href="#fn:ShotgunSurgery" class="footnote">1</a></sup></em> is the result. 
+One has to touch many services when changing a single feature.
+Another effect is that it’s mostly impossible to deploy any of those services independently.</p>
+
+<p>I put this even below level 0, as i see negative modularity going on. 
+In an attempt to increase its modularity we would first have to join the services again, only to arrive at level 0.</p>
+
+<p>How did we get there?</p>
+<ul>
+  <li>We just didn’t understand how to properly decompose a system into modules.</li>
+  <li>We drew the boundaries before we had a proper understanding of the domain we’re building.</li>
+  <li>There are different developers working on different layers of the same thing. (<em>Conways Law<sup id="fnref:ConwaysLaw" role="doc-noteref"><a href="#fn:ConwaysLaw" class="footnote">2</a></sup></em>)</li>
+</ul>
+
+<h2 id="level-0">Level 0</h2>
+
+<p>Monoliths with low cohesion and high coupling.</p>
+
+<h3 id="level-0-the-big-ball-of-mud">Level 0: The Big Ball of Mud</h3>
+
+<p><img src="/assets/modularity/modularity_level0.svg" alt="The Big Ball of Mud" width="25%" class="textwrap" /></p>
+
+<p>This animal is completely disorganized. There is no recognizable structure, no abstraction, dependencies are intertwined. 
+Strong coupling is the result. Changes in one area of the code lead to bugs in several other areas. 
+It contains all sorts of <em>Code Smells<sup id="fnref:CodeSmell" role="doc-noteref"><a href="#fn:CodeSmell" class="footnote">3</a></sup></em> from <em>God Classes</em> to <em>Feature Envy</em>, <em>Dead Code</em> and <em>Change Preventers</em>.</p>
+
+<p>Developers get there because of many reasons:</p>
+<ul>
+  <li>Lack of Experience</li>
+  <li>Carelessness after feeling treated unfair</li>
+  <li>Rushing Changes to try and meet a deadline</li>
+  <li>Developers with different views working independently on the same codebase without sufficient alignment.</li>
+  <li>Fluctuation</li>
+</ul>
+
+<h3 id="level-0-monolith-packaged-by-layer">Level 0: Monolith packaged by Layer</h3>
+
+<p><img src="/assets/modularity/modularity_level0_layered.svg" alt="Monolith packaged by Layer" width="25%" class="textwrap" /></p>
+
+<p>This is probably the most common monolith out there. 
+Its package structure is often guided by frameworks and code generators that propose having packages like <code class="language-plaintext highlighter-rouge">controllers</code>, <code class="language-plaintext highlighter-rouge">domain</code> and <code class="language-plaintext highlighter-rouge">repositories</code> on the top level. 
+This framing proposes <em>Separation of Concerns<sup id="fnref:SeparationOfConcerns" role="doc-noteref"><a href="#fn:SeparationOfConcerns" class="footnote">4</a></sup></em> which is a good thing. 
+But the proposed way of having those packages on the top level obfuscates what the application is doing. “Controllers” does not provide any clue about what the app is doing.</p>
+
+<h2 id="level-1">Level 1</h2>
+
+<p>Monoliths with high cohesion.</p>
+
+<h3 id="level-1-package-by-feature">Level 1: Package by Feature</h3>
+
+<p><img src="/assets/modularity/modularity_level1.svg" alt="Package by Feature" width="25%" class="textwrap" /></p>
+
+<p>Package by Feature is much more desirable. 
+It puts the names of features like Order, Cart and User at the top level which are screaming<sup id="fnref:ScreamingArchitecture" role="doc-noteref"><a href="#fn:ScreamingArchitecture" class="footnote">5</a></sup>: “I am a Shop!”.
+It helps us to quickly find the code we need to change. 
+As the cohesion is increased, we typically just have to touch a single top level package when changing a feature. 
+There is no <em>information hiding<sup id="fnref:InformationHiding" role="doc-noteref"><a href="#fn:InformationHiding" class="footnote">6</a></sup></em> going on between the features though. 
+A code within one feature knows about the internals of another feature and has access to it. 
+For Example: Feature A may fetch data from the Repository of Feature B, or use its business logic. 
+So there is still coupling going on.</p>
+
+<h3 id="level-1-features-but-layered-inside">Level 1: Features, but layered inside</h3>
+
+<p><img src="/assets/modularity/modularity_level1_layered.svg" alt="Features, but layered inside" width="25%" class="textwrap" /></p>
+
+<p><em>Separation of Concerns</em><sup id="fnref:SeparationOfConcerns:1" role="doc-noteref"><a href="#fn:SeparationOfConcerns" class="footnote">4</a></sup> again, just inside feature packages.
+We do this when we want to isolate our domain, our <em>Happy Zone<sup id="fnref:UniversalArchitecture" role="doc-noteref"><a href="#fn:UniversalArchitecture" class="footnote">7</a></sup></em> from infrastructure code.
+Or maybe we just like to organize our many files and put them into distinct folders to gain a better understanding of what a file is about.</p>
+
+<h2 id="level-2-the-modular-monolith">Level 2: The Modular Monolith</h2>
+
+<p><img src="/assets/modularity/modularity_level2.svg" alt="The Modular Monolith" width="25%" class="textwrap" /></p>
+
+<p>A Monolith with both low coupling and high cohesion.</p>
+
+<p>Feature packages turn modules. 
+Each module now has a clear api which is the only way to access it. 
+One module doesn’t know about the inner details of another module anymore. 
+So they are encapsulated, and the coupling is further reduced. 
+But as the module does not encapsulate its data, the modules are still coupled by the shared database.</p>
+
+<p>Increasing the modularity further than this may come with a significant cost.</p>
+
+<h2 id="level-3-the-microservice-ready-monolith">Level 3: The Microservice Ready Monolith</h2>
+
+<p><img src="/assets/modularity/modularity_level3.svg" alt="The Microservice Ready Monolith" width="25%" class="textwrap" /></p>
+
+<p>The coupling of a shared database is removed. 
+Each module now uses its own data. 
+Could be a separate database, or just separate tables within the same database. 
+As long as there is no hidden coupling like a foreign key, we consider it as separated.
+Sometimes, two or more modules need to access the same data.
+In this case they would access the data through the module that owns it, or have a separate copy of the data.
+In case of a copy we would choose a data model that perfectly fits the needs of the respective module. 
+The data might be updated through events.</p>
+
+<p>It’s still a monolith, but a very decoupled one. 
+Extracting a microservice is very easy from this level.</p>
+
+<h2 id="level-4-microservices">Level 4: Microservices</h2>
+
+<p><img src="/assets/modularity/modularity_level4_microservice.svg" alt="Microservices" width="25%" class="textwrap" /></p>
+
+<p>We can now deploy, as well as scale each service independently.
+Each microservice has a strong autonomy and can be developed by its own team that uses the tech that best fits the services job.</p>
+
+<p>But it comes at a cost and a lot of pain:</p>
+<ul>
+  <li>Hard to Integrate.</li>
+  <li>Hard to Maintain.</li>
+  <li>An organizational challenge.</li>
+  <li>Lot’s of additional Technology might be needed.
+    <ul>
+      <li>API Gateway</li>
+      <li>Event Bus</li>
+      <li>Container Orchestration</li>
+      <li>Configuration Broker</li>
+      <li>Contract Testing</li>
+      <li>Bulkheads</li>
+      <li>Circuit Breakers</li>
+      <li>Distributed Tracing</li>
+      <li>Distributed Logging</li>
+      <li>Service Registry</li>
+      <li>and so on</li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>“Don’t even consider microservices unless you have a system that’s too complex to manage as a monolith.”</p>
+
+  <p>~Martin Fowler</p>
+</blockquote>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The <strong>Levels of Modularity</strong> provide a model to reason about an architecture and help decide on where you want to go. 
+The higher the level, the more modular an architecture is.</p>
+
+<p>Also, we may use the <strong>Levels of Modularity</strong> as a cook book to refactor to a more modular architecture. 
+We want to go level by level incrementally.</p>
+
+<p>To get from a <em>Big Ball of Mud (Level 0)</em> to a <em>Modular Monolith (Level 2)</em>, we first want to find the features and collect them in distinct packages to arrive at <em>Package by Feature (Level 1)</em>. 
+Only then would we decouple the feature packages to finally arrive at a <em>Modular Monolith (Level 2)</em>. 
+We may even apply the <em>Strangler Pattern<sup id="fnref:StranglerPattern" role="doc-noteref"><a href="#fn:StranglerPattern" class="footnote">8</a></sup></em> and carry one feature at a time through all levels.</p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:ShotgunSurgery" role="doc-endnote">
+      <p><a href="https://refactoring.guru/smells/shotgun-surgery">Shotgun Surgery</a>: A design smell where one has to make lot’s of changes in various places to change a single feature. <a href="#fnref:ShotgunSurgery" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:ConwaysLaw" role="doc-endnote">
+      <p><a href="https://en.wikipedia.org/wiki/Conway%27s_law">Conways Law</a>: Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization’s communication structure. <a href="#fnref:ConwaysLaw" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:CodeSmell" role="doc-endnote">
+      <p><a href="https://sourcemaking.com/refactoring/smells">Code Smell</a>: A sign that something might be wrong with the code. <a href="#fnref:CodeSmell" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:SeparationOfConcerns" role="doc-endnote">
+      <p><a href="https://wiki.c2.com/?SeparationOfConcerns">Separation Of Concerns</a> is a principle that proposes to separate code by its responsibilities. <a href="#fnref:SeparationOfConcerns" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:SeparationOfConcerns:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:ScreamingArchitecture" role="doc-endnote">
+      <p><a href="http://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html">Screaming Architecture</a> is an architecture that focuses on expressiveness, telling a developer what the code is doing from just looking at the top level folders. <a href="#fnref:ScreamingArchitecture" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:InformationHiding" role="doc-endnote">
+      <p><a href="https://wiki.c2.com/?InformationHiding">Information Hiding</a> is a design principle that leads to lower coupling. <a href="#fnref:InformationHiding" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:UniversalArchitecture" role="doc-endnote">
+      <p><a href="https://www.productivecsharp.com/2017/03/universal-architecture/">Universal Architecture</a> describes the Happy Zone as the core of the software that is very clean and easy to test. <a href="#fnref:UniversalArchitecture" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:StranglerPattern" role="doc-endnote">
+      <p><a href="https://martinfowler.com/bliki/StranglerFigApplication.html">Strangler Pattern</a>: An approach to improve a big system by improving one sub-system at a time until there is no sub-system left to improve. <a href="#fnref:StranglerPattern" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2020/08/08/levels-of-modularity.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
       <a href="/2020/05/11/outside-in-tdd-a-consumer.html">
         Outside-In TDD a Consumer
       </a>
@@ -414,7 +678,7 @@ What do we assert?</p>
 But it certainly is a bit premature.
 We haven’t even put an API’s baseUrl.
 Neither did we think about potential errors.
-All the HTTP handling code would have to go to the not yet existing <code class="highlighter-rouge">Books</code> object. 
+All the HTTP handling code would have to go to the not yet existing <code class="language-plaintext highlighter-rouge">Books</code> object. 
 How would we even go about making a HTTP request?
 How would we deserialize the content?
 There are many things coming up, and it already feels like a huge leap.<br />
@@ -510,7 +774,7 @@ The goal of this is to reduce the risk for messages to fail.</p>
 They should only be concerned with the Resources, Methods and Fields they actually consume, and treat even them with care.</p>
 
 <p>In the existing solution a new arriving field would cause the message to fail. <br />
-Let’s imagine the server would add a new field: <code class="highlighter-rouge">description</code>.
+Let’s imagine the server would add a new field: <code class="language-plaintext highlighter-rouge">description</code>.
 Our client code would not expect it and break.
 We need to make it more robust and prevent this from happening.</p>
 
@@ -519,7 +783,7 @@ We need to make it more robust and prevent this from happening.</p>
 <p>Totally!
 However, we are currently in the writing of a Consumer Test. 
 It generates the Contract for the Producer.
-Adding the <code class="highlighter-rouge">description</code> field to the Contract is not what we want.
+Adding the <code class="language-plaintext highlighter-rouge">description</code> field to the Contract is not what we want.
 We only want to add the fields that we consume.
 So let’s</p>
 <ol>
@@ -551,7 +815,7 @@ So let’s</p>
 </code></pre></div></div>
 <p>Run the tests =&gt; <strong><span style="color:green">Green</span></strong>.</p>
 
-<p>The <code class="highlighter-rouge">decodeBook</code> function makes the code robust against any change to fields that we don’t consume.</p>
+<p>The <code class="language-plaintext highlighter-rouge">decodeBook</code> function makes the code robust against any change to fields that we don’t consume.</p>
 
 <h3 id="aiming-for-duplication">Aiming For Duplication</h3>
 <p>Already fiddling around a lot, aren’t we?
@@ -676,7 +940,7 @@ The two tests look quite different now.</p>
 <p>Ok, great. 
 The implementation code is now the same in both cases: Finding a book, and not finding it.
 We can finally start and extract the duplicated parts out of the tests.
-Let’s begin with the Book type, and the <code class="highlighter-rouge">decodeBook</code> function.</p>
+Let’s begin with the Book type, and the <code class="language-plaintext highlighter-rouge">decodeBook</code> function.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">,</span> <span class="nx">some</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
 <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
@@ -733,7 +997,7 @@ Let’s begin with the Book type, and the <code class="highlighter-rouge">decode
 </code></pre></div></div>
 <p>Run the tests =&gt; <strong><span style="color:green">Green</span></strong>.</p>
 
-<p>Note how I as well extracted both the <code class="highlighter-rouge">baseUrl</code> and <code class="highlighter-rouge">path</code> variables inside the tests.
+<p>Note how I as well extracted both the <code class="language-plaintext highlighter-rouge">baseUrl</code> and <code class="language-plaintext highlighter-rouge">path</code> variables inside the tests.
 This allows us to further extract the function that does the actual request.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">,</span> <span class="nx">some</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
@@ -789,7 +1053,7 @@ This allows us to further extract the function that does the actual request.</p>
 
 <h3 id="final-touch">Final Touch</h3>
 <p>The tests became nice and short.
-However, I would prefer having a bookClient object that had the <code class="highlighter-rouge">baseUrl</code> baked in.
+However, I would prefer having a bookClient object that had the <code class="language-plaintext highlighter-rouge">baseUrl</code> baked in.
 This would allow me to add more functions later.
 So I refactor it further, and extract the module.
 The final result looks like this:</p>
@@ -1091,8 +1355,6 @@ And even though the battery knows nothing about the flashlight, the former contr
 
     <p><br class="clear" /><a class="comments_link" href="/2020/01/12/yet-another-explanation-about-object-orientation.html#comments">to the comments</a></p>
   </article>
-  
-  
   
   
   

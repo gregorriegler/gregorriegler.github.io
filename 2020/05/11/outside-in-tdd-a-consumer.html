@@ -409,7 +409,7 @@ What do we assert?</p>
 But it certainly is a bit premature.
 We haven’t even put an API’s baseUrl.
 Neither did we think about potential errors.
-All the HTTP handling code would have to go to the not yet existing <code class="highlighter-rouge">Books</code> object. 
+All the HTTP handling code would have to go to the not yet existing <code class="language-plaintext highlighter-rouge">Books</code> object. 
 How would we even go about making a HTTP request?
 How would we deserialize the content?
 There are many things coming up, and it already feels like a huge leap.<br />
@@ -505,7 +505,7 @@ The goal of this is to reduce the risk for messages to fail.</p>
 They should only be concerned with the Resources, Methods and Fields they actually consume, and treat even them with care.</p>
 
 <p>In the existing solution a new arriving field would cause the message to fail. <br />
-Let’s imagine the server would add a new field: <code class="highlighter-rouge">description</code>.
+Let’s imagine the server would add a new field: <code class="language-plaintext highlighter-rouge">description</code>.
 Our client code would not expect it and break.
 We need to make it more robust and prevent this from happening.</p>
 
@@ -514,7 +514,7 @@ We need to make it more robust and prevent this from happening.</p>
 <p>Totally!
 However, we are currently in the writing of a Consumer Test. 
 It generates the Contract for the Producer.
-Adding the <code class="highlighter-rouge">description</code> field to the Contract is not what we want.
+Adding the <code class="language-plaintext highlighter-rouge">description</code> field to the Contract is not what we want.
 We only want to add the fields that we consume.
 So let’s</p>
 <ol>
@@ -546,7 +546,7 @@ So let’s</p>
 </code></pre></div></div>
 <p>Run the tests =&gt; <strong><span style="color:green">Green</span></strong>.</p>
 
-<p>The <code class="highlighter-rouge">decodeBook</code> function makes the code robust against any change to fields that we don’t consume.</p>
+<p>The <code class="language-plaintext highlighter-rouge">decodeBook</code> function makes the code robust against any change to fields that we don’t consume.</p>
 
 <h3 id="aiming-for-duplication">Aiming For Duplication</h3>
 <p>Already fiddling around a lot, aren’t we?
@@ -671,7 +671,7 @@ The two tests look quite different now.</p>
 <p>Ok, great. 
 The implementation code is now the same in both cases: Finding a book, and not finding it.
 We can finally start and extract the duplicated parts out of the tests.
-Let’s begin with the Book type, and the <code class="highlighter-rouge">decodeBook</code> function.</p>
+Let’s begin with the Book type, and the <code class="language-plaintext highlighter-rouge">decodeBook</code> function.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">,</span> <span class="nx">some</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
 <span class="kd">const</span> <span class="nx">bent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">bent</span><span class="dl">"</span><span class="p">)</span>
@@ -728,7 +728,7 @@ Let’s begin with the Book type, and the <code class="highlighter-rouge">decode
 </code></pre></div></div>
 <p>Run the tests =&gt; <strong><span style="color:green">Green</span></strong>.</p>
 
-<p>Note how I as well extracted both the <code class="highlighter-rouge">baseUrl</code> and <code class="highlighter-rouge">path</code> variables inside the tests.
+<p>Note how I as well extracted both the <code class="language-plaintext highlighter-rouge">baseUrl</code> and <code class="language-plaintext highlighter-rouge">path</code> variables inside the tests.
 This allows us to further extract the function that does the actual request.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span><span class="nx">none</span><span class="p">,</span> <span class="nx">Option</span><span class="p">,</span> <span class="nx">some</span><span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">fp-ts/lib/Option</span><span class="dl">"</span>
@@ -784,7 +784,7 @@ This allows us to further extract the function that does the actual request.</p>
 
 <h3 id="final-touch">Final Touch</h3>
 <p>The tests became nice and short.
-However, I would prefer having a bookClient object that had the <code class="highlighter-rouge">baseUrl</code> baked in.
+However, I would prefer having a bookClient object that had the <code class="language-plaintext highlighter-rouge">baseUrl</code> baked in.
 This would allow me to add more functions later.
 So I refactor it further, and extract the module.
 The final result looks like this:</p>
@@ -927,6 +927,15 @@ The latter makes it easier to fiddle around with the details and may lead to a m
     
       <li>
         <h3>
+          <a href="/2020/08/08/levels-of-modularity.html">
+            Levels of Modularity
+            <small>08 Aug 2020</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2020/02/23/subclass-and-override.html">
             subclass and override
             <small>23 Feb 2020</small>
@@ -939,15 +948,6 @@ The latter makes it easier to fiddle around with the details and may lead to a m
           <a href="/2020/02/23/humble-object.html">
             humble object
             <small>23 Feb 2020</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2020/02/16/break-time-dependency.html">
-            break time dependency
-            <small>16 Feb 2020</small>
           </a>
         </h3>
       </li>
