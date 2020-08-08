@@ -72,7 +72,7 @@ Monoliths with low cohesion and high coupling.
 ![The Big Ball of Mud](/assets/modularity/modularity_level0.svg){:width="25%" .textwrap}
 
 This animal is completely disorganized. There is no recognizable structure, no abstraction, dependencies are intertwined. 
-Strong coupling is the result. Changes in one Area of the code lead to bugs in several other areas. 
+Strong coupling is the result. Changes in one area of the code lead to bugs in several other areas. 
 It contains all sorts of *Code Smells[^CodeSmell]* from *God Classes* to *Feature Envy*, *Dead Code* and *Change Preventers*.
 
 Developers get there because of many reasons:
@@ -110,18 +110,19 @@ A code within one feature knows about the internals of another feature and has a
 For Example: Feature A may fetch data from the Repository of Feature B, or use its business logic. 
 So there is still coupling going on.
 
-[^InformationHiding]: [Information Hiding](https://wiki.c2.com/?InformationHiding) 
-[^ScreamingArchitecture]: [Screaming Architecture](http://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html)
+[^InformationHiding]: [Information Hiding](https://wiki.c2.com/?InformationHiding) is a design principle that leads to lower coupling.
+[^ScreamingArchitecture]: [Screaming Architecture](http://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html) is an architecture that focuses on expressiveness, telling a developer what the code is doing from just looking at the top level folders.
 
 ### Level 1: Features, but layered inside
 
 ![Features, but layered inside](/assets/modularity/modularity_level1_layered.svg){:width="25%" .textwrap}
 
 *Separation of Concerns*[^SeparationOfConcerns] again, just inside feature packages.
-We do this when we want to isolate our domain, our "Happy World" from infrastructure code.
+We do this when we want to isolate our domain, our *Happy Zone[^UniversalArchitecture]* from infrastructure code.
 Or maybe we just like to organize our many files and put them into distinct folders to gain a better understanding of what a file is about.
 
-[^SeparationOfConcerns]: [Separation Of Concerns](https://wiki.c2.com/?SeparationOfConcerns)
+[^SeparationOfConcerns]: [Separation Of Concerns](https://wiki.c2.com/?SeparationOfConcerns) is a principle that proposes to separate code by its responsibilities.
+[^UniversalArchitecture]: [Universal Architecture](https://www.productivecsharp.com/2017/03/universal-architecture/) describes the Happy Zone as the core of the software that is very clean and easy to test. 
 
 ## Level 2: The Modular Monolith
 
