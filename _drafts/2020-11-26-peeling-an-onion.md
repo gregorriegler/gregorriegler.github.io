@@ -46,7 +46,7 @@ In Inside-Out Design we start at the inside and gradually ascend outwards.
 So we first break the problem down into smaller sub-problems and define how they interact with each other. 
 In doing so we identify the most inner pieces, the domain of the system.
 In Inside-Out, they are exactly where we want to start.
-After all they will be the foundation for the rest of the system.
+After all they will be the foundation for the remainder of the system.
 They are the collaborators we use as soon as we ascend to build the next higher layer. 
 As we ascend further and further outside we will at one point arrive at the outer most layers. 
 They form the interface of our system, the entrypoint users may interact with.
@@ -73,8 +73,7 @@ Once the interface is defined we descend inwards, thinking how we can bring this
 Now we have to decide what collaborators will be needed, and what their responsibilities will be.
 So from this perspective the entrypoint we just defined is now the new user.
 Again, we're treating its collaborators as black-boxes. 
-And again, we only care about what they do, but not *how*. 
-So we define only their interfaces.
+And again, at first we only care about what they do, but not *how*. 
 
 <center><img src="/assets/peeling-an-onion/descending.png" style="zoom:33%;" /></center>
 
@@ -184,4 +183,4 @@ This allows us to finish the implementation of the current SUT before having to 
 #### Disadvantages
 
 - Couples the structure of the test to the structure of the implementation.
-- Usually slower than hand-written test doubles.
+- Usually less performant than hand-written test doubles.
