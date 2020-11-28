@@ -133,7 +133,7 @@ Where test overlap happens we aim to minimize it, and use the sociable unit test
 
 #### Disadvantages
 
-- Need to manage disabled Tests.
+- Need to manage disabled tests.
 - Can lead to premature collaborators.
 
 ### Fake it till you make it
