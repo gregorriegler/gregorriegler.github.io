@@ -61,6 +61,7 @@ I think that a good example of an API that is biased towards its domain is the o
 > - We cannot know what the domain will look like in advance, it is shaped by how users will want to use the system.
 > - A bias towards the domain makes the interface more complicated.
 > - Designing the interface in the end will cause it to be confusing and unfriendly.
+> TODO YAGNI
 
 ## Outside-In Design
 
@@ -90,6 +91,7 @@ As a result, the built system will be biased towards the anticipated usage of th
 >
 > - We're bad at predicting how users will want to use the system. 
 > - A bias towards usage makes the domain unnecessarily complicated.
+> TODO YAGNI
 
 ## Descending in Outside-In TDD
 
