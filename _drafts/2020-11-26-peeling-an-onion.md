@@ -54,7 +54,7 @@ As we build that last, it will be guided by the structure and behavior of the su
 So it will be biased towards the early decisions we made when we first designed the domain. 
 I think that a good example of an API that is biased towards its domain is the one of git.
 
-> Inside-Out is domain centric. Can cause the Interface to be biased towards early domain decisions.
+> ⓘ Inside-Out is domain centric. Can cause the Interface to be biased towards early domain decisions.
 >
 > Stereotypes: 
 >
@@ -84,7 +84,7 @@ We descend further until we arrive at the core, the domain.
 
 As a result, the built system will be biased towards the anticipated usage of the thing.
 
-> Outside-In is user centric. The implemented solution might be biased towards the anticipated usage.
+> ⓘ Outside-In is user centric. The implemented solution might be biased towards the anticipated usage.
 >
 > Stereotypes: 
 >
