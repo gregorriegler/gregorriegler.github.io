@@ -12,7 +12,7 @@ Suppose we're developing a thing, a program.
 
 <center><img src="/assets/peeling-an-onion/system.png" style="zoom: 33%;" /></center>
 
-It will inevitably become a hierarchical system composed of collaborators that form the sub- and sub-sub-systems. 
+It will inevitably become a hierarchical system composed of collaborators that form the sub- and sub-subsystems. 
 Each of those will solve yet another problem, and together they will form our thing.
 The outer layers will be more concerned with infrastructure and coordination, whereas the inner parts will be concerned with the business logic, the domain.
 
@@ -37,20 +37,20 @@ So to them it is a black box.
 ### The Inside
 
 The inside contains the hidden details of the thing - its gear, its structure.
-It represents all the sub-problems the thing was broken into. 
+It represents all the subproblems the thing was broken into. 
 The inside answers the question, *how* the thing accomplishes what it does.
 
 ## Inside-Out Design
 
 In Inside-Out Design we start at the inside and gradually ascend outwards.
-So we first break the problem down into smaller sub-problems and define how they interact with each other. 
+So we first break the problem down into smaller subproblems and define how they interact with each other. 
 In doing so we identify the most inner pieces, the domain of the system.
 In Inside-Out, they are exactly where we want to start.
 After all they will be the foundation for the remainder of the system.
 They are the collaborators we use as soon as we ascend to build the next higher layer. 
 As we ascend further and further outside we will at one point arrive at the outer most layers. 
 They form the interface of our system, the entrypoint users may interact with.
-As we build that last, it will be guided by the structure and behavior of the sub-systems that have already been built.
+As we build that last, it will be guided by the structure and behavior of the subsystems that have already been built.
 So it will be biased towards the early decisions we made when we first designed the domain. 
 I think that a good example of an API that is biased towards its domain is the one of git.
 
@@ -72,7 +72,7 @@ It will be doing what it should do, but we will care about that later.
 Once the interface is defined we descend inwards, thinking how we can bring this entrypoint to life.
 Now we have to decide what collaborators will be needed, and what their responsibilities will be.
 So from this perspective the entrypoint we just defined is now the new user.
-Again, we're treating its collaborators as black-boxes. 
+Again, we're treating its collaborators as blackboxes. 
 And again, at first we only care about what they do, but not *how*. 
 
 <center><img src="/assets/peeling-an-onion/descending.png" style="zoom:33%;" /></center>
@@ -103,7 +103,7 @@ And this is the first of three descending strategies which i call: **Skip and De
 
 ### Skip and Descend
 
-In Skip and Descend we use a black-box test to drive the decision which immediate collaborators will be needed to suffice the test.
+In Skip and Descend we use a blackbox test to drive the decision which immediate collaborators will be needed to suffice the test.
 But we acknowledge the fact that implementing those collaborators on the basis of this test would be too big of a step. 
 So we disable the test and descend to start test driving the just defined collaborator.
 We may rinse and repeat until we arrive at a leaf whose unit is small enough to be implemented.
@@ -159,7 +159,7 @@ May also lead to sociable unit tests and test overlap.
 
 #### Disadvantages
 
-- Testing sub-collaborators from a distance.
+- Testing subcollaborators from a distance.
 
 ### Mock it
 
@@ -171,14 +171,14 @@ This allows us to finish the implementation of the current SUT before having to 
 - Confident in the need of the collaborator.
 - The collaborator is at the application boundary.
 - The collaborator is at the modules boundary.
-- The collaborator interacts with an expensive sub-system such as a database or a web-service.
+- The collaborator interacts with an expensive sub-system such as a database or a webservice.
 - The call to the collaborator is a notification.
 
 #### Advantages
 
 - Avoids test-overlap.
 - Can finish the SUT before having to descend.
-- Allows to simulate expensive sub-systems such as databases and web-services.
+- Allows to simulate expensive subsystems such as databases and webservices.
 
 #### Disadvantages
 
