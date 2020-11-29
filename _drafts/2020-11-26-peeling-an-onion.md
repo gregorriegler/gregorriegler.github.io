@@ -38,7 +38,7 @@ So to them it is a black box.
 
 The inside contains the hidden details of the thing - its gear, its structure.
 It represents all the subproblems the thing was broken into. 
-The inside answers the question, *how* the thing accomplishes what it does.
+The inside answers the question, *how* the thing accomplishes what it was designed for.
 
 ## Inside-Out Design
 
@@ -50,18 +50,23 @@ After all they will be the foundation for the remainder of the system.
 They are the collaborators we use as soon as we ascend to build the next higher layer. 
 As we ascend further and further outside we will at one point arrive at the outer most layers. 
 They form the interface of our system, the entrypoint users may interact with.
-As we build that last, it will be guided by the structure and behavior of the subsystems that have already been built.
-So it will be biased towards the early decisions we made when we first designed the domain. 
-I think that a good example of an API that is biased towards its domain is the one of git.
+As we build those last, they will be guided by the structure and behavior of the subsystems that have already been built.
+So they will be biased towards the early decisions we made when we first designed the domain. 
+I think that a good example of an API that is biased towards its domain is the CLI of git. You see that in the sophisticated helper [tools](https://gitless.com/), [scripts](https://github.com/tj/git-extras) and [aliases](https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet#git) that attempt to make it more accessible.
 
 > ⓘ Inside-Out is domain centric. Can cause the Interface to be biased towards early domain decisions.
 >
 > Stereotypes: 
 >
 > - We cannot know what the domain will look like in advance, it is shaped by how users will want to use the system.
+>
 > - A bias towards the domain makes the interface more complicated.
+>
 > - Designing the interface in the end will cause it to be confusing and unfriendly.
-> TODO YAGNI
+>
+> - Thinking about usage last will cause us to build features nobody will ever use. (YAGNI[^YAGNI])
+>
+>   [^YAGNI]: [You Aint Gonna Need It](https://martinfowler.com/bliki/Yagni.html)
 
 ## Outside-In Design
 
@@ -91,7 +96,7 @@ As a result, the built system will be biased towards the anticipated usage of th
 >
 > - We're bad at predicting how users will want to use the system. 
 > - A bias towards usage makes the domain unnecessarily complicated.
-> TODO YAGNI
+> - Thinking about usage first will help us avoid building stuff we don't need. (YAGNI[^YAGNI])
 
 ## Descending in Outside-In TDD
 
@@ -99,18 +104,18 @@ When we test drive the thing Outside-In, we may start with an acceptance test as
 It describes the thing and its interface in a simple example: How it is used, and what it does. 
 Of course, the test does not work, as there is no *thing* yet. 
 So we disable the test, but our goal is to make it green.
-We write another - this time a unit test, to guide us towards writing the code that will make the acceptance test green. 
+We write another - this time a unit test, to guide us towards writing the code that will make the acceptance test pass. 
 
 And this is the first of three descending strategies which i call: **Skip and Descend**.
 
 ### Skip and Descend
 
-In Skip and Descend we use a blackbox test to drive the decision which immediate collaborators will be needed to suffice the test.
+In Skip and Descend we use a test to drive the decision which immediate collaborators will be needed to suffice the test.
 But we acknowledge the fact that implementing those collaborators on the basis of this test would be too big of a step. 
 So we disable the test and descend to start test driving the just defined collaborator.
 We may rinse and repeat until we arrive at a leaf whose unit is small enough to be implemented.
 After implementing the leaf we would ascend again to the previously disabled test where we would then use the collaborator we just built.
-Kind of like Mikado. 
+Kind of like mikado. 
 
 Leads to [sociable unit tests](https://martinfowler.com/bliki/UnitTest.html) and test overlap[^TestOverlap].
 Where test overlap happens we aim to minimize it, and use the sociable unit tests to cover integrations only.
@@ -124,14 +129,14 @@ Where test overlap happens we aim to minimize it, and use the sociable unit test
   - The collaborator is doing in-memory instructions that finish within milliseconds.
   - The collaborator is going to be a [fake](http://xunitpatterns.com/Fake%20Object.html) that will be replaced by a real system later.
   - The collaborator is inside the application boundary.
-  - The collaborator is not interacting with an expensive system such as a database or a web-service.
+  - The collaborator is not interacting with an expensive system such as a database or a webservice.
 - The call to the collaborator is not a notification[^Notification]. 
 
-[^Notification]: A Notification a.k.a 'fire and forget' is a type of a relation between objects where one object just notifies another. I first read the Term in the [GOOS Book](http://www.growing-object-oriented-software.com/). To test notifications we prefer to use mocks.
+[^Notification]: A Notification a.k.a 'fire and forget' is a type of a relation between objects where one object just notifies another. I first read the Term in the [GOOS Book](http://www.growing-object-oriented-software.com/). To test notifications we prefer to use mocks or spies.
 
 #### Advantages
 
-- Avoids mocks, and as such decouples the tests from their implementation to enable refactoring.
+- Avoids test doubles[^TestDouble], and as such decouples the tests from their implementation to enable refactoring[^StructureInsensitive].
 
 #### Disadvantages
 
@@ -150,22 +155,22 @@ May also lead to sociable unit tests and test overlap.
 #### Use when
 
 - Unsure which collaborators to create at first.
-- The SUT (System Under Test) remains inside the application boundary.
-- The SUT is not interacting with an expensive system such as a database or a web-service.
+- The [SUT (System Under Test)](http://xunitpatterns.com/SUT.html) remains inside the application boundary.
+- The SUT is not interacting with an expensive system such as a database or a webservice.
 - The call to the collaborator is not a notification.
 
 #### Advantages
 
-- Avoids mocks, and as such decouples the tests from their implementation to enable refactoring.
+- Avoids test doubles[^TestDouble], and as such decouples the tests from their implementation to enable refactoring[^StructureInsensitive].
 - Collaborators emerge out of [triangulation](https://www.devteams.at/red_green/2019/04/08/red_green_part_6_triangulation.html) and are therefor more mature.
 
 #### Disadvantages
 
 - Testing subcollaborators from a distance.
 
-### Mock it
+### Replace with Test Doubles [^TestDouble]
 
-When we are confident in the need of a collaborator, we may decide on replacing it with a mock.
+When we are confident in the need of a collaborator, we may decide on replacing it with a test double.
 This allows us to finish the implementation of the current SUT before having to descend.
 
 #### Use when
@@ -173,7 +178,7 @@ This allows us to finish the implementation of the current SUT before having to 
 - Confident in the need of the collaborator.
 - The collaborator is at the application boundary.
 - The collaborator is at the modules boundary.
-- The collaborator interacts with an expensive sub-system such as a database or a webservice.
+- The collaborator interacts with an expensive subsystem such as a database or a webservice.
 - The call to the collaborator is a notification.
 
 #### Advantages
@@ -185,4 +190,8 @@ This allows us to finish the implementation of the current SUT before having to 
 #### Disadvantages
 
 - Couples the structure of the test to the structure of the implementation.
-- Usually less performant than hand-written test doubles.
+- Mocks typically less performant than hand-written test doubles.
+- Hand-written test doubles are an additional effort to write.
+
+[^TestDouble]: A [test touble](http://xunitpatterns.com/Test%20Double.html) replaces a real collaborator in a unittest, just as a stunt double replaces the real actor in a scene
+[^StructureInsensitive]:   Tests should be [structure insensitive](https://www.youtube.com/watch?v=bvRRbWbQwDU) to enable refactoring.
