@@ -172,7 +172,7 @@ May also lead to sociable unit tests and test overlap.
 
 - Testing subcollaborators from a distance.
 
-### Replace with Test Double [^TestDouble]
+### Replace with Test Double[^TestDouble]
 
 When we are confident in the need of a collaborator, we may decide on replacing it with a test double.
 This allows us to finish the implementation of the current SUT before having to descend.
