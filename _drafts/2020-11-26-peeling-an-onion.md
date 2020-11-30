@@ -183,7 +183,7 @@ This allows us to finish the implementation of the current SUT before having to 
 - The collaborator is at the application boundary.
 - The collaborator is at the boundary of the module.
 - The collaborator interacts with an expensive subsystem such as a database or a web service.
-- The call to the collaborator is a notification; we like to use mocks in this case.
+- The call to the collaborator is a notification; we like to use a mock in this case.
 
 #### Advantages
 
