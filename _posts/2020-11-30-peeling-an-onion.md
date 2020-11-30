@@ -6,7 +6,7 @@ tags:
 - Outside-In TDD
 ---
 
-I was recently attending a Coderetreat where a session focused on Outside-In TDD. I paired with a guy who was new to this, and I noticed the difficulty in explaining myself well. This inspired me to write on this topic.
+In one of the recent Coderetreats, we did an Outside-In TDD session. I paired with a guy who was new to this, and I noticed a challenge in expressing my ideas well. Honestly, I don't think I did a good job, so I decided to write about this topic.
 
 ## A Software System
 
