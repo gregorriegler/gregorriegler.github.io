@@ -338,6 +338,277 @@
       <div class="content">
   
   
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2020/11/30/peeling-an-onion.html">
+        Peeling an Onion
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">30 Nov 2020</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <p>In one of the recent Coderetreats, we did an Outside-In TDD session. I paired with a guy who was new to this, and I noticed a challenge in expressing my ideas well. Honestly, I don’t think I did a good job, so I decided to write about this topic.</p>
+
+<h2 id="a-software-system">A Software System</h2>
+
+<p>Suppose we’re developing a thing, a program.</p>
+
+<center><img src="/assets/peeling-an-onion/system.png" style="zoom: 33%;" /></center>
+
+<p>It will inevitably become a hierarchical system composed of collaborators that form the sub- and sub-sub systems. 
+Each of those will solve yet another problem, and together they will form our thing.
+The outer layers will be more concerned with infrastructure and coordination, whereas the inner parts will be concerned with the business logic, the domain.</p>
+
+<h2 id="outside-vs-inside">Outside vs Inside</h2>
+
+<p>When we design the thing we can start on either side, the outside or the inside.</p>
+
+<center><img src="/assets/peeling-an-onion/outside-inside.png" style="zoom:33%;" /></center>
+
+<h3 id="the-outside">The Outside</h3>
+
+<p>The outside is where the users of the thing are. 
+Users might not just be humans, but also other software systems.
+They observe the thing from the outside, and they cannot see inside of it. 
+But they don’t even care about its inside. 
+All they’re interested in is what it does, and how to interact with it.</p>
+
+<p>So to them, it is a black box.</p>
+
+<center><img src="/assets/peeling-an-onion/blackbox.png" style="zoom:50%;" /></center>
+
+<h3 id="the-inside">The Inside</h3>
+
+<p>The inside contains the hidden details of the thing - its gear, its structure.
+It represents all the subproblems the thing was broken into. 
+The inside answers the question, <em>how</em> the thing accomplishes what it was designed for.</p>
+
+<h2 id="inside-out-design">Inside-Out Design</h2>
+
+<p>In Inside-Out Design we start at the inside and gradually ascend outwards.
+So we first break the problem down into smaller subproblems and define how they interact with each other. 
+In doing so we identify the most inner pieces, the domain of the system.
+Doing Inside-Out, they are exactly where we want to start.
+After all, they will be the foundation for the remainder of the system.
+They are the collaborators we use as soon as we ascend to build the next higher layer. 
+As we ascend further and further outside we will at one point arrive at the outermost layers. 
+They form the interface of our system, the entry point users may interact with.
+As we build those last, they will be guided by the structure and behavior of the subsystems that have already been built.
+So they will be biased towards the early decisions we made when we first designed the domain. 
+I think that a good example of an API that is biased towards its domain is the CLI of git. You see that in the sophisticated helper <a href="https://gitless.com/">tools</a>, <a href="https://github.com/tj/git-extras">scripts</a> and <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet#git">aliases</a> that attempt to make it more accessible.</p>
+
+<blockquote>
+  <p>ⓘ Inside-Out is domain-centric. Can cause the Interface to be biased towards early domain decisions.</p>
+
+  <p>Stereotypes:</p>
+
+  <ul>
+    <li>
+      <p>We cannot know what the domain will look like in advance, it is shaped by how users will want to use the system.</p>
+    </li>
+    <li>
+      <p>A bias towards the domain makes the interface more complicated.</p>
+    </li>
+    <li>
+      <p>To preserve a sound Interface, we might have to make ugly adjustments in the layers above the domain.</p>
+    </li>
+    <li>
+      <p>Thinking about usage last will cause us to build features nobody will ever use. (YAGNI<sup id="fnref:YAGNI" role="doc-noteref"><a href="#fn:YAGNI" class="footnote">1</a></sup>)</p>
+
+    </li>
+  </ul>
+</blockquote>
+
+<h2 id="outside-in-design">Outside-In Design</h2>
+
+<p>When we start from the outside we don’t care about the domain at first. 
+Instead, we focus on the users and how they would want to use the thing.
+So we imagine the thing as a black box while defining its interface as simple and practical as possible.
+It will be doing what it should do, but we will care about that later.</p>
+
+<p>Once the interface is defined we descend inwards, thinking about how we can bring this entry point to life.
+Now we have to decide what collaborators will be needed, and what their responsibilities will be.
+So from this perspective, the entry point we just defined is now the new user.
+Again, we’re treating its collaborators as black boxes. 
+And again, at first, we only care about what they do, but not <em>how</em>.</p>
+
+<center><img src="/assets/peeling-an-onion/descending.png" style="zoom:33%;" /></center>
+
+<p>We descend further until we arrive at the core, the domain.</p>
+
+<center><img src="/assets/peeling-an-onion/descending_2.png" style="zoom:60%;" /></center>
+
+<p>As a result, the built system will be biased towards the anticipated usage of the thing.</p>
+
+<blockquote>
+  <p>ⓘ Outside-In is user-centric. The implemented solution might be biased towards the anticipated usage.</p>
+
+  <p>Stereotypes:</p>
+
+  <ul>
+    <li>We’re bad at predicting how users will want to use the system.</li>
+    <li>A bias towards usage makes the domain unnecessarily complicated.</li>
+    <li>Thinking about usage first will help us avoid building stuff we don’t need. (YAGNI<sup id="fnref:YAGNI:1" role="doc-noteref"><a href="#fn:YAGNI" class="footnote">1</a></sup>)</li>
+  </ul>
+</blockquote>
+
+<h2 id="descending-in-outside-in-tdd">Descending in Outside-In TDD</h2>
+
+<p>When we test drive the thing Outside-In, we may start with an acceptance test as in <a href="http://coding-is-like-cooking.info/2013/04/outside-in-development-with-double-loop-tdd/">double loop TDD</a>. 
+It describes the thing and its interface in a simple example: How it is used, and what it does. 
+Of course, the test does not work, as there is no <em>thing</em> yet. 
+We can now keep the test red until it passes, or we just disable it.
+But our goal is to make it pass.
+So we write another - this time a unit test, to guide us towards writing the code that will make the acceptance test pass.</p>
+
+<p>And this is already the first of three descending strategies which I call: <strong>“Skip and Descend”</strong>.
+The other two are <strong>“Fake it till you make it”</strong>, and <strong>“Replace with Test Double”</strong>.
+But when we build a full slice from the entry point all the way down to the domain, we mostly don’t use just one strategy, but a combination of these. 
+Every time we descend we have to make another judgment call about which strategy fits best this time.</p>
+
+<h3 id="skip-and-descend">Skip and Descend</h3>
+
+<p>In Skip and Descend we use a test to drive the decision which immediate collaborators will be needed to suffice the test.
+But we acknowledge the fact that implementing those collaborators on the basis of this test would be too big of a step. 
+So we disable the test and descend to start test driving the just defined collaborator.
+Sometimes we may rinse and repeat until we arrive at a leaf whose unit is small enough to be implemented.
+After implementing the leaf we would ascend again to the previously disabled test where we would then use the collaborator we just built.
+Kind of like mikado.</p>
+
+<p>Leads to <a href="https://martinfowler.com/bliki/UnitTest.html">sociable unit tests</a> and test overlap<sup id="fnref:TestOverlap" role="doc-noteref"><a href="#fn:TestOverlap" class="footnote">2</a></sup>.
+Where test overlap happens we aim to minimize it and use the sociable unit tests to cover integrations only.</p>
+
+<h4 id="use-when">Use when</h4>
+
+<ul>
+  <li>Confident in the need of the collaborator.</li>
+  <li>The sociable unit test will be fast:
+    <ul>
+      <li>The collaborator is doing in-memory instructions that finish within milliseconds.</li>
+      <li>The collaborator is going to be a <a href="http://xunitpatterns.com/Fake%20Object.html">fake</a> that will be replaced by a real system later.</li>
+      <li>The collaborator is inside the application boundary.</li>
+      <li>The collaborator is not interacting with an expensive system such as a database or a web service.</li>
+    </ul>
+  </li>
+  <li>The call to the collaborator is not a notification<sup id="fnref:Notification" role="doc-noteref"><a href="#fn:Notification" class="footnote">3</a></sup>.</li>
+</ul>
+
+<h4 id="advantages">Advantages</h4>
+
+<ul>
+  <li>Avoids test doubles<sup id="fnref:TestDouble" role="doc-noteref"><a href="#fn:TestDouble" class="footnote">4</a></sup>, and as such decouples the tests from their implementation to enable refactoring<sup id="fnref:StructureInsensitive" role="doc-noteref"><a href="#fn:StructureInsensitive" class="footnote">5</a></sup>.</li>
+</ul>
+
+<h4 id="disadvantages">Disadvantages</h4>
+
+<ul>
+  <li>Need to manage disabled tests.</li>
+  <li>Can lead to premature collaborators.</li>
+</ul>
+
+<h3 id="fake-it-till-you-make-it">Fake it till you make it</h3>
+
+<p>In fake it till you make it we don’t necessarily decide on a collaborator and descend.
+Instead, we write the simplest and stupidest expression that will make the current test pass.
+We then write more tests to force us to change the stupid and specific expression into something more generic.
+We might have to apply <a href="https://martinfowler.com/articles/preparatory-refactoring-example.html">preparatory refactorings</a> in the process.
+With those, we place seeds as we extract new collaborators that grow while we write and pass more tests.
+May also lead to sociable unit tests and test overlap.</p>
+
+<h4 id="use-when-1">Use when</h4>
+
+<ul>
+  <li>Unsure which collaborators to create at first.</li>
+  <li>The <a href="http://xunitpatterns.com/SUT.html">SUT (System Under Test)</a> remains inside the application boundary.</li>
+  <li>The SUT is not interacting with an expensive system such as a database or a web service.</li>
+  <li>The call to the collaborator is not a notification.</li>
+</ul>
+
+<h4 id="advantages-1">Advantages</h4>
+
+<ul>
+  <li>Avoids test doubles<sup id="fnref:TestDouble:1" role="doc-noteref"><a href="#fn:TestDouble" class="footnote">4</a></sup>, and as such decouples the tests from their implementation to enable refactoring<sup id="fnref:StructureInsensitive:1" role="doc-noteref"><a href="#fn:StructureInsensitive" class="footnote">5</a></sup>.</li>
+  <li>Collaborators emerge out of <a href="https://www.devteams.at/red_green/2019/04/08/red_green_part_6_triangulation.html">triangulation</a> and are therefore more mature.</li>
+</ul>
+
+<h4 id="disadvantages-1">Disadvantages</h4>
+
+<ul>
+  <li>Testing subcollaborators from a distance.</li>
+</ul>
+
+<h3 id="replace-with-test-double">Replace with Test Double<sup id="fnref:TestDouble:2" role="doc-noteref"><a href="#fn:TestDouble" class="footnote">4</a></sup></h3>
+
+<p>When we are confident in the need of a collaborator, we may decide on replacing it with a test double.
+This allows us to finish the implementation of the current SUT before having to descend.</p>
+
+<h4 id="use-when-2">Use when</h4>
+
+<ul>
+  <li>Confident in the need of the collaborator.</li>
+  <li>The collaborator is at the application boundary.</li>
+  <li>The collaborator is at the boundary of the module.</li>
+  <li>The collaborator interacts with an expensive subsystem such as a database or a web service.</li>
+  <li>The call to the collaborator is a notification; we like to use a mock in this case.</li>
+</ul>
+
+<h4 id="advantages-2">Advantages</h4>
+
+<ul>
+  <li>Avoids test-overlap.</li>
+  <li>Can finish the SUT before having to descend.</li>
+  <li>Allows simulating expensive subsystems such as databases and web services.</li>
+</ul>
+
+<h4 id="disadvantages-2">Disadvantages</h4>
+
+<ul>
+  <li>Couples the structure of the test to the structure of the implementation.</li>
+  <li>Mocks typically less performant than hand-written test doubles.</li>
+  <li>Hand-written test doubles are an additional effort to write.</li>
+</ul>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:YAGNI" role="doc-endnote">
+      <p><a href="https://martinfowler.com/bliki/Yagni.html">You Aint Gonna Need It</a> <a href="#fnref:YAGNI" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:YAGNI:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+    <li id="fn:TestOverlap" role="doc-endnote">
+      <p>Test overlap is when more than one unit tests cover the same thing thus may fail for the same reason. <a href="#fnref:TestOverlap" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:Notification" role="doc-endnote">
+      <p>A Notification a.k.a ‘fire and forget’ is a type of relationship between objects where one object just notifies another. I first read the Term in the <a href="http://www.growing-object-oriented-software.com/">GOOS Book</a>. To test notifications we prefer to use mocks or spies. <a href="#fnref:Notification" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:TestDouble" role="doc-endnote">
+      <p>A <a href="http://xunitpatterns.com/Test%20Double.html">test touble</a> replaces a real collaborator in a unit test, just as a stunt double replaces the real actor in a scene <a href="#fnref:TestDouble" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:TestDouble:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a> <a href="#fnref:TestDouble:2" class="reversefootnote" role="doc-backlink">&#8617;<sup>3</sup></a></p>
+    </li>
+    <li id="fn:StructureInsensitive" role="doc-endnote">
+      <p>Tests should be <a href="https://www.youtube.com/watch?v=bvRRbWbQwDU">structure insensitive</a> to enable refactoring. <a href="#fnref:StructureInsensitive" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:StructureInsensitive:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2020/11/30/peeling-an-onion.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
   
   
   <article class="post-body">
@@ -1265,99 +1536,6 @@ So you can keep your eyes on the street, and increase both your throughput and q
     
 
     <p><br class="clear" /><a class="comments_link" href="/2020/01/26/becoming-a-keyboard-ninja.html#comments">to the comments</a></p>
-  </article>
-  
-  
-  
-  <article class="post-body">
-    <h2 class="post-title">
-      <a href="/2020/01/12/yet-another-explanation-about-object-orientation.html">
-        maybe a different view on object orientation
-      </a>
-    </h2>
-    <div class="post-meta">
-  <span class="post-date">12 Jan 2020</span>
-  <span class="post-categories">
-    
-  </span>
-</div>
-
-
-    
-      <div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/xlMg1a1flYA" frameborder="0" allowfullscreen=""></iframe></div>
-
-<h3 id="informationstate-and-behaviour">information/state and behaviour</h3>
-<p>I like to think of software as a universe of state and behaviour.
-State, whether mutable or immutable, is represented in the form of parameters, return values, vars, fields, files and so on and so forth.
-Those have many different traits to them.
-For example: vars, fields and files are location based, while parameters and return values are flow based. 
-But they are all state.</p>
-
-<p>Behaviour is represented in the form of functions that operate on that state. 
-There is no behaviour without state.
-Try to imagine a program that had no state.
-No Vars.
-No Input.
-No Output.
-Not even lambdas… they generate state.
-We can’t even print a damn thing without passing a string state.</p>
-
-<h3 id="cohesion">cohesion</h3>
-<p>Some state is related.
-If we’d increase the cohesion and move related state closer to each other and behaviour towards the state it operates on, groups are emerging.
-Groups of related parts.
-Groups of state and behaviour.</p>
-
-<h3 id="encapsulation">encapsulation</h3>
-<p>We can wrap them in capsules, which come in many different forms. 
-Functions, classes, packages, modules, processes and even servers are all kinds of capsules.
-For each capsule we define a minimum viable interface.
-The encapsulation serves the purpose of defining usable units that hide their internals which are irrelevant to the outside world.</p>
-
-<h3 id="objects">objects</h3>
-<p>We are defining Objects - behavioural capsules that interact with each other at runtime.
-So a function is a form of an object.
-An instance is a form of an object.
-A module is a form of an object.
-And even a microservice is a form of an object.</p>
-
-<h3 id="coupling">coupling</h3>
-<p>Each object is in some way coupled to the neighbours it interacts with.
-Coupling prevents independent changeability.
-Objects which are strongly coupled to one another cannot be changed independently of each other.
-The size of an objects public interface correlates with the strength of this coupling.
-The more we close the capsule, the more details we hide, the smaller the interface will be, thus the weaker the coupling will turn out.</p>
-
-<h4 id="feature-envy">feature envy</h4>
-<p>Sometimes, an object accidentally operates on the state of another object. 
-We call that a ‘Feature Envy’, as the object envies the other object.
-This increases the coupling between the two.
-We can resolve this situation by moving the behaviour to the object that holds the state.</p>
-
-<h3 id="dependency">dependency</h3>
-<p>When an object knows about another, we call that a dependency. 
-But don’t confuse ‘knows’ with ‘controls’, those are different things.</p>
-
-<h4 id="dependency-inversion">dependency inversion</h4>
-<p>An object can control another object without even knowing it.
-This is called dependency inversion.
-Think about a AAA battery. It provides power, but it has no idea who it provides power to.
-The form of the battery, AAA, is its interface. 
-The flashlight knows the battery, it implements its interface.
-And even though the battery knows nothing about the flashlight, the former controls the latter.</p>
-
-
-    
-
-    
-      
-      
-      
-
-      
-    
-
-    <p><br class="clear" /><a class="comments_link" href="/2020/01/12/yet-another-explanation-about-object-orientation.html#comments">to the comments</a></p>
   </article>
   
   

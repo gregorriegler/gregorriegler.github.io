@@ -1,4 +1,243 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://gregorriegler.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://gregorriegler.com/" rel="alternate" type="text/html" /><updated>2020-11-29T22:19:33+00:00</updated><id>http://gregorriegler.com/feed.xml</id><title type="html">Gregor Riegler</title><subtitle>merciless refactorer</subtitle><author><name>Gregor Riegler</name></author><entry><title type="html">inverting framework dependencies: annotation based authorization</title><link href="http://gregorriegler.com/2020/10/23/framework-dependencies-authorization-annotation.html" rel="alternate" type="text/html" title="inverting framework dependencies: annotation based authorization" /><published>2020-10-23T00:00:00+00:00</published><updated>2020-10-23T00:00:00+00:00</updated><id>http://gregorriegler.com/2020/10/23/framework-dependencies-authorization-annotation</id><content type="html" xml:base="http://gregorriegler.com/2020/10/23/framework-dependencies-authorization-annotation.html">&lt;p&gt;I am applying the &lt;a href=&quot;https://en.wikipedia.org/wiki/Dependency_inversion_principle&quot;&gt;Dependency Inversion Principle&lt;/a&gt; on authorization code to make it more testable.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://gregorriegler.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://gregorriegler.com/" rel="alternate" type="text/html" /><updated>2020-11-30T22:25:55+00:00</updated><id>http://gregorriegler.com/feed.xml</id><title type="html">Gregor Riegler</title><subtitle>merciless refactorer</subtitle><author><name>Gregor Riegler</name></author><entry><title type="html">Peeling an Onion</title><link href="http://gregorriegler.com/2020/11/30/peeling-an-onion.html" rel="alternate" type="text/html" title="Peeling an Onion" /><published>2020-11-30T00:00:00+00:00</published><updated>2020-11-30T00:00:00+00:00</updated><id>http://gregorriegler.com/2020/11/30/peeling-an-onion</id><content type="html" xml:base="http://gregorriegler.com/2020/11/30/peeling-an-onion.html">&lt;p&gt;In one of the recent Coderetreats, we did an Outside-In TDD session. I paired with a guy who was new to this, and I noticed a challenge in expressing my ideas well. Honestly, I don’t think I did a good job, so I decided to write about this topic.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-software-system&quot;&gt;A Software System&lt;/h2&gt;
+
+&lt;p&gt;Suppose we’re developing a thing, a program.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;/assets/peeling-an-onion/system.png&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;It will inevitably become a hierarchical system composed of collaborators that form the sub- and sub-sub systems. 
+Each of those will solve yet another problem, and together they will form our thing.
+The outer layers will be more concerned with infrastructure and coordination, whereas the inner parts will be concerned with the business logic, the domain.&lt;/p&gt;
+
+&lt;h2 id=&quot;outside-vs-inside&quot;&gt;Outside vs Inside&lt;/h2&gt;
+
+&lt;p&gt;When we design the thing we can start on either side, the outside or the inside.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;/assets/peeling-an-onion/outside-inside.png&quot; style=&quot;zoom:33%;&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;the-outside&quot;&gt;The Outside&lt;/h3&gt;
+
+&lt;p&gt;The outside is where the users of the thing are. 
+Users might not just be humans, but also other software systems.
+They observe the thing from the outside, and they cannot see inside of it. 
+But they don’t even care about its inside. 
+All they’re interested in is what it does, and how to interact with it.&lt;/p&gt;
+
+&lt;p&gt;So to them, it is a black box.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;/assets/peeling-an-onion/blackbox.png&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/center&gt;
+
+&lt;h3 id=&quot;the-inside&quot;&gt;The Inside&lt;/h3&gt;
+
+&lt;p&gt;The inside contains the hidden details of the thing - its gear, its structure.
+It represents all the subproblems the thing was broken into. 
+The inside answers the question, &lt;em&gt;how&lt;/em&gt; the thing accomplishes what it was designed for.&lt;/p&gt;
+
+&lt;h2 id=&quot;inside-out-design&quot;&gt;Inside-Out Design&lt;/h2&gt;
+
+&lt;p&gt;In Inside-Out Design we start at the inside and gradually ascend outwards.
+So we first break the problem down into smaller subproblems and define how they interact with each other. 
+In doing so we identify the most inner pieces, the domain of the system.
+Doing Inside-Out, they are exactly where we want to start.
+After all, they will be the foundation for the remainder of the system.
+They are the collaborators we use as soon as we ascend to build the next higher layer. 
+As we ascend further and further outside we will at one point arrive at the outermost layers. 
+They form the interface of our system, the entry point users may interact with.
+As we build those last, they will be guided by the structure and behavior of the subsystems that have already been built.
+So they will be biased towards the early decisions we made when we first designed the domain. 
+I think that a good example of an API that is biased towards its domain is the CLI of git. You see that in the sophisticated helper &lt;a href=&quot;https://gitless.com/&quot;&gt;tools&lt;/a&gt;, &lt;a href=&quot;https://github.com/tj/git-extras&quot;&gt;scripts&lt;/a&gt; and &lt;a href=&quot;https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet#git&quot;&gt;aliases&lt;/a&gt; that attempt to make it more accessible.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ⓘ Inside-Out is domain-centric. Can cause the Interface to be biased towards early domain decisions.&lt;/p&gt;
+
+  &lt;p&gt;Stereotypes:&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;p&gt;We cannot know what the domain will look like in advance, it is shaped by how users will want to use the system.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;A bias towards the domain makes the interface more complicated.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;To preserve a sound Interface, we might have to make ugly adjustments in the layers above the domain.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;Thinking about usage last will cause us to build features nobody will ever use. (YAGNI&lt;sup id=&quot;fnref:YAGNI&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:YAGNI&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;)&lt;/p&gt;
+
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;outside-in-design&quot;&gt;Outside-In Design&lt;/h2&gt;
+
+&lt;p&gt;When we start from the outside we don’t care about the domain at first. 
+Instead, we focus on the users and how they would want to use the thing.
+So we imagine the thing as a black box while defining its interface as simple and practical as possible.
+It will be doing what it should do, but we will care about that later.&lt;/p&gt;
+
+&lt;p&gt;Once the interface is defined we descend inwards, thinking about how we can bring this entry point to life.
+Now we have to decide what collaborators will be needed, and what their responsibilities will be.
+So from this perspective, the entry point we just defined is now the new user.
+Again, we’re treating its collaborators as black boxes. 
+And again, at first, we only care about what they do, but not &lt;em&gt;how&lt;/em&gt;.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;/assets/peeling-an-onion/descending.png&quot; style=&quot;zoom:33%;&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;We descend further until we arrive at the core, the domain.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;/assets/peeling-an-onion/descending_2.png&quot; style=&quot;zoom:60%;&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;As a result, the built system will be biased towards the anticipated usage of the thing.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ⓘ Outside-In is user-centric. The implemented solution might be biased towards the anticipated usage.&lt;/p&gt;
+
+  &lt;p&gt;Stereotypes:&lt;/p&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;We’re bad at predicting how users will want to use the system.&lt;/li&gt;
+    &lt;li&gt;A bias towards usage makes the domain unnecessarily complicated.&lt;/li&gt;
+    &lt;li&gt;Thinking about usage first will help us avoid building stuff we don’t need. (YAGNI&lt;sup id=&quot;fnref:YAGNI:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:YAGNI&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;)&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;descending-in-outside-in-tdd&quot;&gt;Descending in Outside-In TDD&lt;/h2&gt;
+
+&lt;p&gt;When we test drive the thing Outside-In, we may start with an acceptance test as in &lt;a href=&quot;http://coding-is-like-cooking.info/2013/04/outside-in-development-with-double-loop-tdd/&quot;&gt;double loop TDD&lt;/a&gt;. 
+It describes the thing and its interface in a simple example: How it is used, and what it does. 
+Of course, the test does not work, as there is no &lt;em&gt;thing&lt;/em&gt; yet. 
+We can now keep the test red until it passes, or we just disable it.
+But our goal is to make it pass.
+So we write another - this time a unit test, to guide us towards writing the code that will make the acceptance test pass.&lt;/p&gt;
+
+&lt;p&gt;And this is already the first of three descending strategies which I call: &lt;strong&gt;“Skip and Descend”&lt;/strong&gt;.
+The other two are &lt;strong&gt;“Fake it till you make it”&lt;/strong&gt;, and &lt;strong&gt;“Replace with Test Double”&lt;/strong&gt;.
+But when we build a full slice from the entry point all the way down to the domain, we mostly don’t use just one strategy, but a combination of these. 
+Every time we descend we have to make another judgment call about which strategy fits best this time.&lt;/p&gt;
+
+&lt;h3 id=&quot;skip-and-descend&quot;&gt;Skip and Descend&lt;/h3&gt;
+
+&lt;p&gt;In Skip and Descend we use a test to drive the decision which immediate collaborators will be needed to suffice the test.
+But we acknowledge the fact that implementing those collaborators on the basis of this test would be too big of a step. 
+So we disable the test and descend to start test driving the just defined collaborator.
+Sometimes we may rinse and repeat until we arrive at a leaf whose unit is small enough to be implemented.
+After implementing the leaf we would ascend again to the previously disabled test where we would then use the collaborator we just built.
+Kind of like mikado.&lt;/p&gt;
+
+&lt;p&gt;Leads to &lt;a href=&quot;https://martinfowler.com/bliki/UnitTest.html&quot;&gt;sociable unit tests&lt;/a&gt; and test overlap&lt;sup id=&quot;fnref:TestOverlap&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TestOverlap&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.
+Where test overlap happens we aim to minimize it and use the sociable unit tests to cover integrations only.&lt;/p&gt;
+
+&lt;h4 id=&quot;use-when&quot;&gt;Use when&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Confident in the need of the collaborator.&lt;/li&gt;
+  &lt;li&gt;The sociable unit test will be fast:
+    &lt;ul&gt;
+      &lt;li&gt;The collaborator is doing in-memory instructions that finish within milliseconds.&lt;/li&gt;
+      &lt;li&gt;The collaborator is going to be a &lt;a href=&quot;http://xunitpatterns.com/Fake%20Object.html&quot;&gt;fake&lt;/a&gt; that will be replaced by a real system later.&lt;/li&gt;
+      &lt;li&gt;The collaborator is inside the application boundary.&lt;/li&gt;
+      &lt;li&gt;The collaborator is not interacting with an expensive system such as a database or a web service.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The call to the collaborator is not a notification&lt;sup id=&quot;fnref:Notification&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Notification&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;advantages&quot;&gt;Advantages&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Avoids test doubles&lt;sup id=&quot;fnref:TestDouble&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TestDouble&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, and as such decouples the tests from their implementation to enable refactoring&lt;sup id=&quot;fnref:StructureInsensitive&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:StructureInsensitive&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;disadvantages&quot;&gt;Disadvantages&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Need to manage disabled tests.&lt;/li&gt;
+  &lt;li&gt;Can lead to premature collaborators.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;fake-it-till-you-make-it&quot;&gt;Fake it till you make it&lt;/h3&gt;
+
+&lt;p&gt;In fake it till you make it we don’t necessarily decide on a collaborator and descend.
+Instead, we write the simplest and stupidest expression that will make the current test pass.
+We then write more tests to force us to change the stupid and specific expression into something more generic.
+We might have to apply &lt;a href=&quot;https://martinfowler.com/articles/preparatory-refactoring-example.html&quot;&gt;preparatory refactorings&lt;/a&gt; in the process.
+With those, we place seeds as we extract new collaborators that grow while we write and pass more tests.
+May also lead to sociable unit tests and test overlap.&lt;/p&gt;
+
+&lt;h4 id=&quot;use-when-1&quot;&gt;Use when&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Unsure which collaborators to create at first.&lt;/li&gt;
+  &lt;li&gt;The &lt;a href=&quot;http://xunitpatterns.com/SUT.html&quot;&gt;SUT (System Under Test)&lt;/a&gt; remains inside the application boundary.&lt;/li&gt;
+  &lt;li&gt;The SUT is not interacting with an expensive system such as a database or a web service.&lt;/li&gt;
+  &lt;li&gt;The call to the collaborator is not a notification.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;advantages-1&quot;&gt;Advantages&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Avoids test doubles&lt;sup id=&quot;fnref:TestDouble:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TestDouble&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, and as such decouples the tests from their implementation to enable refactoring&lt;sup id=&quot;fnref:StructureInsensitive:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:StructureInsensitive&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+  &lt;li&gt;Collaborators emerge out of &lt;a href=&quot;https://www.devteams.at/red_green/2019/04/08/red_green_part_6_triangulation.html&quot;&gt;triangulation&lt;/a&gt; and are therefore more mature.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;disadvantages-1&quot;&gt;Disadvantages&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Testing subcollaborators from a distance.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;replace-with-test-double&quot;&gt;Replace with Test Double&lt;sup id=&quot;fnref:TestDouble:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TestDouble&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
+
+&lt;p&gt;When we are confident in the need of a collaborator, we may decide on replacing it with a test double.
+This allows us to finish the implementation of the current SUT before having to descend.&lt;/p&gt;
+
+&lt;h4 id=&quot;use-when-2&quot;&gt;Use when&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Confident in the need of the collaborator.&lt;/li&gt;
+  &lt;li&gt;The collaborator is at the application boundary.&lt;/li&gt;
+  &lt;li&gt;The collaborator is at the boundary of the module.&lt;/li&gt;
+  &lt;li&gt;The collaborator interacts with an expensive subsystem such as a database or a web service.&lt;/li&gt;
+  &lt;li&gt;The call to the collaborator is a notification; we like to use a mock in this case.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;advantages-2&quot;&gt;Advantages&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Avoids test-overlap.&lt;/li&gt;
+  &lt;li&gt;Can finish the SUT before having to descend.&lt;/li&gt;
+  &lt;li&gt;Allows simulating expensive subsystems such as databases and web services.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;disadvantages-2&quot;&gt;Disadvantages&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Couples the structure of the test to the structure of the implementation.&lt;/li&gt;
+  &lt;li&gt;Mocks typically less performant than hand-written test doubles.&lt;/li&gt;
+  &lt;li&gt;Hand-written test doubles are an additional effort to write.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:YAGNI&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;&lt;a href=&quot;https://martinfowler.com/bliki/Yagni.html&quot;&gt;You Aint Gonna Need It&lt;/a&gt; &lt;a href=&quot;#fnref:YAGNI&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:YAGNI:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:TestOverlap&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Test overlap is when more than one unit tests cover the same thing thus may fail for the same reason. &lt;a href=&quot;#fnref:TestOverlap&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:Notification&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;A Notification a.k.a ‘fire and forget’ is a type of relationship between objects where one object just notifies another. I first read the Term in the &lt;a href=&quot;http://www.growing-object-oriented-software.com/&quot;&gt;GOOS Book&lt;/a&gt;. To test notifications we prefer to use mocks or spies. &lt;a href=&quot;#fnref:Notification&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:TestDouble&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;A &lt;a href=&quot;http://xunitpatterns.com/Test%20Double.html&quot;&gt;test touble&lt;/a&gt; replaces a real collaborator in a unit test, just as a stunt double replaces the real actor in a scene &lt;a href=&quot;#fnref:TestDouble&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:TestDouble:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; &lt;a href=&quot;#fnref:TestDouble:2&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:StructureInsensitive&quot; role=&quot;doc-endnote&quot;&gt;
+      &lt;p&gt;Tests should be &lt;a href=&quot;https://www.youtube.com/watch?v=bvRRbWbQwDU&quot;&gt;structure insensitive&lt;/a&gt; to enable refactoring. &lt;a href=&quot;#fnref:StructureInsensitive&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;/a&gt; &lt;a href=&quot;#fnref:StructureInsensitive:1&quot; class=&quot;reversefootnote&quot; role=&quot;doc-backlink&quot;&gt;&amp;#8617;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Gregor Riegler</name></author><category term="TDD" /><category term="Outside-In TDD" /><summary type="html">In one of the recent Coderetreats, we did an Outside-In TDD session. I paired with a guy who was new to this, and I noticed a challenge in expressing my ideas well. Honestly, I don’t think I did a good job, so I decided to write about this topic. A Software System Suppose we’re developing a thing, a program. It will inevitably become a hierarchical system composed of collaborators that form the sub- and sub-sub systems. Each of those will solve yet another problem, and together they will form our thing. The outer layers will be more concerned with infrastructure and coordination, whereas the inner parts will be concerned with the business logic, the domain. Outside vs Inside When we design the thing we can start on either side, the outside or the inside. The Outside The outside is where the users of the thing are. Users might not just be humans, but also other software systems. They observe the thing from the outside, and they cannot see inside of it. But they don’t even care about its inside. All they’re interested in is what it does, and how to interact with it. So to them, it is a black box. The Inside The inside contains the hidden details of the thing - its gear, its structure. It represents all the subproblems the thing was broken into. The inside answers the question, how the thing accomplishes what it was designed for. Inside-Out Design In Inside-Out Design we start at the inside and gradually ascend outwards. So we first break the problem down into smaller subproblems and define how they interact with each other. In doing so we identify the most inner pieces, the domain of the system. Doing Inside-Out, they are exactly where we want to start. After all, they will be the foundation for the remainder of the system. They are the collaborators we use as soon as we ascend to build the next higher layer. As we ascend further and further outside we will at one point arrive at the outermost layers. They form the interface of our system, the entry point users may interact with. As we build those last, they will be guided by the structure and behavior of the subsystems that have already been built. So they will be biased towards the early decisions we made when we first designed the domain. I think that a good example of an API that is biased towards its domain is the CLI of git. You see that in the sophisticated helper tools, scripts and aliases that attempt to make it more accessible. ⓘ Inside-Out is domain-centric. Can cause the Interface to be biased towards early domain decisions. Stereotypes: We cannot know what the domain will look like in advance, it is shaped by how users will want to use the system. A bias towards the domain makes the interface more complicated. To preserve a sound Interface, we might have to make ugly adjustments in the layers above the domain. Thinking about usage last will cause us to build features nobody will ever use. (YAGNI1) Outside-In Design When we start from the outside we don’t care about the domain at first. Instead, we focus on the users and how they would want to use the thing. So we imagine the thing as a black box while defining its interface as simple and practical as possible. It will be doing what it should do, but we will care about that later. Once the interface is defined we descend inwards, thinking about how we can bring this entry point to life. Now we have to decide what collaborators will be needed, and what their responsibilities will be. So from this perspective, the entry point we just defined is now the new user. Again, we’re treating its collaborators as black boxes. And again, at first, we only care about what they do, but not how. We descend further until we arrive at the core, the domain. As a result, the built system will be biased towards the anticipated usage of the thing. ⓘ Outside-In is user-centric. The implemented solution might be biased towards the anticipated usage. Stereotypes: We’re bad at predicting how users will want to use the system. A bias towards usage makes the domain unnecessarily complicated. Thinking about usage first will help us avoid building stuff we don’t need. (YAGNI1) Descending in Outside-In TDD When we test drive the thing Outside-In, we may start with an acceptance test as in double loop TDD. It describes the thing and its interface in a simple example: How it is used, and what it does. Of course, the test does not work, as there is no thing yet. We can now keep the test red until it passes, or we just disable it. But our goal is to make it pass. So we write another - this time a unit test, to guide us towards writing the code that will make the acceptance test pass. And this is already the first of three descending strategies which I call: “Skip and Descend”. The other two are “Fake it till you make it”, and “Replace with Test Double”. But when we build a full slice from the entry point all the way down to the domain, we mostly don’t use just one strategy, but a combination of these. Every time we descend we have to make another judgment call about which strategy fits best this time. Skip and Descend In Skip and Descend we use a test to drive the decision which immediate collaborators will be needed to suffice the test. But we acknowledge the fact that implementing those collaborators on the basis of this test would be too big of a step. So we disable the test and descend to start test driving the just defined collaborator. Sometimes we may rinse and repeat until we arrive at a leaf whose unit is small enough to be implemented. After implementing the leaf we would ascend again to the previously disabled test where we would then use the collaborator we just built. Kind of like mikado. Leads to sociable unit tests and test overlap2. Where test overlap happens we aim to minimize it and use the sociable unit tests to cover integrations only. Use when Confident in the need of the collaborator. The sociable unit test will be fast: The collaborator is doing in-memory instructions that finish within milliseconds. The collaborator is going to be a fake that will be replaced by a real system later. The collaborator is inside the application boundary. The collaborator is not interacting with an expensive system such as a database or a web service. The call to the collaborator is not a notification3. Advantages Avoids test doubles4, and as such decouples the tests from their implementation to enable refactoring5. Disadvantages Need to manage disabled tests. Can lead to premature collaborators. Fake it till you make it In fake it till you make it we don’t necessarily decide on a collaborator and descend. Instead, we write the simplest and stupidest expression that will make the current test pass. We then write more tests to force us to change the stupid and specific expression into something more generic. We might have to apply preparatory refactorings in the process. With those, we place seeds as we extract new collaborators that grow while we write and pass more tests. May also lead to sociable unit tests and test overlap. Use when Unsure which collaborators to create at first. The SUT (System Under Test) remains inside the application boundary. The SUT is not interacting with an expensive system such as a database or a web service. The call to the collaborator is not a notification. Advantages Avoids test doubles4, and as such decouples the tests from their implementation to enable refactoring5. Collaborators emerge out of triangulation and are therefore more mature. Disadvantages Testing subcollaborators from a distance. Replace with Test Double4 When we are confident in the need of a collaborator, we may decide on replacing it with a test double. This allows us to finish the implementation of the current SUT before having to descend. Use when Confident in the need of the collaborator. The collaborator is at the application boundary. The collaborator is at the boundary of the module. The collaborator interacts with an expensive subsystem such as a database or a web service. The call to the collaborator is a notification; we like to use a mock in this case. Advantages Avoids test-overlap. Can finish the SUT before having to descend. Allows simulating expensive subsystems such as databases and web services. Disadvantages Couples the structure of the test to the structure of the implementation. Mocks typically less performant than hand-written test doubles. Hand-written test doubles are an additional effort to write. You Aint Gonna Need It &amp;#8617; &amp;#8617;2 Test overlap is when more than one unit tests cover the same thing thus may fail for the same reason. &amp;#8617; A Notification a.k.a ‘fire and forget’ is a type of relationship between objects where one object just notifies another. I first read the Term in the GOOS Book. To test notifications we prefer to use mocks or spies. &amp;#8617; A test touble replaces a real collaborator in a unit test, just as a stunt double replaces the real actor in a scene &amp;#8617; &amp;#8617;2 &amp;#8617;3 Tests should be structure insensitive to enable refactoring. &amp;#8617; &amp;#8617;2</summary></entry><entry><title type="html">inverting framework dependencies: annotation based authorization</title><link href="http://gregorriegler.com/2020/10/23/framework-dependencies-authorization-annotation.html" rel="alternate" type="text/html" title="inverting framework dependencies: annotation based authorization" /><published>2020-10-23T00:00:00+00:00</published><updated>2020-10-23T00:00:00+00:00</updated><id>http://gregorriegler.com/2020/10/23/framework-dependencies-authorization-annotation</id><content type="html" xml:base="http://gregorriegler.com/2020/10/23/framework-dependencies-authorization-annotation.html">&lt;p&gt;I am applying the &lt;a href=&quot;https://en.wikipedia.org/wiki/Dependency_inversion_principle&quot;&gt;Dependency Inversion Principle&lt;/a&gt; on authorization code to make it more testable.&lt;/p&gt;
 
 &lt;div class=&quot;embed-container&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/lflxK7pksHY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
 
@@ -864,64 +1103,4 @@ Expect your editors keymap to be imperfect.
 Think outside the box, and adapt the tool according to your need.&lt;/p&gt;
 
 &lt;p&gt;I hope these tips will help you utilize your keyboard more. 
-So you can keep your eyes on the street, and increase both your throughput and quality of output.&lt;/p&gt;</content><author><name>Gregor Riegler</name></author><category term="efficiency" /><summary type="html">Hi, i’m Gregor, and I want to help you become better at coding. Here are some tips to improve your keyboard utilization. If you are already very good at it, this might not be for you. keep your eyes on the street It is our most important tool because of it’s relatively high throughput. This throughput not only determines our speed, it also affects the quality of our output. Let me explain: As coders we’re switching between different views and modes. We’re mostly looking at the code from a bird’s eye perspective, just reading and thinking. As soon as we have decided on the changes we want to make, our focus tightens. We’re now more concerned which button to click next, which menu to open. Using the mouse is terribly slow. It breaks our flow of thought. We’re not watching the street, we’re looking at the stick shift. Fluent keyboard utilization can help us keep our eyes on the street. It frees our minds and helps us make fewer mistakes. We can not only drive faster, but also safer. getting better is easy! Just lower your expectations. There is no need to get to 0% mouse usage right away. Start small, but start now! The following tips should help you get started. tip #1: buy a keyboard you’ll want to use Do yourself a favour and buy a good keyboard of your choice. After all, you’re a programmer and this is your most important tool. It will be much easier to get better, once you own a keyboard you enjoy working with. One you’ll want to use. Maybe a mechanical one, maybe a slim one, whatever suits you. tip #2: use a powerful editor It should have support for code navigation, refactoring and other coding related stuff. Could be an IDE, could be a lightweight editor that has a healthy plugin ecosystem. tip #3: plugins may help Search for plugins that assist you in learning keystrokes. Like the Key Promoter X for IntelliJ. There is also Mousefeed for Eclipse, and Keypromoter for Netbeans, which do a similar thing. They will assist you by showing the keystroke you could have pressed, whenever you used the mouse. Also they will count and show you how often you used the mouse for that command. tip #4: start small Don’t try and learn everything at once. You gotta start small. Choose ~4 keystrokes or combos you want to learn first, and focus only on them while working on the code you are usually working on. You will soon start doing them unconsciously. This is when you are ready for the next ones. tip #5: prepare a cheat sheet Prepare yourself a cheat sheet, so you can quickly look up the shortcuts you are working on. Maybe you’ll find a nice print out online, or even create one yourself. There is the code cops shortcut search for example. tip #6: be gone, mouse! If it does not work out, and you keep grabbing the mouse out of habit, move it to the other side of your keyboard. So when you try and grab it, it won’t be there. This is also a good tip if you’re advanced and you feel like ditching the mouse anyhow. tip #7: pair with others You can’t practice tricks you didn’t know existed. Pair- and mob- programming will help you find inspiration. I learned some of the most valuable shortcuts from pairing with others. tip #8: RTFM Also, it might be worth it to study your editors documentation. Some of the actions I adopted are ones i found there. For example: The ‘Search and Replace Duplicates’ refactoring. tip #9: extend your keymap Some of the actions you frequently use might not even have a keystroke assigned by default. I for example like to split my tabs when doing TDD. So I can see my tests on the left, and production code on the right. The ‘Move Tab to the Right’ action however did not have a keystroke assigned by default. I had to do this myself. Expect your editors keymap to be imperfect. Think outside the box, and adapt the tool according to your need. I hope these tips will help you utilize your keyboard more. So you can keep your eyes on the street, and increase both your throughput and quality of output.</summary></entry><entry><title type="html">maybe a different view on object orientation</title><link href="http://gregorriegler.com/2020/01/12/yet-another-explanation-about-object-orientation.html" rel="alternate" type="text/html" title="maybe a different view on object orientation" /><published>2020-01-12T00:00:00+00:00</published><updated>2020-01-12T00:00:00+00:00</updated><id>http://gregorriegler.com/2020/01/12/yet-another-explanation-about-object-orientation</id><content type="html" xml:base="http://gregorriegler.com/2020/01/12/yet-another-explanation-about-object-orientation.html">&lt;div class=&quot;embed-container&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/xlMg1a1flYA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;informationstate-and-behaviour&quot;&gt;information/state and behaviour&lt;/h3&gt;
-&lt;p&gt;I like to think of software as a universe of state and behaviour.
-State, whether mutable or immutable, is represented in the form of parameters, return values, vars, fields, files and so on and so forth.
-Those have many different traits to them.
-For example: vars, fields and files are location based, while parameters and return values are flow based. 
-But they are all state.&lt;/p&gt;
-
-&lt;p&gt;Behaviour is represented in the form of functions that operate on that state. 
-There is no behaviour without state.
-Try to imagine a program that had no state.
-No Vars.
-No Input.
-No Output.
-Not even lambdas… they generate state.
-We can’t even print a damn thing without passing a string state.&lt;/p&gt;
-
-&lt;h3 id=&quot;cohesion&quot;&gt;cohesion&lt;/h3&gt;
-&lt;p&gt;Some state is related.
-If we’d increase the cohesion and move related state closer to each other and behaviour towards the state it operates on, groups are emerging.
-Groups of related parts.
-Groups of state and behaviour.&lt;/p&gt;
-
-&lt;h3 id=&quot;encapsulation&quot;&gt;encapsulation&lt;/h3&gt;
-&lt;p&gt;We can wrap them in capsules, which come in many different forms. 
-Functions, classes, packages, modules, processes and even servers are all kinds of capsules.
-For each capsule we define a minimum viable interface.
-The encapsulation serves the purpose of defining usable units that hide their internals which are irrelevant to the outside world.&lt;/p&gt;
-
-&lt;h3 id=&quot;objects&quot;&gt;objects&lt;/h3&gt;
-&lt;p&gt;We are defining Objects - behavioural capsules that interact with each other at runtime.
-So a function is a form of an object.
-An instance is a form of an object.
-A module is a form of an object.
-And even a microservice is a form of an object.&lt;/p&gt;
-
-&lt;h3 id=&quot;coupling&quot;&gt;coupling&lt;/h3&gt;
-&lt;p&gt;Each object is in some way coupled to the neighbours it interacts with.
-Coupling prevents independent changeability.
-Objects which are strongly coupled to one another cannot be changed independently of each other.
-The size of an objects public interface correlates with the strength of this coupling.
-The more we close the capsule, the more details we hide, the smaller the interface will be, thus the weaker the coupling will turn out.&lt;/p&gt;
-
-&lt;h4 id=&quot;feature-envy&quot;&gt;feature envy&lt;/h4&gt;
-&lt;p&gt;Sometimes, an object accidentally operates on the state of another object. 
-We call that a ‘Feature Envy’, as the object envies the other object.
-This increases the coupling between the two.
-We can resolve this situation by moving the behaviour to the object that holds the state.&lt;/p&gt;
-
-&lt;h3 id=&quot;dependency&quot;&gt;dependency&lt;/h3&gt;
-&lt;p&gt;When an object knows about another, we call that a dependency. 
-But don’t confuse ‘knows’ with ‘controls’, those are different things.&lt;/p&gt;
-
-&lt;h4 id=&quot;dependency-inversion&quot;&gt;dependency inversion&lt;/h4&gt;
-&lt;p&gt;An object can control another object without even knowing it.
-This is called dependency inversion.
-Think about a AAA battery. It provides power, but it has no idea who it provides power to.
-The form of the battery, AAA, is its interface. 
-The flashlight knows the battery, it implements its interface.
-And even though the battery knows nothing about the flashlight, the former controls the latter.&lt;/p&gt;</content><author><name>Gregor Riegler</name></author><category term="oo, software design" /><summary type="html">information/state and behaviour I like to think of software as a universe of state and behaviour. State, whether mutable or immutable, is represented in the form of parameters, return values, vars, fields, files and so on and so forth. Those have many different traits to them. For example: vars, fields and files are location based, while parameters and return values are flow based. But they are all state. Behaviour is represented in the form of functions that operate on that state. There is no behaviour without state. Try to imagine a program that had no state. No Vars. No Input. No Output. Not even lambdas… they generate state. We can’t even print a damn thing without passing a string state. cohesion Some state is related. If we’d increase the cohesion and move related state closer to each other and behaviour towards the state it operates on, groups are emerging. Groups of related parts. Groups of state and behaviour. encapsulation We can wrap them in capsules, which come in many different forms. Functions, classes, packages, modules, processes and even servers are all kinds of capsules. For each capsule we define a minimum viable interface. The encapsulation serves the purpose of defining usable units that hide their internals which are irrelevant to the outside world. objects We are defining Objects - behavioural capsules that interact with each other at runtime. So a function is a form of an object. An instance is a form of an object. A module is a form of an object. And even a microservice is a form of an object. coupling Each object is in some way coupled to the neighbours it interacts with. Coupling prevents independent changeability. Objects which are strongly coupled to one another cannot be changed independently of each other. The size of an objects public interface correlates with the strength of this coupling. The more we close the capsule, the more details we hide, the smaller the interface will be, thus the weaker the coupling will turn out. feature envy Sometimes, an object accidentally operates on the state of another object. We call that a ‘Feature Envy’, as the object envies the other object. This increases the coupling between the two. We can resolve this situation by moving the behaviour to the object that holds the state. dependency When an object knows about another, we call that a dependency. But don’t confuse ‘knows’ with ‘controls’, those are different things. dependency inversion An object can control another object without even knowing it. This is called dependency inversion. Think about a AAA battery. It provides power, but it has no idea who it provides power to. The form of the battery, AAA, is its interface. The flashlight knows the battery, it implements its interface. And even though the battery knows nothing about the flashlight, the former controls the latter.</summary></entry></feed>
+So you can keep your eyes on the street, and increase both your throughput and quality of output.&lt;/p&gt;</content><author><name>Gregor Riegler</name></author><category term="efficiency" /><summary type="html">Hi, i’m Gregor, and I want to help you become better at coding. Here are some tips to improve your keyboard utilization. If you are already very good at it, this might not be for you. keep your eyes on the street It is our most important tool because of it’s relatively high throughput. This throughput not only determines our speed, it also affects the quality of our output. Let me explain: As coders we’re switching between different views and modes. We’re mostly looking at the code from a bird’s eye perspective, just reading and thinking. As soon as we have decided on the changes we want to make, our focus tightens. We’re now more concerned which button to click next, which menu to open. Using the mouse is terribly slow. It breaks our flow of thought. We’re not watching the street, we’re looking at the stick shift. Fluent keyboard utilization can help us keep our eyes on the street. It frees our minds and helps us make fewer mistakes. We can not only drive faster, but also safer. getting better is easy! Just lower your expectations. There is no need to get to 0% mouse usage right away. Start small, but start now! The following tips should help you get started. tip #1: buy a keyboard you’ll want to use Do yourself a favour and buy a good keyboard of your choice. After all, you’re a programmer and this is your most important tool. It will be much easier to get better, once you own a keyboard you enjoy working with. One you’ll want to use. Maybe a mechanical one, maybe a slim one, whatever suits you. tip #2: use a powerful editor It should have support for code navigation, refactoring and other coding related stuff. Could be an IDE, could be a lightweight editor that has a healthy plugin ecosystem. tip #3: plugins may help Search for plugins that assist you in learning keystrokes. Like the Key Promoter X for IntelliJ. There is also Mousefeed for Eclipse, and Keypromoter for Netbeans, which do a similar thing. They will assist you by showing the keystroke you could have pressed, whenever you used the mouse. Also they will count and show you how often you used the mouse for that command. tip #4: start small Don’t try and learn everything at once. You gotta start small. Choose ~4 keystrokes or combos you want to learn first, and focus only on them while working on the code you are usually working on. You will soon start doing them unconsciously. This is when you are ready for the next ones. tip #5: prepare a cheat sheet Prepare yourself a cheat sheet, so you can quickly look up the shortcuts you are working on. Maybe you’ll find a nice print out online, or even create one yourself. There is the code cops shortcut search for example. tip #6: be gone, mouse! If it does not work out, and you keep grabbing the mouse out of habit, move it to the other side of your keyboard. So when you try and grab it, it won’t be there. This is also a good tip if you’re advanced and you feel like ditching the mouse anyhow. tip #7: pair with others You can’t practice tricks you didn’t know existed. Pair- and mob- programming will help you find inspiration. I learned some of the most valuable shortcuts from pairing with others. tip #8: RTFM Also, it might be worth it to study your editors documentation. Some of the actions I adopted are ones i found there. For example: The ‘Search and Replace Duplicates’ refactoring. tip #9: extend your keymap Some of the actions you frequently use might not even have a keystroke assigned by default. I for example like to split my tabs when doing TDD. So I can see my tests on the left, and production code on the right. The ‘Move Tab to the Right’ action however did not have a keystroke assigned by default. I had to do this myself. Expect your editors keymap to be imperfect. Think outside the box, and adapt the tool according to your need. I hope these tips will help you utilize your keyboard more. So you can keep your eyes on the street, and increase both your throughput and quality of output.</summary></entry></feed>
