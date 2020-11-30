@@ -10,6 +10,7 @@ github_username:  gregorriegler
 tagline:          'merciless refactorer'
 description:      'merciless refactorer'
 url:              http://gregorriegler.com
+timezone:	      UTC
 #baseurl:          ''
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
