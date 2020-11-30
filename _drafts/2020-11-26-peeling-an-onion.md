@@ -62,7 +62,7 @@ I think that a good example of an API that is biased towards its domain is the C
 >
 > - A bias towards the domain makes the interface more complicated.
 >
-> - Designing the interface last will cause it to be confusing and unfriendly.
+> - To preserve a sound Interface, we might have to make ugly adjustments in the layers above the domain.
 >
 > - Thinking about usage last will cause us to build features nobody will ever use. (YAGNI[^YAGNI])
 >
@@ -103,17 +103,21 @@ As a result, the built system will be biased towards the anticipated usage of th
 When we test drive the thing Outside-In, we may start with an acceptance test as in [double loop TDD](http://coding-is-like-cooking.info/2013/04/outside-in-development-with-double-loop-tdd/). 
 It describes the thing and its interface in a simple example: How it is used, and what it does. 
 Of course, the test does not work, as there is no *thing* yet. 
-So we disable the test, but our goal is to make it green.
-We write another - this time a unit test, to guide us towards writing the code that will make the acceptance test pass. 
+We can now keep the test red until it passes, or we just disable it.
+But our goal is to make it pass.
+So we write another - this time a unit test, to guide us towards writing the code that will make the acceptance test pass. 
 
-And this is the first of three descending strategies which I call: **Skip and Descend**.
+And this is already the first of three descending strategies which I call: **"Skip and Descend"**.
+The other two are **"Fake it till you make it"**, and **"Replace with Test Double"**.
+But when we build a full slice from the entry point all the way down to the domain, we mostly don't use just one strategy, but a combination of these. 
+Every time we descend we have to make another judgment call about which strategy fits best this time.
 
 ### Skip and Descend
 
 In Skip and Descend we use a test to drive the decision which immediate collaborators will be needed to suffice the test.
 But we acknowledge the fact that implementing those collaborators on the basis of this test would be too big of a step. 
 So we disable the test and descend to start test driving the just defined collaborator.
-We may rinse and repeat until we arrive at a leaf whose unit is small enough to be implemented.
+Sometimes we may rinse and repeat until we arrive at a leaf whose unit is small enough to be implemented.
 After implementing the leaf we would ascend again to the previously disabled test where we would then use the collaborator we just built.
 Kind of like mikado. 
 
@@ -168,7 +172,7 @@ May also lead to sociable unit tests and test overlap.
 
 - Testing subcollaborators from a distance.
 
-### Replace with Test Doubles [^TestDouble]
+### Replace with Test Double [^TestDouble]
 
 When we are confident in the need of a collaborator, we may decide on replacing it with a test double.
 This allows us to finish the implementation of the current SUT before having to descend.
