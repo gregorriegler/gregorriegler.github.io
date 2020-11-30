@@ -12,13 +12,13 @@ Suppose we're developing a thing, a program.
 
 <center><img src="/assets/peeling-an-onion/system.png" style="zoom: 33%;" /></center>
 
-It will inevitably become a hierarchical system composed of collaborators that form the sub- and sub-subsystems. 
+It will inevitably become a hierarchical system composed of collaborators that form the sub- and sub-sub systems. 
 Each of those will solve yet another problem, and together they will form our thing.
 The outer layers will be more concerned with infrastructure and coordination, whereas the inner parts will be concerned with the business logic, the domain.
 
 ## Outside vs Inside
 
-When we design the thing we can start at either sides, the outside or the inside.
+When we design the thing we can start on either side, the outside or the inside.
 
 <center><img src="/assets/peeling-an-onion/outside-inside.png" style="zoom:33%;" /></center>
 
@@ -30,7 +30,7 @@ They observe the thing from the outside, and they cannot see inside of it.
 But they don't even care about its inside. 
 All they're interested in is what it does, and how to interact with it.
 
-So to them it is a black box. 
+So to them, it is a black box. 
 
 <center><img src="/assets/peeling-an-onion/blackbox.png" style="zoom:50%;" /></center>
 
@@ -45,16 +45,16 @@ The inside answers the question, *how* the thing accomplishes what it was design
 In Inside-Out Design we start at the inside and gradually ascend outwards.
 So we first break the problem down into smaller subproblems and define how they interact with each other. 
 In doing so we identify the most inner pieces, the domain of the system.
-In Inside-Out, they are exactly where we want to start.
-After all they will be the foundation for the remainder of the system.
+Doing Inside-Out, they are exactly where we want to start.
+After all, they will be the foundation for the remainder of the system.
 They are the collaborators we use as soon as we ascend to build the next higher layer. 
-As we ascend further and further outside we will at one point arrive at the outer most layers. 
-They form the interface of our system, the entrypoint users may interact with.
+As we ascend further and further outside we will at one point arrive at the outermost layers. 
+They form the interface of our system, the entry point users may interact with.
 As we build those last, they will be guided by the structure and behavior of the subsystems that have already been built.
 So they will be biased towards the early decisions we made when we first designed the domain. 
 I think that a good example of an API that is biased towards its domain is the CLI of git. You see that in the sophisticated helper [tools](https://gitless.com/), [scripts](https://github.com/tj/git-extras) and [aliases](https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet#git) that attempt to make it more accessible.
 
-> ⓘ Inside-Out is domain centric. Can cause the Interface to be biased towards early domain decisions.
+> ⓘ Inside-Out is domain-centric. Can cause the Interface to be biased towards early domain decisions.
 >
 > Stereotypes: 
 >
@@ -62,7 +62,7 @@ I think that a good example of an API that is biased towards its domain is the C
 >
 > - A bias towards the domain makes the interface more complicated.
 >
-> - Designing the interface in the end will cause it to be confusing and unfriendly.
+> - Designing the interface last will cause it to be confusing and unfriendly.
 >
 > - Thinking about usage last will cause us to build features nobody will ever use. (YAGNI[^YAGNI])
 >
@@ -70,16 +70,16 @@ I think that a good example of an API that is biased towards its domain is the C
 
 ## Outside-In Design
 
-When we start at the outside we don't care about the domain at first. 
-Instead we focus on the users and how they would want to use the thing.
-So we imagine the thing as a blackbox while defining its interface as simple and practical as possible.
+When we start from the outside we don't care about the domain at first. 
+Instead, we focus on the users and how they would want to use the thing.
+So we imagine the thing as a black box while defining its interface as simple and practical as possible.
 It will be doing what it should do, but we will care about that later.
 
-Once the interface is defined we descend inwards, thinking how we can bring this entrypoint to life.
+Once the interface is defined we descend inwards, thinking about how we can bring this entry point to life.
 Now we have to decide what collaborators will be needed, and what their responsibilities will be.
-So from this perspective the entrypoint we just defined is now the new user.
-Again, we're treating its collaborators as blackboxes. 
-And again, at first we only care about what they do, but not *how*. 
+So from this perspective, the entry point we just defined is now the new user.
+Again, we're treating its collaborators as black boxes. 
+And again, at first, we only care about what they do, but not *how*. 
 
 <center><img src="/assets/peeling-an-onion/descending.png" style="zoom:33%;" /></center>
 
@@ -90,7 +90,7 @@ We descend further until we arrive at the core, the domain.
 
 As a result, the built system will be biased towards the anticipated usage of the thing.
 
-> ⓘ Outside-In is user centric. The implemented solution might be biased towards the anticipated usage.
+> ⓘ Outside-In is user-centric. The implemented solution might be biased towards the anticipated usage.
 >
 > Stereotypes: 
 >
@@ -106,7 +106,7 @@ Of course, the test does not work, as there is no *thing* yet.
 So we disable the test, but our goal is to make it green.
 We write another - this time a unit test, to guide us towards writing the code that will make the acceptance test pass. 
 
-And this is the first of three descending strategies which i call: **Skip and Descend**.
+And this is the first of three descending strategies which I call: **Skip and Descend**.
 
 ### Skip and Descend
 
@@ -118,7 +118,7 @@ After implementing the leaf we would ascend again to the previously disabled tes
 Kind of like mikado. 
 
 Leads to [sociable unit tests](https://martinfowler.com/bliki/UnitTest.html) and test overlap[^TestOverlap].
-Where test overlap happens we aim to minimize it, and use the sociable unit tests to cover integrations only.
+Where test overlap happens we aim to minimize it and use the sociable unit tests to cover integrations only.
 
 [^TestOverlap]: Test overlap is when more than one unit tests cover the same thing thus may fail for the same reason.
 
@@ -129,10 +129,10 @@ Where test overlap happens we aim to minimize it, and use the sociable unit test
   - The collaborator is doing in-memory instructions that finish within milliseconds.
   - The collaborator is going to be a [fake](http://xunitpatterns.com/Fake%20Object.html) that will be replaced by a real system later.
   - The collaborator is inside the application boundary.
-  - The collaborator is not interacting with an expensive system such as a database or a webservice.
+  - The collaborator is not interacting with an expensive system such as a database or a web service.
 - The call to the collaborator is not a notification[^Notification]. 
 
-[^Notification]: A Notification a.k.a 'fire and forget' is a type of a relation between objects where one object just notifies another. I first read the Term in the [GOOS Book](http://www.growing-object-oriented-software.com/). To test notifications we prefer to use mocks or spies.
+[^Notification]: A Notification a.k.a 'fire and forget' is a type of relationship between objects where one object just notifies another. I first read the Term in the [GOOS Book](http://www.growing-object-oriented-software.com/). To test notifications we prefer to use mocks or spies.
 
 #### Advantages
 
@@ -146,23 +146,23 @@ Where test overlap happens we aim to minimize it, and use the sociable unit test
 ### Fake it till you make it
 
 In fake it till you make it we don't necessarily decide on a collaborator and descend.
-Instead we write the simplest and most stupidest expression that will make the current test pass.
+Instead, we write the simplest and stupidest expression that will make the current test pass.
 We then write more tests to force us to change the stupid and specific expression into something more generic.
 We might have to apply [preparatory refactorings](https://martinfowler.com/articles/preparatory-refactoring-example.html) in the process.
-With those we place seeds as we extract new collaborators that grow while we write and pass more tests.
+With those, we place seeds as we extract new collaborators that grow while we write and pass more tests.
 May also lead to sociable unit tests and test overlap.
 
 #### Use when
 
 - Unsure which collaborators to create at first.
 - The [SUT (System Under Test)](http://xunitpatterns.com/SUT.html) remains inside the application boundary.
-- The SUT is not interacting with an expensive system such as a database or a webservice.
+- The SUT is not interacting with an expensive system such as a database or a web service.
 - The call to the collaborator is not a notification.
 
 #### Advantages
 
 - Avoids test doubles[^TestDouble], and as such decouples the tests from their implementation to enable refactoring[^StructureInsensitive].
-- Collaborators emerge out of [triangulation](https://www.devteams.at/red_green/2019/04/08/red_green_part_6_triangulation.html) and are therefor more mature.
+- Collaborators emerge out of [triangulation](https://www.devteams.at/red_green/2019/04/08/red_green_part_6_triangulation.html) and are therefore more mature.
 
 #### Disadvantages
 
@@ -177,15 +177,15 @@ This allows us to finish the implementation of the current SUT before having to 
 
 - Confident in the need of the collaborator.
 - The collaborator is at the application boundary.
-- The collaborator is at the modules boundary.
-- The collaborator interacts with an expensive subsystem such as a database or a webservice.
+- The collaborator is at the boundary of the module.
+- The collaborator interacts with an expensive subsystem such as a database or a web service.
 - The call to the collaborator is a notification.
 
 #### Advantages
 
 - Avoids test-overlap.
 - Can finish the SUT before having to descend.
-- Allows to simulate expensive subsystems such as databases and webservices.
+- Allows simulating expensive subsystems such as databases and web services.
 
 #### Disadvantages
 
@@ -193,5 +193,5 @@ This allows us to finish the implementation of the current SUT before having to 
 - Mocks typically less performant than hand-written test doubles.
 - Hand-written test doubles are an additional effort to write.
 
-[^TestDouble]: A [test touble](http://xunitpatterns.com/Test%20Double.html) replaces a real collaborator in a unittest, just as a stunt double replaces the real actor in a scene
+[^TestDouble]: A [test touble](http://xunitpatterns.com/Test%20Double.html) replaces a real collaborator in a unit test, just as a stunt double replaces the real actor in a scene
 [^StructureInsensitive]:   Tests should be [structure insensitive](https://www.youtube.com/watch?v=bvRRbWbQwDU) to enable refactoring.
