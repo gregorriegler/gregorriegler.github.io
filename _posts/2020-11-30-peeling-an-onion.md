@@ -199,5 +199,14 @@ This allows us to finish the implementation of the current SUT before having to 
 - Mocks typically less performant than hand-written test doubles.
 - Hand-written test doubles are an additional effort to write.
 
+## Conclusion
+
+Mocks are not the only way to descend in Outside-In TDD. 
+There are many strategies, each of which has different trade-offs. 
+So we have to make a judgment call every time.
+We need to keep an eye on refactorability when writing our tests. 
+Sociable unit tests can improve refactorability, but we have to keep the test-overlap low. 
+So we avoid testing all the details from a distance.
+
 [^TestDouble]: A [test touble](http://xunitpatterns.com/Test%20Double.html) replaces a real collaborator in a unit test, just as a stunt double replaces the real actor in a scene
 [^StructureInsensitive]:   Tests should be [structure insensitive](https://www.youtube.com/watch?v=bvRRbWbQwDU) to enable refactoring.
