@@ -25,7 +25,7 @@ It's not that important anyhow.
 The methodical skills are where it's at.
 
 Currently, mostly JVM: 
-Java, Kotlin, Spring Boot, Hibernate, Jooq and so on.<br>
+Java, Kotlin, Spring Boot, Hibernate, Jooq, IntelliJ and so on.<br>
 Also: JavaScript and TypeScript.<br>
 Earlier: PHP with Zend (now Laminas).<br>
 Databases: PostgreSQL, MySQL, SQL Server, Elasticsearch and MongoDB.<br>
