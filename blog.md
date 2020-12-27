@@ -1,6 +1,6 @@
 ---
 layout: page
-title: blog
+title: Blog
 sidebar_link: true
 sidebar_sort_order: 1
 ---

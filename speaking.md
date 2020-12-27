@@ -1,12 +1,12 @@
 ---
 layout: page
-title: speaking
+title: Speaking
 sidebar_link: true
 sidebar_sort_order: 3
 ---
 
 <article class="post-body">
-    <h3>coding should be fun <a href="https://devfest.at/">@DevFestVienna</a></h3>
+    <h3>Coding should be fun <a href="https://devfest.at/">@DevFestVienna</a></h3>
     
     <div class="post-meta">
         <span class="post-date">16 Nov 2019</span>
@@ -21,7 +21,7 @@ sidebar_sort_order: 3
 </article>
 
 <article class="post-body">
-    <h3>coding should be fun <a href="https://fccvienna.github.io/">@FreeCodeCampVienna</a></h3>
+    <h3>Coding should be fun <a href="https://fccvienna.github.io/">@FreeCodeCampVienna</a></h3>
 
     <div class="post-meta">
         <span class="post-date">05 Sep 2019</span>
