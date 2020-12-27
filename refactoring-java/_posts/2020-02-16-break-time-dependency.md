@@ -1,7 +1,7 @@
 ---
 layout: post
 category: refactoring-java
-title: 'break time dependency'
+title: 'Break time dependency'
 date: 2020-02-16
 ---
 

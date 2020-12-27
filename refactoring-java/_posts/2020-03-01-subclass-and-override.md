@@ -1,7 +1,7 @@
 ---
 layout: post
 category: refactoring-java
-title: 'subclass and override'
+title: 'Subclass and override'
 date: 2020-02-23
 ---
 

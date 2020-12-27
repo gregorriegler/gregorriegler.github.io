@@ -1,7 +1,7 @@
 ---
 layout: post
 category: refactoring-java
-title: 'inverting framework dependencies: annotation based authorization'
+title: 'Inverting framework dependencies: annotation based authorization'
 date: 2020-10-23
 ---
 

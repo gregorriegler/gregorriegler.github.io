@@ -1,7 +1,7 @@
 ---
 layout: post
 category: refactoring-java
-title: 'silent finish of the coffee machine kata'
+title: 'Silent finish of the coffee machine kata'
 date: 2020-04-12
 ---
 

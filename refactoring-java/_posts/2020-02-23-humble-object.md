@@ -1,7 +1,7 @@
 ---
 layout: post
 category: refactoring-java
-title: 'humble object'
+title: 'Humble object'
 date: 2020-02-23
 ---
 
