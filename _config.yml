@@ -7,10 +7,10 @@ title:            Gregor Riegler
 email:            rieglerg85@gmail.com
 twitter_username: gregor_riegler
 github_username:  gregorriegler
-tagline:          'merciless refactorer'
-description:      'merciless refactorer'
+tagline:          'Merciless refactorer'
+description:      'Merciless refactorer'
 url:              http://gregorriegler.com
-timezone:	      UTC
+timezone:	        UTC
 #baseurl:          ''
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.

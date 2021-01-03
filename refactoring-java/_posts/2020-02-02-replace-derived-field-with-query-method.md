@@ -1,7 +1,7 @@
 ---
 layout: post
 category: refactoring-java
-title: 'replace derived with query (coffee machine part 4)'
+title: 'Replace derived with query (coffee machine part 4)'
 date: 2020-02-02
 ---
 

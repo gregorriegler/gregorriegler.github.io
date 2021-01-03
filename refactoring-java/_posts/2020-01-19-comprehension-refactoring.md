@@ -1,7 +1,7 @@
 ---
 layout: post
 category: refactoring-java
-title: 'comprehension refactoring (coffee machine part 3)'
+title: 'Comprehension refactoring (coffee machine part 3)'
 date: 2020-01-06
 ---
 
