@@ -407,7 +407,7 @@ So we like to find the sweet spot.</li>
 <p>The structure tells that there has been an attempt to decompose the system into services.
 But what it apparently does is it tears apart cohesive pieces of software and puts thick walls between them. 
 None of the parts is able to perform useful work on its own. They have a strong coupling with their dependencies. 
-<em>Shotgun Surgery<sup id="fnref:ShotgunSurgery" role="doc-noteref"><a href="#fn:ShotgunSurgery" class="footnote">1</a></sup></em> is the result. 
+<em>Shotgun Surgery<sup id="fnref:ShotgunSurgery" role="doc-noteref"><a href="#fn:ShotgunSurgery" class="footnote" rel="footnote">1</a></sup></em> is the result. 
 One has to touch many services when changing a single feature.
 Another effect is that it’s mostly impossible to deploy any of those services independently.</p>
 
@@ -418,7 +418,7 @@ In an attempt to increase its modularity we would first have to join the service
 <ul>
   <li>We just didn’t understand how to properly decompose a system into modules.</li>
   <li>We drew the boundaries before we had a proper understanding of the domain we’re building.</li>
-  <li>There are different developers working on different layers of the same thing. (<em>Conways Law<sup id="fnref:ConwaysLaw" role="doc-noteref"><a href="#fn:ConwaysLaw" class="footnote">2</a></sup></em>)</li>
+  <li>There are different developers working on different layers of the same thing. (<em>Conways Law<sup id="fnref:ConwaysLaw" role="doc-noteref"><a href="#fn:ConwaysLaw" class="footnote" rel="footnote">2</a></sup></em>)</li>
 </ul>
 
 <h2 id="level-0">Level 0</h2>
@@ -431,7 +431,7 @@ In an attempt to increase its modularity we would first have to join the service
 
 <p>This animal is completely disorganized. There is no recognizable structure, no abstraction, dependencies are intertwined. 
 Strong coupling is the result. Changes in one area of the code lead to bugs in several other areas. 
-It contains all sorts of <em>Code Smells<sup id="fnref:CodeSmell" role="doc-noteref"><a href="#fn:CodeSmell" class="footnote">3</a></sup></em> from <em>God Classes</em> to <em>Feature Envy</em>, <em>Dead Code</em> and <em>Change Preventers</em>.</p>
+It contains all sorts of <em>Code Smells<sup id="fnref:CodeSmell" role="doc-noteref"><a href="#fn:CodeSmell" class="footnote" rel="footnote">3</a></sup></em> from <em>God Classes</em> to <em>Feature Envy</em>, <em>Dead Code</em> and <em>Change Preventers</em>.</p>
 
 <p>Developers get there because of many reasons:</p>
 <ul>
@@ -448,7 +448,7 @@ It contains all sorts of <em>Code Smells<sup id="fnref:CodeSmell" role="doc-note
 
 <p>This is probably the most common monolith out there. 
 Its package structure is often guided by frameworks and code generators that propose having packages like <code class="language-plaintext highlighter-rouge">controllers</code>, <code class="language-plaintext highlighter-rouge">domain</code> and <code class="language-plaintext highlighter-rouge">repositories</code> on the top level. 
-This framing proposes <em>Separation of Concerns<sup id="fnref:SeparationOfConcerns" role="doc-noteref"><a href="#fn:SeparationOfConcerns" class="footnote">4</a></sup></em> which is a good thing. 
+This framing proposes <em>Separation of Concerns<sup id="fnref:SeparationOfConcerns" role="doc-noteref"><a href="#fn:SeparationOfConcerns" class="footnote" rel="footnote">4</a></sup></em> which is a good thing. 
 But the proposed way of having those packages on the top level obfuscates what the application is doing. “Controllers” does not provide any clue about what the app is doing.</p>
 
 <h2 id="level-1">Level 1</h2>
@@ -460,10 +460,10 @@ But the proposed way of having those packages on the top level obfuscates what t
 <p><img src="/assets/modularity/modularity_level1.svg" alt="Package by Feature" width="25%" class="textwrap" /></p>
 
 <p>Package by Feature is much more desirable. 
-It puts the names of features like Order, Cart and User at the top level which are screaming<sup id="fnref:ScreamingArchitecture" role="doc-noteref"><a href="#fn:ScreamingArchitecture" class="footnote">5</a></sup>: “I am a Shop!”.
+It puts the names of features like Order, Cart and User at the top level which are screaming<sup id="fnref:ScreamingArchitecture" role="doc-noteref"><a href="#fn:ScreamingArchitecture" class="footnote" rel="footnote">5</a></sup>: “I am a Shop!”.
 It helps us to quickly find the code we need to change. 
 As the cohesion is increased, we typically just have to touch a single top level package when changing a feature. 
-There is no <em>information hiding<sup id="fnref:InformationHiding" role="doc-noteref"><a href="#fn:InformationHiding" class="footnote">6</a></sup></em> going on between the features though. 
+There is no <em>information hiding<sup id="fnref:InformationHiding" role="doc-noteref"><a href="#fn:InformationHiding" class="footnote" rel="footnote">6</a></sup></em> going on between the features though. 
 A code within one feature knows about the internals of another feature and has access to it. 
 For Example: Feature A may fetch data from the Repository of Feature B, or use its business logic. 
 So there is still coupling going on.</p>
@@ -472,8 +472,8 @@ So there is still coupling going on.</p>
 
 <p><img src="/assets/modularity/modularity_level1_layered.svg" alt="Features, but layered inside" width="25%" class="textwrap" /></p>
 
-<p><em>Separation of Concerns</em><sup id="fnref:SeparationOfConcerns:1" role="doc-noteref"><a href="#fn:SeparationOfConcerns" class="footnote">4</a></sup> again, just inside feature packages.
-We do this when we want to isolate our domain, our <em>Happy Zone<sup id="fnref:UniversalArchitecture" role="doc-noteref"><a href="#fn:UniversalArchitecture" class="footnote">7</a></sup></em> from infrastructure code.
+<p><em>Separation of Concerns</em><sup id="fnref:SeparationOfConcerns:1" role="doc-noteref"><a href="#fn:SeparationOfConcerns" class="footnote" rel="footnote">4</a></sup> again, just inside feature packages.
+We do this when we want to isolate our domain, our <em>Happy Zone<sup id="fnref:UniversalArchitecture" role="doc-noteref"><a href="#fn:UniversalArchitecture" class="footnote" rel="footnote">7</a></sup></em> from infrastructure code.
 Or maybe we just like to organize our many files and put them into distinct folders to gain a better understanding of what a file is about.</p>
 
 <h2 id="level-2-the-modular-monolith">Level 2: The Modular Monolith</h2>
@@ -551,7 +551,7 @@ We want to go level by level incrementally.</p>
 
 <p>To get from a <em>Big Ball of Mud (Level 0)</em> to a <em>Modular Monolith (Level 2)</em>, we first want to find the features and collect them in distinct packages to arrive at <em>Package by Feature (Level 1)</em>. 
 Only then would we decouple the feature packages to finally arrive at a <em>Modular Monolith (Level 2)</em>. 
-We may even apply the <em>Strangler Pattern<sup id="fnref:StranglerPattern" role="doc-noteref"><a href="#fn:StranglerPattern" class="footnote">8</a></sup></em> and carry one feature at a time through all levels.</p>
+We may even apply the <em>Strangler Pattern<sup id="fnref:StranglerPattern" role="doc-noteref"><a href="#fn:StranglerPattern" class="footnote" rel="footnote">8</a></sup></em> and carry one feature at a time through all levels.</p>
 
 <div class="footnotes" role="doc-endnotes">
   <ol>
@@ -661,6 +661,15 @@ We may even apply the <em>Strangler Pattern<sup id="fnref:StranglerPattern" role
     
       <li>
         <h3>
+          <a href="/2021/05/20/why-test.html">
+            Why Test?
+            <small>20 May 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2020/11/30/peeling-an-onion.html">
             Peeling an Onion
             <small>30 Nov 2020</small>
@@ -673,15 +682,6 @@ We may even apply the <em>Strangler Pattern<sup id="fnref:StranglerPattern" role
           <a href="/2020/10/23/framework-dependencies-authorization-annotation.html">
             Inverting framework dependencies: annotation based authorization
             <small>23 Oct 2020</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2020/05/11/outside-in-tdd-a-consumer.html">
-            Outside-In TDD a Consumer
-            <small>11 May 2020</small>
           </a>
         </h3>
       </li>

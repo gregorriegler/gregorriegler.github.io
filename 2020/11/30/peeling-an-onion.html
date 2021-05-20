@@ -414,7 +414,7 @@ I think that a good example of an API that is biased towards its domain is the C
       <p>To preserve a sound Interface, we might have to make ugly adjustments in the layers above the domain.</p>
     </li>
     <li>
-      <p>Thinking about usage last will cause us to build features nobody will ever use. (YAGNI<sup id="fnref:YAGNI" role="doc-noteref"><a href="#fn:YAGNI" class="footnote">1</a></sup>)</p>
+      <p>Thinking about usage last will cause us to build features nobody will ever use. (YAGNI<sup id="fnref:YAGNI" role="doc-noteref"><a href="#fn:YAGNI" class="footnote" rel="footnote">1</a></sup>)</p>
 
     </li>
   </ul>
@@ -449,7 +449,7 @@ And again, at first, we only care about what they do, but not <em>how</em>.</p>
   <ul>
     <li>We’re bad at predicting how users will want to use the system.</li>
     <li>A bias towards usage makes the domain unnecessarily complicated.</li>
-    <li>Thinking about usage first will help us avoid building stuff we don’t need. (YAGNI<sup id="fnref:YAGNI:1" role="doc-noteref"><a href="#fn:YAGNI" class="footnote">1</a></sup>)</li>
+    <li>Thinking about usage first will help us avoid building stuff we don’t need. (YAGNI<sup id="fnref:YAGNI:1" role="doc-noteref"><a href="#fn:YAGNI" class="footnote" rel="footnote">1</a></sup>)</li>
   </ul>
 </blockquote>
 
@@ -476,7 +476,7 @@ Sometimes we may rinse and repeat until we arrive at a leaf whose unit is small 
 After implementing the leaf we would ascend again to the previously disabled test where we would then use the collaborator we just built.
 Kind of like mikado.</p>
 
-<p>Leads to <a href="https://martinfowler.com/bliki/UnitTest.html">sociable unit tests</a> and test overlap<sup id="fnref:TestOverlap" role="doc-noteref"><a href="#fn:TestOverlap" class="footnote">2</a></sup>.
+<p>Leads to <a href="https://martinfowler.com/bliki/UnitTest.html">sociable unit tests</a> and test overlap<sup id="fnref:TestOverlap" role="doc-noteref"><a href="#fn:TestOverlap" class="footnote" rel="footnote">2</a></sup>.
 Where test overlap happens we aim to minimize it and use the sociable unit tests to cover integrations only.</p>
 
 <h4 id="use-when">Use when</h4>
@@ -491,13 +491,13 @@ Where test overlap happens we aim to minimize it and use the sociable unit tests
       <li>The collaborator is not interacting with an expensive system such as a database or a web service.</li>
     </ul>
   </li>
-  <li>The call to the collaborator is not a notification<sup id="fnref:Notification" role="doc-noteref"><a href="#fn:Notification" class="footnote">3</a></sup>.</li>
+  <li>The call to the collaborator is not a notification<sup id="fnref:Notification" role="doc-noteref"><a href="#fn:Notification" class="footnote" rel="footnote">3</a></sup>.</li>
 </ul>
 
 <h4 id="advantages">Advantages</h4>
 
 <ul>
-  <li>Avoids test doubles<sup id="fnref:TestDouble" role="doc-noteref"><a href="#fn:TestDouble" class="footnote">4</a></sup>, and as such decouples the tests from their implementation to enable refactoring<sup id="fnref:StructureInsensitive" role="doc-noteref"><a href="#fn:StructureInsensitive" class="footnote">5</a></sup>.</li>
+  <li>Avoids test doubles<sup id="fnref:TestDouble" role="doc-noteref"><a href="#fn:TestDouble" class="footnote" rel="footnote">4</a></sup>, and as such decouples the tests from their implementation to enable refactoring<sup id="fnref:StructureInsensitive" role="doc-noteref"><a href="#fn:StructureInsensitive" class="footnote" rel="footnote">5</a></sup>.</li>
 </ul>
 
 <h4 id="disadvantages">Disadvantages</h4>
@@ -528,7 +528,7 @@ May also lead to sociable unit tests and test overlap.</p>
 <h4 id="advantages-1">Advantages</h4>
 
 <ul>
-  <li>Avoids test doubles<sup id="fnref:TestDouble:1" role="doc-noteref"><a href="#fn:TestDouble" class="footnote">4</a></sup>, and as such decouples the tests from their implementation to enable refactoring<sup id="fnref:StructureInsensitive:1" role="doc-noteref"><a href="#fn:StructureInsensitive" class="footnote">5</a></sup>.</li>
+  <li>Avoids test doubles<sup id="fnref:TestDouble:1" role="doc-noteref"><a href="#fn:TestDouble" class="footnote" rel="footnote">4</a></sup>, and as such decouples the tests from their implementation to enable refactoring<sup id="fnref:StructureInsensitive:1" role="doc-noteref"><a href="#fn:StructureInsensitive" class="footnote" rel="footnote">5</a></sup>.</li>
   <li>Collaborators emerge out of <a href="https://www.devteams.at/red_green/2019/04/08/red_green_part_6_triangulation.html">triangulation</a> and are therefore more mature.</li>
 </ul>
 
@@ -538,7 +538,7 @@ May also lead to sociable unit tests and test overlap.</p>
   <li>Testing subcollaborators from a distance.</li>
 </ul>
 
-<h3 id="replace-with-test-double">Replace with Test Double<sup id="fnref:TestDouble:2" role="doc-noteref"><a href="#fn:TestDouble" class="footnote">4</a></sup></h3>
+<h3 id="replace-with-test-double">Replace with Test Double<sup id="fnref:TestDouble:2" role="doc-noteref"><a href="#fn:TestDouble" class="footnote" rel="footnote">4</a></sup></h3>
 
 <p>When we are confident in the need of a collaborator, we may decide on replacing it with a test double.
 This allows us to finish the implementation of the current SUT before having to descend.</p>
@@ -668,6 +668,15 @@ So we avoid testing all the details from a distance.</p>
     
       <li>
         <h3>
+          <a href="/2021/05/20/why-test.html">
+            Why Test?
+            <small>20 May 2021</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
           <a href="/2020/10/23/framework-dependencies-authorization-annotation.html">
             Inverting framework dependencies: annotation based authorization
             <small>23 Oct 2020</small>
@@ -680,15 +689,6 @@ So we avoid testing all the details from a distance.</p>
           <a href="/2020/08/08/levels-of-modularity.html">
             Levels of Modularity
             <small>08 Aug 2020</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2020/05/11/outside-in-tdd-a-consumer.html">
-            Outside-In TDD a Consumer
-            <small>11 May 2020</small>
           </a>
         </h3>
       </li>

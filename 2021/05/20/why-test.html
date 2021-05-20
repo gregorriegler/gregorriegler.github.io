@@ -11,7 +11,7 @@
 
   <title>
     
-      Gregor Riegler &middot; Inverting framework dependencies: annotation based authorization
+      Gregor Riegler &middot; Why Test?
     
   </title>
 
@@ -336,39 +336,50 @@
 
     <main class="container">
       <header>
-  <h1 class="post-title">Inverting framework dependencies: annotation based authorization</h1>
+  <h1 class="post-title">Why Test?</h1>
 </header>
 <div class="content">
   <div class="post-meta">
-  <span class="post-date">23 Oct 2020</span>
+  <span class="post-date">20 May 2021</span>
   <span class="post-categories">
-    
-      &bull;
-
-      
-      
-      
-
-      
-        refactoring-java
-      
     
   </span>
 </div>
 
 
   <div class="post-body">
-    <p>I am applying the <a href="https://en.wikipedia.org/wiki/Dependency_inversion_principle">Dependency Inversion Principle</a> on authorization code to make it more testable.</p>
+    <p>It’s 2021, yet developers writing automated tests don’t seem to be the norm to this day.
+The belief that the writing of tests is just an additional effort that increases development cost is still going strong. 
+Of course, it’s wrong.</p>
 
-<div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/lflxK7pksHY" frameborder="0" allowfullscreen=""></iframe></div>
+<p>Yes, the learning curve is steep, and yes, there’s a lot of things to get wrong and to suffer from.
+Proper developer testing like TDD is a broad topic and demands deep knowledge of design and refactoring.
+None of which seem to be taught in higher technical schools that much either.
+Humans have been developing software without writing tests for centuries, so why bother?</p>
 
-<p><a href="https://github.com/gregorriegler/framework-dependency-kata">The code on my GitHub</a></p>
+<p>Well, I write tests to my own advantage.
+I do it so that I know what I’m doing, early and often. 
+It helps me find more joy at work and has an overall positive impact on how I feel.
+Maybe also because I’m a little lazy.</p>
+
+<p>Hopefully, this little diagram will help explain how this works out for me.</p>
+
+<p><img src="/assets/why-test/why-test.png" alt="How good developer tests are advantageous" /></p>
 
     
 
 
 
 <div class="post-tags clear">
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">TDD</span>
+    </span>
   
 </div>
   </div>
@@ -388,9 +399,9 @@
   *  https://disqus.com/admin/universalcode/#configuration-variables
   */
   var disqus_config = function () {
-    this.page.url = "http://gregorriegler.com/2020/10/23/framework-dependencies-authorization-annotation.html";
+    this.page.url = "http://gregorriegler.com/2021/05/20/why-test.html";
     this.page.identifier = "" ||
-                           "http://gregorriegler.com/2020/10/23/framework-dependencies-authorization-annotation.html";
+                           "http://gregorriegler.com/2021/05/20/why-test.html";
   }
   function loadDisqusComments() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');
@@ -416,18 +427,18 @@
     
       <li>
         <h3>
-          <a href="/2021/05/20/why-test.html">
-            Why Test?
-            <small>20 May 2021</small>
+          <a href="/2020/11/30/peeling-an-onion.html">
+            Peeling an Onion
+            <small>30 Nov 2020</small>
           </a>
         </h3>
       </li>
     
       <li>
         <h3>
-          <a href="/2020/11/30/peeling-an-onion.html">
-            Peeling an Onion
-            <small>30 Nov 2020</small>
+          <a href="/2020/10/23/framework-dependencies-authorization-annotation.html">
+            Inverting framework dependencies: annotation based authorization
+            <small>23 Oct 2020</small>
           </a>
         </h3>
       </li>

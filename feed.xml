@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://gregorriegler.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://gregorriegler.com/" rel="alternate" type="text/html" /><updated>2021-01-06T09:42:37+00:00</updated><id>http://gregorriegler.com/feed.xml</id><title type="html">Gregor Riegler</title><subtitle>Merciless Refactorer</subtitle><author><name>Gregor Riegler</name></author><entry><title type="html">Peeling an Onion</title><link href="http://gregorriegler.com/2020/11/30/peeling-an-onion.html" rel="alternate" type="text/html" title="Peeling an Onion" /><published>2020-11-30T00:00:00+00:00</published><updated>2020-11-30T00:00:00+00:00</updated><id>http://gregorriegler.com/2020/11/30/peeling-an-onion</id><content type="html" xml:base="http://gregorriegler.com/2020/11/30/peeling-an-onion.html">&lt;p&gt;In one of the recent Coderetreats, we did an Outside-In TDD session. I paired with a guy who was new to this, and I noticed a challenge in expressing my ideas well. Honestly, I don’t think I did a good job, so I decided to write about this topic.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.1">Jekyll</generator><link href="http://gregorriegler.com/feed.xml" rel="self" type="application/atom+xml" /><link href="http://gregorriegler.com/" rel="alternate" type="text/html" /><updated>2021-05-20T19:16:20+00:00</updated><id>http://gregorriegler.com/feed.xml</id><title type="html">Gregor Riegler</title><subtitle>Merciless Refactorer</subtitle><author><name>Gregor Riegler</name></author><entry><title type="html">Why Test?</title><link href="http://gregorriegler.com/2021/05/20/why-test.html" rel="alternate" type="text/html" title="Why Test?" /><published>2021-05-20T00:00:00+00:00</published><updated>2021-05-20T00:00:00+00:00</updated><id>http://gregorriegler.com/2021/05/20/why-test</id><content type="html" xml:base="http://gregorriegler.com/2021/05/20/why-test.html">&lt;p&gt;It’s 2021, yet developers writing automated tests don’t seem to be the norm to this day.
+The belief that the writing of tests is just an additional effort that increases development cost is still going strong. 
+Of course, it’s wrong.&lt;/p&gt;
+
+&lt;p&gt;Yes, the learning curve is steep, and yes, there’s a lot of things to get wrong and to suffer from.
+Proper developer testing like TDD is a broad topic and demands deep knowledge of design and refactoring.
+None of which seem to be taught in higher technical schools that much either.
+Humans have been developing software without writing tests for centuries, so why bother?&lt;/p&gt;
+
+&lt;p&gt;Well, I write tests to my own advantage.
+I do it so that I know what I’m doing, early and often. 
+It helps me find more joy at work and has an overall positive impact on how I feel.
+Maybe also because I’m a little lazy.&lt;/p&gt;
+
+&lt;p&gt;Hopefully, this little diagram will help explain how this works out for me.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/why-test/why-test.png&quot; alt=&quot;How good developer tests are advantageous&quot; /&gt;&lt;/p&gt;</content><author><name>Gregor Riegler</name></author><category term="TDD" /><summary type="html">It’s 2021, yet developers writing automated tests don’t seem to be the norm to this day. The belief that the writing of tests is just an additional effort that increases development cost is still going strong. Of course, it’s wrong. Yes, the learning curve is steep, and yes, there’s a lot of things to get wrong and to suffer from. Proper developer testing like TDD is a broad topic and demands deep knowledge of design and refactoring. None of which seem to be taught in higher technical schools that much either. Humans have been developing software without writing tests for centuries, so why bother? Well, I write tests to my own advantage. I do it so that I know what I’m doing, early and often. It helps me find more joy at work and has an overall positive impact on how I feel. Maybe also because I’m a little lazy. Hopefully, this little diagram will help explain how this works out for me.</summary></entry><entry><title type="html">Peeling an Onion</title><link href="http://gregorriegler.com/2020/11/30/peeling-an-onion.html" rel="alternate" type="text/html" title="Peeling an Onion" /><published>2020-11-30T00:00:00+00:00</published><updated>2020-11-30T00:00:00+00:00</updated><id>http://gregorriegler.com/2020/11/30/peeling-an-onion</id><content type="html" xml:base="http://gregorriegler.com/2020/11/30/peeling-an-onion.html">&lt;p&gt;In one of the recent Coderetreats, we did an Outside-In TDD session. I paired with a guy who was new to this, and I noticed a challenge in expressing my ideas well. Honestly, I don’t think I did a good job, so I decided to write about this topic.&lt;/p&gt;
 
 &lt;h2 id=&quot;a-software-system&quot;&gt;A Software System&lt;/h2&gt;
 
@@ -64,7 +80,7 @@ I think that a good example of an API that is biased towards its domain is the C
       &lt;p&gt;To preserve a sound Interface, we might have to make ugly adjustments in the layers above the domain.&lt;/p&gt;
     &lt;/li&gt;
     &lt;li&gt;
-      &lt;p&gt;Thinking about usage last will cause us to build features nobody will ever use. (YAGNI&lt;sup id=&quot;fnref:YAGNI&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:YAGNI&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;)&lt;/p&gt;
+      &lt;p&gt;Thinking about usage last will cause us to build features nobody will ever use. (YAGNI&lt;sup id=&quot;fnref:YAGNI&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:YAGNI&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;)&lt;/p&gt;
 
     &lt;/li&gt;
   &lt;/ul&gt;
@@ -99,7 +115,7 @@ And again, at first, we only care about what they do, but not &lt;em&gt;how&lt;/
   &lt;ul&gt;
     &lt;li&gt;We’re bad at predicting how users will want to use the system.&lt;/li&gt;
     &lt;li&gt;A bias towards usage makes the domain unnecessarily complicated.&lt;/li&gt;
-    &lt;li&gt;Thinking about usage first will help us avoid building stuff we don’t need. (YAGNI&lt;sup id=&quot;fnref:YAGNI:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:YAGNI&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;)&lt;/li&gt;
+    &lt;li&gt;Thinking about usage first will help us avoid building stuff we don’t need. (YAGNI&lt;sup id=&quot;fnref:YAGNI:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:YAGNI&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;)&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/blockquote&gt;
 
@@ -126,7 +142,7 @@ Sometimes we may rinse and repeat until we arrive at a leaf whose unit is small 
 After implementing the leaf we would ascend again to the previously disabled test where we would then use the collaborator we just built.
 Kind of like mikado.&lt;/p&gt;
 
-&lt;p&gt;Leads to &lt;a href=&quot;https://martinfowler.com/bliki/UnitTest.html&quot;&gt;sociable unit tests&lt;/a&gt; and test overlap&lt;sup id=&quot;fnref:TestOverlap&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TestOverlap&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.
+&lt;p&gt;Leads to &lt;a href=&quot;https://martinfowler.com/bliki/UnitTest.html&quot;&gt;sociable unit tests&lt;/a&gt; and test overlap&lt;sup id=&quot;fnref:TestOverlap&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TestOverlap&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;.
 Where test overlap happens we aim to minimize it and use the sociable unit tests to cover integrations only.&lt;/p&gt;
 
 &lt;h4 id=&quot;use-when&quot;&gt;Use when&lt;/h4&gt;
@@ -141,13 +157,13 @@ Where test overlap happens we aim to minimize it and use the sociable unit tests
       &lt;li&gt;The collaborator is not interacting with an expensive system such as a database or a web service.&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;The call to the collaborator is not a notification&lt;sup id=&quot;fnref:Notification&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Notification&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+  &lt;li&gt;The call to the collaborator is not a notification&lt;sup id=&quot;fnref:Notification&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:Notification&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;advantages&quot;&gt;Advantages&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Avoids test doubles&lt;sup id=&quot;fnref:TestDouble&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TestDouble&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, and as such decouples the tests from their implementation to enable refactoring&lt;sup id=&quot;fnref:StructureInsensitive&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:StructureInsensitive&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+  &lt;li&gt;Avoids test doubles&lt;sup id=&quot;fnref:TestDouble&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TestDouble&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, and as such decouples the tests from their implementation to enable refactoring&lt;sup id=&quot;fnref:StructureInsensitive&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:StructureInsensitive&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h4 id=&quot;disadvantages&quot;&gt;Disadvantages&lt;/h4&gt;
@@ -178,7 +194,7 @@ May also lead to sociable unit tests and test overlap.&lt;/p&gt;
 &lt;h4 id=&quot;advantages-1&quot;&gt;Advantages&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Avoids test doubles&lt;sup id=&quot;fnref:TestDouble:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TestDouble&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, and as such decouples the tests from their implementation to enable refactoring&lt;sup id=&quot;fnref:StructureInsensitive:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:StructureInsensitive&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
+  &lt;li&gt;Avoids test doubles&lt;sup id=&quot;fnref:TestDouble:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TestDouble&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, and as such decouples the tests from their implementation to enable refactoring&lt;sup id=&quot;fnref:StructureInsensitive:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:StructureInsensitive&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;.&lt;/li&gt;
   &lt;li&gt;Collaborators emerge out of &lt;a href=&quot;https://www.devteams.at/red_green/2019/04/08/red_green_part_6_triangulation.html&quot;&gt;triangulation&lt;/a&gt; and are therefore more mature.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -188,7 +204,7 @@ May also lead to sociable unit tests and test overlap.&lt;/p&gt;
   &lt;li&gt;Testing subcollaborators from a distance.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;replace-with-test-double&quot;&gt;Replace with Test Double&lt;sup id=&quot;fnref:TestDouble:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TestDouble&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;replace-with-test-double&quot;&gt;Replace with Test Double&lt;sup id=&quot;fnref:TestDouble:2&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:TestDouble&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/h3&gt;
 
 &lt;p&gt;When we are confident in the need of a collaborator, we may decide on replacing it with a test double.
 This allows us to finish the implementation of the current SUT before having to descend.&lt;/p&gt;
@@ -309,7 +325,7 @@ So we like to find the sweet spot.&lt;/li&gt;
 &lt;p&gt;The structure tells that there has been an attempt to decompose the system into services.
 But what it apparently does is it tears apart cohesive pieces of software and puts thick walls between them. 
 None of the parts is able to perform useful work on its own. They have a strong coupling with their dependencies. 
-&lt;em&gt;Shotgun Surgery&lt;sup id=&quot;fnref:ShotgunSurgery&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:ShotgunSurgery&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt; is the result. 
+&lt;em&gt;Shotgun Surgery&lt;sup id=&quot;fnref:ShotgunSurgery&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:ShotgunSurgery&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt; is the result. 
 One has to touch many services when changing a single feature.
 Another effect is that it’s mostly impossible to deploy any of those services independently.&lt;/p&gt;
 
@@ -320,7 +336,7 @@ In an attempt to increase its modularity we would first have to join the service
 &lt;ul&gt;
   &lt;li&gt;We just didn’t understand how to properly decompose a system into modules.&lt;/li&gt;
   &lt;li&gt;We drew the boundaries before we had a proper understanding of the domain we’re building.&lt;/li&gt;
-  &lt;li&gt;There are different developers working on different layers of the same thing. (&lt;em&gt;Conways Law&lt;sup id=&quot;fnref:ConwaysLaw&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:ConwaysLaw&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt;)&lt;/li&gt;
+  &lt;li&gt;There are different developers working on different layers of the same thing. (&lt;em&gt;Conways Law&lt;sup id=&quot;fnref:ConwaysLaw&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:ConwaysLaw&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;level-0&quot;&gt;Level 0&lt;/h2&gt;
@@ -333,7 +349,7 @@ In an attempt to increase its modularity we would first have to join the service
 
 &lt;p&gt;This animal is completely disorganized. There is no recognizable structure, no abstraction, dependencies are intertwined. 
 Strong coupling is the result. Changes in one area of the code lead to bugs in several other areas. 
-It contains all sorts of &lt;em&gt;Code Smells&lt;sup id=&quot;fnref:CodeSmell&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:CodeSmell&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt; from &lt;em&gt;God Classes&lt;/em&gt; to &lt;em&gt;Feature Envy&lt;/em&gt;, &lt;em&gt;Dead Code&lt;/em&gt; and &lt;em&gt;Change Preventers&lt;/em&gt;.&lt;/p&gt;
+It contains all sorts of &lt;em&gt;Code Smells&lt;sup id=&quot;fnref:CodeSmell&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:CodeSmell&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt; from &lt;em&gt;God Classes&lt;/em&gt; to &lt;em&gt;Feature Envy&lt;/em&gt;, &lt;em&gt;Dead Code&lt;/em&gt; and &lt;em&gt;Change Preventers&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Developers get there because of many reasons:&lt;/p&gt;
 &lt;ul&gt;
@@ -350,7 +366,7 @@ It contains all sorts of &lt;em&gt;Code Smells&lt;sup id=&quot;fnref:CodeSmell&q
 
 &lt;p&gt;This is probably the most common monolith out there. 
 Its package structure is often guided by frameworks and code generators that propose having packages like &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;controllers&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;domain&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;repositories&lt;/code&gt; on the top level. 
-This framing proposes &lt;em&gt;Separation of Concerns&lt;sup id=&quot;fnref:SeparationOfConcerns&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:SeparationOfConcerns&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt; which is a good thing. 
+This framing proposes &lt;em&gt;Separation of Concerns&lt;sup id=&quot;fnref:SeparationOfConcerns&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:SeparationOfConcerns&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt; which is a good thing. 
 But the proposed way of having those packages on the top level obfuscates what the application is doing. “Controllers” does not provide any clue about what the app is doing.&lt;/p&gt;
 
 &lt;h2 id=&quot;level-1&quot;&gt;Level 1&lt;/h2&gt;
@@ -362,10 +378,10 @@ But the proposed way of having those packages on the top level obfuscates what t
 &lt;p&gt;&lt;img src=&quot;/assets/modularity/modularity_level1.svg&quot; alt=&quot;Package by Feature&quot; width=&quot;25%&quot; class=&quot;textwrap&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Package by Feature is much more desirable. 
-It puts the names of features like Order, Cart and User at the top level which are screaming&lt;sup id=&quot;fnref:ScreamingArchitecture&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:ScreamingArchitecture&quot; class=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;: “I am a Shop!”.
+It puts the names of features like Order, Cart and User at the top level which are screaming&lt;sup id=&quot;fnref:ScreamingArchitecture&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:ScreamingArchitecture&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;: “I am a Shop!”.
 It helps us to quickly find the code we need to change. 
 As the cohesion is increased, we typically just have to touch a single top level package when changing a feature. 
-There is no &lt;em&gt;information hiding&lt;sup id=&quot;fnref:InformationHiding&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:InformationHiding&quot; class=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt; going on between the features though. 
+There is no &lt;em&gt;information hiding&lt;sup id=&quot;fnref:InformationHiding&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:InformationHiding&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt; going on between the features though. 
 A code within one feature knows about the internals of another feature and has access to it. 
 For Example: Feature A may fetch data from the Repository of Feature B, or use its business logic. 
 So there is still coupling going on.&lt;/p&gt;
@@ -374,8 +390,8 @@ So there is still coupling going on.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/modularity/modularity_level1_layered.svg&quot; alt=&quot;Features, but layered inside&quot; width=&quot;25%&quot; class=&quot;textwrap&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Separation of Concerns&lt;/em&gt;&lt;sup id=&quot;fnref:SeparationOfConcerns:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:SeparationOfConcerns&quot; class=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; again, just inside feature packages.
-We do this when we want to isolate our domain, our &lt;em&gt;Happy Zone&lt;sup id=&quot;fnref:UniversalArchitecture&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:UniversalArchitecture&quot; class=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt; from infrastructure code.
+&lt;p&gt;&lt;em&gt;Separation of Concerns&lt;/em&gt;&lt;sup id=&quot;fnref:SeparationOfConcerns:1&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:SeparationOfConcerns&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;4&lt;/a&gt;&lt;/sup&gt; again, just inside feature packages.
+We do this when we want to isolate our domain, our &lt;em&gt;Happy Zone&lt;sup id=&quot;fnref:UniversalArchitecture&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:UniversalArchitecture&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt; from infrastructure code.
 Or maybe we just like to organize our many files and put them into distinct folders to gain a better understanding of what a file is about.&lt;/p&gt;
 
 &lt;h2 id=&quot;level-2-the-modular-monolith&quot;&gt;Level 2: The Modular Monolith&lt;/h2&gt;
@@ -453,7 +469,7 @@ We want to go level by level incrementally.&lt;/p&gt;
 
 &lt;p&gt;To get from a &lt;em&gt;Big Ball of Mud (Level 0)&lt;/em&gt; to a &lt;em&gt;Modular Monolith (Level 2)&lt;/em&gt;, we first want to find the features and collect them in distinct packages to arrive at &lt;em&gt;Package by Feature (Level 1)&lt;/em&gt;. 
 Only then would we decouple the feature packages to finally arrive at a &lt;em&gt;Modular Monolith (Level 2)&lt;/em&gt;. 
-We may even apply the &lt;em&gt;Strangler Pattern&lt;sup id=&quot;fnref:StranglerPattern&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:StranglerPattern&quot; class=&quot;footnote&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt; and carry one feature at a time through all levels.&lt;/p&gt;
+We may even apply the &lt;em&gt;Strangler Pattern&lt;sup id=&quot;fnref:StranglerPattern&quot; role=&quot;doc-noteref&quot;&gt;&lt;a href=&quot;#fn:StranglerPattern&quot; class=&quot;footnote&quot; rel=&quot;footnote&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;&lt;/em&gt; and carry one feature at a time through all levels.&lt;/p&gt;
 
 &lt;div class=&quot;footnotes&quot; role=&quot;doc-endnotes&quot;&gt;
   &lt;ol&gt;
@@ -1028,88 +1044,4 @@ We can easily add this cross-cutting concern later on using &lt;a href=&quot;htt
 
 &lt;div class=&quot;embed-container&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/eXElxR1_qOo&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/gregorriegler/coffeemachine-kata&quot;&gt;The code on my GitHub&lt;/a&gt;&lt;/p&gt;</content><author><name>Gregor Riegler</name></author><category term="refactoring-java" /><summary type="html">A derived field is similar to a cache in the sense that you have to actively maintain its state throughout everything that is happening in your domain. So it is similarly complex to cache invalidation. We can replace it with a query method, and get rid of the complication. This doesn’t mean we can’t add caching to the query method later. We can easily add this cross-cutting concern later on using memoization or a decorator pattern if we really need it.</summary></entry><entry><title type="html">becoming a keyboard ninja</title><link href="http://gregorriegler.com/2020/01/26/becoming-a-keyboard-ninja.html" rel="alternate" type="text/html" title="becoming a keyboard ninja" /><published>2020-01-26T00:00:00+00:00</published><updated>2020-01-26T00:00:00+00:00</updated><id>http://gregorriegler.com/2020/01/26/becoming-a-keyboard-ninja</id><content type="html" xml:base="http://gregorriegler.com/2020/01/26/becoming-a-keyboard-ninja.html">&lt;div class=&quot;embed-container&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/xqZpHknfr2E&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;
-Hi, i’m Gregor, and I want to help you become better at coding.
-Here are some tips to improve your keyboard utilization.
-If you are already very good at it, this might not be for you.&lt;/p&gt;
-
-&lt;h3 id=&quot;keep-your-eyes-on-the-street&quot;&gt;keep your eyes on the street&lt;/h3&gt;
-&lt;p&gt;It is our most important tool because of it’s relatively high throughput.
-This throughput not only determines our speed, it also affects the quality of our output.
-Let me explain:
-As coders we’re switching between different views and modes.
-We’re mostly looking at the code from a bird’s eye perspective, just reading and thinking. 
-As soon as we have decided on the changes we want to make, our focus tightens.
-We’re now more concerned which button to click next, which menu to open.
-Using the mouse is terribly slow.
-It breaks our flow of thought.
-We’re not watching the street, we’re looking at the stick shift.
-Fluent keyboard utilization can help us keep our eyes on the street.
-It frees our minds and helps us make fewer mistakes.
-We can not only drive faster, but also safer.&lt;/p&gt;
-
-&lt;h3 id=&quot;getting-better-is-easy&quot;&gt;getting better is easy!&lt;/h3&gt;
-&lt;p&gt;Just lower your expectations.
-There is no need to get to 0% mouse usage right away.
-Start small, but start now! 
-The following tips should help you get started.&lt;/p&gt;
-
-&lt;h3 id=&quot;tip-1-buy-a-keyboard-youll-want-to-use&quot;&gt;tip #1: buy a keyboard you’ll want to use&lt;/h3&gt;
-&lt;p&gt;Do yourself a favour and buy a good keyboard of your choice.
-After all, you’re a programmer and this is your most important tool.
-It will be much easier to get better, once you own a keyboard you enjoy working with.
-One you’ll &lt;strong&gt;want&lt;/strong&gt; to use.
-Maybe a mechanical one, maybe a slim one, whatever suits you.&lt;/p&gt;
-
-&lt;h3 id=&quot;tip-2-use-a-powerful-editor&quot;&gt;tip #2: use a powerful editor&lt;/h3&gt;
-&lt;p&gt;It should have support for code navigation, refactoring and other coding related stuff. 
-Could be an IDE, could be a lightweight editor that has a healthy plugin ecosystem.&lt;/p&gt;
-
-&lt;h3 id=&quot;tip-3-plugins-may-help&quot;&gt;tip #3: plugins may help&lt;/h3&gt;
-&lt;p&gt;Search for plugins that assist you in learning keystrokes.
-Like the &lt;a href=&quot;https://plugins.jetbrains.com/plugin/9792-key-promoter-x&quot;&gt;Key Promoter X&lt;/a&gt; for IntelliJ.
-There is also &lt;a href=&quot;https://marketplace.eclipse.org/content/mousefeed&quot;&gt;Mousefeed&lt;/a&gt; for Eclipse, 
-and &lt;a href=&quot;http://plugins.netbeans.org/plugin/55751/key-promoter&quot;&gt;Keypromoter&lt;/a&gt; for Netbeans, which do a similar thing. 
-They will assist you by showing the keystroke you could have pressed, whenever you used the mouse. 
-Also they will count and show you how often you used the mouse for that command.&lt;/p&gt;
-
-&lt;h3 id=&quot;tip-4-start-small&quot;&gt;tip #4: start small&lt;/h3&gt;
-&lt;p&gt;Don’t try and learn everything at once.
-You gotta start small. 
-Choose ~4 keystrokes or combos you want to learn first, and focus only on them while working on the code you are usually working on.
-You will soon start doing them unconsciously. 
-This is when you are ready for the next ones.&lt;/p&gt;
-
-&lt;h3 id=&quot;tip-5-prepare-a-cheat-sheet&quot;&gt;tip #5: prepare a cheat sheet&lt;/h3&gt;
-&lt;p&gt;Prepare yourself a cheat sheet, so you can quickly look up the shortcuts you are working on.
-Maybe you’ll find a nice print out online, or even create one yourself.
-There is the &lt;a href=&quot;http://blog.code-cop.org/p/shortcut-search.html&quot;&gt;code cops shortcut search&lt;/a&gt; for example.&lt;/p&gt;
-
-&lt;h3 id=&quot;tip-6-be-gone-mouse&quot;&gt;tip #6: be gone, mouse!&lt;/h3&gt;
-&lt;p&gt;If it does not work out, and you keep grabbing the mouse out of habit, move it to the other side of your keyboard.
-So when you try and grab it, it won’t be there.
-This is also a good tip if you’re advanced and you feel like ditching the mouse anyhow.&lt;/p&gt;
-
-&lt;h3 id=&quot;tip-7-pair-with-others&quot;&gt;tip #7: pair with others&lt;/h3&gt;
-&lt;p&gt;You can’t practice tricks you didn’t know existed.
-Pair- and mob- programming will help you find inspiration.
-I learned some of the most valuable shortcuts from pairing with others.&lt;/p&gt;
-
-&lt;h3 id=&quot;tip-8-rtfm&quot;&gt;tip #8: RTFM&lt;/h3&gt;
-&lt;p&gt;Also, it might be worth it to study your editors documentation. 
-Some of the actions I adopted are ones i found there. 
-For example: The ‘Search and Replace Duplicates’ refactoring.&lt;/p&gt;
-
-&lt;h3 id=&quot;tip-9-extend-your-keymap&quot;&gt;tip #9: extend your keymap&lt;/h3&gt;
-&lt;p&gt;Some of the actions you frequently use might not even have a keystroke assigned by default.
-I for example like to split my tabs when doing TDD.
-So I can see my tests on the left, and production code on the right.
-The ‘Move Tab to the Right’ action however did not have a keystroke assigned by default. 
-I had to do this myself.
-Expect your editors keymap to be imperfect. 
-Think outside the box, and adapt the tool according to your need.&lt;/p&gt;
-
-&lt;p&gt;I hope these tips will help you utilize your keyboard more. 
-So you can keep your eyes on the street, and increase both your throughput and quality of output.&lt;/p&gt;</content><author><name>Gregor Riegler</name></author><category term="efficiency" /><summary type="html">Hi, i’m Gregor, and I want to help you become better at coding. Here are some tips to improve your keyboard utilization. If you are already very good at it, this might not be for you. keep your eyes on the street It is our most important tool because of it’s relatively high throughput. This throughput not only determines our speed, it also affects the quality of our output. Let me explain: As coders we’re switching between different views and modes. We’re mostly looking at the code from a bird’s eye perspective, just reading and thinking. As soon as we have decided on the changes we want to make, our focus tightens. We’re now more concerned which button to click next, which menu to open. Using the mouse is terribly slow. It breaks our flow of thought. We’re not watching the street, we’re looking at the stick shift. Fluent keyboard utilization can help us keep our eyes on the street. It frees our minds and helps us make fewer mistakes. We can not only drive faster, but also safer. getting better is easy! Just lower your expectations. There is no need to get to 0% mouse usage right away. Start small, but start now! The following tips should help you get started. tip #1: buy a keyboard you’ll want to use Do yourself a favour and buy a good keyboard of your choice. After all, you’re a programmer and this is your most important tool. It will be much easier to get better, once you own a keyboard you enjoy working with. One you’ll want to use. Maybe a mechanical one, maybe a slim one, whatever suits you. tip #2: use a powerful editor It should have support for code navigation, refactoring and other coding related stuff. Could be an IDE, could be a lightweight editor that has a healthy plugin ecosystem. tip #3: plugins may help Search for plugins that assist you in learning keystrokes. Like the Key Promoter X for IntelliJ. There is also Mousefeed for Eclipse, and Keypromoter for Netbeans, which do a similar thing. They will assist you by showing the keystroke you could have pressed, whenever you used the mouse. Also they will count and show you how often you used the mouse for that command. tip #4: start small Don’t try and learn everything at once. You gotta start small. Choose ~4 keystrokes or combos you want to learn first, and focus only on them while working on the code you are usually working on. You will soon start doing them unconsciously. This is when you are ready for the next ones. tip #5: prepare a cheat sheet Prepare yourself a cheat sheet, so you can quickly look up the shortcuts you are working on. Maybe you’ll find a nice print out online, or even create one yourself. There is the code cops shortcut search for example. tip #6: be gone, mouse! If it does not work out, and you keep grabbing the mouse out of habit, move it to the other side of your keyboard. So when you try and grab it, it won’t be there. This is also a good tip if you’re advanced and you feel like ditching the mouse anyhow. tip #7: pair with others You can’t practice tricks you didn’t know existed. Pair- and mob- programming will help you find inspiration. I learned some of the most valuable shortcuts from pairing with others. tip #8: RTFM Also, it might be worth it to study your editors documentation. Some of the actions I adopted are ones i found there. For example: The ‘Search and Replace Duplicates’ refactoring. tip #9: extend your keymap Some of the actions you frequently use might not even have a keystroke assigned by default. I for example like to split my tabs when doing TDD. So I can see my tests on the left, and production code on the right. The ‘Move Tab to the Right’ action however did not have a keystroke assigned by default. I had to do this myself. Expect your editors keymap to be imperfect. Think outside the box, and adapt the tool according to your need. I hope these tips will help you utilize your keyboard more. So you can keep your eyes on the street, and increase both your throughput and quality of output.</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://github.com/gregorriegler/coffeemachine-kata&quot;&gt;The code on my GitHub&lt;/a&gt;&lt;/p&gt;</content><author><name>Gregor Riegler</name></author><category term="refactoring-java" /><summary type="html">A derived field is similar to a cache in the sense that you have to actively maintain its state throughout everything that is happening in your domain. So it is similarly complex to cache invalidation. We can replace it with a query method, and get rid of the complication. This doesn’t mean we can’t add caching to the query method later. We can easily add this cross-cutting concern later on using memoization or a decorator pattern if we really need it.</summary></entry></feed>
