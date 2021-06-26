@@ -1,4 +1,4 @@
-# TDD Cash Course from the back of the room in 2 hours.
+# TDD Crash Course in 2 hours.  
 
 ## How I got there
 I am reading this book: "Training from the BACK of the Room!" and it really resonates with me.
@@ -16,87 +16,113 @@ The 10 minute rule ...
 
 ## Training Plan
 
+### Mode ??
 I did this all remotely, and it shows in the training plan. However it should be no problem to do this locally, too.
-My Principles for this Training Plan where:
 
-- No preparation for participants needed.
+### Group Size
+5-6 Participants
+
+### Principles
+The principles for this training plan where:
+- Just show up.
+   Coding sessions often require technical preparations for participants in advance. 
+   And when the training starts you somehow always loose those 30 minutes to fix the problems.
+   Two Hours is not enough time for having technical troubleshooting.
+   So for this training there is no preparation for participants needed.
 - Have learners talk the most.
+   In most trainings the trainer talks more than 70% of the time, which is not helping learners remembering things.
+   Learners learn much better when they are the ones active, when they are talking instead.
+   So I want to maximize the amount that learners talk.
 - Keep everybody engaged from start to finish.
+   No participant should be passive for more than 10 minutes. I want to keep them engaged so they get the most out of their training.
 - Learning by doing.
+   The Training is designed to have the learners experience TDD in practice.
+   This is very important.
+   We can explain them what a babystep is, or what the value of fast tests is, but they wont understand unless they experience it themselves.
 - Focus on the need to knows.
+   TDD is a very broad topic, but the essentials are actually very few.
+   Telling everything about it, from history to styles, testdoubles and so on would just confuse the learners.
+   Much more effective is to teach them only the essentials, and have them apply the essentials in a practical exercise.
 - The 10 minute rule.
 
 ### Connections
 Two hours is not a lot of time.
-So if the group already knows each other, you'd want to jump right into the topic.
-If that's not the case, give them at least the opportunity to introduce themselves for a minute or two.
+So if the group already knows each other, we want to jump right into the topic.
+If that's not the case, give them at least the opportunity to introduce themselves in a minute or two.
 
 #### WebHunt
-Start with a "WebHunt" activity where each learner has 10 minutes to search the web and find 3 facts, and to think of 1 question they have about TDD. 
-Prepare a virtual board where the learners can put and share their findings.
+Start with a "WebHunt" activity where each learner has 10 minutes to search the web and find three facts, and to come up with one question they have about TDD. 
+Prepare a virtual board where the learners can put and share those.
 Then, take another ~10 minutes to review the facts and questions they had put on the board.
 I typically have the participants present the facts they had found.
-When somebody states somthing questionable, ask the other participants what they think about it.
+
 Try to stay out of the discussion as much as possible.
+So when somebody states something wrong, instead of correcting it ask the other participants what they think about it.
+For the Questions they put on the board, ask the other learners if they have an answer.
+Keep in mind that it's not about us (the trainers), it's about the learners.
+If you have very good answers that you can back up with quality content such as links to blog posts, articles, books - that's awesome.
+Add them in the end.
 
-For the Questions they put on the Board, ask the other learners if they have an answer for them.
-If you have very good answers that you can even back up with weiterführenden Links of high quality content, that's awesome.
+#### Theory
+After that comes the only part of the training that is dry instructions.
+Take 10 quick minutes to explain the TDD workflow.
 
-After that, take quick 10 minutes to explain how the TDD Workflow works.
-This is the only part of the whole training that is dry instructions by the trainer, but it's just 10 minutes long so.
+#### Short Break
+At this point you are typically 30-40 minutes into the training, so its a good opportunity to have a 5 minute break.
+After that we go on to the practical coding part.
 
-After that you could make a quick 5 minute break, because after that we go on to the Kata and Coding Part.
-
-#### 10 min intro to the kata and the rules.
-The Kata I choose is FizzBuzz, because it is very easy. 
---link to FizzBuzz Kata--
-I don't want to confuse learners with a design challenge, that's not the focus here.
-The focus is on the TDD process.
-A bit of sugar on top is the possibility to use Parameterized Tests which could be interresting to learners, too.
-So I first teach them the rules of FizzBuzz, and then I tell them how this is going to work out.
-
-#### 60min Practical Fizz Buzz.
-
+#### 60 min Practical Fizz Buzz.
+The Kata I choose for this exercise is [FizzBuzz](linkToFizzBuzz), as it is very easy and it can be completed within the available time.
+This should help with creating the feeling of having accomplished something.
+Als we don't want to confuse learners with a design challenge. 
+That's not the focus here.
+The focus is on the TDD workflow, and the toughtprocess behind it. 
+The decisions we make when we Test Drive a code.
+A bit of sugar on top is the possibility to use a Parameterized Test which learners typically find interresting.
 The kata is being worked on in a mob (eg 5 Participants).
-We like to keep every participant actively engaged throughout the session so we organize it so that every learner has an important Role that needs to stay focused.
+As we like to keep every participant actively engaged we assign them roles that require them to stay focused.
 
-Choose 3 people and assign them one of these roles:
-RED Referee: responsible to make sure we watch each test fail, and that the error is clear.
-GREEN Referee: responsible to make sure we don't write a single line of code that doesn't fulfill a test.
-REFACTOR Referee: responsible to make sure we always refactor in the green, and only in the green.
+Choose 3 people and assign them one of these referee roles:
+RED Referee: Responsible to make sure we watch each test fail, and that the error presented is expressive.
+GREEN Referee: Responsible to make sure we only write the simplest code to fulfill the test, but not the line we know we need to write.
+REFACTOR Referee: Responsible to make sure we always refactor in the green and only in the green.
 
-You can have the other participans be Navigators.
+Have the other participans be collaborative navigators.
 
-##### Trainer is the Driver
-The trainer is the Driver/Typist (link to driver/navigator strong style pairing). 
-Writing tests by their selves is another important exercise for learners, but it is not the focus of this training.
-The focus of this training is to have learners grokk the process of TDD, to learn the decisions we make to have tests drive our design in many very small steps.
-And to achieve that, we would like to remove all other obstacles.
-
-So the trainer makes it easy for the learners to write the tests they want.
-Another advantage of the trainer being the driver is that they can step in when needed (even though the goal would be to avoid that).
-So the Trainer shares their screen, Test Setup Prepared with FizzBuzz Rules as a comment on the dummy Test, font size set very large, test results very visible.
-The Trainer is the Driver so they can jump in to have the final word just in case. But the Goal of the trainer is to not take any control. 
-As a Trainer I usually say: "I only type when you navigators tell me to".
-And when you see something smelly going on which you are not satisfied with, play the ball to the Referee: "GREEN, what do you have to say about this?"
-"REFACTOR, Is it okay that we do this refactoring now?"
-
-###### Important Details
 Instruct participants to have their mics on!
 Sometimes people turn their mics off at other meetings which is fine.
 But in this training, this can be harmful. 
-If somebody starts talking with their mic off we wont notice if we stare at the code.
-And we'd like to avoid that.
+If somebody starts talking with their mic off we wont notice if we stare at the code, we'd like to avoid that.
 
-After half-time you ask your participans whether they would like to rotate their roles.
+After half-time ask your participans whether they would like to rotate their roles.
+
+##### Trainer is the Driver
+The trainer is the [Driver/Typist](link to driver/navigator strong style pairing). 
+Writing tests by their selves is another important exercise for learners, but it is not the focus of this training.
+The focus of this training is to have learners grokk the workflow of TDD, to learn the decisions we make when we have tests drive our design in very small steps.
+And to achieve that, we would like to remove all other impediments.
+So the trainer plays the smart input device that makes it easy for the learners to write the tests that they want.
+As a driver, the trainer is also able to step in if needed. 
+So the trainer shares their screen, test setup prepared with the FizzBuzz rules as a comment on the dummy Test, font size set very large and test results very visible.
+Remember, the goal of the trainer is to stay in the background as much as possible.
+They might chime in to get things going, but mostly to ask the right questions and delegate control to the participants.
+
+As a Trainer I might say: "I only type when you navigators tell me to".
+Or: "What would be an even simpler test case to start with?"
+When you see something you are not satisfied with, play the ball to the responsible referee role: "GREEN, what do you have to say about this?",
+"REFACTOR, Is it okay that we do this refactoring now?"
+
+#### 20 min Retrospective
+
+Find out, what the participants have learned that they hadn't known before.
+How did they feel doing the FizzBuzz using TDD?
+Was there anything they didn't like?
+Ask the participants whether they would want to apply it in their real projects, and how.
+When they make a commitment like this publicly, the are more likely to actually do it.
 
 
-After that 20 min Retrospective.
-Find out, what the learners have learned what they haven't known before.
-How they felt doing the FizzBuzz in TDD?
-And if there was anything they didn't like, a.k.a. "Meh"
+## Conclusion
+The Crash Course is obviously just the start. 
+It will provide the participants with the understanding they need to do further hands on practice.
+They should be more comfortable joining a Dojo/Coderetreat.
 
-The only downside I feel I had in this training, is that the learners weren't typing at all.
-But after this Crash Course I feel that they understand the workflow, and they are ready to practice it on their own or collaboratively in a Dojo/Coderetreat.
-
-Commitment on retrospective (say out loud your plans, makes you more likely to actually do them)
