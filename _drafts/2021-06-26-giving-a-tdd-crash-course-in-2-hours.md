@@ -6,21 +6,20 @@ tags:
 - Training
 ---
 
-I was recently giving a 2 hour TDD crash course remotely for a group of 5 people and I find it worked out really well.
+I was recently giving a 2 hour TDD crash course remotely for a group of 5 people and I find it worked out well.
 So I would like to share how I did it.
 
 **If you were searching for TDD guidance, this is not it!
-It is rather guidance on how to run a TDD course.**
+It is rather a guide on how to run a TDD course.**
 
-The way I ran the course was heavily inspired by the book *[Training from the BACK of the Room!](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room)* which I'm currently reading, and really resonates with me.
+The way I ran the course was heavily inspired by the book *[Training from the BACK of the Room!](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room)* which I'm currently reading and resonates with me.
 The book is based on newer neuro-scientific research, of course.
-It is basically all about modern effective training which is highly interactive and has an emphasis on learners talking more during the training instead of the teacher.
+It is all about modern effective training which is highly interactive and has an emphasis on learners talking more during the training instead of the teacher.
 
 ## The Training Plan
 
 ### Goal
-The goal of this training is to provide the participants with the understanding of and reasoning behind the TDD workflow, 
-and to really grasp the thought process and decision making behind it.
+The goal of this training is to provide the participants with the understanding of and reasoning behind the TDD workflow and to grasp the thought process and decision making behind it.
 It is not a goal of this training to have the participants get good at writing tests.
 
 ### Mode 
