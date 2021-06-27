@@ -91,7 +91,7 @@ After that, continue with the practical coding part.
 
 ### Practical FizzBuzz (60 minutes)
 The kata I choose for this exercise is [FizzBuzz](https://kata-log.rocks/fizz-buzz-kata), as it is pretty simple and can be completed within the available time.
-It should help with creating the feeling of having accomplished something.
+It should help with creating the feeling of having accomplished something which makes the learning stick longer.
 Also, we don't want to confuse learners with a design challenge.
 That's not the focus here.
 The focus is on the TDD workflow and the thought process and decision-making behind it. 
