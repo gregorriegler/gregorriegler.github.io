@@ -118,7 +118,7 @@ And to achieve that, we would like to remove all other impediments.
 So the trainer plays the smart input device that makes it easy for the learners to write the tests they want.
 As a driver, the trainer is also able to step in and take control if needed. 
 
-So the trainer shares their screen, test setup prepared with the FizzBuzz requirements as a comment on the dummy test, font size increased, and test results visible.
+The trainer shares their screen, test setup prepared with the FizzBuzz requirements as a comment on the dummy test, font size increased, and test results visible.
 Remember, the goal of the trainer is to stay in the background as much as possible.
 She might chime in to get things going but mostly asks the right questions and delegates control to the participants.
 
