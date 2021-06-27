@@ -60,25 +60,26 @@ Knowing the principles used for this training will help you understand the reaso
 - **The 10-minute rule.**
    This is about optimizing for how long learners can keep up their attention while being passive.
    TV has conditioned us to receive information in small segments of ~10 minutes in length.
-   We want to avoid direct instruction but when we do it, it should take no longer than 20 minutes. 
-   The shorter the better.
+   We want to avoid dry instruction.
+   But when we do it, it should take no longer than 20 minutes. 
+   The shorter, the better.
 
 ### Opening: WebHunt (20-30 minutes)
 Two hours is not a lot of time.
 If the group already knows each other, we want to jump right into the topic.
 When that's not the case, give them at least the opportunity to introduce themselves in a minute or two.
 
-Start with a "WebHunt" activity where learners have 10 minutes to search the web and find three facts, and to come up with one question they have about TDD. 
+Start with a "WebHunt" activity where learners have 10 minutes to search the web and find three facts and come up with one question they have about TDD. 
 Prepare a virtual board where the learners can put and share their findings.
 
 Then, take another ~10 minutes to review the facts and questions they had put on the board.
 Have the participants present them, and try to stay out of the discussion as much as possible.
-When somebody states something wrong, instead of correcting it ask the other participants what they think about it.
-For the questions they put on the board, ask the other learners whether they have an answer.
-
-Keep in mind that it's not about us (the trainers), it's about the learners.
-If you have very good answers that you can back up with quality content such as links to blog posts, articles, talks, or books - that's awesome.
+When you are not satisfied with one of the facts, ask the other participants what they think about it.
+Try to have the learners answer all the questions on the board.
+If you have some great answers that you can back up with quality content such as links to blog posts, articles, talks, or books - that's awesome.
 Add those in the end.
+
+Keep in mind that it's not about us (the trainers). It's about the learners.
 
 ### Theory (10 minutes)
 After that comes the only part of the training that is dry instruction.
