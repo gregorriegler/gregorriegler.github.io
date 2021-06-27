@@ -34,29 +34,28 @@ Knowing the principles used for this training will help you understand the reaso
 
 - **Just show up.**
    Coding sessions often require technical preparations for participants in advance. 
-   When the training starts you somehow always lose those 25 minutes to fix all the issues.
+   When the training starts, you somehow every time lose those 25 minutes to fix all the issues.
    Two hours is not enough time for having this kind of technical troubleshooting.
    So for this training, there is no preparation for participants needed.
    All participants have to do is to show up.
 
+- **Focus on the need to knows.**
+   TDD is a broad topic, but the essentials are few.
+   Teaching everything from history to styles, test doubles, and so on would confuse the learners.
+   So in this training, we focus only on the essentials.
+
+- **Learning by doing.**
+   The training will have the participants experience TDD in practice, which is very important.
+   We can explain what a baby step is and what the value of a fast test suite is. But the learners won't understand unless they experience it themselves.
+
 - **Have learners talk the most.**
-   In traditional training, the trainer talks more than 70% of the time, which is not at all helping learners learn.
+   In traditional training, the trainer talks more than 70% of the time, which doesn't help learners learn.
    Participants learn much more effectively when they are the ones talking.
    So this training aims at maximizing the amount of time that learners talk instead of the trainer.
 
-- **Focus on the need to knows.**
-   TDD is a broad topic but the essentials are few.
-   Teaching everything about it from history to styles, test doubles, and so on would just confuse the learners.
-   Much better is to teach them only the essentials and to have them apply those in a practical exercise.
-
 - **Keep everybody engaged from start to finish.**
    No participant should be listening passively for more than 10 minutes at a time. 
-   We want to keep them engaged so they get the most out of their training.
-
-- **Learning by doing.**
-   The training is designed to have the learners' experience TDD in practice.
-   This is very important.
-   We can explain what a baby-step is, or what the value of a fast test suite is, but it won't make any sense unless they experience it themselves.
+   We want to keep them engaged to get the most out of their training.
 
 - **The 10-minute rule.**
    This is about optimizing for how long learners can keep up their attention while being passive.
