@@ -124,7 +124,7 @@ She might chime in to get things going but mostly asks the right questions and d
 
 As a trainer, you might say: "I only type when you navigators tell me to.",
 or: "What would be an even simpler test case to start with?"
-When you see something you are not satisfied with, play the ball to the responsible referee role: "Green referee, what do you have to say about this?",
+When you see something you are not satisfied with, play the ball to the responsible referee: "Green referee, what do you have to say about this?",
 "Refactor referee, Is it okay that we do this refactoring now?"
 
 Instruct participants to have their mics on!
