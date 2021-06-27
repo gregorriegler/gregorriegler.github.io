@@ -30,7 +30,7 @@ However, I don't see a reason why it would not work in the same way locally.
 5-6 Participants
 
 ### Principles
-Knowing the principles used for this training will help you understand the reasoning behind its design.
+Knowing the principles I used for this training will help you understand the reasoning behind its design.
 
 - **Just show up.**
    Coding sessions often require technical preparations for participants in advance. 
