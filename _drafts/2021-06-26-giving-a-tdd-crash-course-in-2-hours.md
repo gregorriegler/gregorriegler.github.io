@@ -63,12 +63,12 @@ Knowing the principles I used for this training will help you understand the rea
    After 10 to 20 minutes, learning begins to diminish.
    So we want to avoid dry instruction that lasts longer than that.
 
-### Opening: WebHunt (20-30 minutes)
+### Opening: Web Hunt (20-30 minutes)
 Two hours is not a lot of time.
 If the group already knows each other, we want to jump right into the topic.
 When that's not the case, give them at least the opportunity to introduce themselves in a minute or two.
 
-Start with a "WebHunt" activity where learners have 10 minutes to search the web and find three facts and come up with one question they have about TDD. 
+Start with a "Web Hunt" activity where learners have 10 minutes to search the web and find three facts and come up with one question they have about TDD. 
 Prepare a virtual board where the learners can put and share their findings.
 
 Then, take another ~10 minutes to review the facts and questions they had put on the board.
