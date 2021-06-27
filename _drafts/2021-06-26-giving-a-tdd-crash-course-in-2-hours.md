@@ -136,7 +136,7 @@ Find out what the participants have learned that they hadn't known before.
 How did they feel doing FizzBuzz using TDD?
 Was there anything they didn't like?
 Ask the participants whether they would want to apply it in their real projects and how.
-When they commit to it publicly, they are more likely to do it.
+When they commit to it publicly, they are more likely to do so.
 
 ## Conclusion
 The crash course is just the start for the learners. 
