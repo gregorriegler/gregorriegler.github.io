@@ -105,7 +105,7 @@ As we like to keep all participants engaged, we assign each a responsibility tha
 - **Green Referee**: Watches out that we only write the simplest code to fulfill the test, but not the line of code we know we need to write.
 - **Refactor Referee**: Makes sure we always refactor in the green and only in the green.
 
-**Collaborating Navigators**: The other participants are navigating collaboratively. Take a look at [strong style pairing](https://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html) to understand the Driver/Navigator relationship.
+The other participants are navigating collaboratively. Take a look at [strong style pairing](https://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html) to understand the Driver/Navigator relationship.
 
 After half-time, ask your participants whether they would like to rotate their roles.
 
