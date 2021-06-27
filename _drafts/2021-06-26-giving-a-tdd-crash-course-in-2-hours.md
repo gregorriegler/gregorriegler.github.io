@@ -34,7 +34,7 @@ Knowing the principles used for this training will help you understand the reaso
 
 - **Just show up.**
    Coding sessions often require technical preparations for participants in advance. 
-   When the training starts, you somehow every time lose those 25 minutes to fix all the issues.
+   When the training starts, you somehow lose those 25 minutes to fix all the issues every time.
    Two hours is not enough time for having this kind of technical troubleshooting.
    So for this training, there is no preparation for participants needed.
    All participants have to do is to show up.
@@ -87,7 +87,7 @@ That is its rules and the reasoning behind them.
 
 ### Short Break (10 minutes)
 At this point, we are typically 30-40 minutes into the training, and it's an opportunity to have a 10-minute break.
-After that, we continue with the practical coding part.
+After that, continue with the practical coding part.
 
 ### Practical Fizz Buzz (60 minutes)
 The kata I choose for this exercise is [FizzBuzz](https://kata-log.rocks/fizz-buzz-kata), as it is pretty simple and can be completed within the available time.
@@ -99,11 +99,9 @@ A bit of sugar on top is the opportunity to use a parameterized test, which lear
 The kata is being worked on in a special mob where everybody is assigned a specific role.
 
 #### Roles: Red / Green / Blue / Navigator
-As we like to keep all participants engaged, we assign each a responsibility that requires them to stay focused.
+As we like to keep all participants engaged, we assign each a responsibility that requires them to stay focused. Choose three people and assign them one of these referee roles:
 
-Choose three people and assign them one of these referee roles:
-
-- **Red Referee**: This role is responsible to make sure we watch each test fail and that the error presented is expressive.
+- **Red Referee**: This role is responsible to make sure we watch each test fail and that the error presented is useful and expressive.
 - **Green Referee**: Watches out that we only write the simplest code to fulfill the test, but not the line of code we know we need to write.
 - **Refactor Referee**: Makes sure we always refactor in the green and only in the green.
 
@@ -124,7 +122,7 @@ So the trainer shares their screen, test setup prepared with the FizzBuzz requir
 Remember, the goal of the trainer is to stay in the background as much as possible.
 She might chime in to get things going but mostly asks the right questions and delegates control to the participants.
 
-The trainer might say: "I only type when you navigators tell me to.",
+As a trainer, you might say: "I only type when you navigators tell me to.",
 or: "What would be an even simpler test case to start with?"
 When you see something you are not satisfied with, play the ball to the responsible referee role: "Green referee, what do you have to say about this?",
 "Refactor referee, Is it okay that we do this refactoring now?"
