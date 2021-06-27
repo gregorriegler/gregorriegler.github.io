@@ -58,11 +58,10 @@ Knowing the principles used for this training will help you understand the reaso
    We want to keep them engaged to get the most out of their training.
 
 - **The 10-minute rule.**
-   This is about optimizing for how long learners can keep up their attention while being passive.
+   The 10-minute rule is about optimizing for how long learners can keep up their attention while being passive.
    TV has conditioned us to receive information in small segments of ~10 minutes in length.
-   We want to avoid dry instruction.
-   But when we do it, it should take no longer than 20 minutes. 
-   The shorter, the better.
+   After 10 to 20 minutes, learning begins to diminish.
+   So we want to avoid dry instruction that lasts longer than that.
 
 ### Opening: WebHunt (20-30 minutes)
 Two hours is not a lot of time.
