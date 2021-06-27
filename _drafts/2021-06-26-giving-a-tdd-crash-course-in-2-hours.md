@@ -109,41 +109,41 @@ Choose three people and assign them one of these referee roles:
 
 **Collaborating Navigators**: The other participants are navigating collaboratively. Take a look at [strong style pairing](https://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html) to understand the Driver/Navigator relationship.
 
-After half-time ask your participants whether they would like to rotate their roles.
+After half-time, ask your participants whether they would like to rotate their roles.
 
 #### The Trainer is the Driver
 The trainer is the Driver/Typist.
-Writing tests by their selves is another important exercise for learners, but it is not the focus of this training.
+Writing down test cases is another important exercise for learners, but it is not the focus of this training.
 The focus of this training is to have learners grok the workflow of TDD. 
-To learn the decisions we make when we have tests drive our design in very small steps.
+To learn the decisions we make, when we have tests drive our design in tiny steps.
 And to achieve that, we would like to remove all other impediments.
-So the trainer plays the smart input device that makes it easy for the learners to write the tests that they want.
+So the trainer plays the smart input device that makes it easy for the learners to write the tests they want.
 As a driver, the trainer is also able to step in and take control if needed. 
 
-So the trainer shares their screen, test setup prepared with the FizzBuzz requirements as a comment on the dummy test, font size set very largely, and test results visible.
+So the trainer shares their screen, test setup prepared with the FizzBuzz requirements as a comment on the dummy test, font size increased, and test results visible.
 Remember, the goal of the trainer is to stay in the background as much as possible.
 She might chime in to get things going but mostly asks the right questions and delegates control to the participants.
 
-As a Trainer, I might say: "I only type when you navigators tell me to.",
+The trainer might say: "I only type when you navigators tell me to.",
 or: "What would be an even simpler test case to start with?"
 When you see something you are not satisfied with, play the ball to the responsible referee role: "Green referee, what do you have to say about this?",
 "Refactor referee, Is it okay that we do this refactoring now?"
 
 Instruct participants to have their mics on!
 Sometimes people turn their mics off when they are in video calls which could be harmful in this training.
-When everybody is starring at the code we won't notice when somebody starts talking with their mic off.
+When everybody is starring at the code, we won't notice when somebody starts talking with their mic off.
 
 ### Retrospective (10-20 minutes)
-Find out, what the participants have learned that they hadn't known before.
+Find out what the participants have learned that they hadn't known before.
 How did they feel doing FizzBuzz using TDD?
 Was there anything they didn't like?
-Ask the participants whether they would want to apply it in their real projects, and how.
+Ask the participants whether they would want to apply it in their real projects and how.
 When they commit to it publicly, they are more likely to do it.
 
 ## Conclusion
 The crash course is just the start for the learners. 
-It will provide them with the understanding they need to do further hands-on practice.
-From then on they should feel more comfortable joining a dojo/code retreat.
+It will provide them with the prerequisites to have more hands-on practice.
+After the crash course, they should feel more comfortable joining a dojo/code retreat.
 
 Did you like the training design? 
 Which parts did you not like?
