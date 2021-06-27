@@ -139,9 +139,10 @@ Ask the participants whether they would want to apply it in their real projects 
 When they commit to it publicly, they are more likely to do so.
 
 ## Conclusion
+It's astonishing how much you can teach by just getting out of the way.
 The crash course is just the start for the learners. 
 It will provide them with the prerequisites to have more hands-on practice.
-After the crash course, they should feel more comfortable joining a dojo/code retreat.
+After the training, they should feel more comfortable joining a dojo/code retreat.
 
 Did you like the training design? 
 Which parts did you not like?
