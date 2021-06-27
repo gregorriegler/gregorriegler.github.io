@@ -82,31 +82,32 @@ Keep in mind that it's not about us (the trainers). It's about the learners.
 
 ### Theory (10 minutes)
 After that comes the only part of the training that is dry instruction.
-Take 10 quick minutes to explain the essentials of the TDD workflow.
+Take ten quick minutes to explain the essentials of the TDD workflow.
 That is its rules and the reasoning behind them.
 
 ### Short Break (10 minutes)
-At this point, you are typically 30-40 minutes into the training, so it's a good opportunity to have a 10-minute break.
+At this point, we are typically 30-40 minutes into the training, and it's an opportunity to have a 10-minute break.
 After that, we continue with the practical coding part.
 
 ### Practical Fizz Buzz (60 minutes)
-The kata I choose for this exercise is [FizzBuzz](https://kata-log.rocks/fizz-buzz-kata), as it is very easy and can be completed within the available time.
-This should help with creating the feeling of having accomplished something.
-Also, we don't want to confuse learners with a design challenge, that's not the focus here.
+The kata I choose for this exercise is [FizzBuzz](https://kata-log.rocks/fizz-buzz-kata), as it is pretty simple and can be completed within the available time.
+It should help with creating the feeling of having accomplished something.
+Also, we don't want to confuse learners with a design challenge.
+That's not the focus here.
 The focus is on the TDD workflow and the thought process and decision-making behind it. 
-A bit of sugar on top is the possibility to use a parameterized test which learners often find interesting.
-The kata is being worked on in a mob with specific roles.
+A bit of sugar on top is the opportunity to use a parameterized test, which learners often find interesting.
+The kata is being worked on in a special mob where everybody is assigned a specific role.
 
 #### Roles: Red / Green / Blue / Navigator
-As we like to keep all participants actively engaged we assign each a role that requires them to stay focused.
+As we like to keep all participants engaged, we assign each a responsibility that requires them to stay focused.
 
-Choose 3 people and assign them one of these referee roles:
+Choose three people and assign them one of these referee roles:
 
-- **Red Referee**: This role is responsible to make sure we watch each test fail, and that the error presented is expressive.
-- **Green Referee**: Responsible to make sure we only write the simplest code to fulfill the test, but not the line we know we need to write.
-- **Refactor Referee**: Responsible to make sure we always refactor in the green and only in the green.
+- **Red Referee**: This role is responsible to make sure we watch each test fail and that the error presented is expressive.
+- **Green Referee**: Watches out that we only write the simplest code to fulfill the test, but not the line of code we know we need to write.
+- **Refactor Referee**: Makes sure we always refactor in the green and only in the green.
 
-**Collaborating Navigators**: Have the other participants be collaborating navigators as in [strong style pairing](https://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html).
+**Collaborating Navigators**: The other participants are navigating collaboratively. Take a look at [strong style pairing](https://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html) to understand the Driver/Navigator relationship.
 
 After half-time ask your participants whether they would like to rotate their roles.
 
