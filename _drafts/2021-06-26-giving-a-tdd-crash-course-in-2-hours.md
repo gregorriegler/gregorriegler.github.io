@@ -63,6 +63,7 @@ Knowing the principles I used for this training will help you understand the rea
    After 10 to 20 minutes, learning begins to diminish.
    So we want to avoid dry instruction that lasts longer than that.
 
+(TODO Alternative Opening: Things you already know)
 ### Opening: Web Hunt (20-30 minutes)
 Two hours is not a lot of time.
 If the group already knows each other, we want to jump right into the topic.
