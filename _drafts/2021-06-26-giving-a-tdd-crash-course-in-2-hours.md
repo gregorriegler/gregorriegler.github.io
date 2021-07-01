@@ -46,7 +46,7 @@ Knowing the principles I used for this training will help you understand the rea
 
 - **Learning by doing.**
    The training will have the participants experience TDD in practice, which is very important.
-   We can explain what a baby step is and what the value of a fast test suite is. But the learners won't understand unless they experience it themselves.
+   We can explain what a baby step is and what the value of a fast test suite is. Still, learners won't understand unless they experience it themselves.
 
 - **Have learners talk the most.**
    In traditional training, the trainer talks more than 70% of the time, which doesn't help learners learn.
