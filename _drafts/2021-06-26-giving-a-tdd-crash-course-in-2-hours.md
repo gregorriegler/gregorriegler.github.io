@@ -12,7 +12,7 @@ So I would like to share with you how I did it.
 **If you were searching for TDD guidance, this is not it!
 It is rather a guide on how to run a TDD crash course.**
 
-I recently read the book *[Training from the BACK of the Room!](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room)*, which resonated with me, and it heavily inspired how I ran the course.
+I recently read the book *[Training from the BACK of the Room!](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room)*, which resonated with me, and it inspired how I ran the course.
 The book is highly innovative and turns traditional training upside down.
 The emphasis is on learners talking more during the training instead of the teacher.
 
