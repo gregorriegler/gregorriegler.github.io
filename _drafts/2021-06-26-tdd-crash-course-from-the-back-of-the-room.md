@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Giving a TDD Crash Course in 2 Hours
+title: TDD Crash Course from the BACK of the Room
 tags: 
 - TDD
 - Training
@@ -14,39 +14,44 @@ It is rather a guide on how to run a TDD crash course.**
 
 I recently read the book *[Training from the BACK of the Room!](https://www.goodreads.com/book/show/8141935-training-from-the-back-of-the-room)*, which resonated with me, and it inspired how I ran the course.
 The book is highly innovative and turns traditional training upside down.
-The emphasis is on learners talking more during the training instead of the teacher.
+The emphasis is on learners being active and talking more during the training instead of the teacher.
 
 ## The Training Plan
 
 ### Goal
-The goal of this training is to have participants understand the TDD workflow.
-It is not a goal of this training to have the participants get good at writing tests.
+The goal of this training is to have participants understand TDD and be able to apply test-driven design thinking.
+After it, they should be able to practice the red-green-refactor cycle themselves.
+It is not a goal of this training to make TDD pros that can test drive their whole projects.
+While TDD is easy to start with, it is also hard to master.
+To get better, learners will need much more hands-on practice after the training.
+The course should provide participants with a smooth start on their learning journey.
 
 ### Mode 
 I did it remotely. 
 However, I don't see a reason why it would not work in the same way locally.
 
 ### Group Size
-5-6 Participants
+5-6 Participants.
 
 ### Principles
 Knowing the principles I used for this training will help you understand the reasoning behind its design.
 
 - **Just show up.**
    Coding sessions often require technical preparations for participants in advance. 
-   When the training starts, you somehow lose those 25 minutes to fix all the issues every time.
+   When the training starts, you somehow lose those 25 minutes to fix the issues every time.
    Two hours is not enough time for having this kind of technical troubleshooting.
    So for this training, there is no preparation for participants needed.
    All participants have to do is to show up.
 
 - **Focus on the need to knows.**
    TDD is a broad topic, but the essentials are few.
-   Teaching everything from history to styles, test doubles, and so on would confuse the learners.
+   Teaching everything from history to styles, test doubles, and so on would merely confuse the learners.
    So in this training, we focus only on the essentials.
 
-- **Learning by doing.**
+- **[Learning by doing](https://en.wikipedia.org/wiki/Learning-by-doing).**
    The training will have the participants experience TDD in practice, which is very important.
-   We can explain what a baby step is and what the value of a fast test suite is. Still, learners won't understand unless they experience it themselves.
+   We could explain what a [baby step](http://www.thinkcode.se/blog/2019/05/18/what-is-the-size-of-a-baby-step) is and what the value of a fast test suite is.
+   Still, learners won't understand unless they experience it themselves.
 
 - **Have learners talk the most.**
    In traditional training, the trainer talks more than 70% of the time, which doesn't help learners learn.
@@ -57,18 +62,26 @@ Knowing the principles I used for this training will help you understand the rea
    No participant should be listening passively for more than 10 minutes at a time. 
    We want to keep them engaged to get the most out of their training.
 
-- **The 10-minute rule.**
-   The 10-minute rule is about optimizing for how long learners can keep up their attention while being passive.
+- **The [10-minute rule](https://trainingindustry.com/articles/content-development/facilitating-according-to-the-10-minute-rule/).**
+   The 10-minute rule helps us to optimize for the approximate attention span of people.
    TV has conditioned us to receive information in small segments of ~10 minutes in length.
    After 10 to 20 minutes, learning begins to diminish.
    So we want to avoid dry instruction that lasts longer than that.
 
-(TODO Alternative Opening: Things you already know)
-### Opening: Web Hunt (20-30 minutes)
+- **[Psychological safety](https://en.wikipedia.org/wiki/Psychological_safety).**
+   Create an environment where participants feel comfortable to express their opinions without the fear of being wrong.
+   We don't want them to be afraid of making mistakes, so we don't punish those.
+   Instead, reward every form of contribution from the very beginning.
+   Whatever learners have to say: Unless it's not abusive, it's not wrong - it's interesting.
+
+
+### Start-Up
 Two hours is not a lot of time.
 If the group already knows each other, we want to jump right into the topic.
 When that's not the case, give them at least the opportunity to introduce themselves in a minute or two.
+I like to use one of the following Start-Up activities.
 
+#### Start-Up Activity: Web Hunt (20-30 minutes)
 Start with a "Web Hunt" activity where learners have 10 minutes to search the web and find three facts and come up with one question they have about TDD. 
 Prepare a virtual board where the learners can put and share their findings.
 
@@ -81,10 +94,19 @@ Add those in the end.
 
 Keep in mind that it's not about us (the trainers). It's about the learners.
 
+#### Alternative Start-Up Activity: What do you already know? (20-30 minutes)
+Give learners 10 minutes to think of three facts they already know about TDD and have them put those on a virtual board for everybody to see.
+Then, take another ~10 minutes to have participants present the facts they had put on the board.
+When you are not satisfied with one of the facts, ask the other participants what they think about it.
+This activity connects learners to the things they already know.
+Typically, developers have already heard at least something about the topic.
+When they connect to these things first, it will help them evaluate what they had learned during the training.
+
 ### Theory (10 minutes)
 After that comes the only part of the training that is dry instruction.
 Take ten quick minutes to explain the essentials of the TDD workflow.
-That is its rules and the reasoning behind them.
+The [three rules of TDD](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd) provide a good start, but you probably want to explain the whole workflow.
+This [wiki page](https://wiki.c2.com/?TestDrivenDevelopment) gives a nice overview of all the steps involved.
 
 ### Short Break (10 minutes)
 At this point, we are typically 30-40 minutes into the training, and it's an opportunity to have a 10-minute break.
@@ -96,8 +118,8 @@ It should help with creating the feeling of having accomplished something which 
 Also, we don't want to confuse learners with a design challenge.
 That's not the focus here.
 The focus is on the TDD workflow and the thought process and decision-making behind it. 
-A bit of sugar on top is the opportunity to use a parameterized test, which learners often find interesting.
-The kata is being worked on in a special mob where everybody is assigned a specific role.
+A bit of sugar on top is the opportunity to use a [parameterized test](https://www.petrikainulainen.net/programming/testing/junit-5-tutorial-writing-parameterized-tests/), which learners often find interesting.
+The kata is being worked on in a special [mob](https://mobprogramming.org/mob-programming-basics/) where everybody is assigned a specific role.
 
 #### Roles: Red / Green / Blue / Navigator
 As we like to keep all participants engaged, we assign each a responsibility that requires them to stay focused. Choose three people and assign them one of these referee roles:
@@ -137,11 +159,11 @@ Find out what the participants have learned that they hadn't known before.
 How did they feel doing FizzBuzz using TDD?
 Was there anything they didn't like?
 Ask the participants whether they would want to apply it in their real projects and how.
-When they commit to it publicly, they are more likely to do so.
+They are more likely to do so, when they commit to it publicly.
 
 ## Conclusion
-It's astonishing how much you can teach by just getting out of the way.
-The crash course is just the start for the learners. 
+It's astonishing how much you can still teach after getting out of the way.
+Of course, the crash course is just the start for the learners. 
 It will provide them with the prerequisites to have more hands-on practice.
 After the training, they should feel more comfortable joining a dojo/code retreat.
 
