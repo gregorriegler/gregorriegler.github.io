@@ -19,7 +19,7 @@ The emphasis is on learners being active and talking more during the training in
 ## The Training Plan
 
 ### Goal
-The goal of this training is to have participants understand TDD and be able to apply test-driven design thinking.
+The goal of this training is that participants understand TDD and be able to apply test-driven design thinking.
 After it, they should be able to practice the red-green-refactor cycle themselves.
 It is not a goal of this training to make TDD pros that can test drive their whole projects.
 While TDD is easy to start with, it is also hard to master.
