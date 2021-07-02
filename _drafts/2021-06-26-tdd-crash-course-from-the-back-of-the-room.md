@@ -99,7 +99,7 @@ Then, take another ~10 minutes to have participants present the facts they had p
 When you are not satisfied with one of the facts, ask the other participants what they think about it.
 This activity connects learners to the things they already know.
 Typically, developers have already heard at least something about the topic.
-When they connect to these things first, it will help them evaluate what they had learned during the training.
+When they connect to these things first, it will help them evaluate what they had learned in the training.
 
 ### Theory (10 minutes)
 After that comes the only part of the training that is dry instruction.
