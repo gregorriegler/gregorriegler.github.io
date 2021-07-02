@@ -124,7 +124,7 @@ The kata is being worked on in a special [mob](https://mobprogramming.org/mob-pr
 As we like to keep all participants engaged, we assign each a responsibility that requires them to stay focused. Choose three people and assign them one of these referee roles:
 
 - **Red Referee**: This role is responsible to make sure we watch each test fail and that the error presented is useful and expressive.
-- **Green Referee**: Watches out that we only write the simplest code to fulfill the test, but not the line of code we know we need to write.
+- **Green Referee**: Watches out that we only write the simplest code to fulfill the test, but not the line of code we know we'd need to write.
 - **Refactor Referee**: Makes sure we always refactor in the green and only in the green.
 
 The other participants are navigating collaboratively. Take a look at [strong style pairing](https://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html) to understand the Driver/Navigator relationship.
