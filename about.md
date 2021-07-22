@@ -6,7 +6,7 @@ sidebar_sort_order: 0
 ---
 
 I am a Software Crafter and Software Development Coach.
-I like continuous learning, practice, experimenting and sharing.
+I like continuous learning, practice, experimenting, and sharing.
 
 ## Methodical Skills
 - TDD 
