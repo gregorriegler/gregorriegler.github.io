@@ -19,8 +19,7 @@ The emphasis is on learners being active and talking more during the training in
 ## The Training Plan
 
 ### Goal
-The goal of this training is to have participants understand TDD and be able to apply test-driven design thinking.
-After it, they should be able to practice the red-green-refactor cycle themselves.
+The goal of this training is for participants to understand TDD and be able to practice the red-green-refactor cycle themselves.
 It is not a goal of this training to make TDD pros that can test drive their whole projects.
 While TDD is easy to start with, it is also hard to master.
 To get better, learners will need much more hands-on practice after the training.
@@ -100,7 +99,7 @@ Then, take another ~10 minutes to have participants present the facts they had p
 When you are not satisfied with one of the facts, ask the other participants what they think about it.
 This activity connects learners to the things they already know.
 Typically, developers have already heard at least something about the topic.
-When they connect to these things first, it will help them evaluate what they had learned during the training.
+When they connect to these things first, it will help them evaluate what they had learned in the training.
 
 ### Theory (10 minutes)
 After that comes the only part of the training that is dry instruction.
@@ -125,7 +124,7 @@ The kata is being worked on in a special [mob](https://mobprogramming.org/mob-pr
 As we like to keep all participants engaged, we assign each a responsibility that requires them to stay focused. Choose three people and assign them one of these referee roles:
 
 - **Red Referee**: This role is responsible to make sure we watch each test fail and that the error presented is useful and expressive.
-- **Green Referee**: Watches out that we only write the simplest code to fulfill the test, but not the line of code we know we need to write.
+- **Green Referee**: Watches out that we only write the simplest code to fulfill the test, but not the line of code we know we'd need to write.
 - **Refactor Referee**: Makes sure we always refactor in the green and only in the green.
 
 The other participants are navigating collaboratively. Take a look at [strong style pairing](https://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html) to understand the Driver/Navigator relationship.
