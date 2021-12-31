@@ -6,7 +6,7 @@ sidebar_sort_order: 0
 ---
 
 I am a Software Crafter and Software Development Coach.
-I like continuous learning, practice, experimenting and sharing.
+I like continuous learning, practice, experimenting, and sharing.
 
 ## Methodical Skills
 - TDD 
@@ -28,4 +28,3 @@ Currently, mostly JVM:
 Java, Kotlin, Spring Boot, Hibernate, Jooq, IntelliJ and so on.<br>
 Also: JavaScript and TypeScript.<br>
 Earlier: PHP with Zend (now Laminas).<br>
-Databases: PostgreSQL, MySQL, SQL Server, Elasticsearch and MongoDB.<br>
