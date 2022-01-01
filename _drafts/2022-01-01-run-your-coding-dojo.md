@@ -26,7 +26,7 @@ I had 25 employees join in the latest event, and it was a lot of fun.
 
 ![Local Coding Dojo at Ebcont](/assets/coding-dojo/ebcont_remote_dojo.jpg)
 
-Again, take a closer look at these sweet t-shirts!
+Again, take a closer look at these sweet t-shirts! :-)
 
 ![Ebcont Coding Dojo T-Shirts](/assets/coding-dojo/sweet-tshirts.jpg)
 
@@ -111,7 +111,7 @@ The avoid that, the person sharing should behave as a passive driver and the oth
 I prefer when everybody gets the chance to drive, but this usually takes more setup time.
 
 ### #2 Cyber-Dojo
-[Cyber-Dojo](http://www.cyber-dojo.org) works really well for TDD katas, as it allows you to create and share a setup for any language in no time.
+[Cyber-Dojo.org](http://www.cyber-dojo.org) works really well for TDD katas, as it allows you to create and share a setup for any language in no time.
 However, it won't provide you with all the conveniences your IDE does.
 Things like continuous compilation, autocompletion, automated refactoring, and so on are not available.
 
