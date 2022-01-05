@@ -173,6 +173,8 @@ When people get to practice these, they become better programmers.
 They get better at writing code that works, is more maintainable, and more secure, in less time.
 What boss wouldn't want that?
 
----
-Are you also running a Coding Dojo / Coderetreat at your company? Awesome, I would love to learn how you do it!
-Feel free to contact me. 
+## Conclusion
+A Coding Dojo is a great and fun way to provide developers with the space they need to get better at their job.
+I hope there is something like this at your company, too.
+At least I'd recommend that.
+If you need any help with that, feel free to contact me. 
