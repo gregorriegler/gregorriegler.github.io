@@ -175,6 +175,7 @@ What boss wouldn't want that?
 
 ## Conclusion
 A Coding Dojo is a great and fun way to provide developers with the space they need to get better at their job.
-I hope there is something like this at your company, too.
-At least I'd recommend that.
-If you need any help with that, feel free to contact me. 
+People enjoy learning from one another in a relaxed environment like this.
+I'm proud of the progress participants have made so far.
+If you also want to start a Dojo and need help, feel free to contact me. 
+And if you already do something like this at your company, I would love to hear about that, too.
