@@ -7,7 +7,7 @@ sidebar_sort_order: 0
 
 ![Gregor Riegler!](/assets/img/profile_gregor.jpg)
 👋 Hi, I'm Gregor, and I am a Software Development Coach and Software Crafter.
-I am on a lifelong journey of learning better ways to solve problems and develop software effectively.
+I am on a lifelong journey of learning better ways to solve problems and develop quality software effectively.
 I like to teach and share what I learned, and I enjoy practicing with peers.
 I help teams, as well as individuals, become better and find more joy in their work.
 And I do all of this remotely.
