@@ -5,26 +5,21 @@ sidebar_link: true
 sidebar_sort_order: 0
 ---
 
-I am a Software Crafter and Software Development Coach.
-I like continuous learning, practice, experimenting, and sharing.
+![Gregor Riegler!](/assets/img/profile_gregor.jpg)
+👋 Hi, I'm Gregor, and I am a Software Development Coach and Software Crafter.
+I am on a lifelong journey of learning better ways to solve problems and develop software effectively.
+I like to teach and share what I learned, and I enjoy practicing with peers.
+I help teams, as well as individuals, become better and find more joy in their work.
+And I do all of this remotely.
 
-## Methodical Skills
-- TDD 
+## Typically, this involves some of the following skills
+- Test Driven Development
 - Legacy Code Refactoring
-- Technical Software Design
-- Evolutionary Design
+- Modular Software Design
 - Software Architecture 
+- Mob Programming
+- Pair Programming
 - eXtreme Programming
+- Agile Software Development
+- Lean Thinking
 - Continuous Delivery  
-- Agility & Lean 
-
-## Tech
->The list that becomes too long when you mention everything,
-and too short when you try to minimize it.
-It's not that important anyhow.
-The methodical skills are where it's at.
-
-Currently, mostly JVM: 
-Java, Kotlin, Spring Boot, Hibernate, Jooq, IntelliJ and so on.<br>
-Also: JavaScript and TypeScript.<br>
-Earlier: PHP with Zend (now Laminas).<br>
