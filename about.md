@@ -16,6 +16,7 @@ And I do all of this remotely.
 - Test Driven Development
 - Legacy Code Refactoring
 - Modular Software Design
+- Domain-driven Design
 - Software Architecture 
 - Mob Programming
 - Pair Programming
