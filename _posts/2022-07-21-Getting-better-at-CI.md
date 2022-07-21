@@ -1,6 +1,6 @@
 ---
 layout: post
-title: That's Not Continuous!
+title: Getting better at CI
 tags: 
 - TDD
 - Continuous Integration
@@ -170,7 +170,7 @@ goal +MESSAGE:
 ```
 
 Every time I start working on a new goal, I want to write it to my git history first.
-Something like `> just goal MarsRover can turn`.
+Something like `> just goal make rover turn left`.
 The other commit messages would stay 'wip' commits and that's fine.
 One idea would be to use further tooling to decode some of the refactoring commits.
 For example: The [refactoringinsight](https://plugins.jetbrains.com/plugin/14704-refactorinsight) plugin.
@@ -245,7 +245,7 @@ tcr:
 
 ## Conclusion
 Notice how I renamed the `tdd-commit` task to `ci`.
-Continuous Integration is not about what the build server is doing, it is about what we do.
+Continuous Integration is not only about what the build server is doing, it is primarily about what we do.
 
 Coding with this script feels super smooth. 
 It is actually continuous.
