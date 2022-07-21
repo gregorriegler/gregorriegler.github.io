@@ -8,10 +8,10 @@ tags:
 
 I recently felt the urge to experiment with my TDD workflow and improve it.
 It had too many manual steps. 
-Like running the tests, starting a commit, writing a commit message, pulling it, and pushing it. 
-Phew, it felt BORING!
+Like running the tests, starting a commit, writing a commit message, pulling changes, and pushing it. 
+It felt boring and wasteful.
 
-I want to automate this stuff to eliminate all the waste.
+I want to automate this stuff and eliminate all the waste.
 My inspiration comes mainly from the ideas of [continuous integration](https://martinfowler.com/articles/continuousIntegration.html), continuous testing, [TCR](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864), and [limbo on the cheap](https://medium.com/@kentbeck_7670/limbo-on-the-cheap-e4cfae840330). 
 
 We're not aiming high enough with the continuous part.<br>
@@ -20,6 +20,7 @@ We're not aiming high enough with the continuous part.<br>
 *"Short-lived Feature Branches"* ... You got to be kidding. It's rather *"short-lived lies"*.<br>
 None of this is continuous.
 We need to get better and decrease the risk even further.
+I want to integrate actually continuously.
 
 # Actually continuous
 
