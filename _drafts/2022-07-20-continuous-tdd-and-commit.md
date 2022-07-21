@@ -22,7 +22,7 @@ None of this is continuous.
 We need to get better and decrease the risk even further.
 I want to integrate actually continuously.
 
-# Actually continuous
+# Actually continuously
 
 I came up with a way that drastically increased my commit frequency.
 I managed to create **63 commits** in just **25 minutes** practicing this way, where I peaked at **6 commits per minute**. 
