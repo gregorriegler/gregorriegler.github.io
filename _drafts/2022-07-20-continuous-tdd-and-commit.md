@@ -7,7 +7,8 @@ tags:
 ---
 
 I recently felt the urge to experiment with my TDD workflow and improve it.
-The many manual steps I did. Like running the tests, starting a commit, writing a commit message, pulling it, and pushing it. 
+Too many manual steps I did. 
+Like running the tests, starting a commit, writing a commit message, pulling it, and pushing it. 
 Phew, it felt BORING!
 
 I want to automate this stuff to eliminate all the waste.
