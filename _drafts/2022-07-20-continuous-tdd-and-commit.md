@@ -100,7 +100,7 @@ By default `just` would abort on an error exit code, whereas the `-` tells it to
 I need this for the case where the tests pass, but I have not changed anything.
 For example when I add something and delete it right away.
 Then there would be nothing to commit, and `git` would throw the error, having `just` abort the task.
-I could also use the empty commit using the [allow-empty](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---allow-empty) flag.
+I could also allow the empty commit using the [allow-empty](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---allow-empty) flag.
 But why allow an empty commit for no reason!?
 That would be inventory, wasteful.
 
