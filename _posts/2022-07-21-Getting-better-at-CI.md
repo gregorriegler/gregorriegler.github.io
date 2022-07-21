@@ -21,7 +21,7 @@ I want to integrate *actually continuously*.
 
 My inspiration comes mainly from the ideas of [continuous integration](https://martinfowler.com/articles/continuousIntegration.html), continuous testing, [TCR](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864), and [limbo on the cheap](https://medium.com/@kentbeck_7670/limbo-on-the-cheap-e4cfae840330). 
 
-# Actually continuously
+## Actually continuously
 
 I came up with a way that drastically increased my commit frequency.
 I managed to create **63 commits** in just **25 minutes** practicing this way, where I peaked at **6 commits per minute**. 
@@ -40,7 +40,7 @@ Not that hard to achieve actually.
 Just need proper tooling and a little bit of scripting.
 The language I'm trying this with is Java.
 
-# The right tools for the job
+## The right tools for the job
 
 Since I use IntelliJ, which is a great, maybe the best IDE (\**cough*\* it became a little buggy as of recent \**cough*\*), it saves my code automatically. 
 So that problem is already solved.
