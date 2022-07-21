@@ -7,7 +7,7 @@ tags:
 ---
 
 I recently felt the urge to experiment with my TDD workflow and improve it.
-Too many manual steps I did. 
+It had too many manual steps. 
 Like running the tests, starting a commit, writing a commit message, pulling it, and pushing it. 
 Phew, it felt BORING!
 
