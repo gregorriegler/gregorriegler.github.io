@@ -255,6 +255,7 @@ You can probably do even better.
 Imagine remote pair- or mob programming with this.
 Hand-overs could not be easier. 
 You just exchange the screen-sharing while the tests pass.
+And that's it.
 
 Probably some people are already working this way? Let me know!
 
