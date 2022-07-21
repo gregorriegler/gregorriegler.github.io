@@ -153,7 +153,9 @@ Let's take a look at the resulting git history.
 * wip
 
 Whoops, that's not very expressive.
-But the commits are so small that they are very easy to review.
+But the commits are so small and pleasant to review.
+It's like a playback of every little step that was taken.
+It is the actual history.
 Honestly, I think the flow might have more value than the documentation.
 Still, I would like to improve on that by sneaking in descriptive empty commits every once in a while.
 
