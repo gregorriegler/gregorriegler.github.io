@@ -1,26 +1,25 @@
 ---
 layout: post
-title: Not Continuous Enough !!!11
+title: That's Not Continuous!
 tags: 
 - TDD
 - Continuous Integration
 ---
 
 I recently felt the urge to experiment with my TDD workflow and improve it.
-It had too many manual steps. 
-Like running the tests, starting a commit, writing a commit message, pulling changes, and pushing it. 
+It had too many manual steps, like running the tests, starting a commit, writing a commit message, pulling changes, and pushing it. 
 It felt boring and wasteful.
-
 I want to automate this stuff and eliminate all the waste.
-My inspiration comes mainly from the ideas of [continuous integration](https://martinfowler.com/articles/continuousIntegration.html), continuous testing, [TCR](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864), and [limbo on the cheap](https://medium.com/@kentbeck_7670/limbo-on-the-cheap-e4cfae840330). 
 
-We're not aiming high enough with the continuous part.<br>
+We're not aiming high enough with the continuous part in CI/CD.<br>
 *"Integrate at least daily"* ... Come on!<br>
 *"Hourly"* ... We can do better than this.<br>
 *"Short-lived Feature Branches"* ... You got to be kidding. It's rather *"short-lived lies"*.<br>
 None of this is continuous.
 We need to get better and decrease the risk even further.
-I want to integrate actually continuously.
+I want to integrate *actually continuously*.
+
+My inspiration comes mainly from the ideas of [continuous integration](https://martinfowler.com/articles/continuousIntegration.html), continuous testing, [TCR](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864), and [limbo on the cheap](https://medium.com/@kentbeck_7670/limbo-on-the-cheap-e4cfae840330). 
 
 # Actually continuously
 
@@ -31,11 +30,11 @@ On many occasions literally every keystroke went live, and it was all working - 
 
 What I did is based on the following requirements:
 
-- No manual saving. (The code saves itself automatically)
-- No manual test running. (Tests run continuously. They restart automatically as soon as the code changes)
-- No manual commits. (The code is committed automatically whenever the tests pass)
-- No manual pulling. (Changes are pulled automatically before test runs)
-- No manual pushing. (Every commit is automatically pushed right away)
+- **No manual saving**. The code saves itself automatically.
+- **No manual test running**. The tests run continuously. They restart automatically as soon as the code changes. And they are *fast*.
+- **No manual commits**. The code is committed automatically whenever the tests pass.
+- **No manual pulling**. Changes are pulled automatically before the tests run.
+- **No manual pushing**. Every commit is automatically pushed right away.
 
 Not that hard to achieve actually.
 Just need proper tooling and a little bit of scripting.
@@ -57,18 +56,18 @@ With Gradle, I could also make the test report pretty using this [test-logger pl
 I like that!
 
 Another option would be the [quarkus continuous test runner](https://quarkus.io/guides/continuous-testing), which is fairly new, and its test report is so ugly.
-Also, I have no idea how to customize or script it.
+Also, I have no idea how to customize, or script it.
 So I am going with Gradle for now.
 
 On top of the incremental compilation, Gradle ships with a continuous test runner in:
-```sh
-gradle -t test
+```bash
+> gradle -t test
 ```
 But since I need more control I chose to use a little helper tool called [watchexec](https://github.com/watchexec/watchexec) instead.
 It watches for file changes and then executes a command.
 Like this: 
-```sh
-watchexec -e java ./gradlew test
+```bash
+> watchexec -e java ./gradlew test
 ```
 I made some tests and it is just as fast as the Gradle continuous test runner.
 If you'd like even more control and a more complicated script, you could also use [inotifywait](https://linux.die.net/man/1/inotifywait).
@@ -82,7 +81,7 @@ And it is written in rust for whoever that may concern.
 The way this works is you *just* create a `justfile` and specify your tasks in it.
 The commit command looks like this.
 
-```make
+```bash
 commit:
     @git add . 
     -@git commit -am "wip"
@@ -90,8 +89,8 @@ commit:
 
 Simple and concise. 
 To execute it you run: 
-```sh
-just commit
+```bash
+> just commit
 ```
 And I do not even have to remember.
 My shell courteously suggests to me the available commands.<br>
@@ -106,7 +105,7 @@ That would be inventory, wasteful.
 
 So here are the first commands in a `justfile`.
 
-```make
+```bash
 commit:
     @git add . 
     -@git commit -am "wip"
@@ -163,13 +162,13 @@ But for this, I would like to propose a different way.
 I want to use a commit message to describe what is next. In other words: What my current goal is.
 So let's add a command to create such descriptive empty commits.
 
-```make
+```bash
 goal +MESSAGE:
     git commit --allow-empty -m "Goal: {% raw %}{{MESSAGE}}{% endraw %}"
 ```
 
 Every time I start working on a new goal, I want to write it to my git history first.
-Something like `just goal MarsRover can turn`.
+Something like `> just goal MarsRover can turn`.
 The other commit messages would stay 'wip' commits and that's fine.
 One idea would be to use further tooling to decode some of the refactoring commits.
 For example: The [refactoringinsight](https://plugins.jetbrains.com/plugin/14704-refactorinsight) plugin.
@@ -186,7 +185,7 @@ My commit history would then look something like this:
 - wip
 - Goal: make rover turn right
 
-## What about the Integrate part?
+## But what about Integration?
 Lots of small commits on my computer are nice.
 But if I work in a team I need to integrate my changes to the mainline, too.
 So I want to pull before I run my tests, and I want to push after each commit.
@@ -194,7 +193,7 @@ It's called Continuous Integration for a reason, right?
 
 Let's add that to the justfile.
 
-```make
+```bash
 integrate:     
     git pull --rebase
     just test    
@@ -206,7 +205,7 @@ And I think we're done.
 This is the complete [file](https://gist.github.com/gregorriegler/eafaa74250ff166925296dd58d4e62be). 
 It also contains a TCR task.
 
-```make
+```bash
 goal +MESSAGE:
     git pull --rebase
     git commit --allow-empty -m "Goal: {% raw %}{{MESSAGE}}{% endraw %}"
