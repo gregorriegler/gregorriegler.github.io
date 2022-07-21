@@ -165,7 +165,7 @@ So let's add a command to create such descriptive empty commits.
 
 ```make
 goal +MESSAGE:
-    git commit --allow-empty -m "{% raw %}{{MESSAGE}}{% endraw %}"
+    git commit --allow-empty -m "Goal: {% raw %}{{MESSAGE}}{% endraw %}"
 ```
 
 Every time I start working on a new goal, I want to write it to my git history first.
@@ -173,6 +173,18 @@ Something like `just goal MarsRover can turn`.
 The other commit messages would stay 'wip' commits and that's fine.
 One idea would be to use further tooling to decode some of the refactoring commits.
 For example: The [refactoringinsight](https://plugins.jetbrains.com/plugin/14704-refactorinsight) plugin.
+
+My commit history would then look something like this:
+
+- wip
+- wip
+- wip
+- Goal: make rover turn left
+- wip
+- wip
+- wip
+- wip
+- Goal: make rover turn right
 
 ## What about the Integrate part?
 Lots of small commits on my computer are nice.
@@ -197,7 +209,7 @@ It also contains a TCR task.
 ```make
 goal +MESSAGE:
     git pull --rebase
-    git commit --allow-empty -m "{% raw %}{{MESSAGE}}{% endraw %}"
+    git commit --allow-empty -m "Goal: {% raw %}{{MESSAGE}}{% endraw %}"
     git push
 
 commit:
