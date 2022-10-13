@@ -59,6 +59,7 @@ __update:__ seems like i ran into a similar issue like [this](https://github.com
 
 ## Without lombok, what are the alternatives?
 We can just fall back to explicit pojo code. Some libs, ide features and plugins will help us out with the boilerplate. 
+Also, since Java 14 we can finally use records. 
 
 ### equals and hashcode
 For value objects, where you want all fields included, the apache commons lang [EqualsBuilder](http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/EqualsBuilder.html) and [HashCodeBuilder](http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/HashCodeBuilder.html) come in handy.
