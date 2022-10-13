@@ -6,7 +6,7 @@ But other than saving all that boilerplate, have you considered the repercussion
 
 ### Magic is harmful
 I don't want any magic in my code. 
-It is the thing that makes behaviour non-transparent.
+It is the thing that makes behaviour opaque.
 It makes you fire up your debugger, because you don't actually understand what is going on behind the scenes.
 There should be no _behind the scenes_.
 Everything should be as explicit as possible, for economic reasons.
@@ -15,21 +15,21 @@ Everything should be as explicit as possible, for economic reasons.
 >~ John A De Goes
 
 ### @Data, @Getter and @Setter are a design smell
-When i design the objects of my domain i want to avoid accessors.
+When I design the objects of my domain I want to avoid accessors.
 I want those objects to represent a set of behaviours on nicely encapsulated data. 
 I'll occasionally have some public fields on my _Value Objects_, but that's about it. 
-Why would i want getters or setters on these objects? They are a backdoor to the data that ought to be modified through specific methods. 
+Why would I want getters or setters on these objects? They are a backdoor to the data that ought to be modified through specific methods. 
 This smells like [Feature Envy](https://refactoring.guru/smells/feature-envy) and [Anemic Domain Model](https://martinfowler.com/bliki/AnemicDomainModel.html).
 
 Also, setters work against my intention of making most of my objects immutable.
 After all, immutable objects are easier to refactor.
 
-So where do i need accessors then?
+So where do I need accessors then?
 Maybe on my data transfer objects?
-Why would i want to go the length of making fields private and creating accessors on a structure that is solely data?
+Why would I want to go the length of making fields private and creating accessors on a structure that is solely data?
 Does this kind of information hiding provide _any_ value? To me, it is just clutter.
 `public final` fields without accessors are a much cleaner solution here imho.
-And there i am, left without a need for accessors.
+And there I am, left without a need for accessors.
 
 ### @AllArgsConstructor introduces connascence of position
 This awful annotation couples the order of your fields to the order of its generated constructor arguments.
@@ -46,12 +46,12 @@ The bad thing is not the stack overflow. It's the fact that it is hidden behind 
 ### The Lombok plugin might hit your cpu
 If you do use lombok annotations excessively and have a lot of pojos in your code base, the lombok plugin might hit your cpu.
 I had one project where it caused the autocomplete drop down to load several seconds in specific areas of the code.
-The problem was gone once i deactivated the plugin.
+The problem was gone once I deactivated the plugin.
 To be fair: Maybe it was just a temporary problem with the plugin that has already been addressed. 
 
 ### Compatibility issues with Java versions greater than 8 
-When i tried migrating a java 1.8 project that used lombok to java 11, i ran into issues.
-And despite the [known issues](https://stackoverflow.com/questions/53866929/unable-to-use-lombok-with-java-11) and [fixes](https://github.com/rzwitserloot/lombok/issues/1723) that i found on the internet, i was not able to get it to work again within 2 hours of trying.
+When I tried migrating a java 1.8 project that used lombok to java 11, I ran into issues.
+And despite the [known issues](https://stackoverflow.com/questions/53866929/unable-to-use-lombok-with-java-11) and [fixes](https://github.com/rzwitserloot/lombok/issues/1723) that I found on the internet, I was not able to get it to work again within 2 hours of trying.
 Delombok to the rescue. 
 
 __update:__ seems like i ran into a similar issue like [this](https://github.com/rzwitserloot/lombok/issues/1723), trying to upgrade to java 11. 
@@ -103,7 +103,7 @@ I really like the builder generation plugins that are freely available on the in
 - [Builder Generator](https://plugins.jetbrains.com/plugin/6585-builder-generator)
 
 Also, there is a new [__Replace Constructor with Builder__](https://www.jetbrains.com/help/idea/replace-constructor-with-builder.html) refactoring available now.
-However, i prefer the __Inner Builder__ plugin.
+However, I prefer the __Inner Builder__ plugin.
 
 ## A case for Delombok
 Thankfully, there is this nice little feature called delombok.
@@ -111,4 +111,4 @@ It will transform all your former lombok annotations into the ugly boilerplate t
 so you can completely get rid of it.
 Don't expect a beautiful outcome though, the generated code will contain a lot of `@SuppressWarnings("all")`.
 Also, the delombok feature of my intellij plugin caused my ide to freeze.
-So i had to use the [Lombok Maven Plugin](http://anthonywhitford.com/lombok.maven/lombok-maven-plugin/usage.html) instead, it worked just fine.
+So I had to use the [Lombok Maven Plugin](http://anthonywhitford.com/lombok.maven/lombok-maven-plugin/usage.html) instead, it worked just fine.
