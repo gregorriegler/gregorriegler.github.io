@@ -1,7 +1,7 @@
 ---
 layout: post
 category: refactoring-java
-title: 'Expense Report Kata - Refactor Primitive Obsession (3/5)'
+title: 'Expense Report Kata - Make The Change Easy (3/5)'
 date: 2021-11-01
 ---
 Here I am working on the Expense Report Refactoring Kata.
