@@ -1,7 +1,7 @@
 ---
 layout: post
 category: refactoring-java
-title: 'Expense Report Kata - Intro & Test Skeleton (2/5)'
+title: 'Expense Report Kata - Finish Testing (2/5)'
 date: 2021-10-25
 ---
 Here I am working on the Expense Report Refactoring Kata.
