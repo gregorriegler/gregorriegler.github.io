@@ -9,6 +9,9 @@ I was recently following an interesting discussion of the vienna software crafts
 The discussion is held in german, and contains interesting ideas regarding how to code well together, and how to facilitate it. 
 I attempted an answer but it got longer and longer. 
 Eventually I decided to write this blog post instead.
+I will continue to use the terms "coding together", "coding collaboratively", "Mob Programming" and "Ensemble Programming" interchangeably.
+However, there is a slight distinction. When I say "coding together" or "coding collaboratively" I do not exclude pairs.
+When I say "Mob Programming" or "Ensemble Programming" I do exclude pairs.
 
 ## Solo Programming considered bad
 
@@ -46,10 +49,10 @@ Maybe the best thing is the amplified learning, and just having a good time.
 ## The Cost of Coding Together
 There is a cost connected to having many programmers working at the same problem at the same time, of course.
 We understand that cost well, I think.
-What we do not understand well however are the benefits.
+What we do not understand well however are it's benefits.
 After all, it's a trade off.
-Will the benefits outweigh the costs for you?
-So lets talk about benefits, which is much more interesting.
+Will the benefits outweigh the costs?
+So lets talk about benefits, which is more interesting.
 
 ## The Benefits Of Coding Together
 
@@ -125,7 +128,7 @@ Speak slowly and use simple language.
 Meet the people where they are. 
 Use metaphors to help build understanding. 
 
-### So, It's All About Human Interactions
+### So, It's All About Human Interaction
 Be kind, and treat each other with [consideration and respect](https://www.youtube.com/watch?v=oq42E51Ufnk).
 Make people feel safe to contribute and to welcome and reward all forms of contribution, including questions.
 It is ok to not know something or to not get it.
