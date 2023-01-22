@@ -88,11 +88,26 @@ Different people think in different boxes.
 More boxes means more opportunities.
 More opportunities allow for a better result for the user.
 
-### Reduced Work in Progress
+### Reduced Work In Progress
+When we work together at the same problem, we work on just that one problem.
+All the people needed to solve the problem are there when they're needed.
+And when we solve it, given we take the necessary measures, it's done.
+It's off the table. 
+We can now focus on the next problem.
+No task juggling. 
+No wait time.
+No context switching.
+Less stuff on everybodys minds.
+Better and easier focus.
 
 ### Having a good time
-
-The mere learning and knowledge gained from working in a team can already make up for the cost of the collaboration.
+For many people it can be rewarding to work in a mob with other people, especially if they are more experienced.
+We're often thrown into cold water when working on software.
+Teaming reduces the stress of this.
+It is also more enjoyable for many.
+We're working as an actual team.
+Coding together is a great teambuilding activity.
+It might feel awkward in the beginning, but once you get the hang of it it can be a lot of fun, too.
 
 ## Coding Together Isn't Easy
 Coding together, also known as "Mob Programming" or "Ensemble Programming" is challenging.
