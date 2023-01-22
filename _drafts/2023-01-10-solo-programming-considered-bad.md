@@ -7,7 +7,8 @@ tags:
 
 I was recently following an interesting discussion of the vienna software crafts community with the title "[How to facilitate a conversation between people, where the byproduct is code?](https://github.com/swkWien/sessions/issues/105)". 
 The discussion is held in german, and contains interesting questions and ideas regarding how to code well together and how to facilitate it. 
-My Answer got longer and longer, so eventually I decided to write this blog post over answering directly.
+I attempted to answer but it got longer and longer. 
+Eventually I decided to write this blog post over answering directly.
 
 ## Solo Programming considered bad
 
