@@ -6,9 +6,9 @@ tags:
 ---
 
 I was recently following an interesting discussion of the vienna software crafts community with the title "[How to facilitate a conversation between people, where the byproduct is code?](https://github.com/swkWien/sessions/issues/105)". 
-The discussion is held in german, and contains interesting questions and ideas regarding how to code well together and how to facilitate it. 
-I attempted to answer but it got longer and longer. 
-Eventually I decided to write this blog post over answering directly.
+The discussion is held in german, and contains interesting ideas regarding how to code well together, and how to facilitate it. 
+I attempted an answer but it got longer and longer. 
+Eventually I decided to write this blog post instead.
 
 ## Solo Programming considered bad
 
@@ -21,26 +21,78 @@ Let's be honest, we're not good at it.
 We tend to overcomplicate things, and we make a lot of mistakes.
 We rarely understand the problem that needs to be solved, and we don't know our tools well.
 Let's face it, we're not that good at programming.
-We often end up with crufty code that's not as simple as could be, doesn't work, and addresses the wrong problem.
+We often end up with crufty code that's not as simple as could be.
+It doesn't work, and often addresses the wrong problem.
 
 But hey, don't worry.
 We don't mean to.
 We do try hard to live up to the expectations.
 And we are working to the best of our knowledge.
-We're still learning, it's just hard. 🤷‍♂️
+We're learning, it's not that easy. 🤷‍♂️
 
 ## Coding Together As An Answer
 Collaborative coding can greatly improve the situation.
 By bringing together multiple people with different skills and perspectives we can achieve a deeper understanding of the problem and develop a superior solution.
 We can take on different roles and complement each other.
-With multiple people working together, there are more eyes to catch bugs and more knowledge of our tools and valuable techniques and practices. 
+There are more eyes to catch bugs and together we're more knowledgeable of our tools and better at valuable techniques and practices. 
 Collaborative coding is proven to solve complex problems better and more quickly.
-We stumble upon those all day while working on simple programs.
-The mere learning and knowledge gained from working in a team can already make up for the cost of the collaboration.
-
+We stumble upon those hard to solve problems all day while working on simple applications.
+Maybe the best thing is the amplified learning, and just having a good time. 
+// Idea energy drain
 
 ![Remote Mob Programming](/assets/mob-programming/remote-mob-programming.png "Image Caption")
 *» A team coding together remotely.*
+
+## The Cost of Coding Together
+There is a cost connected to having many programmers working at the same problem at the same time, of course.
+We understand that cost well, I think.
+What we do not understand well however are the benefits.
+After all, it's a trade off.
+Will the benefits outweigh the costs for you?
+So lets talk about benefits, which is much more interesting.
+
+## The Benefits Of Coding Together
+
+### Amplified Learning
+The most striking benefit is, and I cannot stress this enough, the amplification in learning.
+We need to learn and get better at what we're doing, desperately so. 
+All of us, but especially people new to this Industry.
+There is a big gap in what you learn in school vs what you need to know at the job.
+We somehow have to make up for that gap.
+I don't know a better way than to work together with the people.
+Coding together is not only the best way to onboard new people.  
+It's also astonishing how fast they raise their level and become valuable contributors.
+After almost two decades of coding, I learned so much from just working together with other people.
+I honestly think the learning by itself is already what makes up for it's cost.
+
+### Reduction In Cost for Change
+We are used to a trade off between quality and cost, but it doesn't work like this in software.
+In Software, quality is cheap and cruft is expensive.
+
+> Martin Fowler wrote an interesting article on this topic
+https://martinfowler.com/articles/is-quality-worth-cost.html
+
+Code is a liability, and much of the cost is spent later when we need to change and improve it.
+It's challenging to get the structure right, and to keep it soft in the sense that it remains easy to change.
+It's also terribly expensive to work on poorly designed legacy code, which we mostly see in enterprise software today.
+The cost of this is insidious as there is mostly no awareness about it.
+So it's a good choice to aim and take measures for a high internal quality to safe cost and maintain the ability to change it easily.
+Having many people looking at and reviewing the code as it's being typed may vastly increase it's internal quality.
+
+### Better Software For The User
+I have seen this repeatedly: Many minds working on the same problem will bring up more and better ideas which simply leads to better solutions.
+When I say better, I mostly mean simpler.
+You just have those moments where the majority is chasing a sub-optimal solution when one person comes up with a better one.
+It's hard to think out of the box. 
+Different people think in different boxes. 
+More boxes means more opportunities.
+More opportunities allow for a better result for the user.
+
+### Reduced Work in Progress
+
+### Having a good time
+
+The mere learning and knowledge gained from working in a team can already make up for the cost of the collaboration.
 
 ## Coding Together Isn't Easy
 Coding together, also known as "Mob Programming" or "Ensemble Programming" is challenging.
