@@ -10,13 +10,14 @@ The discussion is held in german, and contains interesting ideas regarding how t
 I attempted an answer but it got longer and longer. 
 Eventually I decided to write this blog post instead.
 I will continue to use the terms "coding together", "coding collaboratively", "Mob Programming" and "Ensemble Programming" interchangeably.
-However, there is a slight distinction. When I say "coding together" or "coding collaboratively" I do not exclude pairs.
-When I say "Mob Programming" or "Ensemble Programming" I do exclude pairs.
+However, when I say "coding together" or "coding collaboratively" this includes Pair Programming.
+When I say "Mob Programming" or "Ensemble Programming" I do exclude Pair Programming.
 
-## Solo Programming considered bad
+## Solo Programming Considered Bad
 
-> A programmer is a person sitting solo in front of their computer, typing rapidly on their keyboard.
-A well known stereotype. You have seen the movies.
+![Solo Programming](/assets/mob-programming/solo-programming.png "A Solo Programmer")
+*» A programmer is a person sitting solo in front of their computer, typing rapidly on their keyboard.
+A well known stereotype. You have seen the movies.*
 
 Turns out solo programming is quite bad. 
 No, I'm serious.
@@ -33,87 +34,84 @@ We do try hard to live up to the expectations.
 And we are working to the best of our knowledge.
 We're learning, it's not that easy. 🤷‍♂️
 
-## Coding Together As An Answer
+## Coding Together as an Answer
 Collaborative coding can greatly improve the situation.
 By bringing together multiple people with different skills and perspectives we can achieve a deeper understanding of the problem and develop a superior solution.
 We can take on different roles and complement each other.
-There are more eyes to catch bugs and together we're more knowledgeable of our tools and better at valuable techniques and practices. 
+There are more eyes to catch bugs, and together we're more knowledgeable of our tools and better at valuable techniques and practices. 
 Collaborative coding is proven to solve complex problems better and more quickly.
 We stumble upon those hard to solve problems all day while working on simple applications.
-Maybe the best thing is the amplified learning, and just having a good time. 
-// Idea energy drain
+Some of the best things about coding together are the amplified learning, and just having a good time. 
 
 ![Remote Mob Programming](/assets/mob-programming/remote-mob-programming.png "Image Caption")
 *» A team coding together remotely.*
 
 ## The Cost of Coding Together
-There is a cost connected to having many programmers working at the same problem at the same time, of course.
+There is a cost connected with having many programmers working at the same problem at the same time, of course.
 We understand that cost well, I think.
 What we do not understand well however are it's benefits.
 After all, it's a trade off.
 Will the benefits outweigh the costs?
-So lets talk about benefits, which is more interesting.
+So lets talk about benefits.
 
-## The Benefits Of Coding Together
+## The Benefits of Coding Together
 
 ### Amplified Learning
 The most striking benefit is, and I cannot stress this enough, the amplification in learning.
 We need to learn and get better at what we're doing, desperately so. 
-All of us, but especially people new to this Industry.
+All of us, but especially people new to this industry.
 There is a big gap in what you learn in school vs what you need to know at the job.
 We somehow have to make up for that gap.
 I don't know a better way than to work together with the people.
-Coding together is not only the best way to onboard new people.  
-It's also astonishing how fast they raise their level and become valuable contributors.
-After almost two decades of coding, I learned so much from just working together with other people.
-I honestly think the learning by itself is already what makes up for it's cost.
+Coding together is not only the best way to onboard new people, it's also astonishingly fast in raising the participants levels and have them become valuable contributors.
+After almost two decades of coding, I've learned so much from working together with other people.
+I honestly think the learning by itself is already what makes up for its cost.
 
-### Reduction In Cost for Change
+### Reduction in Cost for Change
 We are used to a trade off between quality and cost, but it doesn't work like this in software.
-In Software, quality is cheap and cruft is expensive.
+In this business quality is cheap and cruft is expensive.
 
-> Martin Fowler wrote an interesting article on this topic
-https://martinfowler.com/articles/is-quality-worth-cost.html
+> 💡 Martin Fowler wrote an interesting [article](https://martinfowler.com/articles/is-quality-worth-cost.html) on this topic
 
-Code is a liability, and much of the cost is spent later when we need to change and improve it.
-It's challenging to get the structure right, and to keep it soft in the sense that it remains easy to change.
+Code is a liability and much of the cost is spent later when we need to change and improve it.
+It's challenging to get the structure right and to keep it soft in the sense that it remains easy to change.
 It's also terribly expensive to work on poorly designed legacy code, which we mostly see in enterprise software today.
 The cost of this is insidious as there is mostly no awareness about it.
-So it's a good choice to aim and take measures for a high internal quality to safe cost and maintain the ability to change it easily.
-Having many people looking at and reviewing the code as it's being typed may vastly increase it's internal quality.
+So it's a good choice to aim for and take measures for a high [internal quality](https://wiki.c2.com/?InternalAndExternalQuality) to save cost, and to maintain its ability to be changed easily.
+Having many people looking at and reviewing the code as it's being typed may vastly increase its internal quality.
 
-### Better Software For The User
+### Better Software for the User
 I have seen this repeatedly: Many minds working on the same problem will bring up more and better ideas which simply leads to better solutions.
 When I say better, I mostly mean simpler.
-You just have those moments where the majority is chasing a sub-optimal solution when one person comes up with a better one.
+You just have those moments where the majority is chasing a sub-optimal solution when there is one person coming up with a better one.
 It's hard to think out of the box. 
 Different people think in different boxes. 
-More boxes means more opportunities.
+More boxes mean more opportunities.
 More opportunities allow for a better result for the user.
 
-### Reduced Work In Progress
-When we work together at the same problem, we work on just that one problem.
-All the people needed to solve the problem are there when they're needed.
-And when we solve it, given we take the necessary measures, it's done.
+### Reduced Work in Progress
+When we work together at the same problem this is also the only problem we are working on.
+All the people needed to solve it are there when they're needed.
+And then, given we take all necessary measures, it's done.
 It's off the table. 
-We can now focus on the next problem.
+We can entirely focus on the next problem.
 No task juggling. 
 No wait time.
 No context switching.
 Less stuff on everybodys minds.
 Better and easier focus.
+A clean One-Piece-Flow.
 
-### Having a good time
-For many people it can be rewarding to work in a mob with other people, especially if they are more experienced.
+### Having a Good Time
+For many people it can be rewarding to work in a mob with other people, especially when those are more experienced.
 We're often thrown into cold water when working on software.
 Teaming reduces the stress of this.
 It is also more enjoyable for many.
-We're working as an actual team.
-Coding together is a great teambuilding activity.
-It might feel awkward in the beginning, but once you get the hang of it it can be a lot of fun, too.
+Coding together is a great teambuilding activity, as we're working as an actual team.
+It might feel awkward in the beginning, but once you get the hang of it, it can be a lot of fun.
 
-## Coding Together Isn't Easy
-Coding together, also known as "Mob Programming" or "Ensemble Programming" is challenging.
+## Coding Together is not Easy
+Coding together is challenging.
 It's not simply a matter of one person typing while others observe in silence.
 In order to make it work, it's important for all team members to actively engage and collaborate. 
 This enables us to utilize all of our minds and build the shared understanding we strive for.
@@ -128,7 +126,7 @@ Speak slowly and use simple language.
 Meet the people where they are. 
 Use metaphors to help build understanding. 
 
-### So, It's All About Human Interaction
+### So, it's all About Human Interaction
 Be kind, and treat each other with [consideration and respect](https://www.youtube.com/watch?v=oq42E51Ufnk).
 Make people feel safe to contribute and to welcome and reward all forms of contribution, including questions.
 It is ok to not know something or to not get it.
@@ -139,14 +137,14 @@ Creating a supportive environment that encourages people to contribute will help
 Seems like the social skills are where it's at.
 Has programming been the easy part all along?
 
-### Agree On A Shared Goal
+### Agree on a Shared Goal
 With many different ideas being shared, it can be challenging for a team to agree on a shared goal. 
 Which is yet another team-skill to master.
 It's important to be open to stepping back and trying out someone else's idea. 
 It's okay to try multiple approaches and see which one works best. 
 By being open to different ideas and perspectives, a team can learn and grow together.
 
-### Knowing When To Speak
+### Knowing when to Speak
 It's important for everyone to feel comfortable speaking up and sharing their ideas. 
 However, it's also important to know when to hold back and listen to others. 
 One way to manage this is by keeping a private backlog of ideas that come to mind but may not be relevant at the moment. 
@@ -159,7 +157,7 @@ Somebody needs to type the code, of course.
 A common name for this role is the "Driver" as in the Driver/Navigator relationship of "[Strong Style Pairing](http://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html)".
 I commonly notice people confuse the names of these two roles, so I prefer to call them "Typist" and "Talker" instead.
 
-### The Role Of The Typist
+### The Role of the Typist
 We do not want the typist to just hack away.
 If they did, other participants could merely descipher the then buggy code and make faulty assumptions.
 Terribly inefficient.
@@ -187,7 +185,7 @@ A technique I learned at the python approvals mob that improves feedback and sha
 It means that a typist does a quick explanation of what just had happened and what they did after each rotation.
 When a typist explains this in their own words this tends to reveal and solve misunderstandings.
 
-### Being A Talker Isn't Easy Either
+### Being a Talker is not Easy Either
 So the talker is the actual person programming.
 The typist sort of acts as a smart input device for them.
 A talker should communicate their thinking.
@@ -220,7 +218,7 @@ As a talker, you not only want to keep the direction of the previous talker, you
 Trust them to continue the idea you were working on.
 Without trust, rotations bog down which prevents flow.
 
-## Find Out What Works For Your Mob
+## Find out what Works for Your Mob
 As stated previously, coding together is a deliberate practice.
 You want to keep improving the way you work together.
 No preexisting rules, or framework will make that happen.
