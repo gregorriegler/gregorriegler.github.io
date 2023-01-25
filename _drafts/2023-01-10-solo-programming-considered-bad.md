@@ -5,13 +5,19 @@ tags:
 - Mob Programming
 ---
 
-I was recently following an interesting discussion of the vienna software crafts community with the title "[How to facilitate a conversation between people, where the byproduct is code?](https://github.com/swkWien/sessions/issues/105)". 
-The discussion is held in german, and contains interesting ideas regarding how to code well together, and how to facilitate it. 
-I attempted an answer but it got longer and longer. 
-Eventually I decided to write this blog post instead.
-I will continue to use the terms "coding together", "coding collaboratively", "Mob Programming" and "Ensemble Programming" interchangeably.
-However, when I say "coding together" or "coding collaboratively" this includes Pair Programming.
-When I say "Mob Programming" or "Ensemble Programming" I do exclude Pair Programming.
+I was recently following an interesting discussion of the Vienna software crafts community with the title: "[How to facilitate a conversation between people, where the byproduct is code?](https://github.com/swkWien/sessions/issues/105)". 
+The discussion is held in german and contains interesting ideas regarding how to code well together, and how to facilitate it. 
+I attempted an answer, but it got longer and longer. 
+Eventually, I decided to write this blog post instead.
+I will continue to use the terms
+- coding together
+- collaborative coding
+- Mob Programming, and
+- Ensemble Programming
+
+interchangeably.
+However, when I say *coding together* or *collaborative coding* this includes Pair Programming.
+When I say *Mob Programming* or *Ensemble Programming* I exclude Pair Programming.
 
 ## Solo Programming Considered Bad
 
@@ -19,96 +25,97 @@ When I say "Mob Programming" or "Ensemble Programming" I do exclude Pair Program
 *» A programmer is a person sitting solo in front of their computer, typing rapidly on their keyboard.
 A well known stereotype. You have seen the movies.*
 
-Turns out solo programming is quite bad. 
+It turns out that solo programming may not be as good as we think.
 No, I'm serious.
-Let's be honest, we're not good at it.
+I think we overestimate our programming skills.
+Let's face it, we're not that good.
 We tend to overcomplicate things, and we make a lot of mistakes.
 We rarely understand the problem that needs to be solved, and we don't know our tools well.
-Let's face it, we're not that good at programming.
-We often end up with crufty code that's not as simple as could be.
-It doesn't work, and often addresses the wrong problem.
+We often end up with crufty code that isn't as simple as it could be.
+It doesn't work and often targets the wrong problem.
 
-But hey, don't worry.
+But hey, don't worry about it.
 We don't mean to.
+We try very hard to live up to expectations.
 We do try hard to live up to the expectations.
-And we are working to the best of our knowledge.
-We're learning, it's not that easy. 🤷‍♂️
+And we work to the best of our ability.
+We're learning.
+It's just not that easy. 🤷‍♂️
 
 ## Coding Together as an Answer
 Collaborative coding can greatly improve the situation.
-By bringing together multiple people with different skills and perspectives we can achieve a deeper understanding of the problem and develop a superior solution.
+By bringing together multiple people with different skills and perspectives, we can gain a deeper understanding of the problem and develop a better solution.
 We can take on different roles and complement each other.
-There are more eyes to catch bugs, and together we're more knowledgeable of our tools and better at valuable techniques and practices. 
-Collaborative coding is proven to solve complex problems better and more quickly.
-We stumble upon those hard to solve problems all day while working on simple applications.
-Some of the best things about coding together are the amplified learning, and just having a good time. 
+We have more eyes to spot mistakes, and together we know our tools better and know more about valuable techniques and practices.
+It's proven that complex problems can be solved better and faster through collaborative coding.
+Working on simple applications, we encounter such hard-to-solve problems every day.
+The best thing about coding together is the amplified learning while just having a good time.
 
 ![Remote Mob Programming](/assets/mob-programming/remote-mob-programming.png "Image Caption")
 *» A team coding together remotely.*
 
 ## The Cost of Coding Together
-There is a cost connected with having many programmers working at the same problem at the same time, of course.
-We understand that cost well, I think.
-What we do not understand well however are it's benefits.
-After all, it's a trade off.
+There is a cost, of course, to having many programmers working on the same problem at the same time.
+We understand those costs well, I think.
+What we do not understand so well, however, are the benefits.
+Ultimately, it's about tradeoffs.
 Will the benefits outweigh the costs?
-So lets talk about benefits.
+So let us talk about the benefits.
 
 ## The Benefits of Coding Together
 
 ### Amplified Learning
-The most striking benefit is, and I cannot stress this enough, the amplification in learning.
-We need to learn and get better at what we're doing, desperately so. 
-All of us, but especially people new to this industry.
-There is a big gap in what you learn in school vs what you need to know at the job.
-We somehow have to make up for that gap.
-I don't know a better way than to work together with the people.
-Coding together is not only the best way to onboard new people, it's also astonishingly fast in raising the participants levels and have them become valuable contributors.
-After almost two decades of coding, I've learned so much from working together with other people.
-I honestly think the learning by itself is already what makes up for its cost.
+The most striking advantage, and I cannot emphasise this enough, is the amplification in learning.
+We need to learn and get better at what we do, desperately so.
+All of us, but especially those of us who are new to it.
+There's a big gap between what you learn in school and what you need to know on the job.
+We have to make up for that gap somehow.
+I can't think of a better way than to work together with the people.
+Coding together isn't only the best way to onboard new people, but it also succeeds amazingly quickly in raising the level of participants and turning them into valuable contributors.
+I've learned so much from programming with other people that I honestly believe the learning effect alone makes up for the cost.
 
 ### Reduction in Cost for Change
-We are used to a trade off between quality and cost, but it doesn't work like this in software.
-In this business quality is cheap and cruft is expensive.
+We are used to a trade-off between quality and cost, but it does not work that way with software.
+In our business, quality is cheap and cruft is expensive.
 
-> 💡 Martin Fowler wrote an interesting [article](https://martinfowler.com/articles/is-quality-worth-cost.html) on this topic
+> 💡 Martin Fowler wrote an interesting [article](https://martinfowler.com/articles/is-quality-worth-cost.html) on this topic.
 
-Code is a liability and much of the cost is spent later when we need to change and improve it.
-It's challenging to get the structure right and to keep it soft in the sense that it remains easy to change.
-It's also terribly expensive to work on poorly designed legacy code, which we mostly see in enterprise software today.
-The cost of this is insidious as there is mostly no awareness about it.
-So it's a good choice to aim for and take measures for a high [internal quality](https://wiki.c2.com/?InternalAndExternalQuality) to save cost, and to maintain its ability to be changed easily.
-Having many people looking at and reviewing the code as it's being typed may vastly increase its internal quality.
+Code is a liability, and much of the cost is spent later when we need to change and improve it.
+It's a challenge to find the right structure and keep it soft enough to change easily.
+It's also terribly expensive to work on poorly designed legacy code, as we often see in enterprise software today.
+The cost of this is insidious because there is usually no awareness of it.
+So it's a good choice to strive for and achieve high [internal quality](https://wiki.c2.com/?InternalAndExternalQuality) to save costs and maintain the ability to be easily changed.
+The internal quality of the code can be greatly increased if many people review and revise the code as it's entered.
 
 ### Better Software for the User
-I have seen this repeatedly: Many minds working on the same problem will bring up more and better ideas which simply leads to better solutions.
-When I say better, I mostly mean simpler.
-You just have those moments where the majority is chasing a sub-optimal solution when there is one person coming up with a better one.
-It's hard to think out of the box. 
-Different people think in different boxes. 
+I have seen this repeatedly: Many minds working on the same problem produce more and better ideas, which simply leads to better solutions.
+When I say better, I usually mean simpler.
+There are just those moments when the majority chase a suboptimal solution while one person proposes a better one.
+It's hard to think outside the box.
+Different people think in different boxes.
 More boxes mean more opportunities.
-More opportunities allow for a better result for the user.
+More opportunities lead to a better outcome for the user.
 
 ### Reduced Work in Progress
-When we work together at the same problem this is also the only problem we are working on.
-All the people needed to solve it are there when they're needed.
-And then, given we take all necessary measures, it's done.
-It's off the table. 
-We can entirely focus on the next problem.
-No task juggling. 
-No wait time.
+When we work together on a problem, it's also the only problem we work on.
+All the people needed to solve the problem are there when they're needed.
+And then, once we've taken all the necessary action, it's done.
+It's off the table.
+We can focus entirely on the next problem.
+No juggling of tasks.
+No waiting around.
 No context switching.
-Less stuff on everybodys minds.
+Fewer things to keep everyone busy.
 Better and easier focus.
-A clean One-Piece-Flow.
+A clean one-piece flow.
 
 ### Having a Good Time
-For many people it can be rewarding to work in a mob with other people, especially when those are more experienced.
-We're often thrown into cold water when working on software.
-Teaming reduces the stress of this.
-It is also more enjoyable for many.
-Coding together is a great teambuilding activity, as we're working as an actual team.
-It might feel awkward in the beginning, but once you get the hang of it, it can be a lot of fun.
+For many people, it can be rewarding to work in a mob with other people, especially if they're more experienced.
+When working on software, we're often thrown in at the deep end.
+Teamwork reduces the stress involved.
+It's also more enjoyable for many.
+Coding together is a great team-building activity because we work as an actual team.
+It may feel awkward at first, but once you get the hang of it, it can be a lot of fun.
 
 ## Coding Together is not Easy
 Coding together is challenging.
@@ -120,147 +127,152 @@ Mob Programming, thus working as an actual team, is a deliberate practice.
 
 ### Shared Understanding
 It's important to ensure that everyone is on the same page and no one is left behind.
-This requires patience, effective communication, and the willingness to listen and explain ideas.
-Communication is challenging, but it's a skill we can improve through practice. 
-Speak slowly and use simple language. 
-Meet the people where they are. 
-Use metaphors to help build understanding. 
+This requires patience, effective communication, and a willingness to listen and explain ideas.
+Communication is a challenge, but a skill we can improve with practice.
+Speak slowly and use simple language.
+Pick people up where they are.
+Use metaphors.
 
 ### So, it's all About Human Interaction
-Be kind, and treat each other with [consideration and respect](https://www.youtube.com/watch?v=oq42E51Ufnk).
-Make people feel safe to contribute and to welcome and reward all forms of contribution, including questions.
-It is ok to not know something or to not get it.
-Be a hero and ask the first question so others feel more safe in doing so, too.
-Reward a contribution, especially when the person feels self-conscious about it.
-Be open to considering and evaluating potentially disruptive ideas, even if they come up suddenly.
-Creating a supportive environment that encourages people to contribute will help to ensure that the best ideas and insights from all team members make it into the code.
-Seems like the social skills are where it's at.
+Be kind and treat each other with [consideration and respect] (https://www.youtube.com/watch?v=oq42E51Ufnk).
+Make people feel safe to contribute, and welcome and reward all forms of contribution, including questions.
+It is okay not to know something or not to understand it.
+Be a hero and ask the first question to make others feel confident as well.
+Reward a contribution, especially if it makes the person feel unsure.
+Be open to examining and evaluating potentially disruptive ideas, even if they come up suddenly.
+Creating a supportive environment that encourages people to contribute will help ensure that the best ideas and insights from all team members are incorporated into the code.
+It seems like social skills are the name of the game.
 Has programming been the easy part all along?
 
 ### Agree on a Shared Goal
-With many different ideas being shared, it can be challenging for a team to agree on a shared goal. 
-Which is yet another team-skill to master.
-It's important to be open to stepping back and trying out someone else's idea. 
-It's okay to try multiple approaches and see which one works best. 
+With many different ideas being shared, it can be difficult for a team to agree on a common goal.
+This is another team skill to master.
+It's important to be open to taking a step back and trying someone else's idea.
+It's okay to try multiple approaches and see which one works best.
 By being open to different ideas and perspectives, a team can learn and grow together.
 
 ### Knowing when to Speak
-It's important for everyone to feel comfortable speaking up and sharing their ideas. 
-However, it's also important to know when to hold back and listen to others. 
-One way to manage this is by keeping a private backlog of ideas that come to mind but may not be relevant at the moment. 
-This can help to focus on the task at hand while still being able to capture and consider other ideas for later. 
-Developing the ability to know when to speak up and when to hold back is an important skill for effective collaboration.
+It's important for everyone to feel comfortable speaking their mind and sharing their ideas.
+However, it's also important to know when to hold back and listen to others.
+One way to deal with this is to keep a private backlog of ideas that come to mind but may not be relevant at the moment.
+This can help keep you focused on the task at hand while recording and considering other ideas for later.
+Knowing when to speak up and when to hold back is an important skill for effective collaboration.
 
 ## Distributing Roles
 A logical first step is to distribute participants by what they do.
-Somebody needs to type the code, of course. 
-A common name for this role is the "Driver" as in the Driver/Navigator relationship of "[Strong Style Pairing](http://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html)".
-I commonly notice people confuse the names of these two roles, so I prefer to call them "Typist" and "Talker" instead.
+Someone has to type the code, of course.
+A common name for this role is "driver," as in the Driver/Navigator relationship of [Strong Style Pairing](http://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html).
+I often find that people confuse the names of these two roles, so I prefer to call them "Typist" and "Talker" instead.
 
 ### The Role of the Typist
 We do not want the typist to just hack away.
-If they did, other participants could merely descipher the then buggy code and make faulty assumptions.
-Terribly inefficient.
-We want the typist to exercise on the instructions of the team.
-Being a typist is hard. 
-With contradicting ideas they get overwhelmed.
+If they did, other participants could merely descipher the then buggy code and make incorrect assumptions.
+That's terribly inefficient.
+We want the typist to follow the team's instructions.
+Being a typist is hard.
+They get overwhelmed with conflicting ideas.
 What should they focus on?
-We may solve this problem by instating a designated talker.
-It's not the only person talking, but they act as the primary input channel for the typist and filters all ideas and makes the final decision.
-So even though many things are said, the typist knows which voice to focus on.
+We can solve this problem by using a designated talker.
+It's not the only person who speaks, but they act as the primary input channel for the typist, filtering all the ideas and making the final decision.
+Even if many things are said, the typist knows which voice to focus on.
 
 #### A Typist Translates
-It's a common misconception that the typist stupidly types the code they've been told to type, word by word, character by character. 
-Actually, the typist has a lot of thought and decisions to make.
-For example: They can run the the tests whenever.
-They translate the high level intent of the talker into code, so that the talker can stay on the level of their thinking.
+It is a common misconception that the typist foolishly types out the code they've been told to type, word by word, character by character.
+Actually, the typist must make many considerations and decisions.
+For example: They can run the tests at any time.
+They translate the talker's intention into code so that the talker can stay at the level of their thinking.
 The typist takes care of the details.
-This takes a big burden of the talker.
-I mean, typing itself is already quite a challenge. 
-Knowing your tools well and being good at it is an art. 
-Being able to translate the high level intent on top of that is the icing on the cake.
+That takes a big burden off the talker.
+I mean, typing in itself is quite a challenge.
+To know your tools well and being good at typing is an art.
+If you are then able to translate the high level intent on top of that, that's icing on the cake.
 
 #### Typist Wrapups
-A technique I learned at the python approvals mob that improves feedback and shared understanding are typist wrapups.
-It means that a typist does a quick explanation of what just had happened and what they did after each rotation.
-When a typist explains this in their own words this tends to reveal and solve misunderstandings.
+One technique I learned at the Python Approvals Mob that improves feedback and shared understanding is typist wrapups.
+It means that a typist gives a brief explanation of what just happened and what they did after each round.
+When a typist explains this in their own words, misunderstandings are more likely to be uncovered and cleared up.
 
 ### Being a Talker is not Easy Either
-So the talker is the actual person programming.
-The typist sort of acts as a smart input device for them.
+So the talker is the person who programmes.
+The typist acts as a kind of intelligent input device for them.
 A talker should communicate their thinking.
 In other words, they should think out loud.
-There's a lot of stages of thinking we go through.
-First, we orient ourselves with the current situation - the context.
-Second, we envision where we want to go from here - a direction.
-Third, we formulate a concrete intent - still on a high level.
+There are many stages of thinking that we go through.
+First, we orient ourselves to the current situation - the context.
+Second, we imagine where we want to go from here - a direction.
+Third, we formulate a concrete intention - still at a high level.
 This is already what a typist could work with.
-Only then we go to the low level details: What actual code to type on what line, Syntax, Code Formatting, Keystrokes to use, Buttons to click, etc.
-Every stage of thought is shared with the team.
-The talker instructs the typist on the level they can operate on.
-The higher, the better. 
-Sort of like limbo: How high can you get? 
+Each thought step is shared with the team.
+Only then do we move on to low-level details: What code to write on what line, syntax, code formatting, keys to use, buttons to click, etc.
+The talker instructs the typist at the level at which they can operate on.
+The higher, the better.
+Kind of like limbo: how high can you get?
 
 ### Rotation
-Everybody should get to type and talk.
+Everyone should get to type and talk.
 This keeps everybody engaged.
-When deciding on the rotation interval, think how long it would take for the same person to become typist again.
-One hour of waiting to become typist again is probably too much.
-It's hard for people to keep up their attention for this long.
-Rotating every 2 or 3 minutes works really well, but you have to be able to do it swiftly.
-Work hard on getting your rotation time down.
-The rotation time is the time between initiating a rotation, and the next typist/talker being able to continue.
+When deciding on the rotation interval, consider how long it would take for the same person to become a typist again.
+Waiting an hour to go back to typing is probably too much.
+It's hard to maintain attention that long.
+A rotation every 2 or 3 minutes works very well with an experienced mob, but you need to be able to do it swiftly.
+Work hard to shorten your rotation time.
+Rotation time is the time between the start of a rotation and the next typist/talker being able to continue.
 The perfect rotation time is 0.
 
 #### Rotations Need Trust
-Giving up control can be tough.
-As a talker, you not only want to keep the direction of the previous talker, you also need to trust the next talker to do the same. 
-Trust them to continue the idea you were working on.
-Without trust, rotations bog down which prevents flow.
+Giving up control can be difficult.
+As a talker, you not only want to maintain the direction of the previous talker, but you must trust the next talker to do the same.
+Trust them to continue the idea you have been working on.
+Without trust, rotations get bogged down, which hinders the flow.
 
 ## Find out what Works for Your Mob
-As stated previously, coding together is a deliberate practice.
-You want to keep improving the way you work together.
-No preexisting rules, or framework will make that happen.
-You'll need to find your working agreements for yourself.
+As mentioned earlier, collaborative coding is a deliberate practice.
+You want to constantly improve the way you work together.
+There are no pre-existing rules or frameworks for this.
+You need to find your own working agreements.
 Regular retrospectives are key in this regard.
-Do them at least daily.
-A two hour mob-programming-session can lead to a three hour retrospective which is superb.
-The learning can be massive.
-But it doesn't have to be this long.
-Do them short, a few minutes maybe, but regularely.
-Use them to find out what worked well for you, and turn that up.
+Conduct them at least daily.
+A two-hour mob programming session can lead to a three-hour retrospective, which is great.
+The learning effect can be tremendous.
+But they don't have to be that long.
+Make them short, maybe a few minutes, but regular.
+Use them to find out what worked well for you, and put that in the spotlight.
 Turn up the good.
-Keep innovating and find out what you would like to try.
-The retrospective is about learning and about change.
+Stay innovative and figure out what you'd like to try.
+Retrospectives are about learning and about change.
 Use it, act on its results.
 
 ### Microretro
-A minimal yet nice format for a retro is a microretro. 
-It just takes a few minutes and you can do it at least once a day.
-Maybe every few hours even.
-In that retro ask two questions: 
-1.) How did that feel?
-2.) What worked well?
-3.) What would you like to try?
+A minimal but nice format for a retro is a microretro.
+It only takes a few minutes and you can do it at least once a day.
+Maybe even every few hours.
+In this retro, ask two questions:
+
+1. How did it feel?
+2. What worked well?
+
+And maybe, if there's time left:
+
+3. What would you like to try?
 
 ## Facilitating a Mob
 Start simple.
-People new to Mob Programming will already be overwhelmed by the mere socialness of this way of working.
-All of a sudden they get to talk their ideas in front of other people.
-They're not used to being exposed while typing code either.
+People new to Mob Programming will be overwhelmed just by the conviviality of this way of working.
+Suddenly they have to pitch their ideas to other people.
+They are also not used to being exposed while typing code.
 
-It will take some time until they get used to this way of working and to have some spare space up in their minds to keep a protocol intact.
-So you want the initial protocol to be absolutely minimalistic, and to guide it so they don't have to.
+It will take some time for them to get used to this way of working and still have some room in their head to keep a protocol intact.
+So you want the initial protocol to be minimalist, and you want to guide it.
 Too many rules would throw them off the rails.
-The less rules you can get away with, the better.
-But make the mob do everything by themselves, so they can become autonomous quickly.
-Remind people to be patient and to treat each other with kindness, consideration and respect.
+Have the participants do everything by themselves, so they become self-sufficient quickly.
+They should start the timer, not you.
+Remind them to be patient and treat each other with kindness, consideration and respect.
 Be a role model in the way you treat them.
 
->Tip: Do not join a mob as a facilitator. 
->Both roles can easily conflict with each other.
->It is better to stay out and behave as a neutral mediator. 
+>Tip: Do not join a new mob as a facilitator. 
+>The two roles can easily conflict.
+>It may be better to stay out of it and act as a neutral mediator.
+
 
 
 ### Further Links
