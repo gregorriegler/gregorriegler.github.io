@@ -37,7 +37,6 @@ It doesn't work and often targets the wrong problem.
 But hey, don't worry about it.
 We don't mean to.
 We try very hard to live up to expectations.
-We do try hard to live up to the expectations.
 And we work to the best of our ability.
 We're learning.
 It's just not that easy. 🤷‍♂️
