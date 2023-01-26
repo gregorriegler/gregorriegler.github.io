@@ -116,6 +116,12 @@ It's also more enjoyable for many.
 Coding together is a great team-building activity because we work as an actual team.
 It may feel awkward at first, but once you get the hang of it, it can be a lot of fun.
 
+-
+-
+- up until here: solo bad, benefits of mobbing
+-
+-
+
 ## Coding Together is not Easy
 Coding together is challenging.
 It's not simply a matter of one person typing while others observe in silence.
@@ -133,7 +139,7 @@ Pick people up where they are.
 Use metaphors.
 
 ### So, it's all About Human Interaction
-Be kind and treat each other with [consideration and respect] (https://www.youtube.com/watch?v=oq42E51Ufnk).
+Be kind and treat each other with [consideration and respect](https://www.youtube.com/watch?v=oq42E51Ufnk).
 Make people feel safe to contribute, and welcome and reward all forms of contribution, including questions.
 It is okay not to know something or not to understand it.
 Be a hero and ask the first question to make others feel confident as well.
@@ -156,6 +162,15 @@ However, it's also important to know when to hold back and listen to others.
 One way to deal with this is to keep a private backlog of ideas that come to mind but may not be relevant at the moment.
 This can help keep you focused on the task at hand while recording and considering other ideas for later.
 Knowing when to speak up and when to hold back is an important skill for effective collaboration.
+
+### Bias To Action
+TBD
+
+-
+-
+- up until here: about general behavior and principles
+-
+-
 
 ## Distributing Roles
 A logical first step is to distribute participants by what they do.
@@ -224,6 +239,10 @@ As a talker, you not only want to maintain the direction of the previous talker,
 Trust them to continue the idea you have been working on.
 Without trust, rotations get bogged down, which hinders the flow.
 
+#### Calling out your Role
+TBD
+
+
 ## Find out what Works for Your Mob
 As mentioned earlier, collaborative coding is a deliberate practice.
 You want to constantly improve the way you work together.
@@ -241,36 +260,88 @@ Stay innovative and figure out what you'd like to try.
 Retrospectives are about learning and about change.
 Use it, act on its results.
 
-### Microretro
+-
+-
+- up until here: roles, rotations and work agreements
+-
+-
+
+
+
+
+## Facilitating a Mob Programming
+Above all, remind the participants to be patient and treat each other with kindness, consideration, and respect.
+Be a role model in the way you treat them.
+People new to Mob Programming will be overwhelmed just by the conviviality of this way of working.
+Suddenly they have to pitch their ideas to other people.
+They are also not used to being exposed while typing code.
+It will take some time for them to get used to this way of working and still have some room in their head to keep a protocol intact.
+So you want the initial protocol to be minimalist, and you want to guide it.
+Too many rules would throw them off the rails.
+
+
+### A Simple Protocol to start with
+TBD
+
+### Preparation
+When you use special tooling
+
+### Onboarding
+Just make space
+TBD
+
+
+### Guide your protocol
+There is a fine line between telling everyone what to do all the time and letting them off the hook.
+In the beginning, they won't remember how to follow your protocol.
+It's just too much.
+So you should guide them and kindly tell them what to do and when.
+But you also don't want to fall into the trap of doing everything for them.
+Your goal is for the team to be able to take care of themselves and for you to become redundant.
+Therefore, every time you remind them, you should also give them some time to follow the protocol themselves.
+Once you become redundant, you may consider joining the mob.
+
+>Tip: Do not join a new mob as a facilitator. 
+>The two roles can easily conflict.
+>It may be better to stay out of it and act as a neutral mediator.
+
+
+
+### When you notice some distraction ask for a break
+
+### Keep time for a retro
+You want to end a Mob Programming session with a retro.
+Give them the chance to express their feelings about what happened, and share it with each other.
+They probably enjoyed it.
+Also, they have probably learned new things in the progress.
+
+
+#### Microretro
 A minimal but nice format for a retro is a microretro.
-It only takes a few minutes and you can do it at least once a day.
-Maybe even every few hours.
+It only takes a few minutes and you could do it at least once a day.
 In this retro, ask two questions:
 
 1. How did it feel?
 2. What worked well?
+    This goal of this question is to really turn up the good. 
+    We want to focus on the positive side of things. 
+    To celebreate what worked well, and to do more of it in the future.
+    We're easily stuck thinking back about the things that didn't go well.
+    Focusing on the negative sides of things leads to depression, which is not healthy for the mob.
+    Then it can be extremely hard to come up with something positive instead.
+    Therefor, shift the focus entirely on positive things.
+    It's ok to do that in such a short retro.
+
 
 And maybe, if there's time left:
 
 3. What would you like to try?
 
-## Facilitating a Mob
-Start simple.
-People new to Mob Programming will be overwhelmed just by the conviviality of this way of working.
-Suddenly they have to pitch their ideas to other people.
-They are also not used to being exposed while typing code.
-
-It will take some time for them to get used to this way of working and still have some room in their head to keep a protocol intact.
-So you want the initial protocol to be minimalist, and you want to guide it.
-Too many rules would throw them off the rails.
-Have the participants do everything by themselves, so they become self-sufficient quickly.
-They should start the timer, not you.
-Remind them to be patient and treat each other with kindness, consideration and respect.
-Be a role model in the way you treat them.
-
->Tip: Do not join a new mob as a facilitator. 
->The two roles can easily conflict.
->It may be better to stay out of it and act as a neutral mediator.
+-
+-
+- up until here: facilitation
+-
+-
 
 
 
@@ -279,3 +350,30 @@ Be a role model in the way you treat them.
 - [Mob Mentality Show](https://www.youtube.com/channel/UCgt1lVMrdwlZKBaerxxp2iQ)
 - [Mobbing Discussion](https://www.youtube.com/watch?v=ZnyBoz7wMD0&list=PLzmKmecq34A9rH7MMUYzFjXdV0jdwQoGh&index=7&ab_channel=TsvetanTsvetanov)
 - [Resource Collection on Mob Programming and Software Profession](https://trello.com/b/1lfMkCOh/software-profession-resources)
+- [Mobbing Pattern Language](https://jay.bazuzi.com/Mobbing-Pattern-Language/)
+
+
+### Further Ideas
+
+- Tooling mob.sh (rotation)
+- Rotation patterns: remote vs onsite
+    - time-based vs event-based
+    - finish your thought
+    - onsite
+        - pass keyboard around
+        - switch seats
+        - many keyboards
+    - remote
+        - mob.sh
+        - shared virtual desktop environment (anydesk)
+        - mobti.me (time left in the browser)
+        - gitpod.io
+        - everybody shares their screen
+        - one person shares their screen
+
+- Where to try it: Public Mobs
+
+
+#### Complete Remote Mob Programming Recipes
+##### Gather Town + Gitpod + Mobti.me
+##### Zoom + 
