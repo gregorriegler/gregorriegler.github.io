@@ -307,7 +307,7 @@ Once you become redundant, you may consider joining the mob.
 
 
 
-### When you notice some distraction ask for a break
+### When you notice someone being distracted offer a break
 
 ### Keep time for a retro
 You want to end a Mob Programming session with a retro.
