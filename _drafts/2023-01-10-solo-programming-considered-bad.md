@@ -127,7 +127,7 @@ It's also more enjoyable for many.
 Coding together is a great team-building activity because we work as an actual team.
 It may feel awkward at first, but once you get the hang of it, it can be a lot of fun.
 
-## Coding Together is not Easy
+## Coding Together is Not Easy
 Coding together is challenging.
 It's not simply a matter of one person typing while others observe in silence.
 In order to make it work, it's important for all team members to actively engage and collaborate. 
