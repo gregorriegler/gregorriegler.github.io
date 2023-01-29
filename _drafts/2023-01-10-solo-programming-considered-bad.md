@@ -20,6 +20,12 @@ I will continue to use the terms
 interchangeably.
 However, when I say *coding together* or *collaborative coding* this includes Pair Programming.
 When I say *Mob Programming* or *Ensemble Programming* I exclude Pair Programming.
+By the way: Yes, Mob Programming and Ensemble Programming mean the same thing and may be used interchangeably.
+It's just that the word "Mob" might be associated with something negative, whereas "Ensemble" is a more innocent term.
+However, I like to use "Mob" as a verb because it's so short and simple:
+
+- "Let's mob on this problem!"
+- "We have been mobbing on this problem."
 
 ## Solo Programming Considered Bad
 
@@ -121,12 +127,6 @@ It's also more enjoyable for many.
 Coding together is a great team-building activity because we work as an actual team.
 It may feel awkward at first, but once you get the hang of it, it can be a lot of fun.
 
--
--
-- up until here: solo bad, benefits of mobbing
--
--
-
 ## Coding Together is not Easy
 Coding together is challenging.
 It's not simply a matter of one person typing while others observe in silence.
@@ -141,9 +141,13 @@ This requires patience, effective communication, and a willingness to listen and
 Communication is a challenge, but a skill we can improve with practice.
 Speak slowly and use simple language.
 Use metaphors and pick people up where they are.
+When starting out with a new ensemble, it's common to feel slow at first. 
+This is a normal as the ensemble gets to know each other and establishes a shared understanding. 
+After some time you should experience a boost in productivity. 
+The duration of this initial phase can vary, it could be as short as a few minutes or as long as an hour.
 
 ### So, it's all About Human Interaction
-Treat each other with [kindness, consideration and respect](https://www.youtube.com/watch?v=oq42E51Ufnk).
+Treat each other with kindness, consideration and respect[^1].
 Make people feel safe to contribute, and welcome all forms of contribution, including questions.
 Reward a contribution, especially if it makes the person feel unsure.
 It is perfectly fine not to know something or not to "get it".
@@ -174,12 +178,6 @@ Some discussions just are not worth it.
 If you notice people talking for several minutes without writing any code, alarm bells should be ringing.
 For example, if people are puzzling over the behavior of a particular code for an extended period of time.
 It's time to call to action and suggest that you simply run the code and see.
-
--
--
-- up until here: about general behavior and principles
--
--
 
 ## Distributing Roles
 A logical first step is to distribute participants by what they do.
@@ -285,11 +283,8 @@ Stay innovative and figure out what you'd like to try.
 Retrospectives are about learning and about change.
 Use it, act on its results.
 
-
---> am here
-
 ## Facilitating a Mob Programming
-Above all, remind the participants to be patient and treat each other with kindness, consideration, and respect.
+Above all, remind the participants to be patient and treat each other with kindness, consideration, and respect[^1].
 Be a role model in the way you treat them.
 People new to Mob Programming will be overwhelmed just by the conviviality of this way of working.
 Suddenly they have to pitch their ideas to other people.
@@ -298,17 +293,7 @@ It will take some time for them to get used to this way of working and still hav
 So you want the initial protocol to be minimalist, and you want to guide it.
 Too many rules would throw them off the rails.
 
-
-### A Simple Protocol to start with
-TBD
-
-### Preparation
-When you use special tooling
-
-### Onboarding
-Just make space
-TBD
-
+>**Tip:** When you notice someone being distracted, offer a short break.
 
 ### Guide your protocol
 There is a fine line between telling everyone what to do all the time and letting them off the hook.
@@ -317,16 +302,13 @@ It's just too much.
 So you should guide them and kindly tell them what to do and when.
 But you also don't want to fall into the trap of doing everything for them.
 Your goal is for the team to be able to take care of themselves and for you to become redundant.
-Therefore, every time you remind them, you should also give them some time to follow the protocol themselves.
+Therefore, every time before you remind them, you should also give them some time to follow the protocol themselves.
 Once you become redundant, you may consider joining the mob.
 
->Tip: Do not join a new mob as a facilitator. 
->The two roles can easily conflict.
->It may be better to stay out of it and act as a neutral mediator.
+>**Tip:** Do not join a fresh ensemble as a facilitator unless you are very experienced in this. 
+>Facilitation can be complicated, therefor you do not want to particiate in the programming at first.
+>Stay out of the ensemble and focus on having them work well together.
 
-
-
-### When you notice someone being distracted offer a break
 
 ### Keep time for a retro
 You want to end a Mob Programming session with a retro.
@@ -338,61 +320,49 @@ Also, they have probably learned new things in the progress.
 #### Microretro
 A minimal but nice format for a retro is a microretro.
 It only takes a few minutes and you could do it at least once a day.
-In this retro, ask two questions:
+In this retro, ask these questions:
 
-1. How did it feel?
-2. What worked well?
-    This goal of this question is to really turn up the good. 
-    We want to focus on the positive side of things. 
-    To celebreate what worked well, and to do more of it in the future.
-    We're easily stuck thinking back about the things that didn't go well.
-    Focusing on the negative sides of things leads to depression, which is not healthy for the mob.
-    Then it can be extremely hard to come up with something positive instead.
-    Therefor, shift the focus entirely on positive things.
-    It's ok to do that in such a short retro.
+1.  **How did that feel?**
+2.  **What worked well?**
 
+    The aim of this question is to highlight the positive aspects and achievements. 
+    We want to celebrate what went well and strive to replicate it in the future. 
+    It's easy to get caught up in dwelling on negative aspects, but this can lead to a negative mindset and impact the overall well-being of the team. 
+    Therefore, this retro focuses on shifting the perspective entirely towards the positive.
 
-And maybe, if there's time left:
+3. **Do you have an idea you would you like to try?**
 
-3. What would you like to try?
+    The goal of this question is to foster experimentation and innovation.
 
--
--
-- up until here: facilitation
--
--
+### Tools I frequently use 
 
+- [mob.sh](https://mob.sh) is a commandline tool and git wrapper to easily hand over code in a remote mob programming.
+- [mobti.me](https://mobti.me/) is an online mob timer, and the best that I know.
+- [gitpod](https://gitpod.io/) is a webapp that is basically a vscode in the browser that works well for collaboration as you can share your workspace with others.
+- [remdev on azure](https://github.com/gregorriegler/remdev-azure) is a script to easily boot up a virtual machine on azure for remote mob programming.
 
+### Public Mobs
+
+If you want to try mob programming you may choose an existing community.
+
+- [Mobus Operandi](https://mobusoperandi.com/) has a calendar with a lot of public mobs that you can join.
+- [Mob Programming RPG Mob](https://github.com/gregorriegler/mob-programming-rpg) is a weekly public remote mob on thursdays where we develop a webapp for the mob programming rpg. Read the [Contribute](https://github.com/gregorriegler/mob-programming-rpg#contribute) section to find out how to join (It's dead simple as in "just show up").
+- [Code Crafts Saturdays and Sundays](https://www.eventbrite.com/o/code-craft-saturdays-and-sundays-15457506392) is a monthly event where you can try and practice Mob Programming and TDD.
+- [Python Approvals Mob](https://github.com/approvals/ApprovalTests.Python/blob/main/docs/Contribute.md) is a weekly remote mob that works on the python version of the approvals testing library.
 
 ### Further Links
 
 - [Mob Mentality Show](https://www.youtube.com/channel/UCgt1lVMrdwlZKBaerxxp2iQ)
-- [Mobbing Discussion](https://www.youtube.com/watch?v=ZnyBoz7wMD0&list=PLzmKmecq34A9rH7MMUYzFjXdV0jdwQoGh&index=7&ab_channel=TsvetanTsvetanov)
+- [Mobbing Discussion](https://www.youtube.com/watch?v=ZnyBoz7wMD0&list=PLzmKmecq34A9rH7MMUYzFjXdV0jdwQoGh&index=7&ab_channel=TsvetanTsvetanov) (I particularly like this episode because Tim explains very well and shares valuable insights)
 - [Resource Collection on Mob Programming and Software Profession](https://trello.com/b/1lfMkCOh/software-profession-resources)
 - [Mobbing Pattern Language](https://jay.bazuzi.com/Mobbing-Pattern-Language/)
+
+[^1]: [Kindness, Consideration and Respect](https://www.youtube.com/watch?v=oq42E51Ufnk) are what make a healthy Mob Programming.
 
 
 ### Further Ideas
 
-- Tooling mob.sh (rotation)
 - Rotation patterns: remote vs onsite
     - time-based vs event-based
     - finish your thought
-    - onsite
-        - pass keyboard around
-        - switch seats
-        - many keyboards
-    - remote
-        - mob.sh
-        - shared virtual desktop environment (anydesk)
-        - mobti.me (time left in the browser)
-        - gitpod.io
-        - everybody shares their screen
-        - one person shares their screen
-
-- Where to try it: Public Mobs
-
-
-#### Complete Remote Mob Programming Recipes
-##### Gather Town + Gitpod + Mobti.me
-##### Zoom + 
+    - everybody shares their screen
