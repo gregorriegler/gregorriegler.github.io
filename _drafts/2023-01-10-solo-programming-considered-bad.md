@@ -49,7 +49,7 @@ We can take on different roles and complement each other.
 We have more eyes to spot mistakes, and together we know our tools better and know more about valuable techniques and practices.
 It's proven that complex problems can be solved better and faster through collaborative coding.
 Working on simple applications, we encounter such hard-to-solve problems every day.
-The best thing about coding together is the amplified learning while just having a good time.
+But the best thing about coding together is the amplified learning while having a good time.
 
 ![Remote Mob Programming](/assets/mob-programming/remote-mob-programming.png "Image Caption")
 *» A team coding together remotely.*
@@ -58,7 +58,7 @@ The best thing about coding together is the amplified learning while just having
 There is a cost, of course, to having many programmers working on the same problem at the same time.
 We understand those costs well, I think.
 What we do not understand so well, however, are the benefits.
-Ultimately, it's about the tradeoff.
+Ultimately, it's a tradeoff.
 Will the benefits outweigh the costs?
 So let us talk about the benefits.
 
@@ -82,8 +82,8 @@ In our business, quality is cheap and cruft is expensive.
 
 Code is a liability, and much of the cost is incurred when we need to change and improve it, which happens from day one.
 There is this strange idea that maintenance is something that happens after the project is completed.
-Well, that's not exactly right.
-We maintain the code beginning with the first day.
+Well, that's not exactly true.
+We maintain the code starting with the first day.
 It's a challenge to find the right structure and keep it soft enough to change easily.
 It's also terribly expensive to work on poorly designed legacy code, as we often see in enterprise software today.
 The cost of this is insidious because there is usually no awareness of it.
@@ -116,7 +116,7 @@ A clean one-piece flow.
 ### Having a Good Time
 For many people, it can be rewarding to work in a mob with other people, especially if they're more experienced.
 When working on software, we're often thrown in at the deep end.
-Teamwork reduces the stress involved.
+Teamwork reduces the stress involved in this.
 It's also more enjoyable for many.
 Coding together is a great team-building activity because we work as an actual team.
 It may feel awkward at first, but once you get the hang of it, it can be a lot of fun.
@@ -143,11 +143,11 @@ Speak slowly and use simple language.
 Use metaphors and pick people up where they are.
 
 ### So, it's all About Human Interaction
-Be kind and treat each other with [consideration and respect](https://www.youtube.com/watch?v=oq42E51Ufnk).
-Make people feel safe to contribute, and welcome and reward all forms of contribution, including questions.
-It is okay not to know something or not to understand it.
-Be a hero and ask the first question to make others feel confident as well.
+Treat each other with [kindness, consideration and respect](https://www.youtube.com/watch?v=oq42E51Ufnk).
+Make people feel safe to contribute, and welcome all forms of contribution, including questions.
 Reward a contribution, especially if it makes the person feel unsure.
+It is perfectly fine not to know something or not to "get it".
+Be a hero and ask the first question to make others feel confident as well.
 Be open to examining and evaluating potentially disruptive ideas, even if they come up suddenly.
 Creating a supportive environment that encourages people to contribute will help ensure that the best ideas and insights from all team members are incorporated into the code.
 It seems like social skills are the name of the game.
@@ -168,12 +168,12 @@ This can help keep you focused on the task at hand while recording and consideri
 Knowing when to speak up and when to hold back is an important skill for effective collaboration.
 
 ### Bias To Action
-In a group it's sometimes easy to get stuck in a discussion that is taking forever without trying anything.
-More often than not it takes less effort to just try it out.
-Some discussions are just not worth it.
-When you notice several minutes of talking without any code being written, this should ring your bells.
-For example when people are puzzling over the behavior of some code for a longer time.
-It is time to call for action, and propose to just run the code and see.
+In a group, it's sometimes easy to get stuck in a discussion that goes on forever without trying anything.
+Most of the time, it's less stressful to just try.
+Some discussions just are not worth it.
+If you notice people talking for several minutes without writing any code, alarm bells should be ringing.
+For example, if people are puzzling over the behavior of a particular code for an extended period of time.
+It's time to call to action and suggest that you simply run the code and see.
 
 -
 -
@@ -181,85 +181,101 @@ It is time to call for action, and propose to just run the code and see.
 -
 -
 
-### Distributing Roles
+## Distributing Roles
 A logical first step is to distribute participants by what they do.
 Someone has to type the code, of course.
-A common name for this role is "driver," as in the Driver/Navigator relationship of [Strong Style Pairing](http://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html).
+A common name for this role is *Driver*, as in the *Driver/Navigator* relationship of [Strong Style Pairing](http://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html).
 I often find that people confuse the names of these two roles, so I prefer to call them "Typist" and "Talker" instead.
+May also use "Typing" and "Talking".
 
-#### The Role of the Typist
-We do not want the typist to just hack away.
+### The Role of the Typist
+We do not want the Typist to just hack away.
 If they did, other participants could merely descipher the then buggy code and make incorrect assumptions.
-That's terribly inefficient.
-We want the typist to follow the team's instructions.
-Being a typist is hard.
-They get overwhelmed with conflicting ideas.
+That's not sustainable.
+We want the Typist to follow the team's instructions.
+Being a Typist is hard.
+They may get overwhelmed with conflicting ideas.
 What should they focus on?
-We can solve this problem by using a designated talker.
-It's not the only person who speaks, but they act as the primary input channel for the typist, filtering all the ideas and making the final decision.
-Even if many things are said, the typist knows which voice to focus on.
+We can solve this problem by using a designated Talker.
+It's not the only person who speaks, but they act as the primary input channel for the Typist, filtering all the ideas and making the final decision.
+Even if many things are said, the Typist then knows which voice to focus on.
 
-##### A Typist Translates
-It is a common misconception that the typist foolishly types out the code they've been told to type, word by word, character by character.
-Actually, the typist must make many considerations and decisions.
-For example: They can run the tests at any time.
-They translate the talker's intention into code so that the talker can stay at the level of their thinking.
-The typist takes care of the details.
-That takes a big burden off the talker.
+#### A Typist Translates
+It is a common misconception that the Typist foolishly types out the code they've been told to type, word by word, character by character.
+Actually, the Typist must make many considerations and decisions.
+For example: They may choose to run the tests whenever.
+They translate the Talker's intention into code so that the Talker can stay at the level of their thinking.
+The Typist takes care of the details.
+That takes a big burden off the Talker.
 I mean, typing in itself is quite a challenge.
 To know your tools well and being good at typing is an art.
 If you are then able to translate the high level intent on top of that, that's icing on the cake.
 
-##### Typist Wrapups
-One technique I learned at the Python Approvals Mob that improves feedback and shared understanding is typist wrapups.
-It means that a typist gives a brief explanation of what just happened and what they did after each round.
-When a typist explains this in their own words, misunderstandings are more likely to be uncovered and cleared up.
+#### Typist Wrapups
+One technique I learned at the Python Approvals Mob that improves feedback and shared understanding is Typist wrapups.
+It means that a Typist gives a brief explanation of what just happened and what they did after each round.
+When a Typist explains this in their own words, misunderstandings are more likely to be uncovered and cleared up.
 
-#### Being a Talker is not Easy Either
-So the talker is the person who programmes.
-The typist acts as a kind of intelligent input device for them.
-A talker should communicate their thinking.
+### Being a Talker is not Easy Either
+So the Talker is the person who programmes.
+The Typist acts as a kind of intelligent input device for them.
+A Talker should communicate their thinking.
 In other words, they should think out loud.
 There are many stages of thinking that we go through.
 First, we orient ourselves to the current situation - the context.
 Second, we imagine where we want to go from here - a direction.
 Third, we formulate a concrete intention - still at a high level.
-This is already what a typist could work with.
+This is already what a Typist could work with.
 Each thought step is shared with the team.
-Only then do we move on to low-level details: What code to write on what line, syntax, code formatting, keys to use, buttons to click, etc.
-The talker instructs the typist at the level at which they can operate on.
-The higher, the better.
-Kind of like limbo: how high can you get?
+Only then, if needed, do we move on to low-level details: What code to write on what line, syntax, code formatting, keys to use, buttons to click, etc.
+The Talker instructs the Typist at the level at which they can operate on, the higher, the better.
+Kind of like inverted limbo: How high can you get?
 
-### Rotation
+### Contributing while not Talking nor Typing
+Not being any of those roles doesn't mean you're not contributing.
+You may step out of the mob for a minute, but what you rather want is to be creative in supporting the group.
+Do some research when an opportunity arises.
+Ask, if you don't understand something.
+Remind people about the protocol if necessary.
+Think ahead and take notes about things we should take care of.
+Review the code as it is being typed.
+Observe how the group behaves and what they are doing.
+Maybe you have an Idea of something the group should be trying that could work well, bring that up. 
+Note down things that worked well so you can bring it up in the retro.
+
+## Rotation
 Everyone should get to type and talk.
 This keeps everybody engaged.
-When deciding on the rotation interval, consider how long it would take for the same person to become a typist again.
+When deciding on the rotation interval, consider how long it would take for the same person to become a Typist again.
 Waiting an hour to go back to typing is probably too much.
 It's hard to maintain attention that long.
 A rotation every 2 or 3 minutes works very well with an experienced mob, but you need to be able to do it swiftly.
 Work hard to shorten your rotation time.
-Rotation time is the time between the start of a rotation and the next typist/talker being able to continue.
+Rotation time is the time between the start of a rotation and the next Typist/Talker being able to continue.
 The perfect rotation time is 0.
 
-#### Rotations Need Trust
-Giving up control can be difficult.
-As a talker, you not only want to maintain the direction of the previous talker, but you must trust the next talker to do the same.
+### Rotations Need Trust
+Ending your turn thus giving up control can be difficult.
+As a Talker, you not only want to maintain the direction of the previous Talker, but you must trust the next Talker to do the same.
 Trust them to continue the idea you have been working on.
 Without trust, rotations get bogged down, which hinders the flow.
 
-#### Calling out your Role
-TBD
-
+### Calling out your Role
+Another common practice that helps maintain flow is when everybody calls out their role when the rotation starts.
+It's practical to also have the person that will be participating in the following rotation to call that out as being next.
+This avoids misunderstandings and it makes sure that the "next" person is increasing their attention towards being able and continue the given work. An example would be:
+Alice: "I'm Alice, and I'm talking!"
+Peter: "I'm Peter, and I'm typing!"
+Sarah: "I'm Sarah, and I'm next!"
 
 ## Find out what Works for Your Mob
-As mentioned earlier, collaborative coding is a deliberate practice.
+As mentioned earlier, Mob Programming is a deliberate practice.
 You want to constantly improve the way you work together.
 There are no pre-existing rules or frameworks for this.
 You need to find your own working agreements.
 Regular retrospectives are key in this regard.
 Conduct them at least daily.
-A two-hour mob programming session can lead to a three-hour retrospective, which is great.
+A two-hour Mob Programming session can lead to a three-hour retrospective, which is great.
 The learning effect can be tremendous.
 But they don't have to be that long.
 Make them short, maybe a few minutes, but regular.
@@ -269,14 +285,8 @@ Stay innovative and figure out what you'd like to try.
 Retrospectives are about learning and about change.
 Use it, act on its results.
 
--
--
-- up until here: roles, rotations and work agreements
--
--
 
-
-
+--> am here
 
 ## Facilitating a Mob Programming
 Above all, remind the participants to be patient and treat each other with kindness, consideration, and respect.
