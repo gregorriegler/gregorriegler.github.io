@@ -3,13 +3,13 @@ layout: post
 title: Solo Programming Considered Bad
 tags: 
 - Mob Programming
+- Ensemble Programming
 ---
 
-I was recently following an interesting discussion of the Vienna software crafts community with the title: "[How to facilitate a conversation between people, where the byproduct is code?](https://github.com/swkWien/sessions/issues/105)". 
-
-The discussion is in German and contains interesting ideas about how to code well together, and how to facilitate it.
+I was recently following an interesting discussion of the Vienna software crafts community with the title: "[How to facilitate a conversation between people, where the byproduct is code?](https://github.com/swkWien/sessions/issues/105)". The discussion is in German and contains interesting ideas about how to code well together, and how to facilitate it.
 I tried to give an answer, which got longer and longer.
-Finally I decided to write this blog post instead.
+In the end, I chose to write this blog post which expands upon the original topic of discussion and covers a broader range of related subjects.
+
 I will continue to use the terms
 
 - coding together
@@ -127,7 +127,7 @@ It's also more enjoyable for many.
 Coding together is a great team-building activity because we work as an actual team.
 It may feel awkward at first, but once you get the hang of it, it can be a lot of fun.
 
-## Coding Together is Not Easy
+## Mob Programming is Not Easy
 Coding together is challenging.
 It's not simply a matter of one person typing while others observe in silence.
 In order to make it work, it's important for all team members to actively engage and collaborate. 
@@ -171,7 +171,7 @@ One way to deal with this is to keep a private backlog of ideas that come to min
 This can help keep you focused on the task at hand while recording and considering other ideas for later.
 Knowing when to speak up and when to hold back is an important skill for effective collaboration.
 
-### Bias To Action
+### Bias to Action
 In a group, it's sometimes easy to get stuck in a discussion that goes on forever without trying anything.
 Most of the time, it's less stressful to just try.
 Some discussions just are not worth it.
@@ -190,7 +190,7 @@ May also use "Typing" and "Talking".
 We do not want the Typist to just hack away.
 If they did, other participants could merely descipher the then buggy code and make incorrect assumptions.
 That's not sustainable.
-We want the Typist to follow the team's instructions.
+We want the Typist to follow the team's instructions instead.
 Being a Typist is hard.
 They may get overwhelmed with conflicting ideas.
 What should they focus on?
@@ -259,7 +259,8 @@ Trust them to continue the idea you have been working on.
 Without trust, rotations get bogged down, which hinders the flow.
 
 ### Hard Rotations vs "Finish Your Thought"
-When the timer sounds, you have the option to do a hard rotation, where work stops immediately and team members rotate positions.Another option is to take some time and finish your current thought, known as "Finish Your Thought" (FYT). 
+When the timer sounds, you have the option to do a hard rotation, where work stops immediately and team members rotate positions.
+Another option is to take some time and finish your current thought, known as "Finish Your Thought" (FYT). 
 FYT is useful for completing something small or finishing a line of code. 
 However, when it takes too long, it can disrupt the flow of the team. 
 People might forget or even ignore that the timer rang at all.
@@ -268,11 +269,13 @@ Trust in the next person to pick up where you left off and continue the team's i
 
 ### Calling out your Role
 Another common practice that helps maintain flow is when everybody calls out their role when the rotation starts.
-It's practical to also have the person that will be participating in the following rotation to call that out as being next.
-This avoids misunderstandings and it makes sure that the "next" person is increasing their attention towards being able and continue the given work. An example would be:
-Alice: "I'm Alice, and I'm talking!"
-Peter: "I'm Peter, and I'm typing!"
-Sarah: "I'm Sarah, and I'm next!"
+It's practical to also have the person that will be participating in the following rotation to call that out as being "next".
+This avoids misunderstandings and it makes sure that the "next" person is increasing their attention towards being able and continue the given work.
+
+An example would be:<br>
+Alice: "I'm Alice, and I'm talking!"<br>
+Peter: "I'm Peter, and I'm typing!"<br>
+Sarah: "I'm Sarah, and I'm next!"<br>
 
 
 ## Find out what Works for Your Mob
@@ -347,17 +350,18 @@ In this retro, ask these questions:
 
 - [mob.sh](https://mob.sh) is a commandline tool and git wrapper to easily hand over code in a remote mob programming.
 - [mobti.me](https://mobti.me/) is an online mob timer, and the best that I know.
-- [gitpod](https://gitpod.io/) is a webapp that is basically a vscode in the browser that works well for collaboration as you can share your workspace with others.
+- [gitpod](https://gitpod.io/) is a webapp that is basically vscode in the browser that works well for collaboration as you can share your workspace with others.
 - [remdev on azure](https://github.com/gregorriegler/remdev-azure) is a script to easily boot up a virtual machine on azure for remote mob programming.
+- [cyber-dojo](https://cyber-dojo.org/) is a brilliant webapp to practice mob programming on a kata. All you need is a browser.
 
 ### Public Mobs
 
 If you want to try mob programming you may choose an existing community.
 
-- [Mobus Operandi](https://mobusoperandi.com/) has a calendar with a lot of public mobs that you can join.
-- [Mob Programming RPG Mob](https://github.com/gregorriegler/mob-programming-rpg) is a weekly public remote mob on thursdays where we develop a webapp for the mob programming rpg. Read the [Contribute](https://github.com/gregorriegler/mob-programming-rpg#contribute) section to find out how to join (It's dead simple as in "just show up").
+- [MobRPG Mob](https://github.com/gregorriegler/mob-programming-rpg) is a weekly public remote mob on thursdays where we develop a webapp for the mob programming rpg. Read the [Contribute](https://github.com/gregorriegler/mob-programming-rpg#contribute) section to find out how to join (It's dead simple as in "just show up").
 - [Code Crafts Saturdays and Sundays](https://www.eventbrite.com/o/code-craft-saturdays-and-sundays-15457506392) is a monthly event where you can try and practice Mob Programming and TDD.
 - [Python Approvals Mob](https://github.com/approvals/ApprovalTests.Python/blob/main/docs/Contribute.md) is a weekly remote mob that works on the python version of the approvals testing library.
+- [Mobus Operandi](https://mobusoperandi.com/) has a calendar with a lot of public mobs that you can join.
 
 ### Further Links
 
