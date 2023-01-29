@@ -258,6 +258,14 @@ As a Talker, you not only want to maintain the direction of the previous Talker,
 Trust them to continue the idea you have been working on.
 Without trust, rotations get bogged down, which hinders the flow.
 
+### Hard Rotations vs "Finish Your Thought"
+When the timer sounds, you have the option to do a hard rotation, where work stops immediately and team members rotate positions.Another option is to take some time and finish your current thought, known as "Finish Your Thought" (FYT). 
+FYT is useful for completing something small or finishing a line of code. 
+However, when it takes too long, it can disrupt the flow of the team. 
+People might forget or even ignore that the timer rang at all.
+Based on my experience, in those cases, it's better to do a hard rotation. 
+Trust in the next person to pick up where you left off and continue the team's intent. 
+
 ### Calling out your Role
 Another common practice that helps maintain flow is when everybody calls out their role when the rotation starts.
 It's practical to also have the person that will be participating in the following rotation to call that out as being next.
@@ -265,6 +273,7 @@ This avoids misunderstandings and it makes sure that the "next" person is increa
 Alice: "I'm Alice, and I'm talking!"
 Peter: "I'm Peter, and I'm typing!"
 Sarah: "I'm Sarah, and I'm next!"
+
 
 ## Find out what Works for Your Mob
 As mentioned earlier, Mob Programming is a deliberate practice.
@@ -358,11 +367,3 @@ If you want to try mob programming you may choose an existing community.
 - [Mobbing Pattern Language](https://jay.bazuzi.com/Mobbing-Pattern-Language/)
 
 [^1]: [Kindness, Consideration and Respect](https://www.youtube.com/watch?v=oq42E51Ufnk) are what make a healthy Mob Programming.
-
-
-### Further Ideas
-
-- Rotation patterns: remote vs onsite
-    - time-based vs event-based
-    - finish your thought
-    - everybody shares their screen
