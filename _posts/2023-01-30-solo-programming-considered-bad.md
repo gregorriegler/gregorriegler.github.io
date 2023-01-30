@@ -27,7 +27,7 @@ However, I like to use "Mob" as a verb because it's so short and simple:
 - "Let's mob on this problem!"
 - "We have been mobbing on this problem."
 
-## Solo Programming Considered Bad
+## Solo Programming Considered Harmful
 
 ![Solo Programming](/assets/mob-programming/solo-programming.png "A Solo Programmer")
 *» A programmer is a person sitting solo in front of their computer, typing rapidly on their keyboard.
