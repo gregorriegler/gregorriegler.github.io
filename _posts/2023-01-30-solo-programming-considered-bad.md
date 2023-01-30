@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Solo Programming Considered Bad
+title: Solo Programming Considered Harmful
 tags: 
 - Mob Programming
 - Ensemble Programming
