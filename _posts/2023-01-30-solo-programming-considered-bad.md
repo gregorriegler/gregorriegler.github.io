@@ -342,7 +342,7 @@ In this retro, ask these questions:
     It's easy to get caught up in dwelling on negative aspects, but this can lead to a negative mindset and impact the overall well-being of the team. 
     Therefore, this retro focuses on shifting the perspective entirely towards the positive.
 
-3. **Do you have an idea you would you like to try?**
+3. **Do you have an idea you would like to try?**
 
     The goal of this question is to foster experimentation and innovation.
 
