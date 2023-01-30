@@ -142,7 +142,7 @@ Communication is a challenge, but a skill we can improve with practice.
 Speak slowly and use simple language.
 Use metaphors and pick people up where they are.
 When starting out with a new ensemble, it's common to feel slow at first. 
-This is a normal as the ensemble gets to know each other and establishes a shared understanding. 
+This is normal as the ensemble gets to know each other and establishes a shared understanding. 
 After some time you should experience a boost in productivity. 
 The duration of this initial phase can vary, it could be as short as a few minutes or as long as an hour.
 
