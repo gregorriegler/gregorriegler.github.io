@@ -307,7 +307,7 @@ Too many rules would throw them off the rails.
 
 >**Tip:** When you notice someone being distracted, offer a short break.
 
-### Guide your protocol
+### Guide your Protocol
 There is a fine line between telling everyone what to do all the time and letting them off the hook.
 In the beginning, they won't remember how to follow your protocol.
 It's just too much.
@@ -322,7 +322,7 @@ Once you become redundant, you may consider joining the mob.
 >Stay out of the ensemble and focus on having them work well together.
 
 
-### Keep time for a retro
+### Keep Time for a Retrospective 
 You want to end a Mob Programming session with a retro.
 Give them the chance to express their feelings about what happened, and share it with each other.
 They probably enjoyed it.
@@ -346,7 +346,7 @@ In this retro, ask these questions:
 
     The goal of this question is to foster experimentation and innovation.
 
-### Tools I frequently use 
+### Tools I Frequently Use 
 
 - [mob.sh](https://mob.sh) is a commandline tool and git wrapper to easily hand over code in a remote mob programming.
 - [mobti.me](https://mobti.me/) is an online mob timer, and the best that I know.
