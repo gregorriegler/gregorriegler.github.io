@@ -356,7 +356,7 @@ In this retro, ask these questions:
 
 ### Public Mobs
 
-If you want to try mob programming you may choose an existing community.
+If you want to try Mob Programming you may choose an existing community.
 
 - [MobRPG Mob](https://github.com/gregorriegler/mob-programming-rpg) is a weekly public remote mob on thursdays where we develop a webapp for the mob programming rpg. Read the [Contribute](https://github.com/gregorriegler/mob-programming-rpg#contribute) section to find out how to join (It's dead simple as in "just show up").
 - [Code Crafts Saturdays and Sundays](https://www.eventbrite.com/o/code-craft-saturdays-and-sundays-15457506392) is a monthly event where you can try and practice Mob Programming and TDD.
