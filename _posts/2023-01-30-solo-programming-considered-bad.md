@@ -369,5 +369,6 @@ If you want to try Mob Programming you may choose an existing community.
 - [Mobbing Discussion](https://www.youtube.com/watch?v=ZnyBoz7wMD0&list=PLzmKmecq34A9rH7MMUYzFjXdV0jdwQoGh&index=7&ab_channel=TsvetanTsvetanov) (I particularly like this episode because Tim explains very well and shares valuable insights)
 - [Resource Collection on Mob Programming and Software Profession](https://trello.com/b/1lfMkCOh/software-profession-resources)
 - [Mobbing Pattern Language](https://jay.bazuzi.com/Mobbing-Pattern-Language/)
+- [Scatter Gather (The hidden cost of Solo Programming)](https://www.industriallogic.com/blog/scatter-gather/)
 
 [^1]: [Kindness, Consideration and Respect](https://www.youtube.com/watch?v=oq42E51Ufnk) are what make a healthy Mob Programming.
