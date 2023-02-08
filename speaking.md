@@ -25,7 +25,7 @@ sidebar_sort_order: 3
     </div>
     
     <img src="assets/img/GDCCR2022.png" alt="GDCCR 2022">
-    Cofacilitated the first truly <a href="https://coderlevelup.org/globaldayofcoderetreat2022-48hr">Global Day Of Code Retreat</a>
+    Facilitated the first truly <a href="https://coderlevelup.org/globaldayofcoderetreat2022-48hr">Global Day Of Code Retreat</a> together with Bob Allen, Nitsan Avni, David Campey and Siddhesh Nikude.
 </article>
 
 <article class="post-body">
