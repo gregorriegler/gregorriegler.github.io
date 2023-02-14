@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Speaking
+title: Public Speaking
 sidebar_link: true
 sidebar_sort_order: 3
 ---
