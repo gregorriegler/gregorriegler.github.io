@@ -5,8 +5,10 @@ sidebar_link: true
 sidebar_sort_order: 0
 ---
 
-![Gregor Riegler!](/assets/img/profile_gregor.jpg)
-👋 Hi, I’m a Software Development Coach and Crafter on a lifelong journey to learn better ways to develop quality software. I like to practice with friends and teach and share what I learned. My goal is to help people find joy in their work and become better at developing software.
+![Gregor Riegler!](/assets/img/Portrait.jpg){:width="50%"}
+👋 Hello, I'm a Technical Coach and Crafter who is constantly learning. 
+I enjoy practicing with peers and sharing my knowledge with others. 
+My objective is to assist individuals and teams in finding joy in their work and improving their software development skills.
 
 ## Typically, this involves some of the following skills
 - Test Driven Development
