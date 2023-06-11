@@ -6,6 +6,19 @@ sidebar_sort_order: 3
 ---
 
 <article class="post-body">
+    <h3>Mob Mentality Show: Mobbing on the Open Source Mob RPG</h3>
+
+    <div class="post-meta">
+        <span class="post-date">May 2023</span>
+    </div>
+
+    {% include youtube-player.html id="V7wmLLrsIRA" %}
+    <br>
+    In this episode of the <a href="https://www.youtube.com/@mobmentalityshow">Mob Mentality Show</a>, I talked about "Mobbing on the <a href="https://github.com/gregorriegler/mob-programming-rpg">Open Source Mob RPG</a>". We start by discussing the origin story of the app and the weekly public mob session to work on it. We also cover examples of fun, surprising, and innovative remote mob sessions, as well as a walkthrough of the app page by page. We then dive into the tech stack, tools, and collaboration methodology used in the app's development. 
+</article>
+
+
+<article class="post-body">
     <h3>Ensemble Programming Workshop @ PyConDE</h3>
     
     <div class="post-meta">
