@@ -6,6 +6,19 @@ sidebar_sort_order: 3
 ---
 
 <article class="post-body">
+    <h3>Ensemble Programming Workshop @ PyConDE</h3>
+    
+    <div class="post-meta">
+        <span class="post-date">18 April 2023</span>
+    </div>
+    
+    <img src="assets/img/PyConDe.jpg" alt="PyConDE Ensemble Programming Workshop" />
+    Gave an Ensemble Programming workshop facilitating a huge Ensemble of 80 people together with <a href="https://twitter.com/teagermylk">Lev Konstantinovskyi</a> at the <a href="https://2023.pycon.de/">PyCon DE & PyData Berlin 2023</a>. 
+    The participants excelled both in solving the <a href="https://github.com/Real-Estate-Kata/real-estate-pydantic-kata">Real-Estate-Kata</a> and providing mutual support to one another.
+    They initiated a clap-on-green behavior and maintaned it even after splitting into smaller ensembles.
+</article>
+
+<article class="post-body">
     <h3>Public Mob for the Mob Programming RPG</h3>
     
     <div class="post-meta">
