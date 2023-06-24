@@ -5,6 +5,8 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-  - init: bundle install
+  - name: Start
+    init: bundle install
+    command: ./run.sh
 
 

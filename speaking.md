@@ -25,10 +25,14 @@ sidebar_sort_order: 3
         <span class="post-date">18 April 2023</span>
     </div>
     
-    <img src="assets/img/PyConDe.jpg" alt="PyConDE Ensemble Programming Workshop" />
+    {% include youtube-player.html id="T_sx05-W4Lw" %}
+    <br>
     Gave an Ensemble Programming workshop facilitating a huge Ensemble of 80 people together with <a href="https://twitter.com/teagermylk">Lev Konstantinovskyi</a> at the <a href="https://2023.pycon.de/">PyCon DE & PyData Berlin 2023</a>. 
     The participants excelled both in solving the <a href="https://github.com/Real-Estate-Kata/real-estate-pydantic-kata">Real-Estate-Kata</a> and providing mutual support to one another.
     They initiated a clap-on-green behavior and maintaned it even after splitting into smaller ensembles.
+    <br>
+    <br>
+    <img src="assets/img/PyConDe.jpg" alt="PyConDE Ensemble Programming Workshop" />
 </article>
 
 <article class="post-body">
@@ -44,7 +48,7 @@ sidebar_sort_order: 3
 </article>
 
 <article class="post-body">
-    <h3>Global Day Of Continuous Code Retreat</h3>
+    <h3>Global Day Of Continuous Code Retreat 2022</h3>
     
     <div class="post-meta">
         <span class="post-date">4 Nov 2022</span>
