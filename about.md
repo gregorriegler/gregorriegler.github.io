@@ -6,19 +6,6 @@ sidebar_sort_order: 0
 ---
 
 ![Gregor Riegler!](/assets/img/Portrait.jpg){:width="50%"}
-👋 Hello, I'm a Technical Coach and Crafter who is constantly learning. 
-I enjoy practicing with peers and sharing my knowledge with others. 
-My objective is to assist individuals and teams in finding joy in their work and improving their software development skills.
+Technical Coach, Merciless Refactorer, Eternal Learner.
 
-## Typically, this involves some of the following skills
-- Test Driven Development
-- Legacy Code Refactoring
-- Modular Software Design
-- Domain-driven Design
-- Software Architecture 
-- Mob Programming
-- Pair Programming
-- eXtreme Programming
-- Agile Software Development
-- Lean Thinking
-- Continuous Delivery  
+I meet teams and individuals where they are, assisting them in enhancing their software development skills. This not only elevates their proficiency but also brings more joy to their work.
