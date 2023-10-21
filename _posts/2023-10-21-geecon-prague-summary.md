@@ -16,7 +16,7 @@ I recently attended GeeCon Prague, an event I had never been to before. While it
 
 - There is evidence supporting my frequent claim that developers spend more time reading code than writing it. This is further discussed in the book 'The Programmer's Brain'.
 
-    ![We spend more time reading code](../assets/geecon-2023/more-time-reading-code.png)
+    ![We spend more time reading code](/assets/geecon-2023/more-time-reading-code.png)
 
 - There's an insightful talk on _How to Teach_ that isn't exclusive to programmers. I found it enlightening and recommend it:
     {% include youtube-player.html id="g1ib43q3uXQ" %}
