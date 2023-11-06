@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Takeaways from GeeCon Prague
+title: Takeaways from GeeCon Prague 2023
 tags: 
 - GeeCon
 ---

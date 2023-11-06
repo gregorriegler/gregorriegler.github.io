@@ -6,6 +6,33 @@ sidebar_sort_order: 3
 ---
 
 <article class="post-body">
+    <h3>Global Day Of Coderetreat 2023 Vienna</h3>
+
+    <div class="post-meta">
+        <span class="post-date">November 2023</span>
+    </div>
+
+    <img src="assets/gdcr2023.jpeg" alt="GDCR 2023 Vienna" />
+    Facilitated the <i>"Outside-In TDD without Mocks"</i> session as well as a Mob Programming session.
+    Overall Co-Facilitation.
+</article>
+
+<article class="post-body">
+    <h3>Software Development Myths @ DevFest Vienna 2023</h3>
+
+    <div class="post-meta">
+        <span class="post-date">October 2023</span>
+    </div>
+
+    I gave a Lightning Talk about Myths in Software Development.
+    <br>
+    <br>
+    <ul>
+     <li>Slides: <a href="/assets/myths_in_software_development.pdf">Myths in Software Development</a></li>
+    </ul>
+</article>
+
+<article class="post-body">
     <h3>Mob Mentality Show: Mobbing on the Open Source Mob RPG</h3>
 
     <div class="post-meta">
@@ -48,14 +75,14 @@ sidebar_sort_order: 3
 </article>
 
 <article class="post-body">
-    <h3>Global Day Of Continuous Code Retreat 2022</h3>
+    <h3>Global Day Of Continuous Coderetreat 2022</h3>
     
     <div class="post-meta">
         <span class="post-date">4 Nov 2022</span>
     </div>
     
     <img src="assets/img/GDCCR2022.png" alt="GDCCR 2022">
-    Facilitated the first truly <a href="https://coderlevelup.org/globaldayofcoderetreat2022-48hr">Global Day Of Code Retreat</a> together with Bob Allen, Nitsan Avni, David Campey and Siddhesh Nikude.
+    Facilitated the first truly <a href="https://coderlevelup.org/globaldayofcoderetreat2022-48hr">Global Day Of Coderetreat</a> together with Bob Allen, Nitsan Avni, David Campey and Siddhesh Nikude.
 </article>
 
 <article class="post-body">
