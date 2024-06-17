@@ -11,6 +11,7 @@ Technical Coach, Merciless Refactorer, Eternal Learner.
 Meeting teams and individuals where they are and assist them in enhancing their software development skills. 
 This not only elevates their proficiency but also brings more joy to their work.
 
+- Principal Software Engineer at [Tricentis](www.tricentis.com)
 - Maintainer of [mob.sh](mob.sh)
 - Co-Organizer of the [Software-Crafters Vienna](https://www.meetup.com/de-DE/software-crafters-vienna/)
 - Member of the [Samman Technical Coaching Society](https://sammancoaching.org/)
