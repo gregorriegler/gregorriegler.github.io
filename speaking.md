@@ -6,6 +6,16 @@ sidebar_sort_order: 3
 ---
 
 <article class="post-body">
+    <h3>Mob Programming with mob.sh @ DevFest Vienna 2024</h3>
+
+    <div class="post-meta">
+        <span class="post-date">October 2024</span>
+    </div>
+
+    <img src="assets/devfest2024talk.jpg" alt="DevFest Vienna 2024 Talk" />
+</article>
+
+<article class="post-body">
     <h3>Global Day Of Coderetreat 2023 Vienna</h3>
 
     <div class="post-meta">
