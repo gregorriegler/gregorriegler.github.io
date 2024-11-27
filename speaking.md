@@ -13,7 +13,7 @@ sidebar_sort_order: 3
     </div>
 
     <img src="assets/img/gdcr2024.png" alt="GDCR 2024 Vienna" />
-    Co-organized and Facilitated the GDCR 2024 in Vienna, where we focused on incremental software development. It was a blast.
+    Co-organized and facilitated the GDCR 2024 in Vienna, where we focused on incremental software development. It was a blast.
 </article>
 <article class="post-body">
     <h3>Mob Programming with mob.sh @ DevFest Vienna 2024</h3>
