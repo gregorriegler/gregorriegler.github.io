@@ -6,6 +6,16 @@ sidebar_sort_order: 3
 ---
 
 <article class="post-body">
+    <h3>Global Day Of Coderetreat 2024 Vienna</h3>
+
+    <div class="post-meta">
+        <span class="post-date">November 2024</span>
+    </div>
+
+    <img src="assets/img/gdcr2024.png" alt="GDCR 2024 Vienna" />
+    Co-organized and Facilitated the GDCR 2024 in Vienna, where we focused on incremental software development. It was a blast.
+</article>
+<article class="post-body">
     <h3>Mob Programming with mob.sh @ DevFest Vienna 2024</h3>
 
     <div class="post-meta">
