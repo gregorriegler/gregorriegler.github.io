@@ -61,7 +61,7 @@ A Loop is a Task or Task Chain that reinitiates itself. Its nature is recursive 
 ### 🔀 Condition
 **Pattern:** *Fuzzy decision making.*
 
-Use natural language conditions to guide agent behavior. This can be rigid boolean logic, or very fuzzy. These conditions can be contextual and interpretive. They might be based on [State Machine](#-statemachine-as-a-tool) Memory or other implicit context state. This allows for a more human-like decision making in an automated processes.
+Use natural language conditions to guide agent behavior. This can be rigid boolean logic, or very fuzzy. These conditions can be contextual and interpretive. They might be based on a [State Indicator](#-state-indicator) or other implicit context state. This allows for a more human-like decision making in an automated processes.
 
 ### ➡️ Goto
 **Pattern:** *Exit a loop, or just follow a different path.*
@@ -145,7 +145,7 @@ The LLM typically wants to perform too many changes and do too many things at on
 
 No production code without a failing test. This is now more obvious than ever. The agent needs all the feedback it can get. Make sure it doesn't break things, and keep the code running all the time.
 
-### 🧾 Hypothesize
+### 🤔 Hypothesize
 **Pattern:** *Have the agent state what it expects to happen.*
 
 The Agent is often wrong about a code change. When that happens, it will attempt to recover from the situation, taking several tries. These will inevitably contaminate the context. It may even lead to the agent giving up and making things worse by leaving unintended changes — often stating that it indeed solved the problem. I found it helpful to have the agent express its expectations about a code change first, before it runs the code. For example, before it runs a failing test, it can express what it expects to happen. This reinforces the actual intent in the context.
