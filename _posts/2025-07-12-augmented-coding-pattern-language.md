@@ -79,7 +79,7 @@ An *Orchestrator* is a Process whose sole purpose is to initiate other processes
 AI agents forget everything between contexts. Use Persistent Cross-Context Memory — a file or shared storage — to explicitly write down and reload facts, goals, decisions, and task progress. Treat this as the agent’s long-term memory.
 
 ### 🧰 StateMachine as a Tool
-**Pattern:** *Let state drive automation.*
+**Pattern:** *Use a tool to drive the process.*
 
 State does not have to be just text, and a state machine does not have to be just a description of how the state may change. It can be a tool serving commands that describe the next possible actions and transitions, constraining the agent. This makes the tool a control mechanism.
 
@@ -93,10 +93,11 @@ For human-in-the-loop ideation, it’s helpful to invite the agent to ask questi
 
 Sometimes the Agent needs your input. Maybe it has a question, or it needs a review. Use a Signal step to make it speak up or play a sound — so you can focus on other things in the meantime.
 
-## Evolving the process
+## Evolving the Process
 ### 📦 Process as Code
+
 **Pattern:** *Treat process definitions like code.*
-Treat process definitions as code that can be:
+Process definitions should be:
 
 * Version controlled
 * Incrementally improved
@@ -104,12 +105,14 @@ Treat process definitions as code that can be:
 * Refactored for clarity and smaller context
 * Composed into larger workflows
 
-This represents a sophisticated approach to "process as infrastructure," where your augmented coding workflows are themselves subject to the same evolutionary pressures and improvement cycles as the code they help create.
-
 ### ✂️ Split Process
 **Pattern:** *Divide to prevent drift.*
 
-Long processes can lead to missing steps. Just as we do, agents seem to have limited cognitive capacity. The more context the agent has to hold in memory, the more likely it is to forget or skip parts of the process. The smaller and more focused the context, the more reliably the agent can follow through. Decompose large processes into smaller ones, and track progress between them with explicit markers or checkpoints. Use Persistent Cross-Context Memory to remember what's necessary. This can be achieved by moving steps into another Process File and using a Boomerang to invoke it from the original file. Another way to split the process is to put each piece into its own file and coordinate them with a Guiding Process.
+Long processes can lead to missing steps. 
+Just as we do, agents seem to have limited cognitive capacity. 
+The more context the agent has to hold in memory, the more likely it is to forget or skip parts of the process. 
+The smaller and more focused the context, the more reliably the agent can follow through and perform. 
+Decompose large processes into smaller ones, and track progress between them with explicit markers or checkpoints. Use Cross-Context Memory to remember what's necessary. This can be achieved by moving steps into another Process File and using a Boomerang to invoke it from the original file. Another way to split the process is to put each piece into its own file and coordinate them with an Orchestrator.
 
 ### 🧪 Practice Run
 **Pattern:** *Refine the process through practice.*
@@ -124,7 +127,7 @@ As you evolve your workflows, make hidden, implicit context and decisions visibl
 ## What works well
 
 ### 🪜 One problem at a time
-**Pattern:** *Refine the refined.*
+**Pattern:** *Smaller is better. Refine the refined.*
 
 The LLM typically wants to perform too many changes and do too many things at once. It also tends to plan this way — no wonder, given the world it was trained on. To achieve better results, break big steps into smaller, clearer ones. And when you've done that, take the smallest step and let the agent break it down even further. Always start with the tiniest one, and solve one problem at a time. Vertical slicing and TDD ZOMBIES have proven effective.
 
@@ -141,7 +144,7 @@ The Agent is often wrong about a code change. When that happens, it will attempt
 ### 🚧 Constraints
 **Pattern:** *Keep it on a short leash.*
 
-The best way to help the agent avoid mistakes is to constrain what it can do. Instead of changing code freely, we can give it access to refactoring tools. We can lock it out of certain files or commands. Constraints are more than just rules — they shape what the agent can do or not do in its environment, enabling better and more reliable performance.
+The best way to help the agent avoid mistakes is to constrain what it can do. Instead of changing code freely, we can give it access to refactoring tools. We can lock it out of certain files or commands. Constraints are more than just rules — they shape what the agent can do or not do in its environment, enabling better and more reliable outputs.
 
 ### ⚙️ Automate
 **Pattern:** *Automate whatever can be automated.*
