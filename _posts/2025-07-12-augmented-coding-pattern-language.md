@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Augmented Coding: A Pattern Language
+title: Augmented Coding - A Pattern Language
 tags: 
 - Augmented Coding
 ---
@@ -46,37 +46,37 @@ This is a lot of valuable feedback you receive just for a single character.
 ### 🪃 Boomerang / SubTask
 **Pattern:** *Context engineering via delegation.*
 
-A SubTask is when the Agent starts its next context at a specific step in the process, often to reduce the size of the context window. Necessary information is passed through Cross-Context Memory or prompt. Once completed, the SubTask summarizes its result and returns it to the initiator.
+A SubTask is when the Agent starts its next context at a specific step in the process, often to reduce the size of the context window. Necessary information is passed through [Cross-Context Memory](#-cross-context-memory) or prompt. Once completed, the SubTask summarizes its result and returns it to the initiator.
 
 ### ⛓️ Taskchain
 **Pattern:** *Link SubTasks together.*
 
-A Taskchain is a series of SubTasks that call one another in sequence. Each task hands off to the next, forming a chain of autonomous steps that proceed without user intervention. This leads to a long list of summaries in the end, as all Tasks close only then.
+A Taskchain is a series of [SubTasks](#-boomerang--subtask) that call one another in sequence. Each task hands off to the next, forming a chain of autonomous steps that proceed without user intervention. This leads to a long list of summaries in the end, as all Tasks close only then.
 
 ### 🔁 Loop
 **Pattern:** *Keep going.*
 
-A Loop is a Task or Task Chain that reinitiates itself. Its nature is recursive in order to maintain longer autonomy while preventing context drift. It typically progresses by changing Cross-Context Memory across iterations, refining results or advancing through a workflow.
+A Loop is a Task or Task Chain that reinitiates itself. Its nature is recursive in order to maintain longer autonomy while preventing context drift. It typically progresses by changing [Cross-Context Memory](#-cross-context-memory) across iterations, refining results or advancing through a workflow.
 
 ### 🔀 Condition
 **Pattern:** *Fuzzy decision making.*
 
-Use natural language conditions to guide agent behavior. This can be rigid boolean logic, or very fuzzy. These conditions can be contextual and interpretive. They might be based on State Machine Memory or other implicit context state. This allows for a more human-like decision making in an automated processes.
+Use natural language conditions to guide agent behavior. This can be rigid boolean logic, or very fuzzy. These conditions can be contextual and interpretive. They might be based on [State Machine](#-statemachine-as-a-tool) Memory or other implicit context state. This allows for a more human-like decision making in an automated processes.
 
 ### ➡️ Goto
 **Pattern:** *Exit a loop, or just follow a different path.*
 
-Use a condition to determine whether to jump out of a loop. A loop may have several exits in different places based on different conditions.
+Use a [condition](#-condition) to determine whether to jump out of a [loop](#-loop). A loop may have several exits in different places based on different conditions.
 
 ### 🧭 Orchestrator
 **Pattern:** *A guiding process launching the correct sub-processes in the right order.*
 
-An *Orchestrator* is a Process whose sole purpose is to initiate other processes using Boomerang, and to do so in the correct order. It acts as a conductor, calling out which Process File should run next. It may use a State Machine to keep track of what’s been completed and what comes next.
+An *Orchestrator* is a Process whose sole purpose is to initiate other processes using [Boomerang](#-boomerang--subtask), and to do so in the correct order. It acts as a conductor, calling out which [Process File](#-process-file) should run next. It may use a State Machine to keep track of what's been completed and what comes next.
 
 ### 💾 Cross-Context Memory
 **Pattern:** *Preserve memory between runs.*
 
-AI agents forget everything between contexts. Use Persistent Cross-Context Memory — a file or shared storage — to explicitly write down and reload facts, goals, decisions, and task progress. Treat this as the agent’s long-term memory.
+AI agents forget everything between contexts. Use Persistent Cross-Context Memory — a file or shared storage — to explicitly write down and reload facts, goals, decisions, and task progress. Treat this as the agent's long-term memory.
 
 ### 🧰 StateMachine as a Tool
 **Pattern:** *Use a tool to drive the process.*
@@ -112,7 +112,7 @@ Long processes can lead to missing steps.
 Just as we do, agents seem to have limited cognitive capacity. 
 The more context the agent has to hold in memory, the more likely it is to forget or skip parts of the process. 
 The smaller and more focused the context, the more reliably the agent can follow through and perform. 
-Decompose large processes into smaller ones, and track progress between them with explicit markers or checkpoints. Use Cross-Context Memory to remember what's necessary. This can be achieved by moving steps into another Process File and using a Boomerang to invoke it from the original file. Another way to split the process is to put each piece into its own file and coordinate them with an Orchestrator.
+Decompose large processes into smaller ones, and track progress between them with explicit markers or checkpoints. Use [Cross-Context Memory](#-cross-context-memory) to remember what's necessary. This can be achieved by moving steps into another [Process File](#-process-file) and using a [Boomerang](#-boomerang--subtask) to invoke it from the original file. Another way to split the process is to put each piece into its own file and coordinate them with an [Orchestrator](#-orchestrator).
 
 ### 🧪 Practice Run
 **Pattern:** *Refine the process through practice.*
