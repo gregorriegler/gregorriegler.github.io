@@ -7,7 +7,7 @@ tags:
 
 I was trying to get an LLM to perform TDD first when ChatGPT 3.5 was released in 2022. They added the possibility for the LLM to execute Python code back then. And you could create "GPTs", agents that use your own system prompt kinda. Back then I created a [Software Crafter GPT](https://chatgpt.com/g/g-MWGfe0UQn-software-crafter). It could do simple katas. But its capabilities were quite limited, to be honest. Also, considering that it was previously trained on such kata code before, it was not really something special. In the following months I did not witness much improvement in the LLM space. It felt more like a stagnation. I was sceptical about it all, and still am.
 
-But in the recent weeks I had a few successes with LLM-assisted development, and it was quite fun. Models and tooling have gotten better and actually useful. There are still limits of course, but it's good enough to find joy in trying to get the most out of it. I spent a lot of time doing augmented coding and had quite some learnings. I was trying to make it perform better and better, moving the autonomy slider up. This post introduces a *pattern language* about some of the things I learned work.
+But in the recent weeks I had a few successes with LLM-assisted development, and it was quite fun. Models and tooling have gotten better and actually useful for coding. There are still limits of course, but it's good enough to find joy in trying to get the most out of it. I spent a lot of time doing augmented coding and had quite some learnings. I was trying to make it perform better and better, moving the autonomy slider up. This post introduces a *pattern language* about some of the things I learned work.
 
 
 ## Basics
