@@ -7,7 +7,7 @@ tags:
 
 I was trying to get an LLM to perform TDD first when ChatGPT 3.5 was released in 2022. They added the possibility for the LLM to execute Python code back then. And you could create "GPTs", agents that use your own system prompt kinda. Back then I created a [Software Crafter GPT](https://chatgpt.com/g/g-MWGfe0UQn-software-crafter). It could do simple katas. But its capabilities were quite limited, to be honest. Also, considering that it was previously trained on such kata code before, it was not really something special. In the following months I did not witness much improvement in the LLM space. It felt more like a stagnation. I was sceptical about it all. The intelligence illusion was a concept that appealed to me, and maybe still is.
 
-But in the recent weeks I had a few successes with LLM-assisted development, and it became a lot of fun. It has gotten better and actually useful. There are still limits of course, but it's good enough to find joy again in trying to get the most out of it. I spent a lot of time doing augmented coding and had quite some learnings. I was trying to make it perform better and better, moving the autonomy slider up. This post introduces a *pattern language* about some of the things I learned I did.
+But in the recent weeks I had a few successes with LLM-assisted development, and it became a lot of fun again. It has gotten better and actually useful. There are still limits of course, but it's good enough to find joy in trying to get the most out of it. I spent a lot of time doing augmented coding and had quite some learnings. I was trying to make it perform better and better, moving the autonomy slider up. This post introduces a *pattern language* about some of the things I learned work.
 
 
 ## Basics
@@ -24,7 +24,7 @@ Often we have to go through the motions ourselves to surface unconscious decisio
 
 ## 🌐 **HATEOAG** (Hypertext as the Engine of Agent Guidance)
 
-Inspired by HATEOAS, this pattern treats hypertext as the driving mechanism for agent navigation and behavior. Hypertext guides the agent through a network of clearly defined, interlinked process, memory, and documentation files.
+Inspired by HATEOAS, this pattern treats hypertext as the driving mechanism for agent navigation and behavior. Hypertext guides the agent through a network of clearly defined, interlinked processes, memory, and documentation files.
 
 Links invite the agent to jump, read, or act.
 
@@ -35,8 +35,8 @@ A *Process File* describes what the agent is supposed to do. It can live alongsi
 A good Process File is small and focuses on a single thing.
 
 ### 📍 Starter Symbol
-**Pattern:** *Process Identity*
-Leading emojis are what LLMs are known for. You look at an article containing a lot of leading emojis and immediately think: "generated!". When the agent starts its message with an emoji, this symbol becomes a declaring header about the state of the process. It gives us feedback on where the agent is right now - and what it is doing.
+**Pattern:** *Process Identity*
+Leading emojis are what LLMs are known for. You look at an article containing a lot of leading emojis and immediately think: "generated!" When the agent starts its message with an emoji, this symbol becomes a declaring header about the state of the process. It gives us feedback on where the agent is right now—and what it is doing.
 Also, when it's missing, you know there's something not quite right. Maybe the context has gotten too large, and the agent started forgetting things.
 This is a lot of valuable feedback you receive just for a single character.
 
@@ -121,11 +121,11 @@ The best way to help the agent avoid mistakes is to constrain what it can do. In
 
 ### ⚙️ Automate
 Automate whatever can be automated.
-Have the agent write its own automation. It's really good at this. What is automated
+Have the agent write its own automation. It's really good at this. What is automated:
  - is deterministic.
- - preserves cognitive capacity.
+ - preserves cognitive capacity for other things.
  - is often faster.
-Therefor, we really want to automate as much as possible.
+Therefore, we want to automate as much as possible.
 
 ### 🖥️ CLI First
 **Pattern:** *The agent thrives on the CLI.*
