@@ -78,6 +78,15 @@ An *Orchestrator* is a Process whose sole purpose is to initiate other processes
 
 AI agents forget everything between contexts. Use Persistent Cross-Context Memory — a file or shared storage — to explicitly write down and reload facts, goals, decisions, and task progress. Treat this as the agent's long-term memory.
 
+### 🚦 State Indicator
+**Pattern:** *Build a State Machine by memorizing where you are in the process.*
+
+We may track process state using a State Indicator.
+A simple State Indicator consists of a [Starter Symbol](#-starter-symbol) and a descriptive keyword.
+A more complicated one could span over many lines and contain structured information.
+This enables resilient restarts from any point without losing that context.
+The process of course needs to include steps to adapt the State Indicator.
+
 ### 🧰 StateMachine as a Tool
 **Pattern:** *Use a tool to drive the process.*
 
