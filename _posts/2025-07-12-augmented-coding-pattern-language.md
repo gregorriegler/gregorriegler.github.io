@@ -5,7 +5,7 @@ tags:
 - Augmented Coding
 ---
 
-I was trying to get an llm to perform TDD first when ChatGPT 3.5 was released in 2022. They added the possibility for the llm to execute Python code back then. And you could create "GPTs", agents that use your system prompt kinda. Back then I created a [Software Crafter GPT](https://chatgpt.com/g/g-MWGfe0UQn-software-crafter). It could do simple katas. But its capabilities weere quite limited, tbh. Also, considering that it was previously trained on such kata code before, it was not really something special. In the following months I did not witness much improvement in the llm space. It felt more like a stagnation. I was sceptical about it all. The intelligence illusion was a concept that appealed to me, and maybe still is.
+I was trying to get an llm to perform TDD first when ChatGPT 3.5 was released in 2022. They added the possibility for the llm to execute Python code back then. And you could create "GPTs", agents that use your own system prompt kinda. Back then I created a [Software Crafter GPT](https://chatgpt.com/g/g-MWGfe0UQn-software-crafter). It could do simple katas. But its capabilities were quite limited, to be honest. Also, considering that it was previously trained on such kata code before, it was not really something special. In the following months I did not witness much improvement in the llm space. It felt more like a stagnation. I was sceptical about it all. The intelligence illusion was a concept that appealed to me, and maybe still is.
 
 But in the recent weeks I had a few successes with LLM-assisted development, and it became a lot of fun. It has gotten better and actually useful. There are still limits of course, but it's good enough to find joy again in trying to get the most out of it. I spent a lot of time doing augmented coding and had quite some learnings. I was trying to make it perform better and better, moving the autonomy slider up. This post introduces a *pattern language* about some of the things I learned.
 
@@ -93,7 +93,7 @@ This represents a sophisticated approach to "process as infrastructure," where y
 
 ### ✂️ Split Process
 **Pattern:** *Divide to prevent drift.*
-Long processes can lead to missing steps. Just as we do, agents seem to have limited cognitive capacity.The more context the agent has to hold in memory, the more likely it is to forget or skip parts of the process. The smaller and more focused the context, the more reliably the agent can follow through. Decompose large processes into smaller ones, and track progress between them with explicit markers or checkpoints. Use Persistent Cross-Context Memory to remember what's necessary. This can be achieved by moving steps into another Process File and using a Boomerang to invoke it from the original file. Another way to split the process is to put each piece into its own file and coordinate them with a Guiding Process.
+Long processes can lead to missing steps. Just as we do, agents seem to have limited cognitive capacity. The more context the agent has to hold in memory, the more likely it is to forget or skip parts of the process. The smaller and more focused the context, the more reliably the agent can follow through. Decompose large processes into smaller ones, and track progress between them with explicit markers or checkpoints. Use Persistent Cross-Context Memory to remember what's necessary. This can be achieved by moving steps into another Process File and using a Boomerang to invoke it from the original file. Another way to split the process is to put each piece into its own file and coordinate them with a Guiding Process.
 
 ### 🧪 Practice Run
 **Pattern:** *Refine the process through practice.*
@@ -108,25 +108,25 @@ As you evolve your workflows, make hidden, implicit context and decisions visibl
 **Pattern:** *Refine the refined.*
 The LLM typically wants to perform too many changes and do too many things at once. It also tends to plan this way — no wonder, given the world it was trained on. To achieve better results, break big steps into smaller, clearer ones. And when you've done that, take the smallest step and let the agent break it down even further. Always start with the tiniest one, and solve one problem at a time. Vertical slicing and TDD ZOMBIES have proven effective.
 
-### ✅ Test First**
+### ✅ Test First
 **Pattern:** *Start with the end in mind.*
 No production code without a failing test. This is now more obvious than ever. The agent needs all the feedback it can get. Make sure it doesn't break things, and keep the code running all the time.
 
-### 🧾 Hypothesize**
+### 🧾 Hypothesize
 **Pattern:** *Have the agent state what it expects to happen.*
 The Agent is often wrong about a code change. When that happens, it will attempt to recover from the situation, taking several tries. These will inevitably contaminate the context. It may even lead to the agent giving up and making things worse by leaving unintended changes — often stating that it indeed solved the problem. I found it helpful to have the agent express its expectations about a code change first, before it runs the code. For example, before it runs a failing test, it can express what it expects to happen. This reinforces the actual intent in the context.
 
-### 🚧 Constraints**
+### 🚧 Constraints
 **Pattern:** *Keep it on a short leash.*
 The best way to help the agent avoid mistakes is to constrain what it can do. Instead of changing code freely, we can give it access to refactoring tools. We can lock it out of certain files or commands. Constraints are more than just rules — they shape what the agent can do or not do in its environment, enabling better and more reliable performance.
 
-### 🪄 AgentEx**
+### 🪄 AgentEx
 **Pattern:** *Improve the Agent Experience.*
 AgentEx refers to anything we can do to help it perform better. This can include guardrails, avoiding context contamination, filtering needless script output, or providing easy-to-use tooling.
 
-### 🖥️ CLI First**
+### 🖥️ CLI First
 **Pattern:** *The agent thrives on the CLI.*
 Agent tooling should be CLI-first. MCP is nice, but it is also quite verbose and heavyweight. The LLM’s native medium is chat — text in, text out. This is exactly what the CLI was made for. On top of that, it offers many small, composable Unix-style tools. Agents thrive on the command line — give them tools there.
 
 ## Conclusion
-I see a lot of agile in the things that work well for me. Things like inspect and adapt, continuous improvement, small steps, iterate, TDD. The llm is trained on and born into a waterfall world. When I look at the tooling people develop around it, and the things people do with it, I often see waterfall, too. And I see a lot of legacy code going to emerge.  
+I see a lot of agile in the things that work well for me. Things like inspect and adapt, continuous improvement, small steps, iterate, TDD. The LLM is trained on and born into a waterfall world. When I look at the tooling people develop around it, and the things people do with it, I often see waterfall, too. And I see a lot of legacy code going to emerge.
