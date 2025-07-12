@@ -104,6 +104,7 @@ Build a feature not for its own sake, but to test and refine the process. Then, 
 As you evolve your workflows, make hidden, implicit context and decisions visible and explicit. Capture the state it's based on and make it persistent. Capture the decisions made and describe them. Explicit state and decisions make the process more resilient.
 
 ## What works well
+
 ### 🪜 One problem at a time
 **Pattern:** *Refine the refined.*
 The LLM typically wants to perform too many changes and do too many things at once. It also tends to plan this way — no wonder, given the world it was trained on. To achieve better results, break big steps into smaller, clearer ones. And when you've done that, take the smallest step and let the agent break it down even further. Always start with the tiniest one, and solve one problem at a time. Vertical slicing and TDD ZOMBIES have proven effective.
