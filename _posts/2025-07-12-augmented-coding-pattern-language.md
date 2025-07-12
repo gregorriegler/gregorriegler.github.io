@@ -39,14 +39,14 @@ A good Process File is small and focuses on a single thing.
 ### 📍 Starter Symbol
 **Pattern:** *Process Identity*
 
-Leading emojis are what LLMs are known for. You look at an article containing a lot of leading emojis and immediately think: "generated!" When the agent starts its message with an emoji, this symbol becomes a declaring header about the state of the process. It gives us feedback on where the agent is right now—and what it is doing.
+Leading emojis are what LLMs are known for. You look at an article containing a lot of leading emojis and immediately think: "Generated!!" When the agent starts its message with an emoji, this symbol becomes a declaring header about the state of the process. It gives us feedback on where the agent is right now—and what it is doing.
 Also, when it's missing, you know there's something not quite right. Maybe the context has gotten too large, and the agent started forgetting things.
 This is a lot of valuable feedback you receive just for a single character.
 
 ### 🪃 Boomerang / SubTask
 **Pattern:** *Context engineering via delegation.*
 
-A SubTask is when the Agent starts its next context at a specific step in the process, often to reduce the size of the context window. Necessary information is passed through Persistent Memory. Once completed, the SubTask summarizes its result and returns it to the initiator.
+A SubTask is when the Agent starts its next context at a specific step in the process, often to reduce the size of the context window. Necessary information is passed through Cross-Context Memory or prompt. Once completed, the SubTask summarizes its result and returns it to the initiator.
 
 ### ⛓️ Taskchain
 **Pattern:** *Link SubTasks together.*
@@ -58,10 +58,15 @@ A Taskchain is a series of SubTasks that call one another in sequence. Each task
 
 A Loop is a Task or Task Chain that reinitiates itself. Its nature is recursive in order to maintain longer autonomy while preventing context drift. It typically progresses by changing Cross-Context Memory across iterations, refining results or advancing through a workflow.
 
-### ➡️ Goto
-**Pattern:** *Exit a loop.*
+### 🔀 Condition
+**Pattern:** *Fuzzy decision making.*
 
-Use a condition based on State Machine Memory to determine whether to jump out of a loop. A loop may have several exits in different places based on different conditions.
+Use natural language conditions to guide agent behavior. This can be rigid boolean logic, or very fuzzy. These conditions can be contextual and interpretive. They might be based on State Machine Memory or other implicit context state. This allows for a more human-like decision making in an automated processes.
+
+### ➡️ Goto
+**Pattern:** *Exit a loop, or just follow a different path.*
+
+Use a condition to determine whether to jump out of a loop. A loop may have several exits in different places based on different conditions.
 
 ### 🧭 Orchestrator
 **Pattern:** *A guiding process launching the correct sub-processes in the right order.*
