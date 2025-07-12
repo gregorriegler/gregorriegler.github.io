@@ -153,6 +153,7 @@ Favor algorithms over stochastic outputs to avoid mistakes and have the agent wr
  - is deterministic.
  - preserves cognitive capacity for other things.
  - is often faster.
+
 Therefore, we want to automate as much as possible.
 
 ### 🖥️ CLI First
