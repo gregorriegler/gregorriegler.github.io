@@ -130,4 +130,4 @@ AgentEx refers to anything we can do to help it perform better. This can include
 Agent tooling should be CLI-first. MCP is nice, but it is also quite verbose and heavyweight. The LLM’s native medium is chat — text in, text out. This is exactly what the CLI was made for. On top of that, it offers many small, composable Unix-style tools. Agents thrive on the command line — give them tools there.
 
 ## Conclusion
-I see a lot of agile in the things that work well for me. Things like inspect and adapt, continuous improvement, small steps, iterate, TDD. The LLM is trained on and born into a waterfall world. When I look at the tooling people develop around it, and the things people do with it, I often see waterfall, too. And I see a lot of legacy code going to emerge.
+I see a lot of agile in the things that work well for me. Things like inspect and adapt, continuous improvement, small steps, iterate, TDD. The LLM is trained on and born into a waterfall world. When I look at the tooling people develop around it, and the things people do with it, I often see waterfall, too. And I see a lot of legacy code going to emerge. Maybe we can do better.
