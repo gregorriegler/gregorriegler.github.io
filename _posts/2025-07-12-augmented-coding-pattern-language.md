@@ -13,9 +13,8 @@ But in the recent weeks I had a few successes with LLM-assisted development, and
 ## Basics
 
 ### 🤖 Agent
-**Pattern:** *A loop that facilitates a dialog with a language model.*
-An Agent in its simplest form is not more than a loop that enables an ongoing dialog with a language model. More advanced Agents execute tools, track context size, and embed advanced system prompts. The Agent is the engine of augmented work.
-
+**Pattern:** *Give the LLM Agency*
+An Agent in its simplest form is nothing more than a loop that facilitates a dialog with a language model that allows it to execute tools. More advanced Agents track context size, embed custom system prompts, provide different modes, let you choose the language model and do advanced context management. The Agent is the engine of augmented work.
 
 ### 🧠 To Augment oneself
 **Pattern:** *Project yourself.*
