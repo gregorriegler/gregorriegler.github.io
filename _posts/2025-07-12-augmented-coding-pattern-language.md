@@ -163,7 +163,7 @@ Ask the right question to withdraw the relevant information into the context. Th
 
 The best way to help the agent avoid mistakes is to constrain what it can do. Instead of changing code freely, we can give it access to refactoring tools. We can lock it out of certain files or commands. Constraints are more than just rules — they shape what the agent can do or not do in its environment, enabling better and more reliable outputs.
 
-### ⚙️ Automate
+### ⚙️ Algorithmify
 **Pattern:** *Automate whatever can be automated.*
 
 Favor algorithms over stochastic outputs to avoid mistakes and have the agent write its own automation. It's really good at this. What is automated:
