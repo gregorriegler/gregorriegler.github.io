@@ -150,6 +150,14 @@ No production code without a failing test. This is now more obvious than ever. T
 
 The Agent is often wrong about a code change. When that happens, it will attempt to recover from the situation, taking several tries. These will inevitably contaminate the context. It may even lead to the agent giving up and making things worse by leaving unintended changes — often stating that it indeed solved the problem. I found it helpful to have the agent express its expectations about a code change first, before it runs the code. For example, before it runs a failing test, it can express what it expects to happen. This reinforces the actual intent in the context.
 
+### ❓ Ask, don’t tell.
+**Pattern:** *Don't narrow down the solution space prematurely.*
+
+Don’t tell the agent what to do, unless you're confident in the path forward. Consider that you might be wrong, or missing information. By telling it what to do, you're narrowing the solution space and leading the agent down a failure path. Don’t do that.
+
+Instead, leverage its knowledge.
+Ask the right question to withdraw the relevant information into the context. Then use it, or store it in a relevant memory. This not only leads to better results — it creates a learning opportunity.
+
 ### 🚧 Constraints
 **Pattern:** *Keep it on a short leash.*
 
