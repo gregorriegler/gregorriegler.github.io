@@ -40,8 +40,9 @@ A good Process File is small and focuses on a single thing.
 **Pattern:** *Process Identity*
 
 Leading emojis are what LLMs are known for. You look at an article containing a lot of leading emojis and immediately think: "Generated!!" When the agent starts its message with an emoji, this symbol becomes a declaring header about the state of the process. It gives us feedback on where the agent is right now—and what it is doing.
-Also, when it's missing, you know there's something not quite right. Maybe the context has gotten too large, and the agent started forgetting things.
+Also, when it's missing, you know there's something not quite right. Maybe the context has gotten too large, and it's drifting.
 This is a lot of valuable feedback you receive just for a single character.
+Guide the agent which starter symbol to use.
 
 ### 🪃 Boomerang / SubTask
 **Pattern:** *Context engineering via delegation.*
@@ -122,6 +123,15 @@ Just as we do, agents seem to have limited cognitive capacity.
 The more context the agent has to hold in memory, the more likely it is to forget or skip parts of the process. 
 The smaller and more focused the context, the more reliably the agent can follow through and perform. 
 Decompose large processes into smaller ones, and track progress between them with explicit markers or checkpoints. Use [Cross-Context Memory](#-cross-context-memory) to remember what's necessary. This can be achieved by moving steps into another [Process File](#-process-file) and using a [Boomerang](#-boomerang--subtask) to invoke it from the original file. Another way to split the process is to put each piece into its own file and coordinate them with an [Orchestrator](#-orchestrator).
+
+### 🎛️ Extract Coordinator
+**Pattern:** *Pull coordination logic out of individual chain elements.*
+
+A [Task Chain](#-taskchain) is a good starting point, but orchestration provides better control and maintainability.
+The problem with Task Chains is that each element carries dual responsibility: performing its own work and managing the handoff to the next segment. This creates tight coupling and makes recovery complex.
+We can separate these concerns by extracting the coordination responsibility into an [Orchestrator](#-orchestrator).
+The individual segments then focus solely on their core work, while the orchestrator manages the sequence, and recovery logic from a single location.
+Use a [State Indicator](#-state-indicator) to track progress through the orchestrated workflow.
 
 ### 🧪 Practice Run
 **Pattern:** *Refine the process through practice.*
