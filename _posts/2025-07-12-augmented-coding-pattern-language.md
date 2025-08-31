@@ -29,6 +29,14 @@ Inspired by HATEOAS, this pattern treats hypertext as the driving mechanism for 
 
 Links invite the agent to jump, read, or act.
 
+### 📍 Starter Symbol
+**Pattern:** *Process Identity*
+
+Leading emojis are what LLMs are known for. You look at an article containing a lot of leading emojis and immediately think: "Generated!!" When the agent starts its message with an emoji, this symbol becomes a declaring header about the state of the process. It gives us feedback on where the agent is right now—and what it is doing.
+Also, when it's missing, you know there's something not quite right. Maybe the context has gotten too large, and it's drifting.
+This is a lot of valuable feedback you receive just for a single character.
+Guide the agent which starter symbol to use.
+
 ### 📄 Process File
 **Pattern:** *Externalize the task.*
 
@@ -55,14 +63,6 @@ Make sure we don't accidentally add unwanted changes.
 5. Ask me to commit.
 ```
 **Prompt:** Read and follow **@simple-task.md**; the task is to delete all comments from the code.
-
-### 📍 Starter Symbol
-**Pattern:** *Process Identity*
-
-Leading emojis are what LLMs are known for. You look at an article containing a lot of leading emojis and immediately think: "Generated!!" When the agent starts its message with an emoji, this symbol becomes a declaring header about the state of the process. It gives us feedback on where the agent is right now—and what it is doing.
-Also, when it's missing, you know there's something not quite right. Maybe the context has gotten too large, and it's drifting.
-This is a lot of valuable feedback you receive just for a single character.
-Guide the agent which starter symbol to use.
 
 ### 🪃 Subagent / Subtask / Boomerang
 **Pattern:** *Context engineering via delegation.*
