@@ -236,7 +236,7 @@ AI agents forget everything between contexts. Use Persistent Cross-Context Memor
 ### 🚦 State Indicator
 **Pattern:** *Build a State Machine by memorizing where you are in the process.*
 
-We may track process state using a State Indicator.
+We may track process state using a State Indicator and save it to the [Cross-Context Memory](#-cross-context-memory).
 A simple State Indicator consists of a [Starter Symbol](#-starter-symbol) and a descriptive keyword.
 A more complicated one could span over many lines and contain structured information.
 This enables resilient restarts from any point without losing that context.
