@@ -142,6 +142,41 @@ STARTER_SYMBOL=🟢
 
 A Loop is a Task or Task Chain that reinitiates itself. Its nature is recursive in order to maintain longer autonomy while preventing context drift. It typically progresses by changing [Cross-Context Memory](#-cross-context-memory) across iterations, refining results or advancing through a workflow.
 
+#### Loop example: Counter
+
+##### Contents of count.md
+```md
+- Increment the prompted number by 1 and remember it as RESULT
+- Spawn a subagent with the prompt 
+   "Read and follow `count.md`, start with the number <RESULT>"
+```
+
+##### Demo run
+```
+❯ ./agent.sh read count.md and start with the number 1
+Agent: Let me read the count.md file first.
+Agent: Following the instructions:
+  1. Starting number is 1
+  2. Incrementing by 1: RESULT = 2
+  3. Spawning subagent with the new number
+  🛠️ subagent Read and follow `count.md`, start with the number 2
+
+  Subagent: Let me check the contents of count.md first.
+  Subagent: The instructions tell me to:
+    1. Increment 2 by 1, so RESULT = 3
+    2. Spawn a subagent to continue counting with RESULT (3)
+    🛠️ subagent Read and follow `count.md`, start with the number 3
+
+    Subagent: Let me check the contents of count.md first.
+    Subagent: I'll follow the instructions:
+      1. Starting number is 3
+      2. Increment by 1: RESULT = 4
+      3. Spawn a subagent with the specified prompt
+      🛠️ subagent Read and follow `count.md`, start with the number 4
+...
+Exiting...
+```
+
 ### 🔀 Condition
 **Pattern:** *Fuzzy decision making.*
 
