@@ -227,3 +227,7 @@ Agent tooling should be CLI-first. The LLM’s native medium is chat — text in
 
 ## Conclusion
 I see a lot of "agile" in the things that work well for me. Things like inspect and adapt, continuous improvement, small steps, iterate, TDD. The LLM is trained on and born into a waterfall world. When I look at the tooling people develop around it, and the things people do with it, I often see waterfall, too. And I see a lot of legacy code going to emerge. Maybe we can do better.
+
+## Influences & Inspirations
+
+It was LLewellyn Falco who first showed me the starter symbol as well as the process file pattern. The idea and framing of Augmented Coding was at first sparked by Kent Beck. I discovered subtasking through the usage of Roo Code which already had this feature. 
