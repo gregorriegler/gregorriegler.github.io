@@ -64,15 +64,15 @@ Also, when it's missing, you know there's something not quite right. Maybe the c
 This is a lot of valuable feedback you receive just for a single character.
 Guide the agent which starter symbol to use.
 
-### 🪃 Boomerang / SubTask
+### 🪃 Subagent / Subtask / Boomerang
 **Pattern:** *Context engineering via delegation.*
 
-A SubTask is when the Agent starts its next context at a specific step in the process, often to reduce the size of the context window. Necessary information is passed through [Cross-Context Memory](#-cross-context-memory) or prompt. Once completed, the SubTask summarizes its result and returns it to the initiator.
+A Subagent is when the Agent starts another fresh context at a specific step in the process, often to reduce the size of the context window. Necessary information is passed through [Cross-Context Memory](#-cross-context-memory) or prompt. Once completed, the Subagent summarizes its result and returns it to the initiator.
 
 ### ⛓️ Taskchain
 **Pattern:** *Link SubTasks together.*
 
-A Taskchain is a series of [SubTasks](#-boomerang--subtask) that call one another in sequence. Each task hands off to the next, forming a chain of autonomous steps that proceed without user intervention. This leads to a long list of summaries in the end, as all Tasks close only then.
+A Taskchain is a series of [SubTasks](#-subagent--subtask--boomerang) that call one another in sequence. Each task hands off to the next, forming a chain of autonomous steps that proceed without user intervention. This leads to a long list of summaries in the end, as all Tasks close only then.
 
 ### 🔁 Loop
 **Pattern:** *Keep going.*
@@ -92,7 +92,7 @@ Use a [condition](#-condition) to determine whether to jump out of a [loop](#-lo
 ### 🧭 Orchestrator
 **Pattern:** *A guiding process launching the correct sub-processes in the right order.*
 
-An *Orchestrator* is a Process whose sole purpose is to initiate other processes using [Boomerang](#-boomerang--subtask), and to do so in the correct order. It acts as a conductor, calling out which [Process File](#-process-file) should run next. It may use a State Machine to keep track of what's been completed and what comes next.
+An *Orchestrator* is a Process whose sole purpose is to initiate other processes using [Boomerang](#-subagent--subtask--boomerang), and to do so in the correct order. It acts as a conductor, calling out which [Process File](#-process-file) should run next. It may use a State Machine to keep track of what's been completed and what comes next.
 
 ### 💾 Cross-Context Memory
 **Pattern:** *Preserve memory between runs.*
@@ -142,7 +142,7 @@ Long processes can lead to missing steps.
 Just as we do, agents seem to have limited cognitive capacity. 
 The more context the agent has to hold in memory, the more likely it is to forget or skip parts of the process. 
 The smaller and more focused the context, the more reliably the agent can follow through and perform. 
-Decompose large processes into smaller ones, and track progress between them with explicit markers or checkpoints. Use [Cross-Context Memory](#-cross-context-memory) to remember what's necessary. This can be achieved by moving steps into another [Process File](#-process-file) and using a [Boomerang](#-boomerang--subtask) to invoke it from the original file. Another way to split the process is to put each piece into its own file and coordinate them with an [Orchestrator](#-orchestrator).
+Decompose large processes into smaller ones, and track progress between them with explicit markers or checkpoints. Use [Cross-Context Memory](#-cross-context-memory) to remember what's necessary. This can be achieved by moving steps into another [Process File](#-process-file) and using a [Boomerang](#-subagent--subtask--boomerang) to invoke it from the original file. Another way to split the process is to put each piece into its own file and coordinate them with an [Orchestrator](#-orchestrator).
 
 ### 🎛️ Extract Coordinator
 **Pattern:** *Pull coordination logic out of individual chain elements.*
