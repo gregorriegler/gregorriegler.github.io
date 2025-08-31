@@ -7,7 +7,7 @@ tags:
 
 I was trying to get an LLM to perform TDD first when ChatGPT 3.5 was released in 2022. They added the possibility for the LLM to execute Python code back then. And you could create "GPTs", agents that use your own system prompt kinda. Back then I created a [Software Crafter GPT](https://chatgpt.com/g/g-MWGfe0UQn-software-crafter). It could do simple katas. But its capabilities were quite limited, to be honest. Also, considering that it was previously trained on such kata code before, it was not really something special. In the following months I did not witness much improvement in the LLM space. It felt more like a stagnation. I was sceptical about it all, and still am.
 
-But in the recent weeks I had a few successes with LLM-assisted development, and it was quite fun. Models and tooling have gotten better and actually useful for coding. There are still limits of course, but it's good enough to find joy in trying to get the most out of it. I spent a lot of time doing augmented coding and had quite some learnings. I was trying to make it perform better and better, moving the autonomy slider up. This post introduces a *pattern language* about some of the things I learned work.
+But in the recent weeks I had a few successes with LLM-assisted development, and it was quite fun. Models and tooling have gotten better and actually useful for coding. There are still limits of course, but it's good enough to find joy in trying to get the most out of it. I spent a lot of time doing augmented coding and had quite some learnings. I was trying to make it perform better and better, moving the autonomy slider up. This post introduces a *pattern language* about some of the things I learned work. Some of the examples are demoed with the [simple-agent](https://github.com/gregorriegler/simple-agent).
 
 
 ## Basics
@@ -87,20 +87,15 @@ A Subagent is when the Agent starts another one with a fresh context to reduce t
 Starting new session
 
 Agent: I'll create a subagent with a simple task to say hello.
+  🛠️ subagent Say hello to the user in a friendly way.
 
-       🛠️ subagent Say hello to the user in a friendly way.
+    Subagent: Let me create a friendly greeting message in a file.
+      🛠️ create-file greeting.txt Hello! 👋
+      Created file: greeting.txt with content
 
-       Subagent: Let me create a friendly greeting message in a file.
-
-              🛠️ create-file greeting.txt Hello! 👋
-
-              Created file: greeting.txt with content
-
-       Subagent: Let me show you the greeting I created.
-
-              🛠️ cat greeting.txt
-
-                   1    Hello! 👋
+    Subagent: Let me show you the greeting I created.
+      🛠️ cat greeting.txt
+          1    Hello! 👋
 ```
 
 ### ⛓️ Taskchain
@@ -182,15 +177,56 @@ Exiting...
 
 Use natural language conditions to guide agent behavior. This can be rigid boolean logic, or very fuzzy. These conditions can be contextual and interpretive. They might be based on a [State Indicator](#-state-indicator) or other implicit context state. This allows for a more human-like decision making in an automated processes.
 
+#### Condition example: Stop when uncommitted changes are detected.
+Lets take the Simple Task example from above and add a condition with step 2:
+```md
+...
+1. Make sure the `git status` is clean and shows no changes
+2. When there are any uncommitted changes, **STOP** immediately.
+3. Make sure the tests pass before we start. Run `test.sh`.
+...
+```
+
 ### ➡️ Goto
 **Pattern:** *Exit a loop, or just follow a different path.*
 
 Use a [condition](#-condition) to determine whether to jump out of a [loop](#-loop). A loop may have several exits in different places based on different conditions.
 
+#### Loop example: Count til 10
+
+##### Contents of count.md
+```md
+- Increment the prompted number by 1 and remember it as RESULT
+- If the RESULT is 10 end.
+- If the RESULT is lower than 10 spawn a subagent with the prompt 
+   "Read and follow `count.md`, start with the number <RESULT>"
+```
+
 ### 🧭 Orchestrator
 **Pattern:** *A guiding process launching the correct sub-processes in the right order.*
 
-An *Orchestrator* is a Process whose sole purpose is to initiate other processes using [Boomerang](#-subagent--subtask--boomerang), and to do so in the correct order. It acts as a conductor, calling out which [Process File](#-process-file) should run next. It may use a State Machine to keep track of what's been completed and what comes next.
+An *Orchestrator* is a Process whose sole purpose is to initiate other processes using [Subagent](#-subagent--subtask--boomerang), and to do so in the correct order. It acts as a conductor, calling out which [Process File](#-process-file) should run next. It may use a State Machine to keep track of what's been completed and what comes next.
+
+#### Orchestrator example: Basic Refactoring
+Each step is just creating another subagent and feeding the result into the next subagent.
+
+```md
+# Refactor
+
+STARTER_SYMBOL=🧹
+
+1. Initiate a new subtask to analyze the given code and 
+   find a small step that improves its design. 
+   Don't implement the change, just report back the 
+   result of the analysis.
+2. Initiate a new subtask to decompose the proposed 
+   design improvement to a plan of many small refactoring steps. 
+   Each step should leave the code working. Don't execute yet, 
+   just close the task reporting back the plan.
+3. Execute the planned refactoring steps, creating a new subtask 
+   for each step where you run the tests before and after 
+   the changes.
+```
 
 ### 💾 Cross-Context Memory
 **Pattern:** *Preserve memory between runs.*
