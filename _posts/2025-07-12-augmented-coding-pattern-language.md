@@ -37,6 +37,13 @@ Also, when it's missing, you know there's something not quite right. Maybe the c
 This is a lot of valuable feedback you receive just for a single character.
 Guide the agent which starter symbol to use.
 
+#### Example (excerpt from rules file)
+
+```
+ALWAYS start your answers with a STARTER_SYMBOL
+The default STARTER_SYMBOL is 🐙
+```
+
 ### 📄 Process File
 **Pattern:** *Externalize the task.*
 
