@@ -37,7 +37,7 @@ Also, when it's missing, you know there's something not quite right. Maybe the c
 This is a lot of valuable feedback you receive just for a single character.
 Guide the agent which starter symbol to use.
 
-#### Example (excerpt from rules file)
+#### Starter Symbol example (excerpt from rules file)
 
 ```
 ALWAYS start your answers with a STARTER_SYMBOL
@@ -55,7 +55,7 @@ Also list all the steps the agent should follow in order to complete the task ac
 
 The natural and very convenient evolution of Process Files are [slash commands](https://docs.anthropic.com/en/docs/claude-code/slash-commands). They don't fully replace process files, but they can be a convenient entrypoint to a processes.
 
-#### Example: `simple-task.md`
+#### Process File example: `simple-task.md`
 
 ```md
 STARTER_SYMBOL=✅
@@ -78,7 +78,7 @@ Make sure we don't accidentally add unwanted changes.
 
 A Subagent is when the Agent starts another one with a fresh context to reduce the sizes of the context windows. Necessary information is passed through [Cross-Context Memory](#-cross-context-memory) or prompt. Once completed, the Subagent summarizes its result and returns it to the initiator.
 
-#### Example
+#### Subagent example
 
 **Prompt:** Start a subagent that says hello.
 
@@ -92,7 +92,7 @@ Agent: I'll create a subagent with a simple task to say hello.
 
        Subagent: Let me create a friendly greeting message in a file.
 
-              🛠️ create-file greeting.txt Hello! 👋 I hope you're having a wonderful day! I'm here to help you with whatever you need. Let's work together to accomplish great things! 😊
+              🛠️ create-file greeting.txt Hello! 👋
 
               Created file: greeting.txt with content
 
@@ -100,13 +100,42 @@ Agent: I'll create a subagent with a simple task to say hello.
 
               🛠️ cat greeting.txt
 
-                   1    Hello! 👋 I hope you're having a wonderful day! I'm here to help you with whatever you need. Let's work together to accomplish great things! 😊
+                   1    Hello! 👋
 ```
 
 ### ⛓️ Taskchain
 **Pattern:** *Link SubTasks together.*
 
 A Taskchain is a series of [SubTasks](#-subagent--subtask--boomerang) that call one another in sequence. Each task hands off to the next, forming a chain of autonomous steps that proceed without user intervention. This leads to a long list of summaries in the end, as all Tasks close only then.
+
+#### Taskchain example: Test First
+
+```md
+# Write a failing Test
+
+STARTER_SYMBOL=🔴
+
+1. Pick the next item from the testlist.
+2. Write the failing test
+3. Run the test and see it fail
+4. Start a subtask with the prompt 
+   "Read and follow `process/make-it-pass.md`, the test is <testname>"
+```
+
+See how "Write a failing Test" links to `process/make-it-pass.md` in its fourth step.
+It uses the [Subagent pattern](#-subagent--subtask--boomerang) to start a fresh context for this task. 
+
+##### Contents of process/make-it-pass.md
+```md
+# Make the failing test pass
+
+STARTER_SYMBOL=🟢
+
+1. Run the tests, there should be exactly one failing test.
+2. Make the smallest possible change to the production code 
+   to make the failing test and all other tests pass
+3. Run the tests, and see them pass
+```
 
 ### 🔁 Loop
 **Pattern:** *Keep going.*
