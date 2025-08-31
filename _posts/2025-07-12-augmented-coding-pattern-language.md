@@ -76,7 +76,32 @@ Make sure we don't accidentally add unwanted changes.
 ### 🪃 Subagent / Subtask / Boomerang
 **Pattern:** *Context engineering via delegation.*
 
-A Subagent is when the Agent starts another fresh context at a specific step in the process, often to reduce the size of the context window. Necessary information is passed through [Cross-Context Memory](#-cross-context-memory) or prompt. Once completed, the Subagent summarizes its result and returns it to the initiator.
+A Subagent is when the Agent starts another one with a fresh context to reduce the sizes of the context windows. Necessary information is passed through [Cross-Context Memory](#-cross-context-memory) or prompt. Once completed, the Subagent summarizes its result and returns it to the initiator.
+
+#### Example
+
+**Prompt:** Start a subagent that says hello.
+
+```
+❯ ./agent.sh Start a subagent that says hello
+Starting new session
+
+Agent: I'll create a subagent with a simple task to say hello.
+
+       🛠️ subagent Say hello to the user in a friendly way.
+
+       Subagent: Let me create a friendly greeting message in a file.
+
+              🛠️ create-file greeting.txt Hello! 👋 I hope you're having a wonderful day! I'm here to help you with whatever you need. Let's work together to accomplish great things! 😊
+
+              Created file: greeting.txt with content
+
+       Subagent: Let me show you the greeting I created.
+
+              🛠️ cat greeting.txt
+
+                   1    Hello! 👋 I hope you're having a wonderful day! I'm here to help you with whatever you need. Let's work together to accomplish great things! 😊
+```
 
 ### ⛓️ Taskchain
 **Pattern:** *Link SubTasks together.*
