@@ -35,8 +35,8 @@ Links invite the agent to jump, read, or act.
 A *Process File* describes what the agent is supposed to do. It can live alongside your code or documentation, and it should link to all relevant information — source files, goals, constraints, etc.
 
 A good Process File is small and focuses on a single thing.
-Describe the high level intent at first. 
-But also list all the steps the agent should follow in order to complete the task according to your needs. 
+Describe the high-level intent at first.
+Also list all the steps the agent should follow in order to complete the task according to your needs.
 
 #### Example: `simple-task.md`
 
@@ -45,7 +45,7 @@ STARTER_SYMBOL=✅
 
 # Simple Task
 
-Intent: Work on a small task making sure the tests keep passing.
+Intent: Work on a small task while making sure the tests keep passing.
 Make sure we don't accidentally add unwanted changes. 
 
 1. Make sure the `git status` is clean and shows no changes
@@ -54,7 +54,7 @@ Make sure we don't accidentally add unwanted changes.
 4. Make sure the tests pass again afterwards.
 5. Ask me to commit.
 ```
-**Prompt:** Read and follow **@simple-task.md**, the task is to delete all comments from the code 
+**Prompt:** Read and follow **@simple-task.md**; the task is to delete all comments from the code.
 
 ### 📍 Starter Symbol
 **Pattern:** *Process Identity*
