@@ -355,4 +355,4 @@ I see a lot of "agile" in the things that work well for me. Things like inspect 
 
 ## Influences & Inspirations
 
-It was LLewellyn Falco who first showed me the starter symbol as well as the process file pattern. The idea and framing of Augmented Coding was at first sparked by Kent Beck. I discovered subtasking through the usage of Roo Code which already had this feature. 
+It was LLewellyn Falco who first showed me the starter symbol as well as the process file pattern. The idea of [Augmented Coding](https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes) was at first sparked by Kent Beck. I discovered subtasking through the usage of Roo Code which already had this feature. 
