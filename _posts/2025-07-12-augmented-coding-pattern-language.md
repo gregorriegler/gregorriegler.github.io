@@ -53,7 +53,7 @@ A good Process File is small and focuses on a single thing.
 Describe the high-level intent at first.
 Also list all the steps the agent should follow in order to complete the task according to your needs.
 
-The natural and very convenient evolution of Process Files are [slash commands](https://docs.anthropic.com/en/docs/claude-code/slash-commands). They don't fully replace process files, but they can be a convenient entrypoint to a processes.
+The natural and very convenient evolution of Process Files are [slash commands](https://docs.anthropic.com/en/docs/claude-code/slash-commands). They don't fully replace process files, but they can be a convenient entrypoint to a process.
 
 #### Process File example: `simple-task.md`
 
