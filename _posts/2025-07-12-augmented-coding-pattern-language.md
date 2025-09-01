@@ -5,34 +5,44 @@ tags:
 - Augmented Coding
 ---
 
-I was trying to get an LLM to perform TDD first when ChatGPT 3.5 was released in 2022. They added the possibility for the LLM to execute Python code back then. And you could create "GPTs", agents that use your own system prompt kinda. Back then I created a [Software Crafter GPT](https://chatgpt.com/g/g-MWGfe0UQn-software-crafter). It could do simple katas. But its capabilities were quite limited, to be honest. Also, considering that it was previously trained on such kata code before, it was not really something special. In the following months I did not witness much improvement in the LLM space. It felt more like a stagnation. I was sceptical about it all, and still am.
+I was trying to get an LLM to perform TDD first when ChatGPT 3.5 was released in 2022. They added the possibility for the LLM to execute python code back then. And you could create "GPTs", agents that use your own system prompt kinda. Back then I created a [Software Crafter GPT](https://chatgpt.com/g/g-MWGfe0UQn-software-crafter). It could do simple katas. But its capabilities were limited. In the following months I did not witness a lot of improvement in the LLM space. It felt like stagnation and I was sceptical.
 
-But in the recent weeks I had a few successes with LLM-assisted development, and it was quite fun. Models and tooling have gotten better and actually useful for coding. There are still limits of course, but it's good enough to find joy in trying to get the most out of it. I spent a lot of time doing augmented coding and had quite some learnings. I was trying to make it perform better and better, moving the autonomy slider up. This post introduces a *pattern language* about some of the things I learned work. I also provide examples where some of them show a demo run using the [simple-agent](https://github.com/gregorriegler/simple-agent). Whenever you see a codeblock starting with `❯ ./agent.sh` this is the simple agent.
+This changed in the recent months where I experienced successes with LLM-assisted development. 
+It was fun, ... addictive even.
 
+Models and tooling have gotten better and actually useful for coding. 
+There are still limitations, but it's good enough to to try and get the most out of it.
+I wanted to find out how much I can push up the autonomy slider while keeping up the quality and maintainability.
+I spent a lot of time doing augmented coding, which to me meant to teach the agent what I would do.
+This endeavour was so interresting that I had to describe some of the things I learned.
+
+This post introduces a *pattern language* about some of the things that worked for me. 
+I recently added examples. Some of them show a *demo run* using the [simple-agent](https://github.com/gregorriegler/simple-agent). 
+Whenever you see a codeblock starting with `❯ ./agent.sh` this IS the simple agent.
 
 ## Basics
 
 ### 🤖 Agent
 **Pattern:** *Give the LLM Agency*
 
-An Agent in its simplest form is nothing more than a loop that facilitates a dialog with a language model that allows it to execute tools. More advanced Agents track context size, embed custom system prompts, provide different modes, let you choose the language model and do advanced context management. The Agent is the engine of augmented work.
+An agent in its simplest form is nothing more than a loop that facilitates a dialog with a language model that allows it to execute tools. More advanced agents track context size, embed custom system prompts, provide different modes, let you choose the language model and do advanced context management. The agent is the engine of augmented work.
 
 ### 🧠 To Augment Oneself
 **Pattern:** *Project what you are doing.*
 
 For me, augmentation is a learning process where we discover our habits, decisions and workflows and capture them into clear artifacts that are so precise that an agent can follow and thus imitate us. Before asking the agent to take action, pause to explore what you would do if you were doing it yourself. What steps would you take? What considerations matter? Describe that process to the agent. Externalize your own reasoning, step by step, so the agent can pick it up and run with it. Think of it as constructing a functional representation of yourself.
-Often we have to go through the motions ourselves to surface unconscious decisions. In augmenting we learn about our own thinking and workflow.
+Often we have to go through the motions ourselves to surface unconscious decisions. In augmenting we learn about our own thinking and workflow. This process is an interresting shift in perspectives. It leads you to focus more on methodology and decision making rather than technical details. You have to be so clear about it, that things that were previously obvious but blurry, become well understood and formalized. 
 
 ## 🌐 **HATEOAG** (Hypertext as the Engine of Agent Guidance)
 
-Inspired by HATEOAS, this pattern treats hypertext as the driving mechanism for agent navigation and behavior. Hypertext guides the agent through a network of clearly defined, interlinked processes, memory, documentation files and code.
+Inspired by [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS), this pattern treats hypertext as the driving mechanism for agent navigation and behavior. Hypertext guides the agent through a network of clearly defined, interlinked processes, memory, documentation files and code.
 
-Links invite the agent to jump, read, or act.
+Links invite the agent to jump, read, and act.
 
 ### 📍 Starter Symbol
 **Pattern:** *Process Identity*
 
-Leading emojis are what LLMs are known for. You look at an article containing a lot of leading emojis and immediately think: "Generated!!" When the agent starts its message with an emoji, this symbol becomes a declaring header about the state of the process. It gives us feedback on where the agent is right now—and what it is doing.
+Leading emojis are what LLMs are known for. You look at an article containing a lot of leading emojis and immediately think: *"Generated!!"* When the agent starts its message with an emoji, this symbol becomes a declaring header about the state of the process. It gives us feedback on where the agent is right now—and what it is doing.
 Also, when it's missing, you know there's something not quite right. Maybe the context has gotten too large, and it's drifting.
 This is a lot of valuable feedback you receive just for a single character.
 Guide the agent which starter symbol to use.
@@ -50,8 +60,8 @@ The default STARTER_SYMBOL is 🐙
 A *Process File* describes what the agent is supposed to do. It can live alongside your code or documentation, and it should link to all relevant information — source files, goals, constraints, etc.
 
 A good Process File is small and focuses on a single thing.
-Describe the high-level intent at first.
-Also list all the steps the agent should follow in order to complete the task according to your needs.
+It Describes the high-level intent at first.
+Then it list all the steps the agent should follow in order to complete the task.
 
 The natural and very convenient evolution of Process Files are [slash commands](https://docs.anthropic.com/en/docs/claude-code/slash-commands). They don't fully replace process files, but they can be a convenient entrypoint to a process.
 
@@ -65,15 +75,18 @@ STARTER_SYMBOL=✅
 Intent: Work on a small task while making sure the tests keep passing.
 Make sure we don't accidentally add unwanted changes. 
 
-1. Make sure the `git status` is clean and shows no changes
+1. Make sure the `git status` is clean and shows no changes.
 2. Make sure the tests pass before we start. Run `test.sh`.
 3. Execute the given Task.
 4. Make sure the tests pass again afterwards.
 5. Ask me to commit.
 ```
+
+Start this process with the following prompt:
+
 **Prompt:** Read and follow **@simple-task.md**; the task is to delete all comments from the code.
 
-### 🪃 Subagent / Subtask / Boomerang
+### 🪃 Subagent / Subtask
 **Pattern:** *Context engineering via delegation.*
 
 A Subagent is when the Agent starts another one with a fresh context to reduce the sizes of the context windows. Necessary information is passed through [Cross-Context Memory](#-cross-context-memory) or prompt. Once completed, the Subagent summarizes its result and returns it to the initiator.
@@ -101,7 +114,7 @@ Agent: I'll create a subagent with a simple task to say hello.
 ### ⛓️ Taskchain
 **Pattern:** *Link SubTasks together.*
 
-A Taskchain is a series of [SubTasks](#-subagent--subtask--boomerang) that call one another in sequence. Each task hands off to the next, forming a chain of autonomous steps that proceed without user intervention. This leads to a long list of summaries in the end, as all Tasks close only then.
+A Taskchain is a series of [SubTasks](#-subagent--subtask) that call one another in sequence. Each task hands off to the next, forming a chain of autonomous steps that proceed even without user intervention. This leads to a long list of summaries in the end, as all tasks close only then.
 
 #### Taskchain example: Test First
 
@@ -118,7 +131,7 @@ STARTER_SYMBOL=🔴
 ```
 
 See how "Write a failing Test" links to `process/make-it-pass.md` in its fourth step.
-It uses the [Subagent pattern](#-subagent--subtask--boomerang) to start a fresh context for this task. 
+It uses the [Subagent pattern](#-subagent--subtask) to start a fresh context for this task. 
 
 ##### Contents of process/make-it-pass.md
 ```md
@@ -207,7 +220,7 @@ Use a [condition](#-condition) to determine whether to jump out of a [loop](#-lo
 ### 🧭 Orchestrator
 **Pattern:** *A guiding process launching the correct sub-processes in the right order.*
 
-An *Orchestrator* is a Process whose sole purpose is to initiate other processes using [Subagent](#-subagent--subtask--boomerang), and to do so in the correct order. It acts as a conductor, calling out which [Process File](#-process-file) should run next. It may use a State Machine to keep track of what's been completed and what comes next.
+An *Orchestrator* is a Process whose sole purpose is to initiate other processes using [Subagent](#-subagent--subtask), and to do so in the correct order. It acts as a conductor, calling out which [Process File](#-process-file) should run next. It may use a State Machine to keep track of what's been completed and what comes next.
 
 #### Orchestrator example: Basic Refactoring
 Each step is just creating another subagent and feeding the result into the next subagent.
@@ -263,7 +276,7 @@ The process of course needs to include steps to adapt the State Indicator.
 #### Example: TDD Phases
 
 TDD is too large of a process for me to fit in a single process file.
-So I have at least one [subagent](#-subagent--subtask--boomerang) for each of the phases.
+So I have at least one [subagent](#-subagent--subtask) for each of the phases.
 To let the [orchestrator](#-orchestrator) know where we are in the process, I use a state indicator.
 
 ```md
@@ -273,11 +286,12 @@ To let the [orchestrator](#-orchestrator) know where we are in the process, I us
    - `## TDD Phase: 🔴` - need to write a failing test
    - `## TDD Phase: 🟢` - need to make a test pass
    - `## TDD Phase: 🧹` - need to refactor
-2. If no indicator is found, default to 🔴 and add `## TDD Phase: 🔴` to `development.md`.
+2. If no indicator is found, 
+   default to 🔴 and add `## TDD Phase: 🔴` to `development.md`.
 3. Route to appropriate process:
-   - 🔴: Create new subagent: "Read and follow `process/write-a-failing-test.md`"
-   - 🟢: Create new subagent: "Read and follow `process/make-it-pass.md`"
-   - 🧹: Create new subagent: "Read and follow `process/refactor.md`"
+   - 🔴: Create a subagent: "Follow `process/write-a-failing-test.md`"
+   - 🟢: Create a subagent: "Follow `process/make-it-pass.md`"
+   - 🧹: Create a subagent: "Follow `process/refactor.md`"
 
 ...
 ```
@@ -296,6 +310,15 @@ For human-in-the-loop ideation, it’s helpful to invite the agent to ask questi
 **Pattern:** *Signal for attention.*
 
 Sometimes the Agent needs your input. Maybe it has a question, or it needs a review. Use a Signal step to make it speak up or play a sound — so you can focus on other things in the meantime.
+
+#### Example using a say script
+The say script runs some text to speech tool.
+It is essentially a way for the agent to speak up.
+
+```md
+    - Proceed only if all tests pass. 
+      If they don't stop and notify me using `./say.py`
+```
 
 ## Evolving the Process
 ### 📦 Process as Code
@@ -316,7 +339,9 @@ Long processes can lead to missing steps.
 Just as we do, agents seem to have limited cognitive capacity. 
 The more context the agent has to hold in memory, the more likely it is to forget or skip parts of the process. 
 The smaller and more focused the context, the more reliably the agent can follow through and perform. 
-Decompose large processes into smaller ones, and track progress between them with explicit markers or checkpoints. Use [Cross-Context Memory](#-cross-context-memory) to remember what's necessary. This can be achieved by moving steps into another [Process File](#-process-file) and using a [Boomerang](#-subagent--subtask--boomerang) to invoke it from the original file. Another way to split the process is to put each piece into its own file and coordinate them with an [Orchestrator](#-orchestrator).
+Decompose large processes into smaller ones, and track progress between them with explicit markers or checkpoints. Use [Cross-Context Memory](#-cross-context-memory) to remember what's necessary. 
+This can be achieved by moving steps into another [Process File](#-process-file) and using a [Subtask](#-subagent--subtask) to invoke it from the original file. 
+Another way to split the process is to put each piece into its own file and coordinate them with an [Orchestrator](#-orchestrator).
 
 ### 🎛️ Extract Coordinator
 **Pattern:** *Pull coordination logic out of individual chain elements.*
@@ -327,12 +352,12 @@ We can separate these concerns by extracting the coordination responsibility int
 The individual segments then focus solely on their core work, while the orchestrator manages the sequence, and recovery logic from a single location.
 Use a [State Indicator](#-state-indicator) to track progress through the orchestrated workflow.
 
-### 🧪 Practice Run
+### 🧪 Trial Run
 **Pattern:** *Refine the process through practice.*
 
 Build a feature not for its own sake, but to test and refine the process. Then, throw the feature away. What did you learn? What went well? Adapt small things in the process and restart.
 
-### 🧾 Expose Decisions
+### 🧾 Expose Decision
 **Pattern:** *Make implicit context explicit.*
 
 As you evolve your workflows, make hidden, implicit context and decisions visible and explicit. Capture the state it's based on and make it persistent. Capture the decisions made and describe them. Explicit state and decisions make the process more resilient.
@@ -357,7 +382,7 @@ The Agent is often wrong about a code change. When that happens, it will attempt
 ### ❓ Ask, don’t tell.
 **Pattern:** *Keep the solution space open.*
 
-Don’t tell the agent what to do, unless you're confident in the path forward. Consider that you might be wrong, or missing information. By telling it what to do, you're narrowing the solution space and leading the agent down a failure path. Don’t do that.
+Don’t tell the agent what to do, unless you're confident in the path forward. Consider that you might be wrong, or missing information. By telling it what to do, you're narrowing the solution space and leading the agent down a failure path.
 
 Instead, leverage its knowledge.
 Ask the right question to withdraw the relevant information into the context. Then use it, or store it in a relevant memory. This not only leads to better results — it creates a learning opportunity.
@@ -371,8 +396,8 @@ The best way to help the agent avoid mistakes is to constrain what it can do. In
 **Pattern:** *Keep your finger on the abort button.*
 
 When the agent goes off the rails, for example when it does something it should not do, I like to stop it as quickly as I can.
-The earlier I do that, the better I avoid contamination of the context.
-Then I am more likely to help it recover without messing up the process.
+The earlier I do that, the better.
+I avoid contamination of the context and am more likely to help it recover without messing up the process.
 I like to use [Ask, don't tell](#-ask-dont-tell) when giving it recovery instructions.
 
 ### ⚙️ Algorithmify
