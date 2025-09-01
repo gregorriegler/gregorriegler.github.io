@@ -5,20 +5,26 @@ tags:
 - Augmented Coding
 ---
 
-I was trying to get an LLM to perform TDD first when ChatGPT 3.5 was released in 2022. They added the possibility for the LLM to execute python code back then. And you could create "GPTs", agents that use your own system prompt kinda. Back then I created a [Software Crafter GPT](https://chatgpt.com/g/g-MWGfe0UQn-software-crafter). It could do simple katas. But its capabilities were limited. In the following months I did not witness a lot of improvement in the LLM space. It felt like stagnation and I was sceptical.
+I was trying to get an LLM to perform TDD first when ChatGPT 3.5 was released in 2022. 
+They added the possibility for the LLM to execute Python code back then. 
+And you could create "GPTs", agents that use your own system prompt kinda. 
+Back then I created a [Software Crafter GPT](https://chatgpt.com/g/g-MWGfe0UQn-software-crafter). It could do simple katas. 
+But its capabilities were limited. 
+In the following months I did not witness a lot of improvement in the LLM space. 
+It felt like stagnation and I was sceptical.
 
 This changed in the recent months where I experienced successes with LLM-assisted development. 
 It was fun, ... addictive even.
 
 Models and tooling have gotten better and actually useful for coding. 
-There are still limitations, but it's good enough to to try and get the most out of it.
+There are still limitations, but it's good enough to try and get the most out of it.
 I wanted to find out how much I can push up the autonomy slider while keeping up the quality and maintainability.
 I spent a lot of time doing augmented coding, which to me meant to teach the agent what I would do.
-This endeavour was so interresting that I had to describe some of the things I learned.
+This endeavour was so interesting that I had to describe some of the things I learned.
 
 This post introduces a *pattern language* about some of the things that worked for me. 
 I recently added examples. Some of them show a *demo run* using the [simple-agent](https://github.com/gregorriegler/simple-agent). 
-Whenever you see a codeblock starting with `❯ ./agent.sh` this IS the simple agent.
+Whenever you see a codeblock starting with `❯ ./agent.sh` this is the simple agent.
 
 ## Basics
 
@@ -60,8 +66,8 @@ The default STARTER_SYMBOL is 🐙
 A *Process File* describes what the agent is supposed to do. It can live alongside your code or documentation, and it should link to all relevant information — source files, goals, constraints, etc.
 
 A good Process File is small and focuses on a single thing.
-It Describes the high-level intent at first.
-Then it list all the steps the agent should follow in order to complete the task.
+It describes the high-level intent at first.
+Then it lists all the steps the agent should follow in order to complete the task.
 
 The natural and very convenient evolution of Process Files are [slash commands](https://docs.anthropic.com/en/docs/claude-code/slash-commands). They don't fully replace process files, but they can be a convenient entrypoint to a process.
 
@@ -250,7 +256,7 @@ AI agents forget everything between contexts. Use Persistent Cross-Context Memor
 
 #### Example: Goal File
 
-When my development process is decomposed into several subagents doing its work, they need to be aligned on the overall goal, and the tasks that need to be done. We could define a `goal.md` file that provides at least a high level goal description, and a task list
+When my development process is decomposed into several subagents doing their work, they need to be aligned on the overall goal, and the tasks that need to be done. We could define a `goal.md` file that provides at least a high level goal description, and a task list
 
 ```md
 # Goal: User can create an account
@@ -367,7 +373,7 @@ As you evolve your workflows, make hidden, implicit context and decisions visibl
 ### 🪜 One problem at a time
 **Pattern:** *Smaller is better. Refine the refined.*
 
-The LLM typically wants to perform too many changes and do too many things at once. It also tends to plan this way — no wonder, given the world it was trained on. To achieve better results, break big steps into smaller, clearer ones. And when you've done that, take the smallest step and let the agent break it down even further. Always start with the tiniest one, and solve one problem at a time. Vertical slicing and TDD ZOMBIES have proven effective.
+The LLM typically wants to perform too many changes and do too many things at once. It also tends to plan this way — no wonder, given the nature of its training data. To achieve better results, break big steps into smaller, clearer ones. And when you've done that, take the smallest step and let the agent break it down even further. Always start with the tiniest one, and solve one problem at a time. Vertical slicing and TDD ZOMBIES have proven effective.
 
 ### ✅ Test First
 **Pattern:** *Start with the end in mind.*
@@ -416,7 +422,7 @@ Therefore, we want to automate as much as possible.
 Agent tooling should be CLI-first. The LLM’s native medium is chat — text in, text out. This is exactly what the CLI was made for. On top of that, it offers many small, composable Unix-style tools. Agents thrive on the command line — give them tools there.
 
 ## Conclusion
-I see a lot of "agile" in the things that work well for me. Things like inspect and adapt, continuous improvement, small steps, iterate, TDD. The LLM is trained on and born into a waterfall world. When I look at the tooling people develop around it, and the things people do with it, I often see waterfall, too. And I see a lot of legacy code going to emerge. Maybe we can do better.
+I see a lot of "agile" in the things that work well for me. Things like inspect and adapt, continuous improvement, small steps, iterate, TDD. The LLM is trained on and born into a waterfall world. When I look at the tooling people develop around it, and the things people do with it, I often see waterfall, too. And I see a lot of legacy code that will emerge. Maybe we can do better.
 
 ## Influences & Inspirations
 
