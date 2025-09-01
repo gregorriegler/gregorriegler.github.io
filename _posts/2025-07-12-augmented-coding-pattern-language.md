@@ -260,6 +260,28 @@ A more complicated one could span over many lines and contain structured informa
 This enables resilient restarts from any point without losing that context.
 The process of course needs to include steps to adapt the State Indicator.
 
+#### Example: TDD Phases
+
+TDD is too large of a process for me to fit in a single process file.
+So I have at least one [subagent](#-subagent--subtask--boomerang) for each of the phases.
+To let the [orchestrator](#-orchestrator) know where we are in the process, I use a state indicator.
+
+```md
+...
+
+1. Look for the current TDD phase indicator in `development.md`:
+   - `## TDD Phase: 🔴` - need to write a failing test
+   - `## TDD Phase: 🟢` - need to make a test pass
+   - `## TDD Phase: 🧹` - need to refactor
+2. If no indicator is found, default to 🔴 and add `## TDD Phase: 🔴` to `development.md`.
+3. Route to appropriate process:
+   - 🔴: Create new subagent: "Read and follow `process/write-a-failing-test.md`"
+   - 🟢: Create new subagent: "Read and follow `process/make-it-pass.md`"
+   - 🧹: Create new subagent: "Read and follow `process/refactor.md`"
+
+...
+```
+
 ### 🧰 StateMachine as a Tool
 **Pattern:** *Use a tool to drive the process.*
 
