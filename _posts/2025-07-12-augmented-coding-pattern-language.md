@@ -416,6 +416,29 @@ Favor algorithms over stochastic outputs to avoid mistakes and have the agent wr
 
 Therefore, we want to automate as much as possible.
 
+### 💎 Stdout Distillation
+**Pattern:** *Reduce verbose output to essential signals.*
+
+The Stdout Distillation Pattern reduces verbose script output to only the essential information needed by an agent. Instead of flooding the context with logs, traces, or irrelevant details, the output is distilled into a concise signal—such as a single line indicating success or failure. This minimizes context contamination, improves efficiency, and ensures the agent focuses only on what matters.
+
+#### Example: A test.sh script
+The script makes sure the test results are just a single line.
+Only if the tests fail, more output is shown.
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")"
+
+if ! output=$(python -m pytest tests/ -v 2>&1); then
+    echo "$output"
+    exit 1
+fi
+
+passed_tests=$(echo "$output" | grep -c "PASSED" || echo "0")
+echo "✅ All $passed_tests tests passed"
+```
+
 ### 🖥️ CLI First
 **Pattern:** *Let the agent thrive on the CLI.*
 
