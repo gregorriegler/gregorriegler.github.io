@@ -181,9 +181,11 @@ Use natural language conditions to guide agent behavior. This can be rigid boole
 Lets take the Simple Task example from above and add a condition with step 2:
 ```md
 ...
+
 1. Make sure the `git status` is clean and shows no changes
 2. When there are any uncommitted changes, **STOP** immediately.
 3. Make sure the tests pass before we start. Run `test.sh`.
+
 ...
 ```
 
@@ -232,6 +234,22 @@ STARTER_SYMBOL=🧹
 **Pattern:** *Preserve memory between runs.*
 
 AI agents forget everything between contexts. Use Persistent Cross-Context Memory — a file or shared storage — to explicitly write down and reload facts, goals, decisions, and task progress. Treat this as the agent's long-term memory.
+
+#### Example: Goal File
+
+When my development process is decomposed into several subagents doing its work, they need to be aligned on the overall goal, and the tasks that need to be done. We could define a `goal.md` file that provides at least a high level goal description, and a task list
+
+```md
+# Goal: User can create an account
+
+- [x] Add a feature flag for the "create account" feature
+- [ ] Show button "create account" when the feature flag is turned on
+- [ ] When a user clicks on "create account" they see a simple form
+
+...
+
+```
+
 
 ### 🚦 State Indicator
 **Pattern:** *Build a State Machine by memorizing where you are in the process.*
