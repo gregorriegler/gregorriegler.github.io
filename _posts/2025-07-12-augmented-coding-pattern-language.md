@@ -60,7 +60,7 @@ ALWAYS start your answers with a STARTER_SYMBOL
 The default STARTER_SYMBOL is 🐙
 ```
 
-### 📄 Process File
+### 📜 Process File
 **Pattern:** *Externalize the task.*
 
 A *Process File* describes what the agent is supposed to do. It can live alongside your code or documentation, and it should link to all relevant information — source files, goals, constraints, etc.
