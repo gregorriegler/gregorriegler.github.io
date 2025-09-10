@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+  <title>
+    
+      Gregor Riegler &middot; Merciless Refactorer - page 4
+    
+  </title>
+
+  
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  <!-- Additional head bits without overriding original head -->
+<meta name="description" content="Gregor Riegler, Software Development Coach."/>
+</head>
+
+
+  <body class="default">
+
+    <div id="sidebar">
+  <header>
+    <div class="site-title">
+      <a href="/">
+        
+          <span class="back-arrow icon"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+</svg></span>
+        
+        Gregor Riegler
+      </a>
+    </div>
+    <p class="lead">Merciless Refactorer</p>
+  </header>
+  <nav id="sidebar-nav-links">
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/about">About</a>
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/blog">Blog</a>
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/speaking">Public Speaking</a>
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/refactoring-java/">Refactoring Java Series</a>
+    
+  
+
+
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
+  <!-- Optional additional links to insert in sidebar nav -->
+</nav>
+
+
+  
+
+  <nav id="sidebar-icon-links">
+
+  <a id="bluesky-link"
+     class="icon" title="Bluesky" aria-label="Bluesky"
+     href="https://bsky.app/profile/gregorriegler.com">
+    <?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="21" viewBox="0 0 600 530" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ <path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/>
+</svg>
+
+  </a>
+
+  <a id="mastodon-link"
+     class="icon" title="Mastodon" aria-label="Mastodon"
+     href="https://fosstodon.org/@gregorriegler">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="26" viewBox="0 0 216.4144 232.00976">
+  <defs>
+    <mask id="mastodon-mask">
+      <rect width="100%" height="100%" fill="white"/>
+      <path d="M177.50984 80.077v60.94125h-24.14375v-59.15c0-12.46875-5.24625-18.7975-15.74-18.7975-11.6025 0-17.4175 7.5075-17.4175 22.3525v32.37625H96.20734V85.42325c0-14.845-5.81625-22.3525-17.41875-22.3525-10.49375 0-15.74 6.32875-15.74 18.7975v59.15H38.90484V80.077c0-12.455 3.17125-22.3525 9.54125-29.675 6.56875-7.3225 15.17125-11.07625 25.85-11.07625 12.355 0 21.71125 4.74875 27.8975 14.2475l6.01375 10.08125 6.015-10.08125c6.185-9.49875 15.54125-14.2475 27.8975-14.2475 10.6775 0 19.28 3.75375 25.85 11.07625 6.36875 7.3225 9.54 17.22 9.54 29.675" fill="black"/>
+    </mask>
+  </defs>
+  <path d="M211.80734 139.0875c-3.18125 16.36625-28.4925 34.2775-57.5625 37.74875-15.15875 1.80875-30.08375 3.47125-45.99875 2.74125-26.0275-1.1925-46.565-6.2125-46.565-6.2125 0 2.53375.15625 4.94625.46875 7.2025 3.38375 25.68625 25.47 27.225 46.39125 27.9425 21.11625.7225 39.91875-5.20625 39.91875-5.20625l.8675 19.09s-14.77 7.93125-41.08125 9.39c-14.50875.7975-32.52375-.365-53.50625-5.91875C9.23234 213.82 1.40609 165.31125.20859 116.09125c-.365-14.61375-.14-28.39375-.14-39.91875 0-50.33 32.97625-65.0825 32.97625-65.0825C49.67234 3.45375 78.20359.2425 107.86484 0h.72875c29.66125.2425 58.21125 3.45375 74.8375 11.09 0 0 32.975 14.7525 32.975 65.0825 0 0 .41375 37.13375-4.59875 62.915" mask="url(#mastodon-mask)"/>
+</svg>
+
+  </a>
+
+  <a id="linkedin-link"
+     class="icon" title="LinkedIn" aria-label="LinkedIn"
+     href="https://www.linkedin.com/in/gregorriegler/">
+    <?xml version="1.0" ?>
+<svg height="24" viewBox="0 0 72 72" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z"/>
+</svg>
+  </a>
+  
+  <a id="github-link"
+     class="icon" title="Github" aria-label="Github"
+     href="https://github.com/gregorriegler">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28" height="24" width="28"><path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-0.609 0.109-0.828-0.266-0.828-0.578 0-0.391 0.016-1.687 0.016-3.297 0-1.125-0.375-1.844-0.812-2.219 2.672-0.297 5.484-1.313 5.484-5.922 0-1.313-0.469-2.375-1.234-3.219 0.125-0.313 0.531-1.531-0.125-3.187-1-0.313-3.297 1.234-3.297 1.234-0.953-0.266-1.984-0.406-3-0.406s-2.047 0.141-3 0.406c0 0-2.297-1.547-3.297-1.234-0.656 1.656-0.25 2.875-0.125 3.187-0.766 0.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-0.344 0.313-0.656 0.844-0.766 1.609-0.688 0.313-2.438 0.844-3.484-1-0.656-1.141-1.844-1.234-1.844-1.234-1.172-0.016-0.078 0.734-0.078 0.734 0.781 0.359 1.328 1.75 1.328 1.75 0.703 2.141 4.047 1.422 4.047 1.422 0 1 0.016 1.937 0.016 2.234 0 0.313-0.219 0.688-0.828 0.578-4.766-1.594-8.203-6.094-8.203-11.391 0-6.625 5.375-12 12-12zM4.547 19.234c0.031-0.063-0.016-0.141-0.109-0.187-0.094-0.031-0.172-0.016-0.203 0.031-0.031 0.063 0.016 0.141 0.109 0.187 0.078 0.047 0.172 0.031 0.203-0.031zM5.031 19.766c0.063-0.047 0.047-0.156-0.031-0.25-0.078-0.078-0.187-0.109-0.25-0.047-0.063 0.047-0.047 0.156 0.031 0.25 0.078 0.078 0.187 0.109 0.25 0.047zM5.5 20.469c0.078-0.063 0.078-0.187 0-0.297-0.063-0.109-0.187-0.156-0.266-0.094-0.078 0.047-0.078 0.172 0 0.281s0.203 0.156 0.266 0.109zM6.156 21.125c0.063-0.063 0.031-0.203-0.063-0.297-0.109-0.109-0.25-0.125-0.313-0.047-0.078 0.063-0.047 0.203 0.063 0.297 0.109 0.109 0.25 0.125 0.313 0.047zM7.047 21.516c0.031-0.094-0.063-0.203-0.203-0.25-0.125-0.031-0.266 0.016-0.297 0.109s0.063 0.203 0.203 0.234c0.125 0.047 0.266 0 0.297-0.094zM8.031 21.594c0-0.109-0.125-0.187-0.266-0.172-0.141 0-0.25 0.078-0.25 0.172 0 0.109 0.109 0.187 0.266 0.172 0.141 0 0.25-0.078 0.25-0.172zM8.937 21.438c-0.016-0.094-0.141-0.156-0.281-0.141-0.141 0.031-0.234 0.125-0.219 0.234 0.016 0.094 0.141 0.156 0.281 0.125s0.234-0.125 0.219-0.219z"></path>
+</svg>
+
+  </a>
+
+  <a id="youtube-link"
+     class="icon" title="Youtube" aria-label="Youtube"
+     href="https://www.youtube.com/channel/UCsWg_i6X4KMhjD2CRqCJLdg">
+    <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="96.875px" height="96.875px" viewBox="0 0 96.875 96.875" style="enable-background:new 0 0 96.875 96.875;"
+	 xml:space="preserve">
+<g>
+	<path d="M95.201,25.538c-1.186-5.152-5.4-8.953-10.473-9.52c-12.013-1.341-24.172-1.348-36.275-1.341
+		c-12.105-0.007-24.266,0-36.279,1.341c-5.07,0.567-9.281,4.368-10.467,9.52C0.019,32.875,0,40.884,0,48.438
+		C0,55.992,0,64,1.688,71.336c1.184,5.151,5.396,8.952,10.469,9.52c12.012,1.342,24.172,1.349,36.277,1.342
+		c12.107,0.007,24.264,0,36.275-1.342c5.07-0.567,9.285-4.368,10.471-9.52c1.689-7.337,1.695-15.345,1.695-22.898
+		C96.875,40.884,96.889,32.875,95.201,25.538z M35.936,63.474c0-10.716,0-21.32,0-32.037c10.267,5.357,20.466,10.678,30.798,16.068
+		C56.434,52.847,46.23,58.136,35.936,63.474z"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+  </a>
+
+  <a id="goodreads-link"
+     class="icon" title="goodreads" aria-label="goodreads"
+     href="https://www.goodreads.com/user/show/22567057-gregor-riegler">
+    <?xml version="1.0" ?><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+	.st0{}
+	.st1{fill:#202020;}
+</style><g id="Edges"/><g id="Background_1_"><path class="st0" d="M492,268.3c-6.3,122.8-109.9,224.4-236.5,224.5c-126.7,0.1-230.7-101.6-237-224.5   C11.7,136.2,119.6,19.2,255.2,19.2C390.9,19.2,498.7,136.3,492,268.3z"/></g><g id="Symbol"><path class="st1" d="M346.6,137.5c0-4.3-0.4-8.6-0.6-12.8c-9.2,0-16.9,0-25.6,0c0,9.8,0,18.9,0,28.1   c-41.1-57.3-125.6-39.2-149.4,17.9c-15.2,36.6-14.4,73.4,1.5,109.4c16.8,38,65,54.1,102.8,43.4c2-0.3,4.3-0.9,6.8-1.7   c3.6-1.1,6.7-2.5,8.7-3.6c5.2-2.1,11.4-5.6,17.5-10.3c4.9-3.8,9.1-7.8,12.4-11.5c-0.9,14.3-1.3,28.7-3.6,42.8   c-2.8,17.4-10.8,32.4-27.4,41.2c-36.2,19.2-79.6,4.6-96-32.4c-8.2,0-16.6,0-25.4,0c1.8,24.4,14.7,40.3,34.7,50.6   c24.1,12.4,49.9,13.7,76.2,9.4c33.5-5.5,55.3-24.4,63-57.8c2.7-11.9,4.2-24.2,4.3-36.4C346.8,255,346.6,196.2,346.6,137.5z    M316.5,260.3c-4.8,13.8-12.8,24.7-23.3,32.2c-2.6,1.9-15.4,10.8-34.1,11.7c-1.1,0.1-4.2,0.2-8,0c-0.1,0.1-0.3,0.1-0.4,0.1   c-27.3-1.7-48.2-17.6-57.4-43.9c-7.7-22.1-7.9-44.6-2.3-67.1c8.1-32.5,31.6-52.4,61.6-53.2c0.7-0.1,1.1-0.1,1.1-0.1   c15.6-1.4,27.8,5.1,31.6,7.2c16.1,8.6,28.2,24.6,33.5,46C324.4,215.7,324.2,238.2,316.5,260.3z"/></g></svg>
+  </a>
+
+  <a id="email-link"
+     class="icon" title="e-mail" aria-label="e-mail"
+     href="mailto:rieglerg85@gmail.com">
+    <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 493.332 493.332" style="enable-background:new 0 0 493.332 493.332;" xml:space="preserve">
+<g id="XMLID_78_">
+	<g id="XMLID_79_">
+		<g id="XMLID_80_">
+			<path id="XMLID_81_" d="M352.731,450.956c3.037,9.789-2.044,20.213-11.616,23.878c-35.811,13.709-69.294,18.498-112.873,18.498
+				c-117.663,0-221.147-84.347-221.147-223.275C7.095,125.46,112.003,0,272.2,0c124.735,0,214.036,85.764,214.036,204.845
+				c0,103.483-58.12,168.693-134.66,168.693c-33.327,0-57.419-17.007-60.955-54.582h-1.424c-21.963,36.15-53.86,54.582-91.43,54.582
+				c-46.082,0-79.376-34.022-79.376-92.142c0-86.475,63.769-165.147,165.841-165.147c18.691,0,38.9,2.795,55.909,7.172
+				c16.425,4.227,26.861,20.236,24.147,36.978l-16.972,104.695c-7.072,41.818-2.112,60.953,17.721,61.666
+				c30.475,0.711,68.762-38.272,68.762-119.786c0-92.15-59.543-163.732-169.41-163.732c-108.444,0-203.428,85.051-203.428,220.436
+				c0,118.369,75.834,185.708,181.448,185.708c27.489,0,56.203-4.51,80.853-13.214c5.863-2.07,12.315-1.662,17.872,1.126
+				c5.558,2.788,9.753,7.716,11.595,13.655L352.731,450.956z M293.954,181.362c0.534-3.626-1.892-7.027-5.496-7.696
+				c-4.413-0.819-9.536-1.426-15.573-1.426c-46.771,0-83.617,46.076-83.617,100.653c0,26.94,12.037,43.946,35.423,43.946
+				c26.231,0,53.876-33.31,60.265-74.425L293.954,181.362z"/>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+  </a>
+
+  <a id="subscribe-link"
+     class="icon" title="Subscribe" aria-label="Subscribe"
+     href="/feed.xml">
+    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <circle cx="6.18" cy="17.82" r="2.18"/>
+    <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+</svg>
+  </a>
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <!-- Optional additional links to insert for icons links -->
+</nav>
+
+  <p class="license">
+  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0; margin: 0 0 .5rem" width="20" src="/assets/img/cc_icon_white_x2.png" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> by <a href="http://gregorriegler.com">Gregor Riegler</a>.
+  Layout: &copy; 2025.  <a href="/THEME_LICENSE.md">MIT License.</a>
+</p>
+
+</div>
+
+    <main class="container">
+      <div class="content">
+  
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2019/10/08/shower-thought-why-agile-works.html">
+        shower thoughts on agility
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">08 Oct 2019</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <h2 id="unexpected">unexpected</h2>
+
+<p>we've seen developers writing unit tests, and it has worked out well for them.</p>
+<p>we've seen developers writing those unit tests before writing any production code, and it has worked out well for them.</p>
+<p>we've seen developers spending time in improving the code, without getting any new feature done, and it has worked out well for them.</p>
+<p>we've seen developers doing pair programming - costing twice as much to solve the same problem? - and it has worked out well for them.</p>
+<p>we've seen developers doing mob programming, having a small group of people working at the same time, on the same problem and on the same computer, and it has worked out well for them.</p>
+<p>we've seen developers spending their work time in learning and practice, and it has worked out well for them.</p>
+<p>we've seen developers quit doing estimates, and it has worked out well for them.</p>
+<p>we've seen developers managing to deliver useful versions early and often.</p>
+<p>we've seen developers managing to deliver value to their customers every single day.</p>
+<p>we've seen organizations giving power to their development teams, and it has worked out well for them.</p>
+<p>we didn't expect those things to work out this way - yet here we are.</p>
+
+<p>this is very refreshing in my opinion, and i am very interested in exploring why those things worked out the way they did.<br />
+it seems like we really suck at predicting what would work and what wouldn’t.<br />
+but if we are so bad at those predictions, shouldn’t we just try things out?</p>
+
+<h2 id="the-industrial-age">the industrial age</h2>
+<p>first of all, i believe that our thinking has been stuck in the industrial age of <a href="https://en.wikipedia.org/wiki/Frederick_Winslow_Taylor">taylorism</a> and militarism, and that these ideas have shaped our way of thinking, teaching, working and just everything, up until today.
+taylorism might have worked well in factories, where every new produced thing was exactly the same, and it was finished at some point.
+this however seems not to be the case with software.
+software is never the same, and if it was you’d reuse it.
+software is never finished, it keeps changing and improving.
+software development is just fundamentally different to factory work.
+it is about knowledge, communication, experimentation, discovery and learning.</p>
+
+<h2 id="knowledge-refineries">knowledge refineries</h2>
+<p>software starts with somebody having a need.
+this need unfolds in an idea, a vision.
+in a traditional world this vision leads to the creation of requirements.
+the requirements are used to create specifications.
+the specifications guide the writing of the code.
+each of these steps could be seen as refinements of knowledge.
+the knowledge starts very vague and becomes gradually more specific until it ends in code.
+the knowledge is transferred, refined, stored, and it decays (thanks to Alex Bolboacă <a href="https://twitter.com/alexboly">@alexboly</a> for this <a href="https://mozaicworks.com/blog/software-engineering/knowledge-refinery/">observation</a>).</p>
+
+<h2 id="the-risk-for-bugs">the risk for bugs</h2>
+<p>in a traditional world, those refinements are done by different people of different skills with distance among them.
+we know that communication is lossy, and that the devil is in the details.
+needs are often lost in communication, resulting in instructions without context.
+instructions without context are likely the source of speculative assumptions.
+bugs may not only occur in code, but in specification, requirements, and ideas as well.
+thus each refinement step has a risk of bugs.
+the amount of people involved, and the distance between those people increase the risk of bugs.
+the amount of refinement steps in the process, and the length of interval between them, increase the risk of bugs.
+the damage of bugs in early stages of the development process grows if left undiscovered.
+the damage of bugs is reduced when the code is in a maintainable state.
+one way to discover bugs early, and to prevent them from doing lots of damage, is continuous feedback.
+the faster the feedback, the smaller the risk.
+a waterfall process hides bugs until the last possible moment, it maximizes the risk of bugs, and the damage those bugs inflict.</p>
+
+<h2 id="code-as-a-byproduct">code as a byproduct</h2>
+<p>if software development is so much about discovering bugs, maybe code is just a byproduct.
+the real product would be the learning, and the discovery of a bug-free vision.</p>
+
+<h2 id="the-many-minds-problem">the many minds problem</h2>
+<p>too many cooks spoil the broth, and it’s the same with code.
+different programmers have different opinions, styles and knowledge.
+many disconnected minds working on the same system can only make it unnecessarily complex.
+code is duplicated, when the existing implementation is not known or disliked.
+styles of design in areas of the code deviate from one another.
+programmers of all levels of experience have a hard time creating quality output, while quality output has a lot of attributes.
+mob programming helps solving these issues in an attempt to create a single mind of many.</p>
+
+<h2 id="storing-knowledge">storing knowledge</h2>
+<p>storing knowledge in brains is risky as brains are bad at remembering details.
+knowledge stored in just a single brain is even more risky, as it gets lost in fluctuation (<a href="https://en.wikipedia.org/wiki/Bus_factor">bus factor</a>).
+documentation quickly becomes dated. facts change, but no one updates the documentation.
+the only trustworthy long term store for knowledge is the code, as it never gets old. same with executable specification in the form of tests that change with the code.</p>
+
+<h2 id="transferring-knowledge-meetings">transferring knowledge: meetings</h2>
+<p>when programmers get in the zone, their short-term memories become stuffed with details about a specific problem and the code.
+meetings often cause damage by tearing programmers out of this context, which took a long time to setup in the first place.
+to make things worse, the details discussed in those meetings are typically unrelated to the programmers recent context.
+so, not only will the programmer spend a lot of time getting back into the zone after the meeting, also parts of the knowledge gained within the meeting will get lost in that process anyhow.</p>
+
+<h2 id="transferring-knowledge-email">transferring knowledge: email</h2>
+<p>a good way to avoid lossy communication is to have the recipient repeat in their own words what they have understood.
+the sender then has immediate feedback if there was a misunderstanding or not.
+email does not provide this way of feedback, it is typically ‘send and forget’, sometimes even disregarded.</p>
+
+<h2 id="knowledge-refactoring">knowledge refactoring</h2>
+<p>refactoring is a vital practice to make code more comprehensible, and to discover bugs.
+but what about requirements and specification?
+if they are similar to code, just not as refined - shouldn’t we refactor them, too?</p>
+
+<h2 id="estimation">estimation</h2>
+<p>the things we estimate are typically not the things that cause most of our effort.
+the things we estimate are naturally known things.
+but it is about the things we don’t know, that make the effort.</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Does this seem about right? <a href="https://t.co/PEtgTBX9eM">pic.twitter.com/PEtgTBX9eM</a></p>&mdash; Oluf Nissen (@GeekTieGuy) <a href="https://twitter.com/GeekTieGuy/status/1176895878478450688?ref_src=twsrc%5Etfw">September 25, 2019</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h2 id="derived-principles">derived principles?</h2>
+<ul>
+  <li>less people involved -&gt; smaller teams.</li>
+  <li>less distance between people.</li>
+  <li>write code together.</li>
+  <li>continuous collaboration, share knowledge.</li>
+  <li>continuous and fast feedback using smaller batches.</li>
+  <li>idea to code as soon as possible.</li>
+  <li>avoid meetings and emails.</li>
+  <li>avoid estimation.</li>
+  <li>have the courage to question input.</li>
+</ul>
+
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2019/10/08/shower-thought-why-agile-works.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2019/08/10/who-needs-lombok-anyhow.html">
+        Who Needs Lombok Anyhow
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">10 Aug 2019</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <p>Java is quite a verbose language and annotations can solve almost any problem.
+Right? - What a dangerous combination that is.</p>
+
+<p>I understand it, totally. I’m lazy too.
+But other than saving all that boilerplate, have you considered the repercussions?</p>
+
+<h3 id="magic-is-harmful">Magic is harmful</h3>
+<p>I don’t want any magic in my code. 
+It is the thing that makes behaviour opaque.
+It makes you fire up your debugger, because you don’t actually understand what is going on behind the scenes.
+There should be no <em>behind the scenes</em>.
+Everything should be as explicit as possible, for economic reasons.</p>
+<blockquote>
+  <p>Magic is a feature with non-compositional semantics that succeeds in making the common case easy, at the cost of making the uncommon cases surprising, impossible, or ridiculously complex.</p>
+
+  <p>~ John A De Goes</p>
+</blockquote>
+
+<h3 id="data-getter-and-setter-are-a-design-smell">@Data, @Getter and @Setter are a design smell</h3>
+<p>When I design the objects of my domain I want to avoid accessors.
+I want those objects to represent a set of behaviours on nicely encapsulated data. 
+I’ll occasionally have some public fields on my <em>Value Objects</em>, but that’s about it. 
+Why would I want getters or setters on these objects? They are a backdoor to the data that ought to be modified through specific methods. 
+This smells like <a href="https://refactoring.guru/smells/feature-envy">Feature Envy</a> and <a href="https://martinfowler.com/bliki/AnemicDomainModel.html">Anemic Domain Model</a>.</p>
+
+<p>Also, setters work against my intention of making most of my objects immutable.
+After all, immutable objects are easier to refactor.</p>
+
+<p>So where do I need accessors then?
+Maybe on my data transfer objects?
+Why would I want to go the length of making fields private and creating accessors on a structure that is solely data?
+Does this kind of information hiding provide <em>any</em> value? To me, it is just clutter.
+<code class="language-plaintext highlighter-rouge">public final</code> fields without accessors are a much cleaner solution here imho.
+And there I am, left without a need for accessors.</p>
+
+<h3 id="allargsconstructor-introduces-connascence-of-position">@AllArgsConstructor introduces connascence of position</h3>
+<p>This awful annotation couples the order of your fields to the order of its generated constructor arguments.
+So when you reorder your fields, you effectively break your code.
+That’s an awful <a href="https://en.wikipedia.org/wiki/Connascence#Connascence_of_Position_(CoP)">connascence of position</a> right there.</p>
+
+<h3 id="bi-directional-object-relations-cause-stack-overflows">Bi-directional object relations cause stack overflows</h3>
+<p>So when you use Lomboks <em>equals</em>, <em>hashCode</em> or <em>toString</em> implementations, it is interresting that bi-directional associations will cause a stack overflow.
+I’m not saying bi-directional associations are desirable, or that those stack overflows aren’t obvious.
+All I am saying is, that if Lombok was just a little bit smarter, it could probably have avoided those.</p>
+
+<p>The bad thing is not the stack overflow. It’s the fact that it is hidden behind an annotation.</p>
+
+<h3 id="the-lombok-plugin-might-hit-your-cpu">The Lombok plugin might hit your cpu</h3>
+<p>If you do use lombok annotations excessively and have a lot of pojos in your code base, the lombok plugin might hit your cpu.
+I had one project where it caused the autocomplete drop down to load several seconds in specific areas of the code.
+The problem was gone once I deactivated the plugin.
+To be fair: Maybe it was just a temporary problem with the plugin that has already been addressed.</p>
+
+<h3 id="compatibility-issues-with-java-versions-greater-than-8">Compatibility issues with Java versions greater than 8</h3>
+<p>When I tried migrating a java 1.8 project that used lombok to java 11, I ran into issues.
+And despite the <a href="https://stackoverflow.com/questions/53866929/unable-to-use-lombok-with-java-11">known issues</a> and <a href="https://github.com/rzwitserloot/lombok/issues/1723">fixes</a> that I found on the internet, I was not able to get it to work again within 2 hours of trying.
+Delombok to the rescue.</p>
+
+<p><strong>update:</strong> seems like i ran into a similar issue like <a href="https://github.com/rzwitserloot/lombok/issues/1723">this</a>, trying to upgrade to java 11.</p>
+
+<h2 id="without-lombok-what-are-the-alternatives">Without lombok, what are the alternatives?</h2>
+<p>We can just fall back to explicit pojo code. Some libs, ide features and plugins will help us out with the boilerplate. 
+Also, we may use Java records starting with Java 14.</p>
+
+<h3 id="equals-and-hashcode">equals and hashcode</h3>
+<p>For value objects, where you want all fields included, the apache commons lang <a href="http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/EqualsBuilder.html">EqualsBuilder</a> and <a href="http://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/builder/HashCodeBuilder.html">HashCodeBuilder</a> come in handy.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Override
+public boolean equals(Object that) {
+    return EqualsBuilder.reflectionEquals(this, that);
+}
+ 
+@Override
+public int hashCode() {
+    return HashCodeBuilder.reflectionHashCode(this);
+}
+</code></pre></div></div>
+
+<p>maybe even use an intellij live template like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@Override
+public boolean equals(Object that) {
+    return org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals(this, that);
+}
+
+@Override
+public int hashCode() {
+    return org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode(this);
+}
+</code></pre></div></div>
+
+<h3 id="slf4j">@Slf4j</h3>
+<p>I recommend using an intellij live template again.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// just put in 'className()' for the $CLASS$ variable
+private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger($CLASS$.class);
+</code></pre></div></div>
+
+<p><img src="/assets/img/log_live_template.gif" alt="Logger via live template" /></p>
+
+<h3 id="builder">@Builder</h3>
+<p>I really like the builder generation plugins that are freely available on the intellij plugin market.</p>
+
+<ul>
+  <li><a href="https://plugins.jetbrains.com/plugin/7354-innerbuilder">Inner Builder</a></li>
+  <li><a href="https://plugins.jetbrains.com/plugin/6585-builder-generator">Builder Generator</a></li>
+</ul>
+
+<p>Also, there is a new <a href="https://www.jetbrains.com/help/idea/replace-constructor-with-builder.html"><strong>Replace Constructor with Builder</strong></a> refactoring available now.
+However, I prefer the <strong>Inner Builder</strong> plugin.</p>
+
+<h2 id="a-case-for-delombok">A case for Delombok</h2>
+<p>Thankfully, there is this nice little feature called delombok.
+It will transform all your former lombok annotations into the ugly boilerplate they created behind the scenes,
+so you can completely get rid of it.
+Don’t expect a beautiful outcome though, the generated code will contain a lot of <code class="language-plaintext highlighter-rouge">@SuppressWarnings("all")</code>.
+Also, the delombok feature of my intellij plugin caused my ide to freeze.
+So I had to use the <a href="http://anthonywhitford.com/lombok.maven/lombok-maven-plugin/usage.html">Lombok Maven Plugin</a> instead, it worked just fine.</p>
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2019/08/10/who-needs-lombok-anyhow.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2019/07/23/refactoring-tool-seamer.html">
+        seamer: a refactoring tool for java
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">23 Jul 2019</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <p>Just recently i was refactoring some very messy legacy java code and i stumbled upon this really long and complex method.
+I had to refactor it but there were no tests, no safety net, what so ever. 
+It had so many different paths that adding unit tests would have been a tedious endeavour.</p>
+
+<p>“Would be nice if had something like <a href="https://github.com/testdouble/suture">suture</a>”, i thought.
+So i decided to just code it real quick.</p>
+
+<p>Here is the result: <a href="https://github.com/gregorriegler/seamer">https://github.com/gregorriegler/seamer</a>.</p>
+
+<p>Seamer is a refactoring tool for java that helps you get complex methods under test in order to make safe refactorings.</p>
+
+<h3 id="how-does-it-work">How does it work?</h3>
+<p>Basically you just wrap a complex method with a lambda and the seamer will then record all your invocations including 
+input arguments and return values, serialize and persist them. 
+You can later replay those invocations to make sure everything still works.</p>
+
+<p>Seamer provides an api for you to make suggestions on the arguments you want to pass in. 
+The tool will shuffle your suggestions and execute given arguments in all possible combinations.
+Or you can just let it run, click around in your application, and record real values.</p>
+
+<p>When you are confident with the data you have recorded, go ahead and start your refactorings. 
+Replay the seamer regularly to make sure everything still works.</p>
+
+<p>If you have ideas for further improvements, feel free to do so, or just make a pull request.</p>
+
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2019/07/23/refactoring-tool-seamer.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2019/06/30/tdd-setup-typescript-mocha-chai.html">
+        simplistic tdd setup for typescript with mocha and chai
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">30 Jun 2019</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <p>i was doing a little bit of tdd in typescript recently and the setup always took me way too long. 
+i was trying to do things right. i didn’t want any magic in my setup, everything i added should have a purpose. 
+i wanted it to be simplistic but working. this is my outcome.</p>
+
+<p><a href="https://github.com/gregorriegler/tdd-setup-typescript-mocha-chai">https://github.com/gregorriegler/tdd-setup-typescript-mocha-chai</a></p>
+
+<p>feel free to use, or improve it.</p>
+
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2019/06/30/tdd-setup-typescript-mocha-chai.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2014/12/19/between-lines.html">
+        Between the lines
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">19 Dec 2014</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      As coders we are constantly making decisions. This is what we do, it is our duty. Our decisions have a lot of impact.
+They affect the success of the project or product.
+They affect all stakes of the software, the users that are going to use it, and in enterprise even the company behind the employees that are going to use it.
+And of course they affect our own and/or our companies reputation.
+They affect what problems we face when we engage upcoming tasks, our co-workers future mood and even our own.
+Bad decisions can easily make us suffer.<br /><br />
+What we do is not a routine, ever. We might have patterns, practices, principles and experience. Yet still, every new decision that we make has a unique context.
+This is why our work is very creative.<br /><br />Sometimes we make good decisions and sometimes we make bad ones. This is true for all types of coders from juniors to masters. Sometimes we make bad decisions because we just don't know any better, due to a lack of programming-, technology- or domainknowledge. And sometimes we make bad decisions because we are being put under pressure.<br /><br />Bad decisions are expensive and dangerous. They produce technical debt, and it is not uncommon that they lead us to even more bad decisions. Slowly but surely this burden becomes heavier. It cost us time, energy and money. In extreme cases it gets so expensive that it would be favorable to completely start over.<br /><br />Willingly or not, because of the decisions we make, we coders are in great power. We are leaders, and we can easily steer towards failure. We are not just the ones to write lines. We are not just code monkeys. We are the ones who design the heart of the Software and bear great responsibility.<br /><br />When everyone gets mad because of a problem, maybe a date or even a deadline, we coders are the ones to stay strong. We are the ones to keep calm, and disillusion the others. We know the code, so we know the truth. If we don't stand up, whoelse should?<br /><br />It is hard to act professionally and responsible at any time, but it's mostly a good choice. Thankfully, code is very forgivingly in its nature. We can change it, thus allowing us to revert our decisions. We should value this changeability in the code. We should even take action to improve it. Maybe that'd be a good choice!?<br /><br />I would like to end this post with a quote by&nbsp;<a href="https://twitter.com/WoodyZuill">@WoodyZuill</a>:<br /><blockquote class="tr_bq"><span style="color: #292f33; font-family: Helvetica Neue, Helvetica, Arial, sans-serif;"><span style="line-height: 22px; white-space: pre-wrap;">„</span></span><span style="background-color: white; color: #292f33; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 22px; white-space: pre-wrap;">Be the programmer you want to see in the world.</span><span style="color: #292f33; font-family: Helvetica Neue, Helvetica, Arial, sans-serif;"><span style="line-height: 22px; white-space: pre-wrap;">“</span></span></blockquote>
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2014/12/19/between-lines.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2014/07/11/improve-your-feedbackloop-with.html">
+        Improve your Feedbackloop with Continuous Testing
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">11 Jul 2014</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      Have you ever though about what the most valueable thing in software development was for you? And im not talking about things that value for you personally, but for the success of the development itself. Well i have thought about it, and for me it was Feedback - in any form. It is so important, because it enables steering. Development practices are made for the purpose of better  feedback. TDD, Continuous Integration, Iterations, to name only a view. Many of the agile methods and XP are basically about better feedback.<br /><br />It begins with customer interaction. I need as much feedback as possible, as frequent as possible. If i don't get feedback, i'm likely to get on the wrong track, resulting in a product that is not going to be used, because it's not what the customer needed.  The more feedback i get, the better the outcome will be. If i get feedback rarely, i am unable to steer. I'm forced to make assumptions which are likely just obstacles. The quicker i get feedback, the faster i can deliver value to my customer. Feedback allows me to steer. <br /><br />Feedback is as important for programming. I want it early and often. If i write hundreds of lines of code without running them, they will most likely result in a very long and painful debugging session, and a lot of changes. I don't want that, so i take baby steps. They make me go safer, faster and happier. There are two phases that define my programming feedback loop.<br /><ol><li>The phase where i write code. Lets call it <span lang="grc">alpha, like so '<span style="color: #cc0000;">α</span>'. </span></li><li>The phase where i evaluate my code, and eventually fix errors. Lets call it beta, like so '<span style="color: #38761d;">β</span>'.</li></ol>You could also see those phases as modes. It is important to understand here, that these phases have nothing todo with the alpha/beta definition of a software cycle. I just invented them to describe my programming feedbackloop.In the following graphics you'll notice that the lines get shorter and shorter by example which is intentional and should point out how i got faster using new strategies.<br /><ol></ol>When i first started coding, i did not write any tests. I wrote lots of code before i tried it out manually. Obviously it didn't work when i first ran it. I ended up in rather long <span lang="grc"><span style="color: #cc0000;">α-phases</span>, where i just wrote code, and also long <span style="color: #38761d;">β-phases</span>, where i evaluated (got my feedback), and fixed it. Like this: </span><br /><span lang="grc"><br /></span><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-8wbFVY6fFf4/U7-tV4_g-4I/AAAAAAAAAMA/Mtn4QPE8Be4/s1600/slow.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="75" src="https://4.bp.blogspot.com/-8wbFVY6fFf4/U7-tV4_g-4I/AAAAAAAAAMA/Mtn4QPE8Be4/s1600/slow.png" width="640" /></a></div><br style="clear: both;" /><span lang="grc">I was very slow back then.</span><br /><span lang="grc"><br /></span><span lang="grc">I soon started with an interpreted language, which was very cool because i could run the scripts immediately. No need to compile or anything. Just write and run. It shortened my feedback loop, and </span><span lang="grc">i became faster overall:</span><br /><span lang="grc"><br /></span><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-UBm1C2agLOI/U7-uOQsORGI/AAAAAAAAAMI/N6MxntBnGZY/s1600/medium.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="84" src="https://2.bp.blogspot.com/-UBm1C2agLOI/U7-uOQsORGI/AAAAAAAAAMI/N6MxntBnGZY/s1600/medium.png" width="640" /></a></div><br style="clear: both;" /><span lang="grc">Sooner or later i eventually started tdd. And regardless of the language that i was using, interpreted or not, it again shortened my feedback loop and made me go faster. The loop was shortened to a single 'unit', which is obviously smaller than anything manually executable. It allowed me to evaluate small behaviours, long before the program was even runnable.</span><span lang="grc"> It is important to understand, that the </span><span lang="grc"><span lang="grc"><span style="color: #cc0000;">α-phase</span></span> in the following graphic contains both writing tests and implementation. The </span><span lang="grc"><span lang="grc"><span style="color: #38761d;">β-phase</span></span> is much shorter, since unittests run very fast.</span><br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-A7Qgbi359lo/U7-u7W8qLnI/AAAAAAAAAMQ/6JDYmTVS0yg/s1600/fast.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="60" src="https://2.bp.blogspot.com/-A7Qgbi359lo/U7-u7W8qLnI/AAAAAAAAAMQ/6JDYmTVS0yg/s1600/fast.png" width="640" /></a></div><br style="clear: both;" /><span lang="grc">I thought this was just great, and it could not get any better. Wrong i was!! Later, i tried something that made me go like this:</span><br /><span lang="grc"><br /></span><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-IWbKt9dJ0go/U7-vdjV1YgI/AAAAAAAAAMY/EXbKEKi9ea0/s1600/fastest.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="60" src="https://3.bp.blogspot.com/-IWbKt9dJ0go/U7-vdjV1YgI/AAAAAAAAAMY/EXbKEKi9ea0/s1600/fastest.png" width="640" /></a></div><br style="clear: both;" /><span lang="grc">"What the ...?" You might ask. No, i did not break space-time. The thing i tried was Continuous Testing. Which basically means, that i do tdd, but i don't run my tests by pressing a button and then wait. I just have them run all the time in the background automatically... Everytime i change my code, my tests immediately run automatically, and show me "OK" or "NOT OK" on a small icon on my screen. Since the tests only take about a second to run, this feedback is instant. And since my IDE saves my files onchange automatically, i do not have to press ctrl+s or anything. I just code... and as i code my files get saved.... and as the files get saved my tests get run... fluently, immediately. This is HUGE. I am now progressing without disruption. I completely broke out of the phases, or if you want to call them 'modes'. I love it.</span><br /><span lang="grc"><br /></span><span lang="grc">I have used <a href="http://infinitest.github.io/">infinitest</a> for this. It is a Continuous Testing plugin for Intellij/Eclipse. If you are doing javascript, i can also recommend <a href="http://gruntjs.com/">grunt</a> for Continuous Testing.</span>
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2014/07/11/improve-your-feedbackloop-with.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2014/06/03/about-is-tdd-dead-discussion.html">
+        About the „Is TDD Dead?“ discussion
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">03 Jun 2014</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      It did not take long after <a href="http://pragdave.me/blog/2014/03/04/time-to-kill-agile/">Agile</a> died that TDD joined its party. If you havent noticed, <a href="https://twitter.com/dhh">David Heinemeier Hansson</a> put up quite a <a href="http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html">rant</a><b> </b>against TDD on his blog leading to a lot of discussion - also on Twitter. Finally they ended up doing a live online discussion regularely featuring <a href="https://twitter.com/KentBeck">Kent Beck</a>, <a href="https://twitter.com/martinfowler">Martin Fowler</a> and David not (yet) involving the TDD advocate <a href="https://twitter.com/unclebobmartin">Robert C. Martin</a> aka uncle bob. If you haven't watched it live, here is the initial <a href="https://www.youtube.com/watch?v=z9quxZsLcfo">30min discussion of the series on Youtube</a>. I really recommend the whole series.<br /><br />I think this topic and the ongoing discussion is very valueable to our craft because it is the kind of questioning and critical thinking that evolve what we do and how good we are at it. Even if we have a strong faith in something, we should not be afraid to question it, ever.<br /><br />I get davids points, however i do not entirely agree with all of his concerns. I want to share my thoughts in this blogpost.<br /><br /><blockquote class="tr_bq"><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><i><b>„Test induced design damage“</b></i></span></span></blockquote>A good design is a design that makes the software easy to change. I think this is something we all agree about. While TDD generally puts a lot of good pressure on the design, if you're not careful you're going to couple the tests tightly to the structure of your code. In this case even refactorings might force us to touch a lot of test-code aswell. You don't want that to happen. Tests should be the enabler of refactoring. I've happened to experience lots of applications that were so small that sociable unittests with reduced mocking and integration tests were just perfect. The value of this approach was that it was very easy to change/refactor production code without touching test-code. TDD does not solve these design problems, TDD does not design for you. TDD is just a design tool, but you are still the designer. Testing is engineering. Look for advantages, make tradeoffs. Trying to minimize mocking can definitely pay off. <br /><blockquote class="tr_bq"><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><i><b><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><i><b>„</b></i></span></span>To Test first, or not to Test first</b></i></span></span><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><i><b>“</b></i></span></span></blockquote>The point is, you do not want to verify if the code is working manually. You'd have to do it way too often, and it would just take too long. You want to be able to fiddle with the code, and do small changes frequently, without having to try everything out manually. You want to do it automated and the feedback should be instant. So i see no point in 1. writing code, 2. trying it out, and then 3. writing a test. Why not write the test in the first place? Also, we tend to be very flaccid on writing a test for something that we have found to be working, because we tend to become euphoric about our success quickly which makes us tired of digging in details later. Other than that, the actual writing of the test first forces us to think about the problem to an extent that makes us recognize hidden details. These details are better be known before we start writing the code.<br /><br /><blockquote class="tr_bq"><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><b><i><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><i><b>„</b></i></span></span>TDD is so widespread nowadays</i></b></span></span><span style="font-size: x-large;"><span style="font-family: Times,&quot;Times New Roman&quot;,serif;"><i><b>“</b></i></span></span></blockquote>I was laughing when i noticed that there are actually people who believe that everyone does tdd nowadays. Sadly, TDD, or lets say developer testing is in fact unused and/or undiscovered in many places. I've happened to see it missed in programming education and also software companies. Sometimes, it was even unwelcome. If you were using any kind of developer testing in these places, you were a pioneer. There is still plenty of work to do on this topic.<br /><br />The bottom line is, automated developer testing is good. We need it. We were silly if we didn't.
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2014/06/03/about-is-tdd-dead-discussion.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2013/12/20/an-annotation-nightmare.html">
+        An Annotation Nightmare
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">20 Dec 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #555555; font-weight: bold;">@XmlElementWrapper</span><span style="color: #333333;">(</span>name<span style="color: #333333;">=</span><span style="background-color: #fff0f0;">"orders"</span><span style="color: #333333;">)</span><br /><span style="color: #555555; font-weight: bold;">@XmlJavaTypeAdapter</span><span style="color: #333333;">(</span>OrderJaxbAdapter<span style="color: #333333;">.</span><span style="color: #0000cc;">class</span><span style="color: #333333;">)</span><br /><span style="color: #555555; font-weight: bold;">@XmlElements</span><span style="color: #333333;">({</span><br />   <span style="color: #555555; font-weight: bold;">@XmlElement</span><span style="color: #333333;">(</span>name<span style="color: #333333;">=</span><span style="background-color: #fff0f0;">"order_2"</span><span style="color: #333333;">,</span>type<span style="color: #333333;">=</span>Order2<span style="color: #333333;">.</span><span style="color: #0000cc;">class</span><span style="color: #333333;">),</span><br />   <span style="color: #555555; font-weight: bold;">@XmlElement</span><span style="color: #333333;">(</span>name<span style="color: #333333;">=</span><span style="background-color: #fff0f0;">"old_order"</span><span style="color: #333333;">,</span>type<span style="color: #333333;">=</span>OldOrder<span style="color: #333333;">.</span><span style="color: #0000cc;">class</span><span style="color: #333333;">)</span><br /><span style="color: #333333;">})</span><br /><span style="color: #555555; font-weight: bold;">@JsonIgnore</span><br /><span style="color: #555555; font-weight: bold;">@JsonProperty</span><br /><span style="color: #555555; font-weight: bold;">@NotNull</span><br /><span style="color: #555555; font-weight: bold;">@ManyToMany</span><br /><span style="color: #555555; font-weight: bold;">@Fetch</span><span style="color: #333333;">(</span>FetchMode<span style="color: #333333;">.</span><span style="color: #0000cc;">SUBSELECT</span><span style="color: #333333;">)</span><br /><span style="color: #555555; font-weight: bold;">@JoinTable</span><span style="color: #333333;">(</span><br />    name <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"customer_order"</span><span style="color: #333333;">,</span><br />    joinColumns <span style="color: #333333;">=</span> <span style="color: #333333;">{</span><br />        <span style="color: #555555; font-weight: bold;">@JoinColumn</span><span style="color: #333333;">(</span>name <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"customer_id"</span><span style="color: #333333;">,</span> referencedColumnName <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"id"</span><span style="color: #333333;">)</span><br />    <span style="color: #333333;">},</span><br />    inverseJoinColumns <span style="color: #333333;">=</span> <span style="color: #333333;">{</span><br />        <span style="color: #555555; font-weight: bold;">@JoinColumn</span><span style="color: #333333;">(</span>name <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"order_id"</span><span style="color: #333333;">,</span> referencedColumnName <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"id"</span><span style="color: #333333;">)</span><br />    <span style="color: #333333;">}</span><br /><span style="color: #333333;">)</span><br /><span style="color: #008800; font-weight: bold;">private</span> List orders<span style="color: #333333;">;</span><br /></pre></div><br />Wait. What? Is this really what we have come to? I can't even see the damn property under this bloat. How did this happen? Yeah ok - we had to get rid of the old xml configuration horror somehow. But this? This is even WORSE. This class is supposed to be a goddamn pojo with a bunch of properties. Short and concise, easy to read. I, as a reader of this cass, am not interested at all how the database table is joining customers to orders. I'm neither interested how its being serialized. This is just implementation details. Reading this class, i am living in an object world and i want to know what data and behaviour the object has. Not more, not less. I don't care about column names, fetchtypes or json serialization for the moment. And i don't want to read, change or recompile this class for the sake of a tablename change. I don't want to add another annotation for storing this entity in a mongoDB neither. The entity should not have responsibility for these details. We are not only violating the Single Responsibility Principle here, we are doing a f****** responsibility party.<br /><br />Ok ok, enough of the rage. How do we deal with this issue? Some duplicate the entity for various layers with different annotation purposes. They map the entity onto the next layers related entity using an automated mapper like Dozer. Some even write that mapping themselves. But this is by no means a solution. It is just replacing one code smell with another one: Duplication.<br /><br />So please, focus on frameworks that don't force you to clutter your code.&nbsp;<a href="http://www.jooq.org/">jOOQ</a> is a nice solution to map database records to entities without annotations. Also, hibernate allows you to define your mappings in XML.<br /><br /><h3>Private Field Injection</h3><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #555555; font-weight: bold;">@Inject</span><br /><span style="color: #008800; font-weight: bold;">private</span> MyService myService<br /></pre></div><br />This is used quite often, while it shouldn't even be possible. The myService field is private, thus it's inaccessible from outside the class. Nevertheless it's possible and people do it. In reality it is a hack. The DI-framework sets the field using reflections doing setAccessible(true). You don't want hacks in your code, do you? Lets have a look at the alternatives:<br /><br /><b>Setter Injection</b><br />Well, at least its better than the private field injection, since its using a public method instead of hacking a private field. But still, ask yourself this: 'Is this class even supposed to live without the injected value?' Because if it's not, there is no reason what so ever for the class to get constructed without an instance of MyService. You want to implement this constraint on the class level and inside the constructor, not on the framework level.<br /><br /><b>Constructor Injection</b><br />This is usually the way to go. It allows you to<br /><ul><li>make the field immutable (there is usually no need to change it).</li><li>implement the constraint, that the class is not instantiatable without a given <i>MyService</i> in the right place.</li></ul>Of course it means that you cannot inject by annotation. But why would you want to? The class doesn't need to know, if it gets injections by a DI-Container or a Factory Class. It should not know anything of this. No @Autowired, no @Qualifier. All it needs to know is its own behaviour. Everything else should be handled outside of the class.<br />One could use a configuration class or file for the actual injection.<br /><br />A DI-Container is a usefull tool that helps you wire your classes together. Use it for this purpose, but don't let it dictate your code. Uncle Bob wrote a great <a href="http://bit.ly/1hrE1Kf">post</a> where he explained how to use DI-Frameworks without having them dictate your code. <br /><br /><h3><complete id="goog_238306818">@RunWith(SpringJUnit4ClassRunner.class) in UnitTests</complete></h3><complete id="goog_238306818"></complete>Why would you need this in unittests? Because it is automatically generated by your IDE/app template? No! You want to test the behaviour of a class, living in isolation in unittests. Not if the DI-Conainer is injecting a fields accordingly. Just inject yourself in a setup method. No DI-Container needed. By the way, all this testrunner does is these 3 lines of code.<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-weight: bold;">private</span> TestContextManager testContextManager<span style="color: #333333;">;</span><br /><span style="color: #888888;">//..</span><br /><span style="color: #008800; font-weight: bold;">this</span><span style="color: #333333;">.</span><span style="color: #0000cc;">testContextManager</span> <span style="color: #333333;">=</span> <span style="color: #008800; font-weight: bold;">new</span> TestContextManager<span style="color: #333333;">(</span>getClass<span style="color: #333333;">());</span><br /><span style="color: #008800; font-weight: bold;">this</span><span style="color: #333333;">.</span><span style="color: #0000cc;">testContextManager</span><span style="color: #333333;">.</span><span style="color: #0000cc;">prepareTestInstance</span><span style="color: #333333;">(</span><span style="color: #008800; font-weight: bold;">this</span><span style="color: #333333;">);</span><br /></pre></div><br />They are not worth blocking your only TestRunner slot. You want to keep it free for something like parameterized <i>@RunWith(<span class="ifClosed" id="crumb_links">JUnitParamsRunner.class)</span></i> or concurrency <i>@RunWith(ConcurrentJunitRunner.class)</i> tests.<br /><br /><i><b>tl;dr</b></i><br /><i>Annotations have become more harmful than helpful these days. We should get back to pojos and focus on keeping our code as clutterless and framework-agnostic as possible to make it more readable and reuseable. Don't let frameworks dictate your codebases, since they should be exchangable tools. Beware of what a class should know, and what not. Some annotations are useful, most aren't.</i><br /><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #555555; font-weight: bold;">@DevNull</span><span style="color: #333333;">({</span></pre><pre style="line-height: 125%; margin: 0;"><span style="color: #333333;"></span> <span style="color: #555555; font-weight: bold;">@SuppressWarnings</span></pre><pre style="line-height: 125%; margin: 0;"><span style="color: #333333;"></span> <span style="color: #555555; font-weight: bold;"><span style="color: #555555; font-weight: bold;">@Autowired</span><span style="color: #333333;">,</span> </span><br /> <span style="color: #555555; font-weight: bold;"><span style="color: #555555; font-weight: bold;">@Inject</span><span style="color: #333333;">,</span>&nbsp;</span></pre><pre style="line-height: 125%; margin: 0;"><span style="color: #555555; font-weight: bold;"></span> <span style="color: #555555; font-weight: bold;"><span style="color: #555555; font-weight: bold;"><span style="color: #555555; font-weight: bold;">@Override</span><span style="color: #333333;">,&nbsp;</span></span> </span></pre><pre style="line-height: 125%; margin: 0;"> <span style="color: #555555; font-weight: bold;">@XmlElementWrapper</span><span style="color: #333333;">,</span><br /> <span style="color: #555555; font-weight: bold;">@XmlJavaTypeAdapter</span><span style="color: #333333;">,</span><br /> <span style="color: #555555; font-weight: bold;">@XmlElement</span><span style="color: #333333;">,</span><br /> <span style="color: #555555; font-weight: bold;">@JsonIgnore</span><span style="color: #333333;">,</span><br /> <span style="color: #555555; font-weight: bold;">@JsonProperty</span><span style="color: #333333;">,</span><br /> <span style="color: #555555; font-weight: bold;">@ManyToMany</span><span style="color: #333333;">,</span><br /> <span style="color: #555555; font-weight: bold;">@Fetch</span><span style="color: #333333;">,</span><br /> <span style="color: #555555; font-weight: bold;">@JoinTable</span><br /><span style="color: #333333;">})</span><br /></pre></div>
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2013/12/20/an-annotation-nightmare.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2013/11/28/sessions-pitfall.html">
+        Sessions, a Pitfall.
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">28 Nov 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      I got asked quite often, why one shouldn't use sessions and whats so bad about them. In this post i want to sum up my thoughts and experiences.<br /><br /><h3>Sessions produce unnecessary complexity </h3>The term bugfoot is a combination of bug and bigfoot. It's used for a bug that appears only once and is not reproducable. A bugfoot tells you that something is wrong, and that it will probably come up again. But you cannot fix it, because you don't know the cause.<br /><br />If you want bugfoots in your software, just use sessions. Sooner or later you'll happen to see one.<br /><br /><h3>Sessions don't scale </h3>Lets say you are a professional chess player, and you'd like to play  multiple people at the same time. If you'd try to remember every game  and your strategy on it, you'll hit your capacity rather quick. Now  imagine you were not remembering anything of those games, and you were just rereading the chessboard  on every move. You could literally play 1.000.000 people at the same  time, and it wouldn't make any difference to you. <br /><br />Now draw an analogy to your server. If your application gets a lot of load, you might have to distribute it to different servers. If you were using sessions, you'd suddenly had to replicate all sessions to all servers. The system would become even more complex and error prone.<br /><br /><h3>Sessionstate cannot be bookmarkable nor cachable</h3>Did you try to bookmark your shopping cart? Nah, of course you can't because it's empty as soon as the session runs out. Imagine a shop that actually allowed you to bookmark your cart. Like<br /><ul><li>http://example.com/carts/1337 or</li><li>http://example.com/cart?products=[{id:1, amount: 1}]</li></ul>How wonderful that would be.<br /><br /><h3>Conclusion</h3>You want a simple system that is easy to test and whose bugs are easy to reproduce. State leads to the opposite. HTTP was never ever ment to be stateful and it should have stayed this way. <br /><br />If you want some rest, follow these two rules<br /><ul><li>Keep all application state (not resource state) on the client </li><li>Keep all shared state (not session state) on the server</li></ul>
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2013/11/28/sessions-pitfall.html#comments">to the comments</a></p>
+  </article>
+  
+  
+
+  
+<div class="pagination">
+  <a class="pagination-item older"
+     href="/blog/page/5/index.html">
+    Older
+  </a>
+</div>
+
+
+</div>
+
+    </main>
+
+    <!-- Optional footer content -->
+
+  </body>
+</html>
