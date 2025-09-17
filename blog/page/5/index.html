@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+  <title>
+    
+      Gregor Riegler &middot; Merciless Refactorer - page 5
+    
+  </title>
+
+  
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  <!-- Additional head bits without overriding original head -->
+<meta name="description" content="Gregor Riegler, Software Development Coach."/>
+</head>
+
+
+  <body class="default">
+
+    <div id="sidebar">
+  <header>
+    <div class="site-title">
+      <a href="/">
+        
+          <span class="back-arrow icon"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+</svg></span>
+        
+        Gregor Riegler
+      </a>
+    </div>
+    <p class="lead">Merciless Refactorer</p>
+  </header>
+  <nav id="sidebar-nav-links">
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/about">About</a>
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/blog">Blog</a>
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/speaking">Public Speaking</a>
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/refactoring-java/">Refactoring Java Series</a>
+    
+  
+
+
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
+  <!-- Optional additional links to insert in sidebar nav -->
+</nav>
+
+
+  
+
+  <nav id="sidebar-icon-links">
+
+  <a id="bluesky-link"
+     class="icon" title="Bluesky" aria-label="Bluesky"
+     href="https://bsky.app/profile/gregorriegler.com">
+    <?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="21" viewBox="0 0 600 530" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ <path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/>
+</svg>
+
+  </a>
+
+  <a id="mastodon-link"
+     class="icon" title="Mastodon" aria-label="Mastodon"
+     href="https://fosstodon.org/@gregorriegler">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="26" viewBox="0 0 216.4144 232.00976">
+  <defs>
+    <mask id="mastodon-mask">
+      <rect width="100%" height="100%" fill="white"/>
+      <path d="M177.50984 80.077v60.94125h-24.14375v-59.15c0-12.46875-5.24625-18.7975-15.74-18.7975-11.6025 0-17.4175 7.5075-17.4175 22.3525v32.37625H96.20734V85.42325c0-14.845-5.81625-22.3525-17.41875-22.3525-10.49375 0-15.74 6.32875-15.74 18.7975v59.15H38.90484V80.077c0-12.455 3.17125-22.3525 9.54125-29.675 6.56875-7.3225 15.17125-11.07625 25.85-11.07625 12.355 0 21.71125 4.74875 27.8975 14.2475l6.01375 10.08125 6.015-10.08125c6.185-9.49875 15.54125-14.2475 27.8975-14.2475 10.6775 0 19.28 3.75375 25.85 11.07625 6.36875 7.3225 9.54 17.22 9.54 29.675" fill="black"/>
+    </mask>
+  </defs>
+  <path d="M211.80734 139.0875c-3.18125 16.36625-28.4925 34.2775-57.5625 37.74875-15.15875 1.80875-30.08375 3.47125-45.99875 2.74125-26.0275-1.1925-46.565-6.2125-46.565-6.2125 0 2.53375.15625 4.94625.46875 7.2025 3.38375 25.68625 25.47 27.225 46.39125 27.9425 21.11625.7225 39.91875-5.20625 39.91875-5.20625l.8675 19.09s-14.77 7.93125-41.08125 9.39c-14.50875.7975-32.52375-.365-53.50625-5.91875C9.23234 213.82 1.40609 165.31125.20859 116.09125c-.365-14.61375-.14-28.39375-.14-39.91875 0-50.33 32.97625-65.0825 32.97625-65.0825C49.67234 3.45375 78.20359.2425 107.86484 0h.72875c29.66125.2425 58.21125 3.45375 74.8375 11.09 0 0 32.975 14.7525 32.975 65.0825 0 0 .41375 37.13375-4.59875 62.915" mask="url(#mastodon-mask)"/>
+</svg>
+
+  </a>
+
+  <a id="linkedin-link"
+     class="icon" title="LinkedIn" aria-label="LinkedIn"
+     href="https://www.linkedin.com/in/gregorriegler/">
+    <?xml version="1.0" ?>
+<svg height="24" viewBox="0 0 72 72" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z"/>
+</svg>
+  </a>
+  
+  <a id="github-link"
+     class="icon" title="Github" aria-label="Github"
+     href="https://github.com/gregorriegler">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28" height="24" width="28"><path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-0.609 0.109-0.828-0.266-0.828-0.578 0-0.391 0.016-1.687 0.016-3.297 0-1.125-0.375-1.844-0.812-2.219 2.672-0.297 5.484-1.313 5.484-5.922 0-1.313-0.469-2.375-1.234-3.219 0.125-0.313 0.531-1.531-0.125-3.187-1-0.313-3.297 1.234-3.297 1.234-0.953-0.266-1.984-0.406-3-0.406s-2.047 0.141-3 0.406c0 0-2.297-1.547-3.297-1.234-0.656 1.656-0.25 2.875-0.125 3.187-0.766 0.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-0.344 0.313-0.656 0.844-0.766 1.609-0.688 0.313-2.438 0.844-3.484-1-0.656-1.141-1.844-1.234-1.844-1.234-1.172-0.016-0.078 0.734-0.078 0.734 0.781 0.359 1.328 1.75 1.328 1.75 0.703 2.141 4.047 1.422 4.047 1.422 0 1 0.016 1.937 0.016 2.234 0 0.313-0.219 0.688-0.828 0.578-4.766-1.594-8.203-6.094-8.203-11.391 0-6.625 5.375-12 12-12zM4.547 19.234c0.031-0.063-0.016-0.141-0.109-0.187-0.094-0.031-0.172-0.016-0.203 0.031-0.031 0.063 0.016 0.141 0.109 0.187 0.078 0.047 0.172 0.031 0.203-0.031zM5.031 19.766c0.063-0.047 0.047-0.156-0.031-0.25-0.078-0.078-0.187-0.109-0.25-0.047-0.063 0.047-0.047 0.156 0.031 0.25 0.078 0.078 0.187 0.109 0.25 0.047zM5.5 20.469c0.078-0.063 0.078-0.187 0-0.297-0.063-0.109-0.187-0.156-0.266-0.094-0.078 0.047-0.078 0.172 0 0.281s0.203 0.156 0.266 0.109zM6.156 21.125c0.063-0.063 0.031-0.203-0.063-0.297-0.109-0.109-0.25-0.125-0.313-0.047-0.078 0.063-0.047 0.203 0.063 0.297 0.109 0.109 0.25 0.125 0.313 0.047zM7.047 21.516c0.031-0.094-0.063-0.203-0.203-0.25-0.125-0.031-0.266 0.016-0.297 0.109s0.063 0.203 0.203 0.234c0.125 0.047 0.266 0 0.297-0.094zM8.031 21.594c0-0.109-0.125-0.187-0.266-0.172-0.141 0-0.25 0.078-0.25 0.172 0 0.109 0.109 0.187 0.266 0.172 0.141 0 0.25-0.078 0.25-0.172zM8.937 21.438c-0.016-0.094-0.141-0.156-0.281-0.141-0.141 0.031-0.234 0.125-0.219 0.234 0.016 0.094 0.141 0.156 0.281 0.125s0.234-0.125 0.219-0.219z"></path>
+</svg>
+
+  </a>
+
+  <a id="youtube-link"
+     class="icon" title="Youtube" aria-label="Youtube"
+     href="https://www.youtube.com/channel/UCsWg_i6X4KMhjD2CRqCJLdg">
+    <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="96.875px" height="96.875px" viewBox="0 0 96.875 96.875" style="enable-background:new 0 0 96.875 96.875;"
+	 xml:space="preserve">
+<g>
+	<path d="M95.201,25.538c-1.186-5.152-5.4-8.953-10.473-9.52c-12.013-1.341-24.172-1.348-36.275-1.341
+		c-12.105-0.007-24.266,0-36.279,1.341c-5.07,0.567-9.281,4.368-10.467,9.52C0.019,32.875,0,40.884,0,48.438
+		C0,55.992,0,64,1.688,71.336c1.184,5.151,5.396,8.952,10.469,9.52c12.012,1.342,24.172,1.349,36.277,1.342
+		c12.107,0.007,24.264,0,36.275-1.342c5.07-0.567,9.285-4.368,10.471-9.52c1.689-7.337,1.695-15.345,1.695-22.898
+		C96.875,40.884,96.889,32.875,95.201,25.538z M35.936,63.474c0-10.716,0-21.32,0-32.037c10.267,5.357,20.466,10.678,30.798,16.068
+		C56.434,52.847,46.23,58.136,35.936,63.474z"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+  </a>
+
+  <a id="goodreads-link"
+     class="icon" title="goodreads" aria-label="goodreads"
+     href="https://www.goodreads.com/user/show/22567057-gregor-riegler">
+    <?xml version="1.0" ?><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+	.st0{}
+	.st1{fill:#202020;}
+</style><g id="Edges"/><g id="Background_1_"><path class="st0" d="M492,268.3c-6.3,122.8-109.9,224.4-236.5,224.5c-126.7,0.1-230.7-101.6-237-224.5   C11.7,136.2,119.6,19.2,255.2,19.2C390.9,19.2,498.7,136.3,492,268.3z"/></g><g id="Symbol"><path class="st1" d="M346.6,137.5c0-4.3-0.4-8.6-0.6-12.8c-9.2,0-16.9,0-25.6,0c0,9.8,0,18.9,0,28.1   c-41.1-57.3-125.6-39.2-149.4,17.9c-15.2,36.6-14.4,73.4,1.5,109.4c16.8,38,65,54.1,102.8,43.4c2-0.3,4.3-0.9,6.8-1.7   c3.6-1.1,6.7-2.5,8.7-3.6c5.2-2.1,11.4-5.6,17.5-10.3c4.9-3.8,9.1-7.8,12.4-11.5c-0.9,14.3-1.3,28.7-3.6,42.8   c-2.8,17.4-10.8,32.4-27.4,41.2c-36.2,19.2-79.6,4.6-96-32.4c-8.2,0-16.6,0-25.4,0c1.8,24.4,14.7,40.3,34.7,50.6   c24.1,12.4,49.9,13.7,76.2,9.4c33.5-5.5,55.3-24.4,63-57.8c2.7-11.9,4.2-24.2,4.3-36.4C346.8,255,346.6,196.2,346.6,137.5z    M316.5,260.3c-4.8,13.8-12.8,24.7-23.3,32.2c-2.6,1.9-15.4,10.8-34.1,11.7c-1.1,0.1-4.2,0.2-8,0c-0.1,0.1-0.3,0.1-0.4,0.1   c-27.3-1.7-48.2-17.6-57.4-43.9c-7.7-22.1-7.9-44.6-2.3-67.1c8.1-32.5,31.6-52.4,61.6-53.2c0.7-0.1,1.1-0.1,1.1-0.1   c15.6-1.4,27.8,5.1,31.6,7.2c16.1,8.6,28.2,24.6,33.5,46C324.4,215.7,324.2,238.2,316.5,260.3z"/></g></svg>
+  </a>
+
+  <a id="email-link"
+     class="icon" title="e-mail" aria-label="e-mail"
+     href="mailto:rieglerg85@gmail.com">
+    <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 493.332 493.332" style="enable-background:new 0 0 493.332 493.332;" xml:space="preserve">
+<g id="XMLID_78_">
+	<g id="XMLID_79_">
+		<g id="XMLID_80_">
+			<path id="XMLID_81_" d="M352.731,450.956c3.037,9.789-2.044,20.213-11.616,23.878c-35.811,13.709-69.294,18.498-112.873,18.498
+				c-117.663,0-221.147-84.347-221.147-223.275C7.095,125.46,112.003,0,272.2,0c124.735,0,214.036,85.764,214.036,204.845
+				c0,103.483-58.12,168.693-134.66,168.693c-33.327,0-57.419-17.007-60.955-54.582h-1.424c-21.963,36.15-53.86,54.582-91.43,54.582
+				c-46.082,0-79.376-34.022-79.376-92.142c0-86.475,63.769-165.147,165.841-165.147c18.691,0,38.9,2.795,55.909,7.172
+				c16.425,4.227,26.861,20.236,24.147,36.978l-16.972,104.695c-7.072,41.818-2.112,60.953,17.721,61.666
+				c30.475,0.711,68.762-38.272,68.762-119.786c0-92.15-59.543-163.732-169.41-163.732c-108.444,0-203.428,85.051-203.428,220.436
+				c0,118.369,75.834,185.708,181.448,185.708c27.489,0,56.203-4.51,80.853-13.214c5.863-2.07,12.315-1.662,17.872,1.126
+				c5.558,2.788,9.753,7.716,11.595,13.655L352.731,450.956z M293.954,181.362c0.534-3.626-1.892-7.027-5.496-7.696
+				c-4.413-0.819-9.536-1.426-15.573-1.426c-46.771,0-83.617,46.076-83.617,100.653c0,26.94,12.037,43.946,35.423,43.946
+				c26.231,0,53.876-33.31,60.265-74.425L293.954,181.362z"/>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+  </a>
+
+  <a id="subscribe-link"
+     class="icon" title="Subscribe" aria-label="Subscribe"
+     href="/feed.xml">
+    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <circle cx="6.18" cy="17.82" r="2.18"/>
+    <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+</svg>
+  </a>
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <!-- Optional additional links to insert for icons links -->
+</nav>
+
+  <p class="license">
+  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0; margin: 0 0 .5rem" width="20" src="/assets/img/cc_icon_white_x2.png" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> by <a href="http://gregorriegler.com">Gregor Riegler</a>.
+  Layout: &copy; 2025.  <a href="/THEME_LICENSE.md">MIT License.</a>
+</p>
+
+</div>
+
+    <main class="container">
+      <div class="content">
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2013/10/15/boost-up-your-development-speed.html">
+        Boost your development speed
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">15 Oct 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      I'm really pragmatic on this. To go faster, you need to avoid the things that slow you down. These blockers may vary from developer to developer, but some are pretty common. In this post i will elaborate on the more common ones. Before i do so i want to remind you that to improve, we might need to unlearn in the first place.<br /><blockquote class="tr_bq"><i><b>Tip:</b> Sometimes, the greatest achievement in improving is to successfully unlearn.</i></blockquote><br /><h3>Are you using your Mouse?</h3>Don't let your mouse slow you down. If you are not using all of your fingers typing, you might want to stop reading here and go over to a <a href="http://www.learntyping.org/">typewriting course</a>. The following recommendation also assumes that you are using a feature rich editor like <a href="http://www.vim.org/">vim</a> or an ide. Every single time you move your hand over to your mouse for a click there is a keyboard shortcut for the exact action that you are not aware of, or not used to. You want to learn these. It's really not that hard,&nbsp; you'll get used to it faster than you'd think. Just begin by putting your mouse over to the other (or wrong) side of your keyboard. You're now forcing yourself to think every time you want to click. When this happens, remember to think of a possible solution using your keyboard. Don't know any? Ask your friends or search the internet (yes, you can use your mouse for that). BUT: Do not use your mouse for what ever action you wanted to perform. After following these simple rules for a few days, you'll notice how irrelevant your mouse has become. If you start feeling comfortable using your keyboard only, you could even try some sessions with your mouse plugged out.<b> </b>Mastering your keyboard will significantly boost your development speed.<br /><blockquote class="tr_bq"><i><b>Tip:</b> You could print out a list of your IDEs shortcuts and use it as a cheatsheet</i></blockquote><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-f305y2ei6qY/UlmLO6_HikI/AAAAAAAAAJE/-TRM5gLI0wU/s1600/mouse-kill.jpg" imageanchor="1"><img border="0" src="https://1.bp.blogspot.com/-f305y2ei6qY/UlmLO6_HikI/AAAAAAAAAJE/-TRM5gLI0wU/s1600/mouse-kill.jpg" /></a></div><br /><h3>Reduce the Time debugging</h3>Debugging costs an awful lot. It's not rare that we end up hunting a bug for hours or even days. Quite often we engage multiple co-workers to solve it. This is really not a scenario we want to be in, since its not only expensive, but also depressing. How can we avoid such a scenario? Pretty easy. Just separate the software into pieces that work in isolation, and write automated tests that cover the components behaviour. This way, we can easily distinguish the component the bug is actually sitting in, and the debugging will become a cinch. The better the tests, the easier to find the bug. However, you wont write good tests, if the system that you are testing is already done and working. You'll assume that there is no additional value of writing thoughtout tests, when it's already working. Overcome this dilemma by writing your tests BEFORE the implementation. As a side effect, this will also help you coding in many ways. You want to treat your tests as first class citizens and as what they are - at least as important as your implementation. Think of a blacksmith who's casting metal into a mold. What would be more important for him. The mold, or the first sculpture coming out of it? You know the answer. And guess what... the tests are your mold. I don't care what you call it. TDD, BDD or whatever. Just automate tests to cover your softwares behaviour, write them before the implementation, and treat them as what they are - at least as important as your implementation.<br /><blockquote class="tr_bq"><i><b>Tip:</b> When using TDD, you want to use a shortcut to quickly navigate between the test and its implementation. I've bound it to Alt+T</i></blockquote><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-RSn6lPETCG0/Ulp8Z8gZ2aI/AAAAAAAAAJs/kJ3Tm5Z1GvE/s1600/mold1.jpg" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" src="https://3.bp.blogspot.com/-RSn6lPETCG0/Ulp8Z8gZ2aI/AAAAAAAAAJs/kJ3Tm5Z1GvE/s1600/mold1.jpg" /></a></div><br /><br style="clear: both;" /><h3>Reduce the Time reading code</h3>I can't stress this enough: You spend more time reading code than writing code. Believe it or not, while implementing a new feature or solving a bug, you repeatedly read code. You read code before you start writing new code, you read code multiple times inbetween writing code, and you read code after you have written it. Reading a 50 line method is pretty time consuming. Thus you want to make reading as easy and smooth as possible. Write self explanatory code with good names and short methods. And Don't Repeat Yourself. Who wants to read anything twice? Invest some time on this, and it will pay off.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-owCgoi1Wzt4/Ul1pWa9bTSI/AAAAAAAAAKc/wE-ui8vMxqw/s1600/y-u-so-hard-to-read.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://3.bp.blogspot.com/-owCgoi1Wzt4/Ul1pWa9bTSI/AAAAAAAAAKc/wE-ui8vMxqw/s1600/y-u-so-hard-to-read.png" /></a></div><h3>Improve your search skills</h3>This is an important one. A searchengine has become the most important development tool. It is even more important than your ide. You can do anything without your ide if you can find out how, but you cannot do anything with your ide if you dont know how. You are probably googling regularely, so it's worth improving. Improve your searchterms. Anticipate helpful words like 'how to' or 'problem'. Try different variants and quote important words and sentences. If you keep getting bad results of a common subject or website, filter them out using a preceeding minus. Here are some examples:<br /><ul><li>while c -do  -c++</li><li>SomeException -helpme.com</li><li>How to "clean code" </li></ul>If you keep getting out-dated information, limit your search to the last month/year. This can easily be done in the search options. On stackoverflow, do not always read the first post since its usually a question and code thats not working. Scroll down to the answers with the most upvotes. They are worth reading. Bookmark the sites/docs that you are using regularely. You don't want to search them over and over again. Also, consider code search engines (Examples <a href="http://www.makeuseof.com/tag/open-source-matters-6-source-code-search-engines-you-can-use-for-programming-projects/">here</a> and <a href="http://knightknetwork.com/2007/09/13/5-great-code-search-engines/">here</a>).<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-woXAeQlAm5o/UlmNjMo9ElI/AAAAAAAAAJQ/C0qO4vqUz5A/s1600/search.jpg" imageanchor="1"><img border="0" src="https://4.bp.blogspot.com/-woXAeQlAm5o/UlmNjMo9ElI/AAAAAAAAAJQ/C0qO4vqUz5A/s1600/search.jpg" /></a></div><br /><h3>Focus &amp; Calm</h3>You want to get into and keep a good focus when working on a task. Get into your flow and do not allow disruptions. Several disruptions can easily cost you an hour or two each day. Use headphones in louder environments, and communicate that you'll be available for questions a little later. Focus requires a clear mind. Make sure you don't have to remember too much stuff. You don't want to be afraid of forgetting things. If you can feel the fear to forget, write that thing down - so you can forget. Also, don't work on too many different tasks/projects at the same time. One is perfect, two is ok. More is probably just slowing you down. I've happened to work on 7 different projects a single day. It's really really dragging from you. Also, stay calm even in the most stressful situation. Huddling just slows you down even more.<br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-E0zEWPTM4Xc/UlmOuUshcKI/AAAAAAAAAJc/COeNX0To7PY/s1600/focus.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://4.bp.blogspot.com/-E0zEWPTM4Xc/UlmOuUshcKI/AAAAAAAAAJc/COeNX0To7PY/s1600/focus.png" /></a></div><h3>Invest in Hardware</h3>Hardware is cheap, workhours are not. Good hardware will save lots of time in the long term. An SSD that makes you boot within seconds and loads everything real quick, saves at least 10 minutes a day which is 40 hours a year. Same goes with ram and cpu of course. Also, screensize really matters. Choose a large monitor to be able to see everything without resizing/scrolling windows/panels. I personally feel comfortable with ~27". You can speed up many tasks using two monitors also. Web development would be such a task for example.<br /><blockquote class="tr_bq"><i><b>Tip:</b> 16:9 is standard nowadays but not quite optimal for coding. The higher the screen, the more lines of code you see. Try a 16:10 instead.</i></blockquote><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-EMDkXfPYuI4/Ul1vo2zVp6I/AAAAAAAAAKs/NVUXSQ5eezQ/s1600/ridiculously-old-computer.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="243" src="https://2.bp.blogspot.com/-EMDkXfPYuI4/Ul1vo2zVp6I/AAAAAAAAAKs/NVUXSQ5eezQ/s400/ridiculously-old-computer.jpg" width="400" /></a></div><br /><h3>Optimize your Workflow, Question your Tools </h3>It depends on what you are working on, but the goal stays the same. You want the most lean workflow and you will constantly have to reevaluate and improve it. For example: If you are working on a Java Webapp, you want to be able to quickly get feedback without redeploying. You can do this by using a class-reloader like spring-loaded or JRebel, or use the Play Framework which does not require redeployments at all due to its architecture. You could also question the language. Is there something else than java that could be more appropriate? Automate everything: testing, building, deployment, notifications. Consider rapid prototyping if you are in the early stages of a project.<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-V3OjyasNg8o/Ul1xrtT2qaI/AAAAAAAAAK4/Yzg5bB3iuQA/s1600/workflow.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="https://1.bp.blogspot.com/-V3OjyasNg8o/Ul1xrtT2qaI/AAAAAAAAAK4/Yzg5bB3iuQA/s1600/workflow.png" /></a></div><br /><br />
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2013/10/15/boost-up-your-development-speed.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2013/08/28/are-you-really-agile.html">
+        Agility demands good Software Design
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">28 Aug 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      From what i have seen, Agile Software Development is widely misinterpreted nowadays. Many people think to be agile, they just need a process like scrum to define a framework of sprints and iterations. They will sprint until they exhaust and change until they stagnate. But when you'd ask them what principles of objectoriented design are, they'd answer: "Aww yes, we use classes". And when you'd asked them if they did test driven development, they'd reply: "Ahh, this is the thing where you write tests first, isn't it?". Bottom line, people think to be agile without caring about good software design. But in the end, the most important thing is what nobody cares about. It is the agility of the software that they are producing. So if you want to be agile, a process and a mindset is not enough. You need to keep your software agile. By that i mean, you need to keep the design of the software as clean and flexible as possible, to be able to apply any future changes at minimal cost. Software design of course includes your source code. In the end, you are only as agile as your software is.<br /><br /><h3><b><span style="font-weight: bold;">Why Agile?</span></b></h3>A customer does not know what he wants in the first place. He might have a rough idea, but thats it. We cant even blame him for that, because the actual problem that we are supposed to solve is influenced by so many factors and opinions that it is almost impossible to define the best solution right away. Other than that, miscommunication will most likely make things worse. To solve these issues we start small, and deliver fast. Seeing the first result, the customer can verify if we are on track or not. He can check if we have understood, or if he himself made a bad call. He might recognize things that he hasnt thought of before. Delivering repeatedly and iteratively like that, our software will more likely be useful and accepted by the customer in the end. It will more likely lead our project to success. Of course we will have to deal with changes more often, which is why we have to make the software itself agile. In the end it is the software which needs to be changeable, not us.<br /><br /><h3>What it takes </h3>Not only does an agile development process put our software under frequent change, it also demands progress at a fast and steady pace. These facts can quickly cause our software to rot if we don't watch out. And when it does, we get slowed down even more and changes suddenly become impossible. So we'd better not forget about the most important part in agile software development: Keeping our software design as agile as possible, from high-level architecture to the very code itself. Sadly, this gets ignored way too often, and many agile projects fail because of it. They fail because they chose to go faster by neglecting quality, and they quickly rush into a deadend of code rot leading to stagnation. So please remember: It is the Software you  are building that needs to be agile in order to adapt to change defined by the customer. It is the software that needs to be agile in order to react to change with minimal effort. Rushing is not gonna make your software agile. Rushing is not gonna make YOU agile. Agility comes hand in hand with quality. And high quality is not even slow, hell no. Good quality done right makes you go even faster.<br /><br /><h3>So what is Agile Software Design? </h3>Agile Software Design is what makes your software as clean and flexible as you need it to be. It demands deliberate adoption of discovered and well established design patterns and principles of objectoriented programming. This is not easy. In fact it's hard, it's very hard. Even if you are really good and experienced at it, you might fail at some point, having to rethink many of your previous design decisions. Agile Software Design is not something that you can rush. It needs time and deliberateness. But it will pay off in the long term by making you progress at a more constant pace, which will in fact be much faster than it would be without agile design. The graphic below should clarify how quick ignorant rushing can slow you down tremendously. The graphic is not based on statistics, but on experience.<br /><a href="http://2.bp.blogspot.com/-Qv435IVYgcY/Ug9ZKdN7nfI/AAAAAAAAAGs/PHxz3r2oMDU/s1600/agile_vs_rush.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-Qv435IVYgcY/Ug9ZKdN7nfI/AAAAAAAAAGs/PHxz3r2oMDU/s1600/agile_vs_rush.png" /></a><br />Agile Software Design does not end at high-level architecture. It goes on with coding. Bad code can quickly make your project more clumsy than a bad high-level design could. So the devil is in the details.<br /><br /><h3>What can you do to make your Software Design more Agile?</h3><b>From a Managers perspective?</b> Trust your Developers, don't push them. Invest in experience and expertise.<br /><br /><b>From a developers perspective?</b> First of all, learn the principles and patterns of objectoriented programming - not just in theory. Being good at those needs lots of practice. There are plenty of books for this:<br /><ul><li><a href="http://www.amazon.com/Design-Patterns-Elements-Object-Oriented-ebook/dp/B000SEIBB8">Design Patterns: Elements of Reusable Object-Oriented Software</a>,</li><li><a href="http://www.amazon.com/Software-Development-Principles-Patterns-Practices/dp/0135974445/ref=sr_1_cc_1?s=aps&amp;ie=UTF8&amp;qid=1377428897&amp;sr=1-1-catcorr&amp;keywords=agile+software+development+principles+patterns+and+practices">Agile Software Development, principles, patterns and practices</a></li></ul>and many more.<br /><br />Keep your code clean - don't underestimate this! When you are programming, you spend more time reading code, than writing code. Thus you want to minimize the time you have to read code by making it more readable. It's not a secret how clean code looks like. Take a look at <a href="http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code</a>.<br />Other than that, use the right practices like<br /><br /><h3><b><span style="font-weight: bold;">Test Driven Development&nbsp;&nbsp;</span></b></h3>Just do it already. And if you don't know how, go on and start learning. I have heard numerous opinions of TDD where people said<br /><ul><li>"Unittests are too expensive. The Customer wont pay for that."</li><li>"Unittests slow us down, we needed to write more code in that time."</li><li>"I don't know. I'm pretty good at programming, Test-First feels needlessly hard and awkward."</li></ul>But these are just subjective opinions of people who are not experienced in TDD.<br />TDD should in fact boost your longterm development speed if you are doing it right. I have not seen a single project in my life that has been as small and simple as that it would not have taken a significant profit from a TDD approach. And i have in fact seen very simple ones. The thing is, you have to test it anyways. What else would speed up your testing more than to automate it? Also, TDD significantly reduces the amount of time you have to spend debugging which already eats up lots of your time - at least more than you'd think. Other than that those tests<br /><ul><li>become a reliable documentation of your code,</li><li>allow you to fearlessly clean up your code,</li><li>force you to think of the problem before thinking of the actual solution, which will improve your initial draft,</li><li>enforce decoupling of components, which will make your design more agile.</li></ul><h3><span style="font-weight: bold;">Pair Programming</span></h3>It's not only that 4 eyes will see more defects than 2 eyes do, but also that the transfer of knowledge is taking place. You want all developers to learn from each other to become equally valuable. And you always want more than one person to know a specific module to improve the <a href="http://en.wikipedia.org/wiki/Bus_factor">truck factor</a>. Heck yeah, some people even do <a href="http://mobprogramming.org/">mobprogramming</a> - Seriously.<br /><br /><h3><span style="font-weight: bold;">Collective Code Ownership</span></h3>Don't allow one guy to own that modules code. All code on the project must belong to everybody. Everyone is allowed and invited to view, question and improve everyones code. This might be hard for some people, and might provoke conflicts, but it is absolutely mandatory to make the code better.<br /><br /><h3><span style="font-weight: bold;">Code Reviews</span></h3>Constantly review code changes. It is the only way to stay up to date, and it will reveal code smell. You need to reveal code smell, because if you don't, you will get stuck.<br /><br /><h3><span style="font-weight: bold;">Refactoring</span></h3>Refactor often. Everytime you see something that could be refactored, you need to do it right on the spot. The earlier you do it, the more time you save. So if you do it right then, you save the most possible amount of time.<br /><br /><br /><b>tl;dr: You are just as agile as your software design, which of course includes code. High speed does not demand low quality. It doesn't work like that. In fact high quality is needed to allow high speed. Agile design evolves high quality. </b><br /><b><br /></b>
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2013/08/28/are-you-really-agile.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2013/08/12/spring-data-rest-in-action.html">
+        spring-data-rest in Action
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">12 Aug 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <h3></h3><h3>What is spring-data-rest?</h3><h3></h3><a href="http://www.springsource.org/spring-data/rest">spring-data-rest</a>, a recent addition to the <a href="http://www.springsource.org/spring-data">spring-data</a> project, is a framework that helps you expose your entities directly as RESTful webservice endpoints. Unlike rails, grails or roo it does not generate any code achieving this goal. spring data-rest supports JPA, MongoDB, JSR-303 validation, <a href="http://stateless.co/hal_specification.html">HAL</a> and many more. It is really innovative and lets you setup your RESTful webservice within minutes. In this example i'll give you a short overview of what spring-data-rest is capable of.<br /><br /><h3>Initial Configuration&nbsp;</h3>I'm gonna use the new Servlet 3 Java Web Configuration instead of an ancient web.xml. Nothing really special here.<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-weight: bold;">public</span> <span style="color: #008800; font-weight: bold;">class</span> <span style="color: #bb0066; font-weight: bold;">WebAppInitializer</span> <span style="color: #008800; font-weight: bold;">extends</span> AbstractAnnotationConfigDispatcherServletInitializer <span style="color: #333333;">{</span><br /><br />    <span style="color: #555555; font-weight: bold;">@Override</span><br />    <span style="color: #008800; font-weight: bold;">protected</span> Class<span style="color: #333333;">&lt;?&gt;[]</span> getRootConfigClasses<span style="color: #333333;">()</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">return</span> <span style="color: #008800; font-weight: bold;">new</span> Class<span style="color: #333333;">&lt;?&gt;[]{</span>AppConfiguration<span style="color: #333333;">.</span><span style="color: #0000cc;">class</span><span style="color: #333333;">};</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #555555; font-weight: bold;">@Override</span><br />    <span style="color: #008800; font-weight: bold;">protected</span> Class<span style="color: #333333;">&lt;?&gt;[]</span> getServletConfigClasses<span style="color: #333333;">()</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">return</span> <span style="color: #008800; font-weight: bold;">new</span> Class<span style="color: #333333;">[]{</span>WebConfiguration<span style="color: #333333;">.</span><span style="color: #0000cc;">class</span><span style="color: #333333;">};</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #555555; font-weight: bold;">@Override</span><br />    <span style="color: #008800; font-weight: bold;">protected</span> String<span style="color: #333333;">[]</span> <span style="color: #0066bb; font-weight: bold;">getServletMappings</span><span style="color: #333333;">()</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">return</span> <span style="color: #008800; font-weight: bold;">new</span> String<span style="color: #333333;">[]{</span><span style="background-color: #fff0f0;">"/"</span><span style="color: #333333;">};</span><br />    <span style="color: #333333;">}</span><br /><span style="color: #333333;">}</span><br /></pre></div><a href="https://github.com/gregorriegler/babdev-spring/blob/master/spring-data-rest/src/main/java/com/blogspot/babdev/bookapi/WebAppInitializer.java">WebAppInitializer.java on github</a><br /><br />I am initializing hibernate as my database abstraction layer in the <i>AppConfiguration</i> class. I'm using an embedded database (<a href="http://hsqldb.org/">hsql</a>), since i want to keep this showcase simple stupid. Still, nothing special here.<br /><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #555555; font-weight: bold;">@Configuration</span><br /><span style="color: #555555; font-weight: bold;">@EnableJpaRepositories</span><br /><span style="color: #555555; font-weight: bold;">@EnableTransactionManagement</span><br /><span style="color: #008800; font-weight: bold;">public</span> <span style="color: #008800; font-weight: bold;">class</span> <span style="color: #bb0066; font-weight: bold;">AppConfiguration</span> <span style="color: #333333;">{</span><br /><br />    <span style="color: #555555; font-weight: bold;">@Bean</span><br />    <span style="color: #008800; font-weight: bold;">public</span> DataSource <span style="color: #0066bb; font-weight: bold;">dataSource</span><span style="color: #333333;">()</span> <span style="color: #333333;">{</span><br />        EmbeddedDatabaseBuilder builder <span style="color: #333333;">=</span> <span style="color: #008800; font-weight: bold;">new</span> EmbeddedDatabaseBuilder<span style="color: #333333;">();</span><br />        <span style="color: #008800; font-weight: bold;">return</span> builder<span style="color: #333333;">.</span><span style="color: #0000cc;">setType</span><span style="color: #333333;">(</span>EmbeddedDatabaseType<span style="color: #333333;">.</span><span style="color: #0000cc;">HSQL</span><span style="color: #333333;">).</span><span style="color: #0000cc;">build</span><span style="color: #333333;">();</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #555555; font-weight: bold;">@Bean</span><br />    <span style="color: #008800; font-weight: bold;">public</span> LocalContainerEntityManagerFactoryBean <span style="color: #0066bb; font-weight: bold;">entityManagerFactory</span><span style="color: #333333;">()</span> <span style="color: #333333;">{</span><br />        HibernateJpaVendorAdapter vendorAdapter <span style="color: #333333;">=</span> <span style="color: #008800; font-weight: bold;">new</span> HibernateJpaVendorAdapter<span style="color: #333333;">();</span><br />        vendorAdapter<span style="color: #333333;">.</span><span style="color: #0000cc;">setDatabase</span><span style="color: #333333;">(</span>Database<span style="color: #333333;">.</span><span style="color: #0000cc;">HSQL</span><span style="color: #333333;">);</span><br />        vendorAdapter<span style="color: #333333;">.</span><span style="color: #0000cc;">setGenerateDdl</span><span style="color: #333333;">(</span><span style="color: #008800; font-weight: bold;">true</span><span style="color: #333333;">);</span><br /><br />        LocalContainerEntityManagerFactoryBean factory <span style="color: #333333;">=</span> <span style="color: #008800; font-weight: bold;">new</span> LocalContainerEntityManagerFactoryBean<span style="color: #333333;">();</span><br />        factory<span style="color: #333333;">.</span><span style="color: #0000cc;">setJpaVendorAdapter</span><span style="color: #333333;">(</span>vendorAdapter<span style="color: #333333;">);</span><br />        factory<span style="color: #333333;">.</span><span style="color: #0000cc;">setPackagesToScan</span><span style="color: #333333;">(</span>getClass<span style="color: #333333;">().</span><span style="color: #0000cc;">getPackage</span><span style="color: #333333;">().</span><span style="color: #0000cc;">getName</span><span style="color: #333333;">());</span><br />        factory<span style="color: #333333;">.</span><span style="color: #0000cc;">setDataSource</span><span style="color: #333333;">(</span>dataSource<span style="color: #333333;">());</span><br /><br />        <span style="color: #008800; font-weight: bold;">return</span> factory<span style="color: #333333;">;</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #555555; font-weight: bold;">@Bean</span><br />    <span style="color: #008800; font-weight: bold;">public</span> PlatformTransactionManager <span style="color: #0066bb; font-weight: bold;">transactionManager</span><span style="color: #333333;">()</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">return</span> <span style="color: #008800; font-weight: bold;">new</span> <span style="color: #0066bb; font-weight: bold;">JpaTransactionManager</span><span style="color: #333333;">();</span><br />    <span style="color: #333333;">}</span><br /><span style="color: #333333;">}</span><br /></pre></div><a href="https://github.com/gregorriegler/babdev-spring/blob/master/spring-data-rest/src/main/java/com/blogspot/babdev/bookapi/AppConfiguration.java">AppConfiguration.java on github</a><br /><br />Now to the application servlet configuration: <i>WebConfiguration</i><br /><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #555555; font-weight: bold;">@Configuration</span><br /><span style="color: #008800; font-weight: bold;">public</span> <span style="color: #008800; font-weight: bold;">class</span> <span style="color: #bb0066; font-weight: bold;">WebConfiguration</span> <span style="color: #008800; font-weight: bold;">extends</span> RepositoryRestMvcConfiguration <span style="color: #333333;">{</span><br /><span style="color: #333333;">}</span><br /></pre></div><a href="https://github.com/gregorriegler/babdev-spring/blob/master/spring-data-rest/src/main/java/com/blogspot/babdev/bookapi/WebConfiguration.java">WebConfiguration.java on github</a><br /><br />Oh, well thats a bit short isnt it? Not a single line of code required for a complete setup. This is a really nice application of the <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention over configuration</a> paradigm. We can now start creating spring-data-jpa repositories and they will be exposed as RESTful resources automatically. And we can still add custom configuration to the <i>WebConfiguration</i> class later if needed.<br /><br />The Initialization was really short and easy. We didn't have to code anything special. The only thing we did was setting up a database connection and hibernate, which is obviously inevitable. Now, that we have setup our "REST Servlet" and persistence,  lets move on to the application itself, starting with the model.<br /><br /><h3>The Model</h3>I'll keep it really simple creating only two related entities. <br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-pVhAVTCk70E/UgU6z_a3W8I/AAAAAAAAAGA/oIlaK7wRGCA/s1600/bookapi_model.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/-pVhAVTCk70E/UgU6z_a3W8I/AAAAAAAAAGA/oIlaK7wRGCA/s1600/bookapi_model.png" /></a></div><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #555555; font-weight: bold;">@Entity</span><br /><span style="color: #008800; font-weight: bold;">public</span> <span style="color: #008800; font-weight: bold;">class</span> <span style="color: #bb0066; font-weight: bold;">Book</span> <span style="color: #333333;">{</span><br /><br />    <span style="color: #555555; font-weight: bold;">@Id</span><br />    <span style="color: #008800; font-weight: bold;">private</span> String isbn<span style="color: #333333;">;</span><br /><br />    <span style="color: #008800; font-weight: bold;">private</span> String title<span style="color: #333333;">;</span><br /><br />    <span style="color: #008800; font-weight: bold;">private</span> String language<span style="color: #333333;">;</span><br /><br />    <span style="color: #555555; font-weight: bold;">@ManyToMany</span><br />    <span style="color: #008800; font-weight: bold;">private</span> List<span style="color: #333333;">&lt;</span>Author<span style="color: #333333;">&gt;</span> authors<span style="color: #333333;">;</span><br /><br /><span style="color: #333333;">}</span><br /></pre></div><a href="https://github.com/gregorriegler/babdev-spring/blob/master/spring-data-rest/src/main/java/com/blogspot/babdev/bookapi/model/Book.java">Book.java on github</a><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #555555; font-weight: bold;">@Entity</span><br /><span style="color: #008800; font-weight: bold;">public</span> <span style="color: #008800; font-weight: bold;">class</span> <span style="color: #bb0066; font-weight: bold;">Author</span> <span style="color: #333333;">{</span><br /><br />    <span style="color: #555555; font-weight: bold;">@Id</span><br />    <span style="color: #555555; font-weight: bold;">@GeneratedValue</span><span style="color: #333333;">(</span>strategy <span style="color: #333333;">=</span> GenerationType<span style="color: #333333;">.</span><span style="color: #0000cc;">SEQUENCE</span><span style="color: #333333;">)</span><br />    <span style="color: #008800; font-weight: bold;">private</span> Integer id<span style="color: #333333;">;</span><br /><br />    <span style="color: #008800; font-weight: bold;">private</span> String name<span style="color: #333333;">;</span><br /><br />    <span style="color: #555555; font-weight: bold;">@ManyToMany</span><span style="color: #333333;">(</span>mappedBy <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"authors"</span><span style="color: #333333;">)</span><br />    <span style="color: #008800; font-weight: bold;">private</span> List<span style="color: #333333;">&lt;</span>Book<span style="color: #333333;">&gt;</span> books<span style="color: #333333;">;</span><br /><br /><span style="color: #333333;">}</span><br /></pre></div><a href="https://github.com/gregorriegler/babdev-spring/blob/master/spring-data-rest/src/main/java/com/blogspot/babdev/bookapi/model/Author.java">Author.java on github</a><br /><br />To finally make the entities persistent and exposed as a RESTful webservice, we need spring-data repositories. A repository is basically a <a href="http://en.wikipedia.org/wiki/Data_access_object">DAO</a>. It offers <a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> functionality for our entities. spring-data takes away most of your programming effort creating such repositories. We just have to define an empty interface, spring-data does everything else out of the box. Still, it is easily customizable thanks to its design by convention over configuration!<br /><br /><h3>The Actual Repositories</h3><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #555555; font-weight: bold;">@RestResource</span><span style="color: #333333;">(</span>path <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"books"</span><span style="color: #333333;">,</span> rel <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"books"</span><span style="color: #333333;">)</span><br /><span style="color: #008800; font-weight: bold;">public</span> <span style="color: #008800; font-weight: bold;">interface</span> <span style="color: #bb0066; font-weight: bold;">BookRepository</span> <span style="color: #008800; font-weight: bold;">extends</span> PagingAndSortingRepository<span style="color: #333333;">&lt;</span>Book<span style="color: #333333;">,</span> Long<span style="color: #333333;">&gt;</span> <span style="color: #333333;">{</span><br /><span style="color: #333333;">}</span><br /></pre></div><a href="https://github.com/gregorriegler/babdev-spring/blob/master/spring-data-rest/src/main/java/com/blogspot/babdev/bookapi/BookRepository.java">BookRepository.java on github</a><br /><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #555555; font-weight: bold;">@RestResource</span><span style="color: #333333;">(</span>path <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"authors"</span><span style="color: #333333;">,</span> rel <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"authors"</span><span style="color: #333333;">)</span><br /><span style="color: #008800; font-weight: bold;">public</span> <span style="color: #008800; font-weight: bold;">interface</span> <span style="color: #bb0066; font-weight: bold;">AuthorRepository</span> <span style="color: #008800; font-weight: bold;">extends</span> PagingAndSortingRepository<span style="color: #333333;">&lt;</span>Author<span style="color: #333333;">,</span> Integer<span style="color: #333333;">&gt;</span> <span style="color: #333333;">{</span><br /><span style="color: #333333;">}</span><br /></pre></div><a href="https://github.com/gregorriegler/babdev-spring/blob/master/spring-data-rest/src/main/java/com/blogspot/babdev/bookapi/AuthorRepository.java">AuthorRepository.java on github</a><br /><br />Again, there is nearly no code needed. Even the <i>@RestResource</i> annotation could be left out. But if i did, the path and rel would be named after the entity, which i dont want. A REST resource that contains multiple children should be named plural though.<br /><br /><h3>Accessing The Result</h3>Our RESTful webservice is now ready for deployment. Once run, it lists all available resources on the root, so you can navigate from there.<br /><br /><b><i>GET http://localhost:8080/</i></b><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;">{<br />  <span style="color: #007700;">"links"</span> : [ {<br />    <span style="color: #007700;">"rel"</span> : <span style="background-color: #fff0f0;">"books"</span>,<br />    <span style="color: #007700;">"href"</span> : <span style="background-color: #fff0f0;">"http://localhost:8080/books"</span><br />  }, {<br />    <span style="color: #007700;">"rel"</span> : <span style="background-color: #fff0f0;">"authors"</span>,<br />    <span style="color: #007700;">"href"</span> : <span style="background-color: #fff0f0;">"http://localhost:8080/authors"</span><br />  } ],<br />  <span style="color: #007700;">"content"</span> : [ ]<br />}<br /></pre></div><br />Fine! Now lets create an author and a book.<br /><br /><b><i>POST http://localhost:8080/authors</i></b><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;">{<span style="color: #007700;">"name"</span>:<span style="background-color: #fff0f0;">"Uncle Bob"</span>}<br /></pre></div><br /><b>Response</b><br /><pre><span style="color: #666666;">201 Created</span><br /><span style="color: #666666;">Location: http://localhost:8080/authors/1</span><br /></pre><b><i>PUT http://localhost:8080/books/0132350882</i></b><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;">{<br />  <span style="color: #007700;">"title"</span>: <span style="background-color: #fff0f0;">"Clean Code"</span>,<br />  <span style="color: #007700;">"authors"</span>: [<br />      {<br />          <span style="color: #007700;">"rel"</span>: <span style="background-color: #fff0f0;">"authors"</span>,<br />          <span style="color: #007700;">"href"</span>: <span style="background-color: #fff0f0;">"http://localhost:8080/authors/1"</span><br />      }<br />  ]<br />}<br /></pre></div><br /><b>Response</b><br /><pre><span style="color: #666666;">201 Created</span></pre>Noticed how i used PUT to create the book? This is because its id is the actual isbn. I have to tell the server which isbn to use since he cant guess it. I used POST for the author as his id is just an incremental number that is generated automatically. Also, i used a link to connect both, the book (<i>/books/0132350882</i>) and the author (<i>/authors/1</i>). This is basically what hypermedia is all about: Links are used for navigation and relations between entities.<br /><br />Now, lets see if the book was created accordingly.<br /><br /><b><i>GET http://localhost:8080/books</i></b><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;">{<br />  <span style="color: #007700;">"links"</span> : [ ],<br />  <span style="color: #007700;">"content"</span> : [ {<br />    <span style="color: #007700;">"links"</span> : [ {<br />      <span style="color: #007700;">"rel"</span> : <span style="background-color: #fff0f0;">"books.Book.authors"</span>,<br />      <span style="color: #007700;">"href"</span> : <span style="background-color: #fff0f0;">"http://localhost:8080/books/0132350882/authors"</span><br />    }, {<br />      <span style="color: #007700;">"rel"</span> : <span style="background-color: #fff0f0;">"self"</span>,<br />      <span style="color: #007700;">"href"</span> : <span style="background-color: #fff0f0;">"http://localhost:8080/books/0132350882"</span><br />    } ],<br />    <span style="color: #007700;">"title"</span> : <span style="background-color: #fff0f0;">"Clean Code"</span><br />  } ],<br />  <span style="color: #007700;">"page"</span> : {<br />    <span style="color: #007700;">"size"</span> : <span style="color: #0000dd; font-weight: bold;">20</span>,<br />    <span style="color: #007700;">"totalElements"</span> : <span style="color: #0000dd; font-weight: bold;">1</span>,<br />    <span style="color: #007700;">"totalPages"</span> : <span style="color: #0000dd; font-weight: bold;">1</span>,<br />    <span style="color: #007700;">"number"</span> : <span style="color: #0000dd; font-weight: bold;">1</span><br />  }<br />}<br /></pre></div><br />Fine!<br /><br />Here is an Integration Test, following these steps automatically. It is also available in the example on github.<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-weight: bold;">public</span> <span style="color: #008800; font-weight: bold;">class</span> <span style="color: #bb0066; font-weight: bold;">BookApiIT</span> <span style="color: #333333;">{</span><br /><br />    <span style="color: #008800; font-weight: bold;">private</span> <span style="color: #008800; font-weight: bold;">final</span> RestTemplate restTemplate <span style="color: #333333;">=</span> <span style="color: #008800; font-weight: bold;">new</span> RestTemplate<span style="color: #333333;">();</span><br /><br />    <span style="color: #008800; font-weight: bold;">private</span> <span style="color: #008800; font-weight: bold;">final</span> String authorsUrl <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"http://localhost:8080/authors"</span><span style="color: #333333;">;</span><br />    <span style="color: #008800; font-weight: bold;">private</span> <span style="color: #008800; font-weight: bold;">final</span> String booksUrl <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"http://localhost:8080/books"</span><span style="color: #333333;">;</span><br /><br />    <span style="color: #555555; font-weight: bold;">@Test</span><br />    <span style="color: #008800; font-weight: bold;">public</span> <span style="color: #333399; font-weight: bold;">void</span> <span style="color: #0066bb; font-weight: bold;">testCreateBookWithAuthor</span><span style="color: #333333;">()</span> <span style="color: #008800; font-weight: bold;">throws</span> Exception <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">final</span> URI authorUri <span style="color: #333333;">=</span> restTemplate<span style="color: #333333;">.</span><span style="color: #0000cc;">postForLocation</span><span style="color: #333333;">(</span>authorsUrl<span style="color: #333333;">,</span> sampleAuthor<span style="color: #333333;">());</span> <span style="color: #888888;">// create Author</span><br /><br />        <span style="color: #008800; font-weight: bold;">final</span> URI bookUri <span style="color: #333333;">=</span> <span style="color: #008800; font-weight: bold;">new</span> URI<span style="color: #333333;">(</span>booksUrl <span style="color: #333333;">+</span> <span style="background-color: #fff0f0;">"/"</span> <span style="color: #333333;">+</span> sampleBookIsbn<span style="color: #333333;">);</span><br />        restTemplate<span style="color: #333333;">.</span><span style="color: #0000cc;">put</span><span style="color: #333333;">(</span>bookUri<span style="color: #333333;">,</span> sampleBook<span style="color: #333333;">(</span>authorUri<span style="color: #333333;">.</span><span style="color: #0000cc;">toString</span><span style="color: #333333;">()));</span> <span style="color: #888888;">// create Book linked to Author</span><br /><br />        Resource<span style="color: #333333;">&lt;</span>Book<span style="color: #333333;">&gt;</span> book <span style="color: #333333;">=</span> getBook<span style="color: #333333;">(</span>bookUri<span style="color: #333333;">);</span><br />        assertNotNull<span style="color: #333333;">(</span>book<span style="color: #333333;">);</span><br /><br />        <span style="color: #008800; font-weight: bold;">final</span> URI authorsOfBookUri <span style="color: #333333;">=</span> <span style="color: #008800; font-weight: bold;">new</span> URI<span style="color: #333333;">(</span>book<span style="color: #333333;">.</span><span style="color: #0000cc;">getLink</span><span style="color: #333333;">(</span><span style="background-color: #fff0f0;">"books.Book.authors"</span><span style="color: #333333;">).</span><span style="color: #0000cc;">getHref</span><span style="color: #333333;">());</span><br />        Resource<span style="color: #333333;">&lt;</span>List<span style="color: #333333;">&lt;</span>Resource<span style="color: #333333;">&lt;</span>Author<span style="color: #333333;">&gt;&gt;&gt;</span> authors <span style="color: #333333;">=</span> getAuthors<span style="color: #333333;">(</span>authorsOfBookUri<span style="color: #333333;">);</span><br />        assertNotNull<span style="color: #333333;">(</span>authors<span style="color: #333333;">.</span><span style="color: #0000cc;">getContent</span><span style="color: #333333;">());</span><br />        assertFalse<span style="color: #333333;">(</span>authors<span style="color: #333333;">.</span><span style="color: #0000cc;">getContent</span><span style="color: #333333;">().</span><span style="color: #0000cc;">isEmpty</span><span style="color: #333333;">());</span> <span style="color: #888888;">// check if /books/0132350882/authors contains an author</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #008800; font-weight: bold;">private</span> String <span style="color: #0066bb; font-weight: bold;">sampleAuthor</span><span style="color: #333333;">()</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">return</span> <span style="background-color: #fff0f0;">"{\"name\":\"Robert C. Martin\"}"</span><span style="color: #333333;">;</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #008800; font-weight: bold;">private</span> <span style="color: #008800; font-weight: bold;">final</span> String sampleBookIsbn <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"0132350882"</span><span style="color: #333333;">;</span><br /><br />    <span style="color: #008800; font-weight: bold;">private</span> String <span style="color: #0066bb; font-weight: bold;">sampleBook</span><span style="color: #333333;">(</span>String authorUrl<span style="color: #333333;">)</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">return</span> <span style="background-color: #fff0f0;">"{\"title\":\"Clean Code\",\"authors\":[{\"rel\":\"authors\",\"href\":\""</span> <span style="color: #333333;">+</span> authorUrl <span style="color: #333333;">+</span> <span style="background-color: #fff0f0;">"\"}]}"</span><span style="color: #333333;">;</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #008800; font-weight: bold;">private</span> Resource<span style="color: #333333;">&lt;</span>Book<span style="color: #333333;">&gt;</span> <span style="color: #0066bb; font-weight: bold;">getBook</span><span style="color: #333333;">(</span>URI uri<span style="color: #333333;">)</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">return</span> restTemplate<span style="color: #333333;">.</span><span style="color: #0000cc;">exchange</span><span style="color: #333333;">(</span>uri<span style="color: #333333;">,</span> HttpMethod<span style="color: #333333;">.</span><span style="color: #0000cc;">GET</span><span style="color: #333333;">,</span> <span style="color: #008800; font-weight: bold;">null</span><span style="color: #333333;">,</span> <span style="color: #008800; font-weight: bold;">new</span> ParameterizedTypeReference<span style="color: #333333;">&lt;</span>Resource<span style="color: #333333;">&lt;</span>Book<span style="color: #333333;">&gt;&gt;()</span> <span style="color: #333333;">{</span><br />        <span style="color: #333333;">}).</span><span style="color: #0000cc;">getBody</span><span style="color: #333333;">();</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #008800; font-weight: bold;">private</span> Resource<span style="color: #333333;">&lt;</span>List<span style="color: #333333;">&lt;</span>Resource<span style="color: #333333;">&lt;</span>Author<span style="color: #333333;">&gt;&gt;&gt;</span> <span style="color: #0066bb; font-weight: bold;">getAuthors</span><span style="color: #333333;">(</span>URI uri<span style="color: #333333;">)</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">return</span> restTemplate<span style="color: #333333;">.</span><span style="color: #0000cc;">exchange</span><span style="color: #333333;">(</span>uri<span style="color: #333333;">,</span> HttpMethod<span style="color: #333333;">.</span><span style="color: #0000cc;">GET</span><span style="color: #333333;">,</span> <span style="color: #008800; font-weight: bold;">null</span><span style="color: #333333;">,</span> <span style="color: #008800; font-weight: bold;">new</span> ParameterizedTypeReference<span style="color: #333333;">&lt;</span>Resource<span style="color: #333333;">&lt;</span>List<span style="color: #333333;">&lt;</span>Resource<span style="color: #333333;">&lt;</span>Author<span style="color: #333333;">&gt;&gt;&gt;&gt;()</span> <span style="color: #333333;">{</span><br />        <span style="color: #333333;">}).</span><span style="color: #0000cc;">getBody</span><span style="color: #333333;">();</span><br />    <span style="color: #333333;">}</span><br /><span style="color: #333333;">}</span><br /></pre></div><a href="https://github.com/gregorriegler/babdev-spring/blob/master/spring-data-rest/src/test/java/com/blogspot/babdev/bookapi/BookApiIT.java">BookApiIT.java on github </a><br /><br /><h3>Conclusion </h3>We have created a complete RESTful webservice without much coding effort. We just defined our entities and database connection. spring-data-rest stated that everything else is just boilerplate, and i agree.<br /><br />To consume the webservices manually, consider the <a href="https://github.com/SpringSource/rest-shell">rest-shell</a>. It is a command-shell making the navigation in your webservice as easy and fun as it could be. Here is a screenshot:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-_1qXu6WJuJs/UgVQbtGA-LI/AAAAAAAAAGQ/ZY5fQRJs0Xg/s1600/rest_shell.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-_1qXu6WJuJs/UgVQbtGA-LI/AAAAAAAAAGQ/ZY5fQRJs0Xg/s1600/rest_shell.png" /></a></div><br />The complete example is available on my github<br /><a href="https://github.com/gregorriegler/babdev-spring/tree/master/spring-data-rest">https://github.com/gregorriegler/babdev-spring/tree/master/spring-data-rest</a><br /><a href="https://github.com/gregorriegler/babdev-spring">https://github.com/gregorriegler/babdev-spring</a><br /><br /><br />
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2013/08/12/spring-data-rest-in-action.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2013/08/02/good-bye-redeployment-spring-loaded.html">
+        Good Bye Redeployment. spring-loaded, an Opensource Classreloader
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">02 Aug 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      Redeem yourself from hot deployments and OutOfMemoryException. <a href="https://github.com/SpringSource/spring-loaded">spring-loaded</a> is an opensource classreloader and a promising alternative to <a href="http://zeroturnaround.com/software/jrebel/">JRebel</a>. It does not offer as many features as JRebel does, and it does not support any framework just yet. Nevertheless, its a great tool that can save the time you are waiting for that servletcontainer to restart again.<br /><br />What it can do:<br /><ul><li>add/modify/delete methods/fields/constructors</li><li>modify annotations on types/methods/fields/constructors</li><li>add/remove/change values in enum types </li></ul>What it cant:<br /><ul><li>support framework specific changes like Spring MVC @RequestMappings</li><li>change log configuration on the fly</li></ul>It is not getting the attention that it deserves, so give it a try.<br /><br />Just download from <a href="https://github.com/SpringSource/spring-loaded">github</a> already, and add the following to your JVM parameters:<br /><pre><code>java -javaagent:&lt;pathTo&gt;/springloaded-{VERSION}.jar -noverify</code></pre>
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2013/08/02/good-bye-redeployment-spring-loaded.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2013/07/29/why-rest-is-so-important.html">
+        Why REST is so important
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">29 Jul 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <div class="separator" style="clear: both; text-align: center;"></div>This post is dedicated to REST, an architectural style of shaping webservices and one of the most misunderstood concept in the history of IT. This post is addressed to you who is designing webservice apis not being  fully aware what REST actually means. I'm trying to give you the idea.  This post is also addressed to you who think to know what REST means, when in reality you have no clue, just yet. Yes i have met such  people in the past - plenty of them. It's not going into the details of the <a href="http://martinfowler.com/articles/richardsonMaturityModel.html">Richardson Maturity Model</a>, and it's not gonna make you a REST expert. There are plenty of guides on the web for that: slides, youtube videos, blogposts, books and more. Rather than going into the details, i'm going to link some good resources at the end of this post. <br /><br />So lets start with<br /><br /><h3>The meaning of REST</h3>Representational State Transfer. This sentence is not only what REST stands for, it is also the tiniest possible description of what REST actually means. Didn't get it? Read it again: Representational State Transfer. It is not a standard, rather a style describing the act of transfering a state of something by its representation.<br /><br />Lets consider this: <br />Marcus is a farmer. He has a ranch with 4 pigs, 12 chickens and 3 cows. He is now simulating a REST api while i am the client. If i want to request the current state of his farm using REST i just ask him: "State?"<br />Marcus answers: "4 pigs, 12 chickens, 3 cows".<br />This is the most simple example of Representional State Transfer. Marcus transfered the state of his farm to me using a representation. The representation of the farm is the plain sentence: "4 pigs, 12 chickens, 3 cows".<br /><br />So lets get to the next level. How would i tell Marcus to add 2 cows to his farm the REST way?<br />Maybe tell him: "Marcus, please add 2 cows to your farm".<br />Do you think this was REST? Are we transfering state by its representation here? NO! This was calling a remote procedure. The procedure of adding 2 cows to the farm.<br />Marcus sadly answers: "400, Bad Request. What do you mean?"<br />So lets try this again. How would we do this the REST way? What was the representation again? It was "4 pigs, 12 chickens, 3 cows". Ok. so lets try this again transfering the representation...<br />me: "Marcus, ... 4 pigs, 12 chickens, <span style="color: red;">5</span> cows ... please!". <br />Marcus: "Alright !".<br />me: "Marcus, ... what is your state now?". <br />Marcus: "4 pigs, 12 chickens, 5 cows".<br />me: "Ahh, great!"<br />See? It was really not that hard and it was REST.<br /><br /><h3>Why RPC is a pain in the A**</h3>So why would you favor REST over the remote procedure call (=RPC) from a logical perspective? Because it dramatically reduces the complexity of our communication by making the representation our only contract. We do not have to discuss what kinds of procedures we need (Add a cow?, Add an animal of a type? Double the chickens amount? Remove all pigs?). All we have to discuss is the representation, and use this representation to achieve anything we want. Easy, isn't it? The needless complexity of RPC is not helpful at all. It is rather increasing the risk of misunderstandings, which we don't want. We don't want our communication to fail because Marcus and I understood a procedure differently.<br />But this is just one of many problems RPC is creating. If you want to use RPC you need to design some kind of structure to embed your procedure into. This structure requires a place to store parameters, error codes, return values and so on. I have seen lots of developers and companies who really did this. They designed their own RPC-Structure arising huge problems in the implementation of clients and client-server interaction. Why would you do this? Why would you invent your own RPC-Structure? Do you think this is helpful? What if i wanted to make an application that uses many WebServices of multiple proprietary RPC-Formats? I would have to develop something like this:<br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://4.bp.blogspot.com/-ab4KymTz7MA/UfbbWi1zYvI/AAAAAAAAAFM/AJEO1dWrxCw/s1600/chaos.jpg" style="margin-left: auto; margin-right: auto;"><img border="0" src="http://4.bp.blogspot.com/-ab4KymTz7MA/UfbbWi1zYvI/AAAAAAAAAFM/AJEO1dWrxCw/s1600/chaos.jpg" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">image #1</td></tr></tbody></table><br />Ugh...<br />If you really need RPC, at least choose a standard like SOAP. Don't make up your own stuff!<br /><br /><h3></h3><h3>But SOAP is still bad</h3>Still, even the standards of RPC are really painful. Well, i have to admit that with ACID Transactions, and a complete standardized Service Description Language, SOAP is not all that bad in some circumstances. Nevertheless, the overhead SOAP produces is massive and a huge performance killer. HTTP is a lightweight protocol. Its headers include anything you need. The only thing you want to put in the body is a representation - or not even that.<br /><br /><h3>Sessions are Evil</h3>Since i wrote solely about sessions and why they are bad in another post, i removed this paragraph. Please continue reading here: <a href="http://www.beabetterdeveloper.com/2013/11/sessions-pitfall.html">Sessions. A Pitfall</a><br /><br /><h3>Dont reinvent Hypermedia</h3>Since hypermedia is getting quite popular now, i beg you: Don't invent your own style.<br />We do already have plenty. There is<br /><ul><li>Hypermedia by the <a href="http://en.wikipedia.org/wiki/Atom_%28standard%29#Including_in_HTML">Atom Link specification</a> like in <a href="https://github.com/SpringSource/spring-hateoas">spring-hateoas</a> and <a href="http://www.springsource.org/spring-data/rest">spring-data-rest</a>.</li><li><a href="http://stateless.co/hal_specification.html">JSON-HAL</a></li><li><a href="http://json-ld.org/">JSON-LD</a></li><li>... </li></ul>And we are slowly getting to the situation in <i>image #1</i> again.<br /><br /><h3>Further Resources</h3>In this post, i have only scratched the surface of the advantages of REST. <br />Here are some good resources to get you a deeper understanding.<br /><ul><li><a href="http://martinfowler.com/articles/richardsonMaturityModel.html">Fowlers Article on the Richardson Maturity Model</a></li><li><a href="https://speakerdeck.com/ammeep/exist-in-the-web-not-on-it">A great slide on Hypermedia</a></li><li><a href="http://www.youtube.com/watch?v=XzgCzjMdvRE">A talk by David Zuelke on RESTful Webservices</a></li><li><a href="http://www.youtube.com/watch?v=YCcAE2SCQ6k">Intro to REST (short video of GoogleDevelopers)</a></li><li><a href="http://www.youtube.com/watch?v=5WXYw4J4QOU">A talk of Lez Hazlewood (Stormpath)</a></li><li><a href="http://www.amazon.com/RESTful-Web-Services-Cookbook-Scalability/dp/0596801688/ref=sr_1_2?s=books&amp;ie=UTF8&amp;qid=1375133720&amp;sr=1-2">A Cookbook for RESTful WebServices </a></li><li><a href="http://www.amazon.com/REST-HTTP-Einsatz-Architektur-Integrationsszenarien/dp/3898645835/ref=sr_1_30?ie=UTF8&amp;qid=1375133651&amp;sr=8-30">Great German Book about REST</a></li></ul>
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2013/07/29/why-rest-is-so-important.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2013/07/20/spring-mvc-requestbody-and-responsebody.html">
+        Spring MVC - @RequestBody and @ResponseBody demystified
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">20 Jul 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      In this post i want to dig into spring mvc a little, revealing what happens behind the scenes when a request is converted to your parameter object and vice versa. Before we start, i want to explain the purpose of these annotations.<br /><br /><h3>What are @RequestBody and @ResponseBody for? </h3><br />They are annotations of the spring mvc framework and can be used in a controller to implement smart object serialization and deserialization. They help you avoid boilerplate code by extracting the logic of messageconversion and making it an aspect. Other than that they help you support multiple formats for a single REST resource without duplication of code. If you annotate a method with @ResponseBody, spring will try to convert its return value and write it to the http response automatically. If you annotate a methods parameter with @RequestBody, spring will try to convert the content of the incoming request body to your parameter object on the fly.<br /><br />Here is an example<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #555555; font-weight: bold;">@Controller</span><br /><span style="color: #555555; font-weight: bold;">@RequestMapping</span><span style="color: #333333;">(</span>value <span style="color: #333333;">=</span> <span style="background-color: #fff0f0;">"/bookcase"</span><span style="color: #333333;">)</span><br /><span style="color: #008800; font-weight: bold;">public</span> <span style="color: #008800; font-weight: bold;">class</span> <span style="color: #bb0066; font-weight: bold;">BookCaseController</span> <span style="color: #333333;">{</span><br /><br />    <span style="color: #008800; font-weight: bold;">private</span> BookCase bookCase<span style="color: #333333;">;</span><br /><br />    <span style="color: #555555; font-weight: bold;">@RequestMapping</span><span style="color: #333333;">(</span>method <span style="color: #333333;">=</span> RequestMethod<span style="color: #333333;">.</span><span style="color: #0000cc;">GET</span><span style="color: #333333;">)</span><br />    <span style="color: #555555; font-weight: bold;">@ResponseBody</span><br />    <span style="color: #008800; font-weight: bold;">public</span> BookCase <span style="color: #0066bb; font-weight: bold;">getBookCase</span><span style="color: #333333;">()</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">return</span> <span style="color: #008800; font-weight: bold;">this</span><span style="color: #333333;">.</span><span style="color: #0000cc;">bookCase</span><span style="color: #333333;">;</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #555555; font-weight: bold;">@RequestMapping</span><span style="color: #333333;">(</span>method <span style="color: #333333;">=</span> RequestMethod<span style="color: #333333;">.</span><span style="color: #0000cc;">PUT</span><span style="color: #333333;">)</span><br />    <span style="color: #555555; font-weight: bold;">@ResponseStatus</span><span style="color: #333333;">(</span>HttpStatus<span style="color: #333333;">.</span><span style="color: #0000cc;">NO_CONTENT</span><span style="color: #333333;">)</span><br />    <span style="color: #008800; font-weight: bold;">public</span> <span style="color: #333399; font-weight: bold;">void</span> <span style="color: #0066bb; font-weight: bold;">setBookCase</span><span style="color: #333333;">(</span><span style="color: #555555; font-weight: bold;">@RequestBody</span> BookCase bookCase<span style="color: #333333;">)</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">this</span><span style="color: #333333;">.</span><span style="color: #0000cc;">bookCase</span> <span style="color: #333333;">=</span> bookCase<span style="color: #333333;">;</span><br />    <span style="color: #333333;">}</span><br /><br /><span style="color: #333333;">}</span><br /></pre></div><br /><h3>So what is Spring doing behind the scenes when we are using those Annotations?</h3><br />Depending on your configuration, spring has a list of <a href="http://static.springsource.org/spring/docs/3.2.x/javadoc-api/org/springframework/http/converter/HttpMessageConverter.html">HttpMessageConverters</a> registered in the background. A HttpMessageConverters responsibility is to convert the request body to a specific class and back to the response body again, depending on a predefined <a href="http://de.wikipedia.org/wiki/Multipurpose_Internet_Mail_Extensions">mime type</a>. Every time an issued request is hitting a @RequestBody or @ResponseBody annotation spring loops through all registered HttpMessageConverters seeking for the first that fits the given mime type and class and then uses it for the actual conversion.<br /><br /><h3>How can i add a custom HttpMessageConverter?</h3><br />By adding @EnableWebMvc respectively &lt;mvc:annotation-driven /&gt;, spring registers a bunch of predefined messageconverters for JSON/XML and so on. You can add a custom converter like the following<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #555555; font-weight: bold;">@Configuration</span><br /><span style="color: #555555; font-weight: bold;">@EnableWebMvc</span><br /><span style="color: #555555; font-weight: bold;">@ComponentScan</span><br /><span style="color: #008800; font-weight: bold;">public</span> <span style="color: #008800; font-weight: bold;">class</span> <span style="color: #bb0066; font-weight: bold;">WebConfiguration</span> <span style="color: #008800; font-weight: bold;">extends</span> WebMvcConfigurerAdapter <span style="color: #333333;">{</span><br /><br />    <span style="color: #555555; font-weight: bold;">@Override</span><br />    <span style="color: #008800; font-weight: bold;">public</span> <span style="color: #333399; font-weight: bold;">void</span> <span style="color: #0066bb; font-weight: bold;">configureMessageConverters</span><span style="color: #333333;">(</span>List<span style="color: #333333;">&lt;</span>HttpMessageConverter<span style="color: #333333;">&lt;?&gt;&gt;</span> httpMessageConverters<span style="color: #333333;">)</span> <span style="color: #333333;">{</span><br />        httpMessageConverters<span style="color: #333333;">.</span><span style="color: #0000cc;">add</span><span style="color: #333333;">(</span><span style="color: #008800; font-weight: bold;">new</span> BookCaseMessageConverter<span style="color: #333333;">(</span><span style="color: #008800; font-weight: bold;">new</span> MediaType<span style="color: #333333;">(</span><span style="background-color: #fff0f0;">"text"</span><span style="color: #333333;">,</span> <span style="background-color: #fff0f0;">"csv"</span><span style="color: #333333;">)));</span><br />    <span style="color: #333333;">}</span><br /><span style="color: #333333;">}</span><br /></pre></div><br />In this example i've written a converter that handles the conversion of a BookCase, which is basically a List of Books. The converter is able to convert csv content to a BookCase and vice versa. I used <a href="http://opencsv.sourceforge.net/">opencsv </a>to parse the text.<br /><br />Here is the model<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-weight: bold;">public</span> <span style="color: #008800; font-weight: bold;">class</span> <span style="color: #bb0066; font-weight: bold;">Book</span> <span style="color: #333333;">{</span><br /><br />    <span style="color: #008800; font-weight: bold;">private</span> String isbn<span style="color: #333333;">;</span><br /><br />    <span style="color: #008800; font-weight: bold;">private</span> String title<span style="color: #333333;">;</span><br /><br />    <span style="color: #008800; font-weight: bold;">public</span> <span style="color: #0066bb; font-weight: bold;">Book</span><span style="color: #333333;">(</span>String isbn<span style="color: #333333;">,</span> String title<span style="color: #333333;">)</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">this</span><span style="color: #333333;">.</span><span style="color: #0000cc;">isbn</span> <span style="color: #333333;">=</span> isbn<span style="color: #333333;">;</span><br />        <span style="color: #008800; font-weight: bold;">this</span><span style="color: #333333;">.</span><span style="color: #0000cc;">title</span> <span style="color: #333333;">=</span> title<span style="color: #333333;">;</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #888888;">// ...</span><br /><span style="color: #333333;">}</span><br /><br /><span style="color: #008800; font-weight: bold;">public</span> <span style="color: #008800; font-weight: bold;">class</span> <span style="color: #bb0066; font-weight: bold;">BookCase</span> <span style="color: #008800; font-weight: bold;">extends</span> ArrayList<span style="color: #333333;">&lt;</span>Book<span style="color: #333333;">&gt;</span> <span style="color: #333333;">{</span><br /><br />    <span style="color: #008800; font-weight: bold;">public</span> <span style="color: #0066bb; font-weight: bold;">BookCase</span><span style="color: #333333;">()</span> <span style="color: #333333;">{</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #008800; font-weight: bold;">public</span> <span style="color: #0066bb; font-weight: bold;">BookCase</span><span style="color: #333333;">(</span>Collection<span style="color: #333333;">&lt;?</span> <span style="color: #008800; font-weight: bold;">extends</span> Book<span style="color: #333333;">&gt;</span> c<span style="color: #333333;">)</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">super</span><span style="color: #333333;">(</span>c<span style="color: #333333;">);</span><br />    <span style="color: #333333;">}</span><br /><span style="color: #333333;">}</span><br /></pre></div><br />and the actual converter<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; border-width: .1em .1em .1em .8em; border: solid gray; overflow: auto; padding: .2em .6em; width: auto;"><pre style="line-height: 125%; margin: 0;"><span style="color: #008800; font-weight: bold;">public</span> <span style="color: #008800; font-weight: bold;">class</span> <span style="color: #bb0066; font-weight: bold;">BookCaseMessageConverter</span> <span style="color: #008800; font-weight: bold;">extends</span> AbstractHttpMessageConverter<span style="color: #333333;">&lt;</span>BookCase<span style="color: #333333;">&gt;</span> <span style="color: #333333;">{</span><br /><br />    <span style="color: #008800; font-weight: bold;">public</span> <span style="color: #0066bb; font-weight: bold;">BookCaseMessageConverter</span><span style="color: #333333;">()</span> <span style="color: #333333;">{</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #008800; font-weight: bold;">public</span> <span style="color: #0066bb; font-weight: bold;">BookCaseMessageConverter</span><span style="color: #333333;">(</span>MediaType supportedMediaType<span style="color: #333333;">)</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">super</span><span style="color: #333333;">(</span>supportedMediaType<span style="color: #333333;">);</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #008800; font-weight: bold;">public</span> <span style="color: #0066bb; font-weight: bold;">BookCaseMessageConverter</span><span style="color: #333333;">(</span>MediaType<span style="color: #333333;">...</span> supportedMediaTypes<span style="color: #333333;">)</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">super</span><span style="color: #333333;">(</span>supportedMediaTypes<span style="color: #333333;">);</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #555555; font-weight: bold;">@Override</span><br />    <span style="color: #008800; font-weight: bold;">protected</span> <span style="color: #333399; font-weight: bold;">boolean</span> <span style="color: #0066bb; font-weight: bold;">supports</span><span style="color: #333333;">(</span>Class<span style="color: #333333;">&lt;?&gt;</span> clazz<span style="color: #333333;">)</span> <span style="color: #333333;">{</span><br />        <span style="color: #008800; font-weight: bold;">return</span> BookCase<span style="color: #333333;">.</span><span style="color: #0000cc;">class</span><span style="color: #333333;">.</span><span style="color: #0000cc;">equals</span><span style="color: #333333;">(</span>clazz<span style="color: #333333;">);</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #555555; font-weight: bold;">@Override</span><br />    <span style="color: #008800; font-weight: bold;">protected</span> BookCase <span style="color: #0066bb; font-weight: bold;">readInternal</span><span style="color: #333333;">(</span>Class<span style="color: #333333;">&lt;?</span> <span style="color: #008800; font-weight: bold;">extends</span> BookCase<span style="color: #333333;">&gt;</span> clazz<span style="color: #333333;">,</span> HttpInputMessage httpInputMessage<span style="color: #333333;">)</span> <span style="color: #008800; font-weight: bold;">throws</span> IOException<span style="color: #333333;">,</span> HttpMessageNotReadableException <span style="color: #333333;">{</span><br />        CSVReader reader <span style="color: #333333;">=</span> <span style="color: #008800; font-weight: bold;">new</span> CSVReader<span style="color: #333333;">(</span><span style="color: #008800; font-weight: bold;">new</span> InputStreamReader<span style="color: #333333;">(</span>httpInputMessage<span style="color: #333333;">.</span><span style="color: #0000cc;">getBody</span><span style="color: #333333;">()));</span><br />        List<span style="color: #333333;">&lt;</span>String<span style="color: #333333;">[]&gt;</span> rows <span style="color: #333333;">=</span> reader<span style="color: #333333;">.</span><span style="color: #0000cc;">readAll</span><span style="color: #333333;">();</span><br />        BookCase bookCase <span style="color: #333333;">=</span> <span style="color: #008800; font-weight: bold;">new</span> BookCase<span style="color: #333333;">();</span><br />        <span style="color: #008800; font-weight: bold;">for</span> <span style="color: #333333;">(</span>String<span style="color: #333333;">[]</span> row <span style="color: #333333;">:</span> rows<span style="color: #333333;">)</span> <span style="color: #333333;">{</span><br />            bookCase<span style="color: #333333;">.</span><span style="color: #0000cc;">add</span><span style="color: #333333;">(</span><span style="color: #008800; font-weight: bold;">new</span> Book<span style="color: #333333;">(</span>row<span style="color: #333333;">[</span><span style="color: #0000dd; font-weight: bold;">0</span><span style="color: #333333;">],</span> row<span style="color: #333333;">[</span><span style="color: #0000dd; font-weight: bold;">1</span><span style="color: #333333;">]));</span><br />        <span style="color: #333333;">}</span><br />        <span style="color: #008800; font-weight: bold;">return</span> bookCase<span style="color: #333333;">;</span><br />    <span style="color: #333333;">}</span><br /><br />    <span style="color: #555555; font-weight: bold;">@Override</span><br />    <span style="color: #008800; font-weight: bold;">protected</span> <span style="color: #333399; font-weight: bold;">void</span> <span style="color: #0066bb; font-weight: bold;">writeInternal</span><span style="color: #333333;">(</span>BookCase books<span style="color: #333333;">,</span> HttpOutputMessage httpOutputMessage<span style="color: #333333;">)</span> <span style="color: #008800; font-weight: bold;">throws</span> IOException<span style="color: #333333;">,</span> HttpMessageNotWritableException <span style="color: #333333;">{</span><br />        CSVWriter writer <span style="color: #333333;">=</span> <span style="color: #008800; font-weight: bold;">new</span> CSVWriter<span style="color: #333333;">(</span><span style="color: #008800; font-weight: bold;">new</span> OutputStreamWriter<span style="color: #333333;">(</span>httpOutputMessage<span style="color: #333333;">.</span><span style="color: #0000cc;">getBody</span><span style="color: #333333;">()));</span><br />        <span style="color: #008800; font-weight: bold;">for</span> <span style="color: #333333;">(</span>Book book <span style="color: #333333;">:</span> books<span style="color: #333333;">)</span> <span style="color: #333333;">{</span><br />            writer<span style="color: #333333;">.</span><span style="color: #0000cc;">writeNext</span><span style="color: #333333;">(</span><span style="color: #008800; font-weight: bold;">new</span> String<span style="color: #333333;">[]{</span>book<span style="color: #333333;">.</span><span style="color: #0000cc;">getIsbn</span><span style="color: #333333;">(),</span> book<span style="color: #333333;">.</span><span style="color: #0000cc;">getTitle</span><span style="color: #333333;">()});</span><br />        <span style="color: #333333;">}</span><br />        writer<span style="color: #333333;">.</span><span style="color: #0000cc;">close</span><span style="color: #333333;">();</span><br />    <span style="color: #333333;">}</span><br /><span style="color: #333333;">}</span><br /></pre></div><br /><h3>The Result&nbsp; </h3>We can now issue text/csv requests to our Resource along with application/json and xml which are basically supported out of the box.<br /><br />1.)<br /><pre><b>PUT /bookcase</b><br /><i><span class="label" data-header-id="f9beee7543227809ba788522f2ba5b9d61a0d03a" title="Content-Type: text/csv">Content-Type: text/csv</span></i><br /><span style="color: blue;"><span class="label" data-header-id="f9beee7543227809ba788522f2ba5b9d61a0d03a" title="Content-Type: text/csv">"123","Spring in Action"<br />"456","Clean Code"</span></span><br /><br /><b><span class="label" data-header-id="f9beee7543227809ba788522f2ba5b9d61a0d03a" title="Content-Type: text/csv">Response</span></b><br /><span style="color: #6aa84f;"><span class="label" data-header-id="f9beee7543227809ba788522f2ba5b9d61a0d03a" title="Content-Type: text/csv">204 No Content</span></span></pre>2.)<span style="color: #6aa84f;"><span class="label" data-header-id="f9beee7543227809ba788522f2ba5b9d61a0d03a" title="Content-Type: text/csv"></span></span><br /><pre><b><span class="label" data-header-id="f9beee7543227809ba788522f2ba5b9d61a0d03a" title="Content-Type: text/csv">GET /bookcase</span></b><br /><i><span class="label" data-header-id="f9beee7543227809ba788522f2ba5b9d61a0d03a" title="Content-Type: text/csv">Accept: text/csv</span></i><br /><br /><b><span class="label" data-header-id="f9beee7543227809ba788522f2ba5b9d61a0d03a" title="Content-Type: text/csv">Response</span></b><br /><span style="color: #6aa84f;"><span class="label" data-header-id="f9beee7543227809ba788522f2ba5b9d61a0d03a" title="Content-Type: text/csv">200 OK</span></span><br /><span style="color: blue;"><span class="label" data-header-id="f9beee7543227809ba788522f2ba5b9d61a0d03a" title="Content-Type: text/csv">"123","Spring in Action"<br />"456","Clean Code"</span></span><br /></pre><br />Thanks to the design of spring mvc, which is following the single responsibility principle, our controller stays thin. We don't have to add a single line if we want to support new media types.<br /><br /><h3>The complete example is available on my <a href="https://github.com/gregorriegler/babdev-spring/tree/master/message-converter">github</a>  </h3>
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2013/07/20/spring-mvc-requestbody-and-responsebody.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2013/07/08/modern-web-development.html">
+        Modern Web Development
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">08 Jul 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      In the last few years web technology has lived through rapid growth and heavy change. We went from frames to table layouts, to column layouts, to responsive layouts. From html4 to xhtml &amp; flash to html5. From heavy server to rich client. From rpc to soap to rest. From sql to nosql and big data. From MVC to MVP and so on. In the following post i want to describe what has become state-of-the-art from my perspective.<br /><br /><h3>A Backend is a REST api&nbsp; </h3>Every backend should be seen as a REST api and every controller as another resource. You want to analyze your problem domain, find your resources and design proper paths for them. They become the M in your MVC Architecture. Developing a webapplication first, and adding an extra REST api later on has to be considered an antipattern. If you do make a REST api, you want to consequently use it yourself, making your frontend its first consumer. This procedure allows you to smoothly add different kinds of clients  later on, such as a mobile app or even a desktop application. It's also  the foundation to integrate your applications features into other  applications.<br /><br /><h3>Separate your Frontend</h3>The days when you made up a form using jsp with a jstl form validation are fading. You don't want to mix client with server technology anymore. The V and C of MVC has shifted over to the client and your backend just represents the Model. You want your frontend to be completely separated using client technology only (html/css/js) and consuming your REST api. GUI logic, building and aligning proper html elements can be achieved within javascript. The most appropriate content-type for information exchange between the backend and frontend would be json or even xml.<br /><br /><h3>Rich Client &amp; Hail JavaScript</h3>The MVC pattern is nowadays implemented on the client side using javascript and it's fellow frameworks. There is no full-blown complete javascript framework that can achieve everything out of the box, but there are tons of smaller libs solving atomic tasks. This should not be considered bad or overwhelming, but advantageous. It causes a great variety of tools that focus on solving single problems outright. <a href="http://documentcloud.github.io/backbone/">Backbone</a> is a popular mvc framework built upon <a href="http://underscorejs.org/">underscore</a>, a js library delivering great utility with remarkable functional programming features. A template engine like <a href="http://mustache.github.io/">mustache</a> or <a href="http://handlebarsjs.com/">handlebars</a> could be added and <a href="http://requirejs.org/">requirejs</a> would manage the dependencies within your modules. Of course, a dom manipulator like <a href="http://jquery.com/">jquery</a> cannot be left out. The trend is leading towards <a href="http://en.wikipedia.org/wiki/Single-page_application">SPA</a>'s (Single Page Applications) with heavy <a href="http://en.wikipedia.org/wiki/AJAJ">AJAJ</a><a href="http://en.wikipedia.org/wiki/Ajax_%28programming%29">/AJAX</a>, routing through html <a href="http://en.wikipedia.org/wiki/HTML_element#Anchor">#anchors</a> representing bookmarkable view-states.<br /><br /><h3>Implement a Buildprocess for your Frontend</h3>As Browsers are continously increasing javascript performance and adding more and more support for html5, frontends have become complex and sophisticated. You now want to add a build process for your frontend, compiling all your js and css files. You want to deliver only a single minified js file to the browser. Other than that we don't break the DRY principle writing styles anymore. We use dynamic stylesheet languages like <a href="http://lesscss.org/">less</a> to make our styles smarter and cleaner and compile them to css in our build process. <a href="http://nodejs.org/">Node</a> and <a href="https://developer.mozilla.org/en-US/docs/Rhino">rhino</a> are possible engine candidates to build your frontend. While node is much faster, it requires an easy installation on the build server. Rhino runs in a jvm, thus not requiring an installation. You can add it to your project as a maven dependency. <br /><br /><h3>Mobile Web &amp; Responsive Design</h3>Mobile devices are becoming more powerful in terms of hardware whilst html5 support is also rapidly increasing  on mobile browsers. Html5 could potentially make native mobile applications obsolete one day. Localstorage, SQL, Geolocation, Multimedia, Camera Access, Web Sockets, Graphics, Touch Events, WebGL, Filesystem Access, Notifications and many more are all features to be completely available to mobile html5 webapplications one day, hopefully working on all devices. So far, we have been developing multiple applications for android/ios/windows mobile and so on, being an economic nightmare.<br />Mobile clients have gained a substantial amount in web consumership, and cannot be ignored anymore. Therefor you want to make your GUI <a href="http://en.wikipedia.org/wiki/Responsive_design">reponsive</a>, beeing able to scale down to smaller display-resolutions. Wise companies have even started designing userinterfaces for the smallest resolution before even thinking of a desktop resolution. This makes scaling more easy, since the other way round is harder and tends to force painfull workarounds. <a href="http://twitter.github.io/bootstrap/">Bootstrap</a> is one of many libraries that help you make your gui responsive. You can use <a href="http://www.initializr.com/">initializr</a> to get started.<br /><br /><h3><a href="http://www.gwtproject.org/">GWT</a> or <a href="http://www.zkoss.org/">ZK Framework</a>? Use Neither!</h3>GWT/ZK are trying do deliver a framework that makes it possible to develop modern ajax web applications using Java only. So they are basically building a java wrapper for frontend technology. Other than that, they deliver a huge amount of components. BUT ... i'd like to question their philosophy for many reasons.<br /><ul><li>They Both produce quite bad html code making you end in an element and dom-id nightmare that gets hard or even impossible to test, debug and style. Html5 allows to write short, clean and readable code, organized way better. You want to write html yourself.</li><li>Their AJAX calls are not based on the REST api that you need. If you want a REST api, you may have to write that again. RPC is GWT's primary communication-technology and i am really concerned about that. But you can still make a REST api work with GWT if you like to.</li><li>They keep you away from the technology that you are actually producing. Tiny customizations can get hard or even impossible in the end. You are basically giving up control and limiting your possibilities. This might in many cases lead to dead ends, that are based on the framework, not the technology. GWT helps to overcome this problem offering JSNI.</li><li>They are never up to date. While browsers are evolving rapidly, new features have to be implemented in the Java-Wrapper before you can even use them, delaying your up-to-dateness.</li><li>I doubt that wrapping native front-end technology is a good idea, and i don't see a reason for doing it. One pro GWT argument might be: it's generating optimized JS code.</li></ul>In the end they make it easier to build webapplications for former java.awt/swing developers, who have no to little knowhow on html/css/js.<br />They defintively have their place right now and aren't a bad choice in some cases.<br /><br />
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2013/07/08/modern-web-development.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2013/06/13/what-makes-great-developer.html">
+        What makes a great Developer
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">13 Jun 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <ul></ul><h3>Passion</h3>It's the taste of success that comes with every little task that you've mastered, and smart solutions you've found that turn out advantageous. Programming is not just a job, it's an Art - it's Poetry. With Passion comes Motivation and thus Progress. Software development is not only huge, but also evolving very fast. A good developer enjoy's keeping up-to-date, since he knows that there's always a better way to do something. Learning new ways, satisfies his hunger.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-8sln7eXSJLM/UbotalRZX7I/AAAAAAAAADM/eh9gZyh7jgE/s1600/computer-cartoon-happy-guy2.gif" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://3.bp.blogspot.com/-8sln7eXSJLM/UbotalRZX7I/AAAAAAAAADM/eh9gZyh7jgE/s320/computer-cartoon-happy-guy2.gif" width="311" /></a></div><br /><h3>Curiosity</h3>A Program is deterministic. There is no such thing as an accident in a computers world. Every effect has its cause. A great developer does not accept accidents. He'd rather search and debug the numerous layers of a Software and it's environment to find the very reason. He builds up deep knowledge by doing that, allowing him to better understand, read and interpret weird behaviour of an application. A good developer does not <a href="http://en.wikipedia.org/wiki/Programming_by_permutation">program by Accident</a>.<br /><br />“The important thing is not to stop questioning.  Curiosity has its own reason for existing.” - Albert Einstein<br /><br />"The most likely way for the world to be destroyed, most experts  agree, is by accident. That's where we come in; we're computer  professionals. We cause accidents." -&nbsp;  <br />Nathaniel Borenstein<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-iyGqooSxvbo/UboeJhPGqTI/AAAAAAAAACE/ajvZ9djAxBg/s1600/curiosity2.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/-iyGqooSxvbo/UboeJhPGqTI/AAAAAAAAACE/ajvZ9djAxBg/s1600/curiosity2.jpg" /></a></div><br /><br /><h3>Cognition</h3>Programming is the act of solving a problem. Problems can be factorized into multiple parts that work together as a whole. To find and reflect those in your mind, and imagine their interaction is a true skill. There is nothing more to say about that.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-L7o6T5xIQc8/Uboiz-PepSI/AAAAAAAAACU/K5iIsFLTYvI/s1600/image030.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="300" src="http://3.bp.blogspot.com/-L7o6T5xIQc8/Uboiz-PepSI/AAAAAAAAACU/K5iIsFLTYvI/s320/image030.jpg" width="320" /></a></div><br /><h3>Meticulosity</h3>Programming is full pitfalls that can be tracked down to the very microcosm of Software Development. The Devil is in the details, and even the smallest sluttery can easily tear a Project down. That's why perfection is so powerful, and important for high quality and success. If you accept a single flaw, you will most likely accept a second, ... and a third ... until you got a mess. A good developer cannot accept flaws and thus avoids many pitfalls increasing quality. There is an analogy to the <a href="http://en.wikipedia.org/wiki/Broken_windows_theory">Broken Windows Theory</a>, which basically says that a single broken window can easily lead to more serious deviance, crime, abandonment and demolishment of its house.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-vt2UqSUJ9Js/Ubon3XlLSOI/AAAAAAAAACk/nTrXt3rz0-I/s1600/precision.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://3.bp.blogspot.com/-vt2UqSUJ9Js/Ubon3XlLSOI/AAAAAAAAACk/nTrXt3rz0-I/s1600/precision.jpg" /></a></div><br /><h3>Time</h3>Greatness comes with experience. It's the iterations of improvement that have been lived through, that really matter. Yes, you can simply follow advices, patterns and best practice. But that has nothing to do with Wisdom, which evolves by doing mistakes and iterations.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/--AX9ojXHMz8/UbooCe59PcI/AAAAAAAAACs/lYXT5lqCV98/s1600/sheep-with-an-afro.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="320" src="http://4.bp.blogspot.com/--AX9ojXHMz8/UbooCe59PcI/AAAAAAAAACs/lYXT5lqCV98/s400/sheep-with-an-afro.jpg" width="400" /></a></div><br /><h3>Humbleness</h3>A great developer knows that he doesn't, and will never know everything. He knows, that there is always room for improvement, also in his own work. He admits his mistakes and accepts critisism.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-h4rJJ1Zt5Ew/Uboqp5rTpbI/AAAAAAAAAC8/ZuQS4lSk8JY/s1600/vor-lastwagen-verneigen.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="251" src="http://2.bp.blogspot.com/-h4rJJ1Zt5Ew/Uboqp5rTpbI/AAAAAAAAAC8/ZuQS4lSk8JY/s320/vor-lastwagen-verneigen.jpg" width="320" /></a></div><br /><h3>Tenacity</h3>A good developer declares war on every workaround. He will fight it even if he has to struggle hour after hour, through the night, until the sun rises. Even the greatest developer meets problems, that he might not consider solvable in the first place. But he takes it as a challenge, unless it's not an antipattern. "It won't work" is not an option. Hard-earned success evolves self-confidence.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-ZYTaDp_SzzU/Ubouofvgc9I/AAAAAAAAADg/_svH6kKAFDA/s1600/never-give-up-frog-211x300.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-ZYTaDp_SzzU/Ubouofvgc9I/AAAAAAAAADg/_svH6kKAFDA/s1600/never-give-up-frog-211x300.jpg" /></a></div><h2></h2><h3>Vision</h3>In Software development, it is common to work long times on small tasks. While beeing focused, it's easy to get lost and overlook the impact on the rest of the system. A good developer is skilled in keeping an eye on the bigger picture, foreseeing sideeffects of a current decision. Still he may intentionally choose to postpone their treatment going step-by-step.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-6qhhYWfdPgs/Ubx3Eu_0OnI/AAAAAAAAAD0/0Wd3VpjcQhI/s1600/1024px-Spyglass.jpg" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="132" src="http://1.bp.blogspot.com/-6qhhYWfdPgs/Ubx3Eu_0OnI/AAAAAAAAAD0/0Wd3VpjcQhI/s320/1024px-Spyglass.jpg" width="320" /></a></div><br /><h3>Lazyness</h3>This might sound stupid in the first place, but its not. Lazyness leads to a lot of improvements. The  probably most important thing it leads to is Automation. Everytime you  have successfully refused to do something manually by automating it, you  have already improved. Automation is the key to faultlessness,  efficiency and progress. Faultlessness, because ideally a computer  doesnt make any mistakes (which is not entirely true in every aspect),  but humans do real quick. Efficiency, because it's an investment saving  time in the long run. The earlier you automate something, the more you  get out of it. Progress, because every process that  does not demand mental resources anymore leaves room for something else.  What you don't have to think of doesn't hinder you, whereas software  development is actually completely blown up with barriers that you have  to think of all the time. <br /><br />A good developer is too lazy to<br /><ul><li>write a complete API doc, he lets JavaDoc do the job.</li><li>format his code properly, he lets his IDE do the job.</li><li>test a functionality over and over again, so he automates it using xUnit.&nbsp;</li><li>read complicated methods, so he writes short readable methods with good names.</li><li>write the same lines of code all over again. He seeks for ways to  refactor to avoid such boilerplate code, since he is too lazy to repeat  himself. (<a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a>)</li><li>implement that functionality that nobody asked for. (<a href="http://en.wikipedia.org/wiki/YAGNI">YAGNI</a>)</li><li>use bitwise shifting for a subtraction, he keeps it simple stupid (<a href="http://en.wikipedia.org/wiki/KISS_principle">KISS</a>).</li><li>write code at all, he lets his colleague do it for him (<a href="http://en.wikipedia.org/wiki/Pair_programming">Pair Programming</a>). <br />Nah, i was just kidding on this one ;-)&nbsp;</li></ul><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-TOzmVyAzDf4/Ubotw2VKS5I/AAAAAAAAADU/GjBxZOaAgWE/s1600/garfield.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-TOzmVyAzDf4/Ubotw2VKS5I/AAAAAAAAADU/GjBxZOaAgWE/s1600/garfield.jpg" /></a></div><br /><h3>What do you think makes a great developer?</h3>
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2013/06/13/what-makes-great-developer.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2013/05/21/the-art-of-naming.html">
+        The Art of Naming
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">21 May 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; background: white; border-width: .1em .1em .1em .8em; border: solid gray; color: black; overflow: auto; padding: .2em .6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;">1<br />2<br />3<br />4<br />5<br />6<br />7<br />8</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: green; font-weight: bold;">public</span> <span style="color: green; font-weight: bold;">class</span> <span style="color: #b00060; font-weight: bold;">Handler</span> <span style="color: #303030;">{</span><br />    <br />    <span style="color: green; font-weight: bold;">private</span> String data<span style="color: #303030;">;</span><br />    <span style="color: green; font-weight: bold;">private</span> String temp<span style="color: #303030;">;</span><br /><br />    <span style="color: green; font-weight: bold;">public</span> <span style="color: #303090; font-weight: bold;">int</span> <span style="color: #0060b0; font-weight: bold;">c</span><span style="color: #303030;">(</span><span style="color: #303090; font-weight: bold;">int</span> a<span style="color: #303030;">,</span> <span style="color: #303090; font-weight: bold;">int</span> a2<span style="color: #303030;">){</span><br />        <span style="color: #303090; font-weight: bold;">int</span> result <span style="color: #303030;">=</span> a<span style="color: #303030;">+</span>a2<span style="color: #303030;">;</span><br />        <span style="color: grey;">//...</span><br /></pre></td></tr></tbody></table></div><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://3.bp.blogspot.com/-4-EmMuW5W_M/UZZ9Sp_CxVI/AAAAAAAAABw/zLW-M2JE4lo/s1600/12178628141677313153AJ_Buddy_frightened.svg.hi.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="200" src="http://3.bp.blogspot.com/-4-EmMuW5W_M/UZZ9Sp_CxVI/AAAAAAAAABw/zLW-M2JE4lo/s200/12178628141677313153AJ_Buddy_frightened.svg.hi.png" width="180" /></a></div><br /><h3>Why is Naming so important?</h3>Because its a matter of Quality.<br />Naming = Readability = Understandability = Maintainability = Quality.<br />Good Names make your code readable, which is an essential feature for every person that has to work on it, including yourself. Soon after written, you'll forget about the details. Getting into it and understanding again can be tough and frustrating. The right Names will redeem yourself and others from those barriers. You'll might think for yourself: "No!!! I don't have the time to make this all clean and perfect. I just have to get the thing done as fast as possible, and it's no problem because i won't have to deal with it after its finished anyways..." - That's just wishful thinking. Software never ever becomes completed. Thats part of its nature. In fact, the opposite is the truth: By choosing the right names carefully, you save a lot of time from the very first day on. You keep your mind free of needless noise that slows your progression down.<br /><br /><h3>How to choose the right Names?</h3>According to "<a href="http://www.amazon.de/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code</a>", Names should:<br /><ul><li>Be intention revealing</li><li>Avoid disinformation</li><li>Make meaningful distinctions</li><li>Be pronounceable</li><li>Be searchable</li></ul>But i'll add one point<br /><ul><li>be unmistakable (which might already be part of avoiding disinformation)</li></ul><br />Be skeptical about a name in the first place, and dont accept it until every bit of skepticism has been eliminated. Complete Words are usually better than Acronyms, AND .... avoid redundancy!!<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; background: white; border-width: .1em .1em .1em .8em; border: solid gray; color: black; overflow: auto; padding: .2em .6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;">1<br />2<br />3</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: green; font-weight: bold;">class</span> <span style="color: #b00060; font-weight: bold;">Book</span><span style="color: #303030;">{</span><br /><br />  <span style="color: green; font-weight: bold;">public</span> String<span style="color: #303030;">[]</span> <strike>book</strike>Page<span style="color: #303030;">;</span> <span style="color: grey;">// Don't repeat book since its given in the classname!</span><br /></pre></td></tr></tbody></table></div><br />The art is to combine good names so that your code becomes a meaningful, selfdocumenting story.<br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; background: white; border-width: .1em .1em .1em .8em; border: solid gray; color: black; overflow: auto; padding: .2em .6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;">1</pre></td><td><pre style="line-height: 125%; margin: 0;"><span style="color: green; font-weight: bold;">if</span><span style="color: #303030;">(</span>plant<span style="color: #303030;">.</span><span style="color: #0000c0;">needsWater</span><span style="color: #303030;">())</span> gardener<span style="color: #303030;">.</span><span style="color: #0000c0;">water</span><span style="color: #303030;">(</span>plant<span style="color: #303030;">)</span><br /></pre></td></tr></tbody></table></div><br /><h3>Classes, Interfaces and Abstracts</h3>Stay away from 'Manager', 'Handler' and the such. 'SomethingManager' doesn't mean anything specific and is clearly not unmistakable. Use Design Patterns in your Names. They are common knowledge and give a good information about what a Class is doing. Eg.: ShadowedBorderDecorator. Name Interfaces as what they are, and don't add Pre- / Suffixes to them (IFoo, BarInterface). Client-classes don't care if they work on Interfaces or Implementations. And it's not the Names job to indicate it's Type. You dont name a Variable intNumber either, do you? It's a violation of the DRY principle. Using Abstract in a Classname is debatable. While it's pretty common, it still violates the DRY principle. Decide for yourself.<br /><br /><h3>Common Errors in Variablenaming</h3><br /><b>Repeating Type in Variablenames:</b><br /><!-- HTML generated using hilite.me --><br /><div style="background: #ffffff; background: white; border-width: .1em .1em .1em .8em; border: solid gray; color: black; overflow: auto; padding: .2em .6em; width: auto;"><table><tbody><tr><td><pre style="line-height: 125%; margin: 0;">1<br />2<br />3<br />4</pre></td><td><pre style="line-height: 125%; margin: 0;">Timestamp creationTime<span style="color: #303030;">;</span><br />Date date<span style="color: #303030;">;</span><br />String<span style="color: #303030;">[]</span> bookArray<span style="color: #303030;">;</span><br />SomeType somethingObject<br /></pre></td></tr></tbody></table></div><br /><b>Adding "is" as a Prefix to booleans:</b><br />isActive. So the getter becomes isIsActive() or what?<br /><br /><b>Consecutive numbers.</b><br />There is nothing harder to read than a calculation using a1, a2 and a3 multiple times.<br /><br /><b>Generic names</b>:<br />temp, data, other, object, result, value and so on<br /><br /><b>Inconsistency:</b><br />Mixing multiple Naming Strategies, or choosing one without 100% sticking to it.<br />E.g.: Mixing camelCase with under_scored
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2013/05/21/the-art-of-naming.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2013/05/08/master-unpredictable.html">
+        Master the unpredictable
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">08 May 2013</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      Have you ever come to work on a Project that you cant quite overlook? Are Requirements not yet clear or changing fast? Here are some tips to get along.<br /><br /><h3>Use Tracer Bullets</h3>Don't specify your software to death. Just grab your best idea, and give it a shot. Tracer Bullets are similar to Prototypes with one very important difference. Prototypes are built to proove something, and then be thrown away. They are not intended for real production. Even some drawing on a paper could be a prototype. A Tracer Bullet might get thrown away, but it is not intended to in the first place. It is developed as stable, clean and complete as needed, to use it for real production. A Tracer Bullet that hits its target, becomes a trunk.<br /><br /><h3>Develop Leaves first</h3>What do i mean with a leaf? Leaves are small exchangable software components or modules, that can be written independently, tested in isolation, and sometimes even run autonomous. They only perform a very specific task, not more. Find the leaves in your Project, and start developing the leaf with the highest risk.<br /><br /><h3>Dont Reinvent the Wheel</h3>99% of the problems that you face in your project have already been solved. Solving these by yourself can easily become a waste of time. Even the most trivial seeming problems are not trivial at all. Underestimating those is the issue in the first place, nevertheless it happens all the time. Well, its just logical to understimate the unsolved as you cannot know all the details until you solved it yourself. Analysing the problemdomain, concepting and realizing a solution can be a great way to learn, but is not very beneficial. Its in fact a risk, since it can lead to misconception or become a timeconsuming task that exceed your resources. You might even have to throw away your first attempts. Also, your outcome would be buggy, whereas established opensource software is usually stable thanks to its brave communities.<br />"Make or Buy" was a common phrase. I think it should be "Make or Find" by now, since opensource got really big. Rather invest your time into research opensource, and stay skeptical with what you find. When you compare 3rd party software, consider<br /><ul><li><b>Stability</b>: Is it still beta, or did it have some stable releases yet? Who is the organization behind? Is the code clean and tested?</li><li><b>Activity</b>: Can you find out how many developers this software has? When was the last commit? How frequently do they release a new build?</li><li><b>Support</b>: Does it offer a good documentation? How about examples? Is there a public Issue Tracker? How many issues have been submitted yet and how many have been solved? Is there a Forum, literature, and a big community? Are there any big names that use this software?</li><li><b>Critisism</b>: Is there anything bad that you should know in the first place? Search for reliable critiques and comparisons.</li></ul><br /><ul></ul><h3>Estimation is a waste of time</h3>Every hour that you invest in estimation, could also be invested in producing real outcome. Your estimation will be inaccurate anyway. When requirements change, you even have to change your estimations. If you have to estimate, because the business needs it, try to split your project into smaller independent parts first, and multiply your estimation with a risk factor (times two for example). In the end you`ll need it.<br /><br /><br />
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2013/05/08/master-unpredictable.html#comments">to the comments</a></p>
+  </article>
+  
+  
+
+  
+<div class="pagination">
+  <a class="pagination-item older"
+     href="/blog/page/6/index.html">
+    Older
+  </a>
+</div>
+
+
+</div>
+
+    </main>
+
+    <!-- Optional footer content -->
+
+  </body>
+</html>
