@@ -6,6 +6,16 @@ sidebar_sort_order: 3
 ---
 
 <article class="post-body">
+    <h3>Software Engineering Meetup Brno</h3>
+
+    <div class="post-meta">
+        <span class="post-date">11 September 2025</span>
+    </div>
+
+    <img src="assets/img/software_engineering_meetup_brno_2025_09.jpg" alt="Software Engineering Meetup Brno talk" />
+    How far can we let AI code on its own? I shared patterns for extending the autonomy of coding agents in a sustainable way.
+</article>
+<article class="post-body">
     <h3>Global Day Of Coderetreat 2024 Vienna</h3>
 
     <div class="post-meta">
@@ -144,4 +154,3 @@ sidebar_sort_order: 3
     </ul>
 
 </article>
-
