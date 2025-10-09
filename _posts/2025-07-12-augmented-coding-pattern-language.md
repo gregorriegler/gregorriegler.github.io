@@ -398,6 +398,11 @@ Ask the right question to withdraw the relevant information into the context. Th
 
 The best way to help the agent avoid mistakes is to constrain what it can do. Instead of changing code freely, we can give it access to refactoring tools. We can lock it out of certain files or commands. Constraints are more than just rules — they shape what the agent can do or not do in its environment, enabling better and more reliable outputs.
 
+### 🛡️ Refactor Guard
+**Pattern:** *Increase confidence in legacy code refactoring with micro ai code reviews.*
+
+When working in legacy code, make the smallest possible refactoring step, then let the Agent review and make sure that behavior hasn’t changed. If the checks pass, it may even commit automatically. If it finds an issue it warns you.
+
 ### 🫷 Stop
 **Pattern:** *Keep your finger on the stop button.*
 
