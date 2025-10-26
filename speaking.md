@@ -6,6 +6,18 @@ sidebar_sort_order: 3
 ---
 
 <article class="post-body">
+    <h3>Patterns for AI Augmented Coding @ AI4dev Brno</h3>
+
+    <div class="post-meta">
+        <span class="post-date">21 October 2025</span>
+    </div>
+
+    <img src="https://media.licdn.com/dms/image/v2/D4E22AQHx6OwDx-Dr3g/feedshare-shrink_800/B4EZocfTUyKcAg-/0/1761414560306?e=1762992000&amp;v=beta&amp;t=_i-G1jzYX-hr_atMk8TwIgJ4x1V-1agWobQEGW6ogFo" alt="AI4dev Brno talk" />
+    {% include youtube-player.html id="GCZ14Opdlz0" %}
+    <br>
+    In this talk, I shared my story of how I learned to teach AI a Software Crafter’s approach to development.
+</article>
+<article class="post-body">
     <h3>Software Engineering Meetup Brno</h3>
 
     <div class="post-meta">
