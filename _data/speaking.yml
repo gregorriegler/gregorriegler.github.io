@@ -1,0 +1,123 @@
+- title: Extreme AI Augmented Coding
+  date: 2025-11-11
+  youtube_id: HXXGVQFCjbg
+  body: >-
+    In this talk, I shared my story of how I taught AI a Software Crafter's
+    approach to development.
+
+- title: Patterns for AI Augmented Coding @ AI4dev Brno
+  date: 2025-10-21
+  youtube_id: GCZ14Opdlz0
+  body: >-
+    In this talk, I shared my story of how I taught AI a Software Crafter's
+    approach to development.
+
+- title: Software Engineering Meetup Brno
+  date: 2025-09-11
+  image:
+    src: assets/img/software_engineering_meetup_brno_2025_09.jpg
+    alt: Software Engineering Meetup Brno talk
+  body: >-
+    How far can we let AI code on its own? I shared patterns for extending the
+    autonomy of coding agents in a sustainable way.
+
+- title: Global Day Of Coderetreat 2024 Vienna
+  date: 2024-11-01
+  display_date: November 2024
+  image:
+    src: assets/img/gdcr2024.png
+    alt: GDCR 2024 Vienna
+  body: >-
+    Co-organized and facilitated the GDCR 2024 in Vienna, where we focused on
+    incremental software development. It was a blast.
+
+- title: Mob Programming with mob.sh @ DevFest Vienna 2024
+  date: 2024-10-01
+  display_date: October 2024
+  image:
+    src: assets/devfest2024talk.jpg
+    alt: DevFest Vienna 2024 Talk
+
+- title: Global Day Of Coderetreat 2023 Vienna
+  date: 2023-11-01
+  display_date: November 2023
+  image:
+    src: assets/gdcr2023.jpeg
+    alt: GDCR 2023 Vienna
+  body: >-
+    Facilitated the *Outside-In TDD without Mocks* session as well as a Mob
+    Programming session. Overall Co-Facilitation.
+
+- title: Software Development Myths @ DevFest Vienna 2023
+  date: 2023-10-01
+  display_date: October 2023
+  body: |-
+    I gave a Lightning Talk about Myths in Software Development.
+
+    - Slides: [Myths in Software Development](/assets/myths_in_software_development.pdf)
+
+- title: "Mob Mentality Show: Mobbing on the Open Source Mob RPG"
+  date: 2023-05-01
+  display_date: May 2023
+  youtube_id: V7wmLLrsIRA
+  body: >-
+    In this episode of the [Mob Mentality Show](https://www.youtube.com/@mobmentalityshow),
+    I talked about "Mobbing on the [Open Source Mob RPG](https://github.com/gregorriegler/mob-programming-rpg)".
+    We start by discussing the origin story of the app and the weekly public mob session
+    to work on it. We also cover examples of fun, surprising, and innovative remote mob
+    sessions, as well as a walkthrough of the app page by page. We then dive into the tech
+    stack, tools, and collaboration methodology used in the app's development.
+
+- title: Ensemble Programming Workshop @ PyConDE
+  date: 2023-04-18
+  youtube_id: T_sx05-W4Lw
+  image:
+    src: assets/img/PyConDe.jpg
+    alt: PyConDE Ensemble Programming Workshop
+  body: >-
+    Gave an Ensemble Programming workshop facilitating a huge Ensemble of 80 people
+    together with [Lev Konstantinovskyi](https://twitter.com/teagermylk) at the
+    [PyCon DE & PyData Berlin 2023](https://2023.pycon.de/). The participants excelled
+    both in solving the [Real-Estate-Kata](https://github.com/Real-Estate-Kata/real-estate-pydantic-kata)
+    and providing mutual support to one another. They initiated a clap-on-green behavior
+    and maintained it even after splitting into smaller ensembles.
+
+- title: Public Mob for the Mob Programming RPG
+  date: 2023-01-01
+  display_date: "2023 - ?"
+  image:
+    src: assets/mob-programming/remote-mob-programming.png
+    alt: Mob Programming RPG Public Mob
+  body: >-
+    Facilitating a weekly public mob where we develop a
+    [webapp for the Mob Programming RPG](https://github.com/gregorriegler/mob-programming-rpg).
+    Feel free to [join](https://github.com/gregorriegler/mob-programming-rpg#contribute).
+
+- title: Global Day Of Continuous Coderetreat 2022
+  date: 2022-11-04
+  image:
+    src: assets/img/GDCCR2022.png
+    alt: GDCCR 2022
+  body: >-
+    Facilitated the first truly
+    [Global Day Of Coderetreat](https://coderlevelup.org/globaldayofcoderetreat2022-48hr)
+    together with Bob Allen, Nitsan Avni, David Campey and Siddhesh Nikude.
+
+- title: Mobbing Discussion (Interview by Tsvetan Tsventanov)
+  date: 2022-08-15
+  youtube_id: zpTr88nneHE
+
+- title: Coding should be fun @DevFestVienna
+  date: 2019-11-16
+  image:
+    src: assets/img/devfest19.jpg
+    alt: DevFest 2019
+  body: |-
+    - Slides: [coding should be fun](http://gregorriegler.com/talk-coding-should-be-fun/)
+    - Code: [diff I performed at the venue](https://github.com/gregorriegler/Theatrical-Players-Refactoring-Kata/commit/05a34ed5507be62dd93f5d8999ac4cc6557a6a8b)
+
+- title: Coding should be fun @FreeCodeCampVienna
+  date: 2019-09-05
+  youtube_id: z_BRsxrbz8w
+  body: |-
+    - Slides: [coding should be fun](https://slides.com/gregorriegler/deck-2#/)
