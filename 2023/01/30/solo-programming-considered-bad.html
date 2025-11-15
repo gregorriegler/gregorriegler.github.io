@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+  <title>
+    
+      Gregor Riegler &middot; Solo Programming Considered Harmful
+    
+  </title>
+
+  
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  <!-- Additional head bits without overriding original head -->
+<meta name="description" content="Gregor Riegler, Software Development Coach."/>
+</head>
+
+
+  <body class="post">
+
+    <div id="sidebar">
+  <header>
+    <div class="site-title">
+      <a href="/">
+        
+          <span class="back-arrow icon"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+</svg></span>
+        
+        Gregor Riegler
+      </a>
+    </div>
+    <p class="lead">Merciless Refactorer</p>
+  </header>
+  <nav id="sidebar-nav-links">
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/about">About</a>
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/blog">Blog</a>
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/speaking">Public Speaking</a>
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/refactoring-java/">Refactoring Java Series</a>
+    
+  
+
+
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
+  <!-- Optional additional links to insert in sidebar nav -->
+</nav>
+
+
+  
+
+  <nav id="sidebar-icon-links">
+
+  <a id="bluesky-link"
+     class="icon" title="Bluesky" aria-label="Bluesky"
+     href="https://bsky.app/profile/gregorriegler.com">
+    <?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="21" viewBox="0 0 600 530" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ <path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/>
+</svg>
+
+  </a>
+
+  <a id="mastodon-link"
+     class="icon" title="Mastodon" aria-label="Mastodon"
+     href="https://fosstodon.org/@gregorriegler">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="26" viewBox="0 0 216.4144 232.00976">
+  <defs>
+    <mask id="mastodon-mask">
+      <rect width="100%" height="100%" fill="white"/>
+      <path d="M177.50984 80.077v60.94125h-24.14375v-59.15c0-12.46875-5.24625-18.7975-15.74-18.7975-11.6025 0-17.4175 7.5075-17.4175 22.3525v32.37625H96.20734V85.42325c0-14.845-5.81625-22.3525-17.41875-22.3525-10.49375 0-15.74 6.32875-15.74 18.7975v59.15H38.90484V80.077c0-12.455 3.17125-22.3525 9.54125-29.675 6.56875-7.3225 15.17125-11.07625 25.85-11.07625 12.355 0 21.71125 4.74875 27.8975 14.2475l6.01375 10.08125 6.015-10.08125c6.185-9.49875 15.54125-14.2475 27.8975-14.2475 10.6775 0 19.28 3.75375 25.85 11.07625 6.36875 7.3225 9.54 17.22 9.54 29.675" fill="black"/>
+    </mask>
+  </defs>
+  <path d="M211.80734 139.0875c-3.18125 16.36625-28.4925 34.2775-57.5625 37.74875-15.15875 1.80875-30.08375 3.47125-45.99875 2.74125-26.0275-1.1925-46.565-6.2125-46.565-6.2125 0 2.53375.15625 4.94625.46875 7.2025 3.38375 25.68625 25.47 27.225 46.39125 27.9425 21.11625.7225 39.91875-5.20625 39.91875-5.20625l.8675 19.09s-14.77 7.93125-41.08125 9.39c-14.50875.7975-32.52375-.365-53.50625-5.91875C9.23234 213.82 1.40609 165.31125.20859 116.09125c-.365-14.61375-.14-28.39375-.14-39.91875 0-50.33 32.97625-65.0825 32.97625-65.0825C49.67234 3.45375 78.20359.2425 107.86484 0h.72875c29.66125.2425 58.21125 3.45375 74.8375 11.09 0 0 32.975 14.7525 32.975 65.0825 0 0 .41375 37.13375-4.59875 62.915" mask="url(#mastodon-mask)"/>
+</svg>
+
+  </a>
+
+  <a id="linkedin-link"
+     class="icon" title="LinkedIn" aria-label="LinkedIn"
+     href="https://www.linkedin.com/in/gregorriegler/">
+    <?xml version="1.0" ?>
+<svg height="24" viewBox="0 0 72 72" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z"/>
+</svg>
+  </a>
+  
+  <a id="github-link"
+     class="icon" title="Github" aria-label="Github"
+     href="https://github.com/gregorriegler">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28" height="24" width="28"><path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-0.609 0.109-0.828-0.266-0.828-0.578 0-0.391 0.016-1.687 0.016-3.297 0-1.125-0.375-1.844-0.812-2.219 2.672-0.297 5.484-1.313 5.484-5.922 0-1.313-0.469-2.375-1.234-3.219 0.125-0.313 0.531-1.531-0.125-3.187-1-0.313-3.297 1.234-3.297 1.234-0.953-0.266-1.984-0.406-3-0.406s-2.047 0.141-3 0.406c0 0-2.297-1.547-3.297-1.234-0.656 1.656-0.25 2.875-0.125 3.187-0.766 0.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-0.344 0.313-0.656 0.844-0.766 1.609-0.688 0.313-2.438 0.844-3.484-1-0.656-1.141-1.844-1.234-1.844-1.234-1.172-0.016-0.078 0.734-0.078 0.734 0.781 0.359 1.328 1.75 1.328 1.75 0.703 2.141 4.047 1.422 4.047 1.422 0 1 0.016 1.937 0.016 2.234 0 0.313-0.219 0.688-0.828 0.578-4.766-1.594-8.203-6.094-8.203-11.391 0-6.625 5.375-12 12-12zM4.547 19.234c0.031-0.063-0.016-0.141-0.109-0.187-0.094-0.031-0.172-0.016-0.203 0.031-0.031 0.063 0.016 0.141 0.109 0.187 0.078 0.047 0.172 0.031 0.203-0.031zM5.031 19.766c0.063-0.047 0.047-0.156-0.031-0.25-0.078-0.078-0.187-0.109-0.25-0.047-0.063 0.047-0.047 0.156 0.031 0.25 0.078 0.078 0.187 0.109 0.25 0.047zM5.5 20.469c0.078-0.063 0.078-0.187 0-0.297-0.063-0.109-0.187-0.156-0.266-0.094-0.078 0.047-0.078 0.172 0 0.281s0.203 0.156 0.266 0.109zM6.156 21.125c0.063-0.063 0.031-0.203-0.063-0.297-0.109-0.109-0.25-0.125-0.313-0.047-0.078 0.063-0.047 0.203 0.063 0.297 0.109 0.109 0.25 0.125 0.313 0.047zM7.047 21.516c0.031-0.094-0.063-0.203-0.203-0.25-0.125-0.031-0.266 0.016-0.297 0.109s0.063 0.203 0.203 0.234c0.125 0.047 0.266 0 0.297-0.094zM8.031 21.594c0-0.109-0.125-0.187-0.266-0.172-0.141 0-0.25 0.078-0.25 0.172 0 0.109 0.109 0.187 0.266 0.172 0.141 0 0.25-0.078 0.25-0.172zM8.937 21.438c-0.016-0.094-0.141-0.156-0.281-0.141-0.141 0.031-0.234 0.125-0.219 0.234 0.016 0.094 0.141 0.156 0.281 0.125s0.234-0.125 0.219-0.219z"></path>
+</svg>
+
+  </a>
+
+  <a id="youtube-link"
+     class="icon" title="Youtube" aria-label="Youtube"
+     href="https://www.youtube.com/channel/UCsWg_i6X4KMhjD2CRqCJLdg">
+    <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="96.875px" height="96.875px" viewBox="0 0 96.875 96.875" style="enable-background:new 0 0 96.875 96.875;"
+	 xml:space="preserve">
+<g>
+	<path d="M95.201,25.538c-1.186-5.152-5.4-8.953-10.473-9.52c-12.013-1.341-24.172-1.348-36.275-1.341
+		c-12.105-0.007-24.266,0-36.279,1.341c-5.07,0.567-9.281,4.368-10.467,9.52C0.019,32.875,0,40.884,0,48.438
+		C0,55.992,0,64,1.688,71.336c1.184,5.151,5.396,8.952,10.469,9.52c12.012,1.342,24.172,1.349,36.277,1.342
+		c12.107,0.007,24.264,0,36.275-1.342c5.07-0.567,9.285-4.368,10.471-9.52c1.689-7.337,1.695-15.345,1.695-22.898
+		C96.875,40.884,96.889,32.875,95.201,25.538z M35.936,63.474c0-10.716,0-21.32,0-32.037c10.267,5.357,20.466,10.678,30.798,16.068
+		C56.434,52.847,46.23,58.136,35.936,63.474z"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+  </a>
+
+  <a id="goodreads-link"
+     class="icon" title="goodreads" aria-label="goodreads"
+     href="https://www.goodreads.com/user/show/22567057-gregor-riegler">
+    <?xml version="1.0" ?><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+	.st0{}
+	.st1{fill:#202020;}
+</style><g id="Edges"/><g id="Background_1_"><path class="st0" d="M492,268.3c-6.3,122.8-109.9,224.4-236.5,224.5c-126.7,0.1-230.7-101.6-237-224.5   C11.7,136.2,119.6,19.2,255.2,19.2C390.9,19.2,498.7,136.3,492,268.3z"/></g><g id="Symbol"><path class="st1" d="M346.6,137.5c0-4.3-0.4-8.6-0.6-12.8c-9.2,0-16.9,0-25.6,0c0,9.8,0,18.9,0,28.1   c-41.1-57.3-125.6-39.2-149.4,17.9c-15.2,36.6-14.4,73.4,1.5,109.4c16.8,38,65,54.1,102.8,43.4c2-0.3,4.3-0.9,6.8-1.7   c3.6-1.1,6.7-2.5,8.7-3.6c5.2-2.1,11.4-5.6,17.5-10.3c4.9-3.8,9.1-7.8,12.4-11.5c-0.9,14.3-1.3,28.7-3.6,42.8   c-2.8,17.4-10.8,32.4-27.4,41.2c-36.2,19.2-79.6,4.6-96-32.4c-8.2,0-16.6,0-25.4,0c1.8,24.4,14.7,40.3,34.7,50.6   c24.1,12.4,49.9,13.7,76.2,9.4c33.5-5.5,55.3-24.4,63-57.8c2.7-11.9,4.2-24.2,4.3-36.4C346.8,255,346.6,196.2,346.6,137.5z    M316.5,260.3c-4.8,13.8-12.8,24.7-23.3,32.2c-2.6,1.9-15.4,10.8-34.1,11.7c-1.1,0.1-4.2,0.2-8,0c-0.1,0.1-0.3,0.1-0.4,0.1   c-27.3-1.7-48.2-17.6-57.4-43.9c-7.7-22.1-7.9-44.6-2.3-67.1c8.1-32.5,31.6-52.4,61.6-53.2c0.7-0.1,1.1-0.1,1.1-0.1   c15.6-1.4,27.8,5.1,31.6,7.2c16.1,8.6,28.2,24.6,33.5,46C324.4,215.7,324.2,238.2,316.5,260.3z"/></g></svg>
+  </a>
+
+  <a id="email-link"
+     class="icon" title="e-mail" aria-label="e-mail"
+     href="mailto:rieglerg85@gmail.com">
+    <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 493.332 493.332" style="enable-background:new 0 0 493.332 493.332;" xml:space="preserve">
+<g id="XMLID_78_">
+	<g id="XMLID_79_">
+		<g id="XMLID_80_">
+			<path id="XMLID_81_" d="M352.731,450.956c3.037,9.789-2.044,20.213-11.616,23.878c-35.811,13.709-69.294,18.498-112.873,18.498
+				c-117.663,0-221.147-84.347-221.147-223.275C7.095,125.46,112.003,0,272.2,0c124.735,0,214.036,85.764,214.036,204.845
+				c0,103.483-58.12,168.693-134.66,168.693c-33.327,0-57.419-17.007-60.955-54.582h-1.424c-21.963,36.15-53.86,54.582-91.43,54.582
+				c-46.082,0-79.376-34.022-79.376-92.142c0-86.475,63.769-165.147,165.841-165.147c18.691,0,38.9,2.795,55.909,7.172
+				c16.425,4.227,26.861,20.236,24.147,36.978l-16.972,104.695c-7.072,41.818-2.112,60.953,17.721,61.666
+				c30.475,0.711,68.762-38.272,68.762-119.786c0-92.15-59.543-163.732-169.41-163.732c-108.444,0-203.428,85.051-203.428,220.436
+				c0,118.369,75.834,185.708,181.448,185.708c27.489,0,56.203-4.51,80.853-13.214c5.863-2.07,12.315-1.662,17.872,1.126
+				c5.558,2.788,9.753,7.716,11.595,13.655L352.731,450.956z M293.954,181.362c0.534-3.626-1.892-7.027-5.496-7.696
+				c-4.413-0.819-9.536-1.426-15.573-1.426c-46.771,0-83.617,46.076-83.617,100.653c0,26.94,12.037,43.946,35.423,43.946
+				c26.231,0,53.876-33.31,60.265-74.425L293.954,181.362z"/>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+  </a>
+
+  <a id="subscribe-link"
+     class="icon" title="Subscribe" aria-label="Subscribe"
+     href="/feed.xml">
+    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <circle cx="6.18" cy="17.82" r="2.18"/>
+    <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+</svg>
+  </a>
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <!-- Optional additional links to insert for icons links -->
+</nav>
+
+  <p class="license">
+  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0; margin: 0 0 .5rem" width="20" src="/assets/img/cc_icon_white_x2.png" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> by <a href="http://gregorriegler.com">Gregor Riegler</a>.
+  Layout: &copy; 2025.  <a href="/THEME_LICENSE.md">MIT License.</a>
+</p>
+
+</div>
+
+    <main class="container">
+      <header>
+  <h1 class="post-title">Solo Programming Considered Harmful</h1>
+</header>
+<div class="content">
+  <div class="post-meta">
+  <span class="post-date">30 Jan 2023</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+  <div class="post-body">
+    <p>I was recently following an interesting discussion of the Vienna software crafts community with the title: “<a href="https://github.com/swkWien/sessions/issues/105">How to facilitate a conversation between people, where the byproduct is code?</a>”. The discussion is in German and contains interesting ideas about how to code well together, and how to facilitate it.
+I tried to give an answer, which got longer and longer.
+In the end, I chose to write this blog post which expands upon the original topic of discussion and covers a broader range of related subjects.</p>
+
+<p>I will continue to use the terms</p>
+
+<ul>
+  <li>coding together</li>
+  <li>collaborative coding</li>
+  <li>Mob Programming, and</li>
+  <li>Ensemble Programming</li>
+</ul>
+
+<p>interchangeably.
+However, when I say <em>coding together</em> or <em>collaborative coding</em> this includes Pair Programming.
+When I say <em>Mob Programming</em> or <em>Ensemble Programming</em> I exclude Pair Programming.
+By the way: Yes, Mob Programming and Ensemble Programming mean the same thing and may be used interchangeably.
+It’s just that the word “Mob” might be associated with something negative, whereas “Ensemble” is a more innocent term.
+However, I like to use “Mob” as a verb because it’s so short and simple:</p>
+
+<ul>
+  <li>“Let’s mob on this problem!”</li>
+  <li>“We have been mobbing on this problem.”</li>
+</ul>
+
+<h2 id="solo-programming-considered-harmful">Solo Programming Considered Harmful</h2>
+
+<p><img src="/assets/mob-programming/solo-programming.png" alt="Solo Programming" title="A Solo Programmer" />
+<em>» A programmer is a person sitting solo in front of their computer, typing rapidly on their keyboard.
+A well known stereotype. You have seen the movies.</em></p>
+
+<p>It turns out that solo programming may not be as good as we think.
+No, I’m serious.
+I think we overestimate our programming skills.
+We tend to overcomplicate things, and we make a lot of mistakes.
+We rarely understand the problem that needs to be solved, and we don’t know our tools well.
+We often end up with crufty code that isn’t as simple as it could be.
+It doesn’t work and often targets the wrong problem.</p>
+
+<p>But hey, don’t worry about it.
+We don’t mean to.
+We try hard to live up to expectations.
+And we work to the best of our ability.
+We’re learning.
+It’s just not that easy. 🤷‍♂️</p>
+
+<h2 id="coding-together-as-an-answer">Coding Together as an Answer</h2>
+<p>Collaborative coding can greatly improve the situation.
+By bringing together multiple people with different skills and perspectives, we can gain a deeper understanding of the problem and develop a better solution.
+We can take on different roles and complement each other.
+We have more eyes to spot mistakes, and together we know our tools better and know more about valuable techniques and practices.
+It’s proven that complex problems can be solved better and faster through collaborative coding.
+Working on simple applications, we encounter such hard-to-solve problems every day.
+But the best thing about coding together is the amplified learning while having a good time.</p>
+
+<p><img src="/assets/mob-programming/remote-mob-programming.png" alt="Remote Mob Programming" title="Image Caption" />
+<em>» A team coding together remotely.</em></p>
+
+<h2 id="the-cost-of-coding-together">The Cost of Coding Together</h2>
+<p>There is a cost, of course, to having many programmers working on the same problem at the same time.
+We understand those costs well, I think.
+What we do not understand so well, however, are the benefits.
+Ultimately, it’s a tradeoff.
+Will the benefits outweigh the costs?
+So let us talk about the benefits.</p>
+
+<h2 id="the-benefits-of-coding-together">The Benefits of Coding Together</h2>
+
+<h3 id="amplified-learning">Amplified Learning</h3>
+<p>The most striking advantage, and I cannot emphasise this enough, is the amplification in learning.
+We need to learn and get better at what we do, desperately so.
+All of us, but especially those of us who are new to it.
+There’s a big gap between what you learn in school and what you need to know on the job.
+We have to make up for that gap somehow.
+The thing that works best in my experience is to work together with the people.
+Coding together isn’t only the best way to onboard new people, but it also succeeds amazingly quickly in raising the level of participants and turning them into valuable contributors.
+I’ve learned so much myself through programming with other people that I honestly believe the learning effect alone makes up for the cost.</p>
+
+<h3 id="reduction-in-cost-for-change">Reduction in Cost for Change</h3>
+<p>We are used to a trade-off between quality and cost, but it does not work that way with software.
+In our business, quality is cheap and cruft is expensive.</p>
+
+<blockquote>
+  <p>💡 Martin Fowler wrote an interesting <a href="https://martinfowler.com/articles/is-quality-worth-cost.html">article</a> on this topic.</p>
+</blockquote>
+
+<p>Code is a liability, and much of the cost is incurred when we need to change and improve it, which happens from day one.
+There is this strange idea that maintenance is something that happens after the project is completed.
+Well, that’s not exactly true.
+We maintain the code starting with the first day.
+It’s a challenge to find the right structure and keep it soft enough to change easily.
+It’s also terribly expensive to work on poorly designed legacy code, as we often see in enterprise software today.
+The cost of this is insidious because there is usually no awareness of it.
+So we should strive for and achieve high <a href="https://wiki.c2.com/?InternalAndExternalQuality">internal quality</a> to save maintenance cost.
+The internal quality of the code can be greatly increased if many people review and revise the code as it’s written.</p>
+
+<h3 id="better-software-for-the-user">Better Software for the User</h3>
+<p>I have seen this repeatedly: Many minds working on the same problem produce more and better ideas, which simply leads to better solutions.
+When I say better, I usually mean simpler.
+It’s those moments when the majority chase a suboptimal solution and then one person proposes a better one.
+We need to think outside the box.
+Different people think in different boxes.
+More boxes mean more opportunities.
+More opportunities lead to a better outcome for the user.</p>
+
+<h3 id="reduced-work-in-progress">Reduced Work in Progress</h3>
+<p>We know that high work in progress causes slow down.
+When we work together on one problem, it’s also the only problem we work on.
+All the people needed to solve the problem are there when they’re needed.
+And then, once we’ve taken all the necessary action, it’s done.
+It’s off the table.
+We can focus entirely on the next problem.
+No juggling of tasks.
+No waiting around.
+No context switching.
+Fewer things to keep everyone busy.
+Better and easier focus.
+A clean one-piece flow.</p>
+
+<h3 id="having-a-good-time">Having a Good Time</h3>
+<p>For many people, it can be rewarding to work in a mob with other people, especially if they’re more experienced.
+When working on software, we’re often thrown in at the deep end.
+Teamwork reduces the stress involved in this.
+It’s also more enjoyable for many.
+Coding together is a great team-building activity because we work as an actual team.
+It may feel awkward at first, but once you get the hang of it, it can be a lot of fun.</p>
+
+<h2 id="mob-programming-is-not-easy">Mob Programming is Not Easy</h2>
+<p>Coding together is challenging.
+It’s not simply a matter of one person typing while others observe in silence.
+In order to make it work, it’s important for all team members to actively engage and collaborate. 
+This enables us to utilize all of our minds and build the shared understanding we strive for.
+Also, we want to reach a flow state and make continuous progress.
+Mob Programming, thus working as an actual team, is a deliberate practice.</p>
+
+<h3 id="shared-understanding">Shared Understanding</h3>
+<p>It’s important to ensure that everyone is on the same page and no one is left behind.
+This requires patience, effective communication, and a willingness to listen and explain ideas.
+Communication is a challenge, but a skill we can improve with practice.
+Speak slowly and use simple language.
+Use metaphors and pick people up where they are.
+When starting out with a new ensemble, it’s common to feel slow at first. 
+This is normal as the ensemble gets to know each other and establishes a shared understanding. 
+After some time you should experience a boost in productivity. 
+The duration of this initial phase can vary, it could be as short as a few minutes or as long as an hour.</p>
+
+<h3 id="so-its-all-about-human-interaction">So, it’s all About Human Interaction</h3>
+<p>Treat each other with kindness, consideration and respect<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>.
+Make people feel safe to contribute, and welcome all forms of contribution, including questions.
+Reward a contribution, especially if it makes the person feel unsure.
+It is perfectly fine not to know something or not to “get it”.
+Be a hero and ask the first question to make others feel confident as well.
+Be open to examining and evaluating potentially disruptive ideas, even if they come up suddenly.
+Creating a supportive environment that encourages people to contribute will help ensure that the best ideas and insights from all team members are incorporated into the code.
+It seems like social skills are the name of the game.
+Has programming been the easy part all along?</p>
+
+<h3 id="agree-on-a-shared-goal">Agree on a Shared Goal</h3>
+<p>With many different ideas being shared, it can be difficult for a team to agree on a common goal.
+This is another team skill to master.
+It’s important to be open to taking a step back and trying someone else’s idea.
+It’s okay to try multiple approaches and see which one works best.
+By being open to different ideas and perspectives, a team can learn and grow together.</p>
+
+<h3 id="knowing-when-to-speak">Knowing when to Speak</h3>
+<p>It’s important for everyone to feel comfortable speaking their mind and sharing their ideas.
+However, it’s also important to know when to hold back and listen to others.
+One way to deal with this is to keep a private backlog of ideas that come to mind but may not be relevant at the moment.
+This can help keep you focused on the task at hand while recording and considering other ideas for later.
+Knowing when to speak up and when to hold back is an important skill for effective collaboration.</p>
+
+<h3 id="bias-to-action">Bias to Action</h3>
+<p>In a group, it’s sometimes easy to get stuck in a discussion that goes on forever without trying anything.
+Most of the time, it’s less stressful to just try.
+Some discussions just are not worth it.
+If you notice people talking for several minutes without writing any code, alarm bells should be ringing.
+For example, if people are puzzling over the behavior of a particular code for an extended period of time.
+It’s time to call to action and suggest that you simply run the code and see.</p>
+
+<h2 id="distributing-roles">Distributing Roles</h2>
+<p>A logical first step is to distribute participants by what they do.
+Someone has to type the code, of course.
+A common name for this role is <em>Driver</em>, as in the <em>Driver/Navigator</em> relationship of <a href="http://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html">Strong Style Pairing</a>.
+I often find that people confuse the names of these two roles, so I prefer to call them “Typist” and “Talker” instead.
+May also use “Typing” and “Talking”.</p>
+
+<h3 id="the-role-of-the-typist">The Role of the Typist</h3>
+<p>We do not want the Typist to just hack away.
+If they did, other participants could merely descipher the then buggy code and make incorrect assumptions.
+That’s not sustainable.
+We want the Typist to follow the team’s instructions instead.
+Being a Typist is hard.
+They may get overwhelmed with conflicting ideas.
+What should they focus on?
+We can solve this problem by using a designated Talker.
+It’s not the only person who speaks, but they act as the primary input channel for the Typist, filtering all the ideas and making the final decision.
+Even if many things are said, the Typist then knows which voice to focus on.</p>
+
+<h4 id="a-typist-translates">A Typist Translates</h4>
+<p>It is a common misconception that the Typist foolishly types out the code they’ve been told to type, word by word, character by character.
+Actually, the Typist must make many considerations and decisions.
+For example: They may choose to run the tests whenever.
+They translate the Talker’s intention into code so that the Talker can stay at the level of their thinking.
+The Typist takes care of the details.
+That takes a big burden off the Talker.
+I mean, typing in itself is quite a challenge.
+To know your tools well and being good at typing is an art.
+If you are then able to translate the high level intent on top of that, that’s icing on the cake.</p>
+
+<h4 id="typist-wrapups">Typist Wrapups</h4>
+<p>One technique I learned at the Python Approvals Mob that improves feedback and shared understanding is Typist wrapups.
+It means that a Typist gives a brief explanation of what just happened and what they did after each round.
+When a Typist explains this in their own words, misunderstandings are more likely to be uncovered and cleared up.</p>
+
+<h3 id="being-a-talker-is-not-easy-either">Being a Talker is not Easy Either</h3>
+<p>So the Talker is the person who programmes.
+The Typist acts as a kind of intelligent input device for them.
+A Talker should communicate their thinking.
+In other words, they should think out loud.
+There are many stages of thinking that we go through.
+First, we orient ourselves to the current situation - the context.
+Second, we imagine where we want to go from here - a direction.
+Third, we formulate a concrete intention - still at a high level.
+This is already what a Typist could work with.
+Each thought step is shared with the team.
+Only then, if needed, do we move on to low-level details: What code to write on what line, syntax, code formatting, keys to use, buttons to click, etc.
+The Talker instructs the Typist at the level at which they can operate on, the higher, the better.
+Kind of like inverted limbo: How high can you get?</p>
+
+<h3 id="contributing-while-not-talking-nor-typing">Contributing while not Talking nor Typing</h3>
+<p>Not being any of those roles doesn’t mean you’re not contributing.
+You may step out of the mob for a minute, but what you rather want is to be creative in supporting the group.
+Do some research when an opportunity arises.
+Ask, if you don’t understand something.
+Remind people about the protocol if necessary.
+Think ahead and take notes about things we should take care of.
+Review the code as it is being typed.
+Observe how the group behaves and what they are doing.
+Maybe you have an Idea of something the group should be trying that could work well, bring that up. 
+Note down things that worked well so you can bring it up in the retro.</p>
+
+<h2 id="rotation">Rotation</h2>
+<p>Everyone should get to type and talk.
+This keeps everybody engaged.
+When deciding on the rotation interval, consider how long it would take for the same person to become a Typist again.
+Waiting an hour to go back to typing is probably too much.
+It’s hard to maintain attention that long.
+A rotation every 2 or 3 minutes works very well with an experienced mob, but you need to be able to do it swiftly.
+Work hard to shorten your rotation time.
+Rotation time is the time between the start of a rotation and the next Typist/Talker being able to continue.
+The perfect rotation time is 0.</p>
+
+<h3 id="rotations-need-trust">Rotations Need Trust</h3>
+<p>Ending your turn thus giving up control can be difficult.
+As a Talker, you not only want to maintain the direction of the previous Talker, but you must trust the next Talker to do the same.
+Trust them to continue the idea you have been working on.
+Without trust, rotations get bogged down, which hinders the flow.</p>
+
+<h3 id="hard-rotations-vs-finish-your-thought">Hard Rotations vs “Finish Your Thought”</h3>
+<p>When the timer sounds, you have the option to do a hard rotation, where work stops immediately and team members rotate positions.
+Another option is to take some time and finish your current thought, known as “Finish Your Thought” (FYT). 
+FYT is useful for completing something small or finishing a line of code. 
+However, when it takes too long, it can disrupt the flow of the team. 
+People might forget or even ignore that the timer rang at all.
+Based on my experience, in those cases, it’s better to do a hard rotation. 
+Trust in the next person to pick up where you left off and continue the team’s intent.</p>
+
+<h3 id="calling-out-your-role">Calling out your Role</h3>
+<p>Another common practice that helps maintain flow is when everybody calls out their role when the rotation starts.
+It’s practical to also have the person that will be participating in the following rotation to call that out as being “next”.
+This avoids misunderstandings and it makes sure that the “next” person is increasing their attention towards being able and continue the given work.</p>
+
+<p>An example would be:<br />
+Alice: “I’m Alice, and I’m talking!”<br />
+Peter: “I’m Peter, and I’m typing!”<br />
+Sarah: “I’m Sarah, and I’m next!”<br /></p>
+
+<h2 id="find-out-what-works-for-your-mob">Find out what Works for Your Mob</h2>
+<p>As mentioned earlier, Mob Programming is a deliberate practice.
+You want to constantly improve the way you work together.
+There are no pre-existing rules or frameworks for this.
+You need to find your own working agreements.
+Regular retrospectives are key in this regard.
+Conduct them at least daily.
+A two-hour Mob Programming session can lead to a three-hour retrospective, which is great.
+The learning effect can be tremendous.
+But they don’t have to be that long.
+Make them short, maybe a few minutes, but regular.
+Use them to find out what worked well for you, and put that in the spotlight.
+Turn up the good.
+Stay innovative and figure out what you’d like to try.
+Retrospectives are about learning and about change.
+Use it, act on its results.</p>
+
+<h2 id="facilitating-a-mob-programming">Facilitating a Mob Programming</h2>
+<p>Above all, remind the participants to be patient and treat each other with kindness, consideration, and respect<sup id="fnref:1:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>.
+Be a role model in the way you treat them.
+People new to Mob Programming will be overwhelmed just by the conviviality of this way of working.
+Suddenly they have to pitch their ideas to other people.
+They are also not used to being exposed while typing code.
+It will take some time for them to get used to this way of working and still have some room in their head to keep a protocol intact.
+So you want the initial protocol to be minimalist, and you want to guide it.
+Too many rules would throw them off the rails.</p>
+
+<blockquote>
+  <p><strong>Tip:</strong> When you notice someone being distracted, offer a short break.</p>
+</blockquote>
+
+<h3 id="guide-your-protocol">Guide your Protocol</h3>
+<p>There is a fine line between telling everyone what to do all the time and letting them off the hook.
+In the beginning, they won’t remember how to follow your protocol.
+It’s just too much.
+So you should guide them and kindly tell them what to do and when.
+But you also don’t want to fall into the trap of doing everything for them.
+Your goal is for the team to be able to take care of themselves and for you to become redundant.
+Therefore, every time before you remind them, you should also give them some time to follow the protocol themselves.
+Once you become redundant, you may consider joining the mob.</p>
+
+<blockquote>
+  <p><strong>Tip:</strong> Do not join a fresh ensemble as a facilitator unless you are very experienced in this. 
+Facilitation can be complicated, therefor you do not want to particiate in the programming at first.
+Stay out of the ensemble and focus on having them work well together.</p>
+</blockquote>
+
+<h3 id="keep-time-for-a-retrospective">Keep Time for a Retrospective</h3>
+<p>You want to end a Mob Programming session with a retro.
+Give them the chance to express their feelings about what happened, and share it with each other.
+They probably enjoyed it.
+Also, they have probably learned new things in the progress.</p>
+
+<h4 id="microretro">Microretro</h4>
+<p>A minimal but nice format for a retro is a microretro.
+It only takes a few minutes and you could do it at least once a day.
+In this retro, ask these questions:</p>
+
+<ol>
+  <li><strong>How did that feel?</strong></li>
+  <li>
+    <p><strong>What worked well?</strong></p>
+
+    <p>The aim of this question is to highlight the positive aspects and achievements. 
+We want to celebrate what went well and strive to replicate it in the future. 
+It’s easy to get caught up in dwelling on negative aspects, but this can lead to a negative mindset and impact the overall well-being of the team. 
+Therefore, this retro focuses on shifting the perspective entirely towards the positive.</p>
+  </li>
+  <li>
+    <p><strong>Do you have an idea you would like to try?</strong></p>
+
+    <p>The goal of this question is to foster experimentation and innovation.</p>
+  </li>
+</ol>
+
+<h3 id="tools-for-mob-programming">Tools for Mob Programming</h3>
+
+<ul>
+  <li><a href="https://mob.sh">mob.sh</a> is a commandline tool and git wrapper to easily hand over code in a remote mob programming.</li>
+  <li><a href="https://mobti.me/">mobti.me</a> is an online mob timer, and the best that I know.</li>
+  <li><a href="https://gitpod.io/">gitpod</a> is a webapp that is basically vscode in the browser that works well for collaboration as you can share your workspace with others.</li>
+  <li><a href="https://github.com/gregorriegler/remdev-azure">remdev on azure</a> is a script to easily boot up a virtual machine on azure for remote mob programming.</li>
+  <li><a href="https://cyber-dojo.org/">cyber-dojo</a> is a brilliant webapp to practice mob programming on a kata. All you need is a browser.</li>
+  <li><a href="https://tmate.io/">tmate</a> allows you to share your terminal with others to collaborate.</li>
+</ul>
+
+<h3 id="public-mobs">Public Mobs</h3>
+
+<p>If you want to try Mob Programming you may choose an existing community.</p>
+
+<ul>
+  <li><a href="https://github.com/gregorriegler/mob-programming-rpg">MobRPG Mob</a> is a weekly public remote mob on thursdays where we develop a webapp for the mob programming rpg. Read the <a href="https://github.com/gregorriegler/mob-programming-rpg#contribute">Contribute</a> section to find out how to join (It’s dead simple as in “just show up”).</li>
+  <li><a href="https://www.eventbrite.com/o/code-craft-saturdays-and-sundays-15457506392">Code Crafts Saturdays and Sundays</a> is a monthly event where you can try and practice Mob Programming and TDD.</li>
+  <li><a href="https://github.com/approvals/ApprovalTests.Python/blob/main/docs/Contribute.md">Python Approvals Mob</a> is a weekly remote mob that works on the python version of the approvals testing library.</li>
+  <li><a href="https://mobusoperandi.com/">Mobus Operandi</a> has a calendar with a lot of public mobs that you can join.</li>
+</ul>
+
+<h3 id="further-links">Further Links</h3>
+
+<ul>
+  <li><a href="https://www.youtube.com/channel/UCgt1lVMrdwlZKBaerxxp2iQ">Mob Mentality Show</a></li>
+  <li><a href="https://www.youtube.com/watch?v=ZnyBoz7wMD0&amp;list=PLzmKmecq34A9rH7MMUYzFjXdV0jdwQoGh&amp;index=7&amp;ab_channel=TsvetanTsvetanov">Mobbing Discussion</a> (I particularly like this episode because Tim explains very well and shares valuable insights)</li>
+  <li><a href="https://trello.com/b/1lfMkCOh/software-profession-resources">Resource Collection on Mob Programming and Software Profession</a></li>
+  <li><a href="https://jay.bazuzi.com/Mobbing-Pattern-Language/">Mobbing Pattern Language</a></li>
+  <li><a href="https://www.industriallogic.com/blog/scatter-gather/">Scatter Gather (The hidden cost of Solo Programming)</a></li>
+</ul>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="https://www.youtube.com/watch?v=oq42E51Ufnk">Kindness, Consideration and Respect</a> are what make a healthy Mob Programming. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+    
+
+
+
+<div class="post-tags clear">
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">Mob Programming</span>
+    </span>
+  
+    <span>
+      <span class="icon">
+        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/>
+</svg>
+      </span>&nbsp;<span class="tag-name">Ensemble Programming</span>
+    </span>
+  
+</div>
+  </div>
+
+  <section class="related">
+  <h2>Related Posts</h2>
+  <ul class="posts-list">
+    
+      <li>
+        <h3>
+          <a href="/2025/07/12/augmented-coding-pattern-language.html">
+            Augmented Coding - A Pattern Language
+            <small>12 Jul 2025</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2023/10/21/geecon-prague-summary.html">
+            Takeaways from GeeCon Prague 2023
+            <small>21 Oct 2023</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2022/07/21/Getting-better-at-CI.html">
+            Getting better at CI
+            <small>21 Jul 2022</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</section>
+
+</div>
+
+    </main>
+
+    <!-- Optional footer content -->
+
+  </body>
+</html>

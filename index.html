@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="https://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+
+  <title>
+    
+      Gregor Riegler &middot; Merciless Refactorer
+    
+  </title>
+
+  
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface" />
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon.png" />
+<link rel="shortcut icon" href="/favicon.ico" />
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+
+  <!-- Additional head bits without overriding original head -->
+<meta name="description" content="Gregor Riegler, Software Development Coach."/>
+</head>
+
+
+  <body class="default">
+
+    <div id="sidebar">
+  <header>
+    <div class="site-title">
+      <a href="/">
+        
+          <span class="back-arrow icon"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0 0h24v24H0z" fill="none"/>
+  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+</svg></span>
+        
+        Gregor Riegler
+      </a>
+    </div>
+    <p class="lead">Merciless Refactorer</p>
+  </header>
+  <nav id="sidebar-nav-links">
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/about">About</a>
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/blog">Blog</a>
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/speaking">Public Speaking</a>
+    
+  
+
+  
+    
+      <a class="page-link "
+          href="/refactoring-java/">Refactoring Java Series</a>
+    
+  
+
+
+
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+
+  <!-- Optional additional links to insert in sidebar nav -->
+</nav>
+
+
+  
+
+  <nav id="sidebar-icon-links">
+
+  <a id="bluesky-link"
+     class="icon" title="Bluesky" aria-label="Bluesky"
+     href="https://bsky.app/profile/gregorriegler.com">
+    <?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="21" viewBox="0 0 600 530" version="1.1" xmlns="http://www.w3.org/2000/svg">
+ <path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/>
+</svg>
+
+  </a>
+
+  <a id="mastodon-link"
+     class="icon" title="Mastodon" aria-label="Mastodon"
+     href="https://fosstodon.org/@gregorriegler">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="26" viewBox="0 0 216.4144 232.00976">
+  <defs>
+    <mask id="mastodon-mask">
+      <rect width="100%" height="100%" fill="white"/>
+      <path d="M177.50984 80.077v60.94125h-24.14375v-59.15c0-12.46875-5.24625-18.7975-15.74-18.7975-11.6025 0-17.4175 7.5075-17.4175 22.3525v32.37625H96.20734V85.42325c0-14.845-5.81625-22.3525-17.41875-22.3525-10.49375 0-15.74 6.32875-15.74 18.7975v59.15H38.90484V80.077c0-12.455 3.17125-22.3525 9.54125-29.675 6.56875-7.3225 15.17125-11.07625 25.85-11.07625 12.355 0 21.71125 4.74875 27.8975 14.2475l6.01375 10.08125 6.015-10.08125c6.185-9.49875 15.54125-14.2475 27.8975-14.2475 10.6775 0 19.28 3.75375 25.85 11.07625 6.36875 7.3225 9.54 17.22 9.54 29.675" fill="black"/>
+    </mask>
+  </defs>
+  <path d="M211.80734 139.0875c-3.18125 16.36625-28.4925 34.2775-57.5625 37.74875-15.15875 1.80875-30.08375 3.47125-45.99875 2.74125-26.0275-1.1925-46.565-6.2125-46.565-6.2125 0 2.53375.15625 4.94625.46875 7.2025 3.38375 25.68625 25.47 27.225 46.39125 27.9425 21.11625.7225 39.91875-5.20625 39.91875-5.20625l.8675 19.09s-14.77 7.93125-41.08125 9.39c-14.50875.7975-32.52375-.365-53.50625-5.91875C9.23234 213.82 1.40609 165.31125.20859 116.09125c-.365-14.61375-.14-28.39375-.14-39.91875 0-50.33 32.97625-65.0825 32.97625-65.0825C49.67234 3.45375 78.20359.2425 107.86484 0h.72875c29.66125.2425 58.21125 3.45375 74.8375 11.09 0 0 32.975 14.7525 32.975 65.0825 0 0 .41375 37.13375-4.59875 62.915" mask="url(#mastodon-mask)"/>
+</svg>
+
+  </a>
+
+  <a id="linkedin-link"
+     class="icon" title="LinkedIn" aria-label="LinkedIn"
+     href="https://www.linkedin.com/in/gregorriegler/">
+    <?xml version="1.0" ?>
+<svg height="24" viewBox="0 0 72 72" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z"/>
+</svg>
+  </a>
+  
+  <a id="github-link"
+     class="icon" title="Github" aria-label="Github"
+     href="https://github.com/gregorriegler">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28" height="24" width="28"><path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-0.609 0.109-0.828-0.266-0.828-0.578 0-0.391 0.016-1.687 0.016-3.297 0-1.125-0.375-1.844-0.812-2.219 2.672-0.297 5.484-1.313 5.484-5.922 0-1.313-0.469-2.375-1.234-3.219 0.125-0.313 0.531-1.531-0.125-3.187-1-0.313-3.297 1.234-3.297 1.234-0.953-0.266-1.984-0.406-3-0.406s-2.047 0.141-3 0.406c0 0-2.297-1.547-3.297-1.234-0.656 1.656-0.25 2.875-0.125 3.187-0.766 0.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-0.344 0.313-0.656 0.844-0.766 1.609-0.688 0.313-2.438 0.844-3.484-1-0.656-1.141-1.844-1.234-1.844-1.234-1.172-0.016-0.078 0.734-0.078 0.734 0.781 0.359 1.328 1.75 1.328 1.75 0.703 2.141 4.047 1.422 4.047 1.422 0 1 0.016 1.937 0.016 2.234 0 0.313-0.219 0.688-0.828 0.578-4.766-1.594-8.203-6.094-8.203-11.391 0-6.625 5.375-12 12-12zM4.547 19.234c0.031-0.063-0.016-0.141-0.109-0.187-0.094-0.031-0.172-0.016-0.203 0.031-0.031 0.063 0.016 0.141 0.109 0.187 0.078 0.047 0.172 0.031 0.203-0.031zM5.031 19.766c0.063-0.047 0.047-0.156-0.031-0.25-0.078-0.078-0.187-0.109-0.25-0.047-0.063 0.047-0.047 0.156 0.031 0.25 0.078 0.078 0.187 0.109 0.25 0.047zM5.5 20.469c0.078-0.063 0.078-0.187 0-0.297-0.063-0.109-0.187-0.156-0.266-0.094-0.078 0.047-0.078 0.172 0 0.281s0.203 0.156 0.266 0.109zM6.156 21.125c0.063-0.063 0.031-0.203-0.063-0.297-0.109-0.109-0.25-0.125-0.313-0.047-0.078 0.063-0.047 0.203 0.063 0.297 0.109 0.109 0.25 0.125 0.313 0.047zM7.047 21.516c0.031-0.094-0.063-0.203-0.203-0.25-0.125-0.031-0.266 0.016-0.297 0.109s0.063 0.203 0.203 0.234c0.125 0.047 0.266 0 0.297-0.094zM8.031 21.594c0-0.109-0.125-0.187-0.266-0.172-0.141 0-0.25 0.078-0.25 0.172 0 0.109 0.109 0.187 0.266 0.172 0.141 0 0.25-0.078 0.25-0.172zM8.937 21.438c-0.016-0.094-0.141-0.156-0.281-0.141-0.141 0.031-0.234 0.125-0.219 0.234 0.016 0.094 0.141 0.156 0.281 0.125s0.234-0.125 0.219-0.219z"></path>
+</svg>
+
+  </a>
+
+  <a id="youtube-link"
+     class="icon" title="Youtube" aria-label="Youtube"
+     href="https://www.youtube.com/channel/UCsWg_i6X4KMhjD2CRqCJLdg">
+    <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="96.875px" height="96.875px" viewBox="0 0 96.875 96.875" style="enable-background:new 0 0 96.875 96.875;"
+	 xml:space="preserve">
+<g>
+	<path d="M95.201,25.538c-1.186-5.152-5.4-8.953-10.473-9.52c-12.013-1.341-24.172-1.348-36.275-1.341
+		c-12.105-0.007-24.266,0-36.279,1.341c-5.07,0.567-9.281,4.368-10.467,9.52C0.019,32.875,0,40.884,0,48.438
+		C0,55.992,0,64,1.688,71.336c1.184,5.151,5.396,8.952,10.469,9.52c12.012,1.342,24.172,1.349,36.277,1.342
+		c12.107,0.007,24.264,0,36.275-1.342c5.07-0.567,9.285-4.368,10.471-9.52c1.689-7.337,1.695-15.345,1.695-22.898
+		C96.875,40.884,96.889,32.875,95.201,25.538z M35.936,63.474c0-10.716,0-21.32,0-32.037c10.267,5.357,20.466,10.678,30.798,16.068
+		C56.434,52.847,46.23,58.136,35.936,63.474z"/>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+  </a>
+
+  <a id="goodreads-link"
+     class="icon" title="goodreads" aria-label="goodreads"
+     href="https://www.goodreads.com/user/show/22567057-gregor-riegler">
+    <?xml version="1.0" ?><svg style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+	.st0{}
+	.st1{fill:#202020;}
+</style><g id="Edges"/><g id="Background_1_"><path class="st0" d="M492,268.3c-6.3,122.8-109.9,224.4-236.5,224.5c-126.7,0.1-230.7-101.6-237-224.5   C11.7,136.2,119.6,19.2,255.2,19.2C390.9,19.2,498.7,136.3,492,268.3z"/></g><g id="Symbol"><path class="st1" d="M346.6,137.5c0-4.3-0.4-8.6-0.6-12.8c-9.2,0-16.9,0-25.6,0c0,9.8,0,18.9,0,28.1   c-41.1-57.3-125.6-39.2-149.4,17.9c-15.2,36.6-14.4,73.4,1.5,109.4c16.8,38,65,54.1,102.8,43.4c2-0.3,4.3-0.9,6.8-1.7   c3.6-1.1,6.7-2.5,8.7-3.6c5.2-2.1,11.4-5.6,17.5-10.3c4.9-3.8,9.1-7.8,12.4-11.5c-0.9,14.3-1.3,28.7-3.6,42.8   c-2.8,17.4-10.8,32.4-27.4,41.2c-36.2,19.2-79.6,4.6-96-32.4c-8.2,0-16.6,0-25.4,0c1.8,24.4,14.7,40.3,34.7,50.6   c24.1,12.4,49.9,13.7,76.2,9.4c33.5-5.5,55.3-24.4,63-57.8c2.7-11.9,4.2-24.2,4.3-36.4C346.8,255,346.6,196.2,346.6,137.5z    M316.5,260.3c-4.8,13.8-12.8,24.7-23.3,32.2c-2.6,1.9-15.4,10.8-34.1,11.7c-1.1,0.1-4.2,0.2-8,0c-0.1,0.1-0.3,0.1-0.4,0.1   c-27.3-1.7-48.2-17.6-57.4-43.9c-7.7-22.1-7.9-44.6-2.3-67.1c8.1-32.5,31.6-52.4,61.6-53.2c0.7-0.1,1.1-0.1,1.1-0.1   c15.6-1.4,27.8,5.1,31.6,7.2c16.1,8.6,28.2,24.6,33.5,46C324.4,215.7,324.2,238.2,316.5,260.3z"/></g></svg>
+  </a>
+
+  <a id="email-link"
+     class="icon" title="e-mail" aria-label="e-mail"
+     href="mailto:rieglerg85@gmail.com">
+    <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 493.332 493.332" style="enable-background:new 0 0 493.332 493.332;" xml:space="preserve">
+<g id="XMLID_78_">
+	<g id="XMLID_79_">
+		<g id="XMLID_80_">
+			<path id="XMLID_81_" d="M352.731,450.956c3.037,9.789-2.044,20.213-11.616,23.878c-35.811,13.709-69.294,18.498-112.873,18.498
+				c-117.663,0-221.147-84.347-221.147-223.275C7.095,125.46,112.003,0,272.2,0c124.735,0,214.036,85.764,214.036,204.845
+				c0,103.483-58.12,168.693-134.66,168.693c-33.327,0-57.419-17.007-60.955-54.582h-1.424c-21.963,36.15-53.86,54.582-91.43,54.582
+				c-46.082,0-79.376-34.022-79.376-92.142c0-86.475,63.769-165.147,165.841-165.147c18.691,0,38.9,2.795,55.909,7.172
+				c16.425,4.227,26.861,20.236,24.147,36.978l-16.972,104.695c-7.072,41.818-2.112,60.953,17.721,61.666
+				c30.475,0.711,68.762-38.272,68.762-119.786c0-92.15-59.543-163.732-169.41-163.732c-108.444,0-203.428,85.051-203.428,220.436
+				c0,118.369,75.834,185.708,181.448,185.708c27.489,0,56.203-4.51,80.853-13.214c5.863-2.07,12.315-1.662,17.872,1.126
+				c5.558,2.788,9.753,7.716,11.595,13.655L352.731,450.956z M293.954,181.362c0.534-3.626-1.892-7.027-5.496-7.696
+				c-4.413-0.819-9.536-1.426-15.573-1.426c-46.771,0-83.617,46.076-83.617,100.653c0,26.94,12.037,43.946,35.423,43.946
+				c26.231,0,53.876-33.31,60.265-74.425L293.954,181.362z"/>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+  </a>
+
+  <a id="subscribe-link"
+     class="icon" title="Subscribe" aria-label="Subscribe"
+     href="/feed.xml">
+    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <circle cx="6.18" cy="17.82" r="2.18"/>
+    <path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/>
+</svg>
+  </a>
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <!-- Optional additional links to insert for icons links -->
+</nav>
+
+  <p class="license">
+  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0; margin: 0 0 .5rem" width="20" src="/assets/img/cc_icon_white_x2.png" /></a>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a> by <a href="http://gregorriegler.com">Gregor Riegler</a>.
+  Layout: &copy; 2025.  <a href="/THEME_LICENSE.md">MIT License.</a>
+</p>
+
+</div>
+
+    <main class="container">
+      <div class="content">
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2025/07/12/augmented-coding-pattern-language.html">
+        Augmented Coding - A Pattern Language
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">12 Jul 2025</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <p>I was trying to get an LLM to perform TDD first when ChatGPT 3.5 was released in 2022. 
+They added the possibility for the LLM to execute Python code back then. 
+And you could create “GPTs”, agents that use your own system prompt kinda. 
+Back then I created a <a href="https://chatgpt.com/g/g-MWGfe0UQn-software-crafter">Software Crafter GPT</a>. It could do simple katas. 
+But its capabilities were limited. 
+In the following months I did not witness a lot of improvement in the LLM space. 
+It felt like stagnation and I was sceptical.</p>
+
+<p>This changed in the recent months where I experienced successes with LLM-assisted development. 
+It was fun, … addictive even.</p>
+
+<p>Models and tooling have gotten better and actually useful for coding. 
+There are still limitations, but it’s good enough to try and get the most out of it.
+I wanted to find out how much I can push up the autonomy slider while keeping up the quality and maintainability.
+I spent a lot of time doing augmented coding, which to me meant to teach the agent what I would do.
+This endeavour was so interesting that I had to describe some of the things I learned.</p>
+
+<p>This post introduces a <em>pattern language</em> about some of the things that worked for me. 
+I recently added examples. Some of them show a <em>demo run</em> using the <a href="https://github.com/gregorriegler/simple-agent">simple-agent</a>. 
+Whenever you see a codeblock starting with <code class="language-plaintext highlighter-rouge">❯ ./agent.sh</code> this is the simple agent.</p>
+
+<h2 id="basics">Basics</h2>
+
+<h3 id="-agent">🤖 Agent</h3>
+<p><strong>Pattern:</strong> <em>Give the LLM Agency</em></p>
+
+<p>An agent in its simplest form is nothing more than a loop that facilitates a dialog with a language model that allows it to execute tools. More advanced agents track context size, embed custom system prompts, provide different modes, let you choose the language model and do advanced context management. The agent is the engine of augmented work.</p>
+
+<h3 id="-to-augment-oneself">🧠 To Augment Oneself</h3>
+<p><strong>Pattern:</strong> <em>Project what you are doing.</em></p>
+
+<p>For me, augmentation is a learning process where we discover our habits, decisions and workflows and capture them into clear artifacts that are so precise that an agent can follow and thus imitate us. Before asking the agent to take action, pause to explore what you would do if you were doing it yourself. What steps would you take? What considerations matter? Describe that process to the agent. Externalize your own reasoning, step by step, so the agent can pick it up and run with it. Think of it as constructing a functional representation of yourself.
+Often we have to go through the motions ourselves to surface unconscious decisions. In augmenting we learn about our own thinking and workflow. This process is an interresting shift in perspectives. It leads you to focus more on methodology and decision making rather than technical details. You have to be so clear about it, that things that were previously obvious but blurry, become well understood and formalized.</p>
+
+<h2 id="-hateoag-hypertext-as-the-engine-of-agent-guidance">🌐 <strong>HATEOAG</strong> (Hypertext as the Engine of Agent Guidance)</h2>
+
+<p>Inspired by <a href="https://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a>, this pattern treats hypertext as the driving mechanism for agent navigation and behavior. Hypertext guides the agent through a network of clearly defined, interlinked processes, memory, documentation files and code.</p>
+
+<p>Links invite the agent to jump, read, and act.</p>
+
+<h3 id="-starter-symbol">📍 Starter Symbol</h3>
+<p><strong>Pattern:</strong> <em>Process Identity</em></p>
+
+<p>Leading emojis are what LLMs are known for. You look at an article containing a lot of leading emojis and immediately think: <em>“Generated!!”</em> When the agent starts its message with an emoji, this symbol becomes a declaring header about the state of the process. It gives us feedback on where the agent is right now—and what it is doing.
+Also, when it’s missing, you know there’s something not quite right. Maybe the context has gotten too large, and it’s drifting.
+This is a lot of valuable feedback you receive just for a single character.
+Guide the agent which starter symbol to use.</p>
+
+<h4 id="starter-symbol-example-excerpt-from-rules-file">Starter Symbol example (excerpt from rules file)</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ALWAYS start your answers with a STARTER_SYMBOL
+The default STARTER_SYMBOL is 🐙
+</code></pre></div></div>
+
+<h3 id="-process-file">📜 Process File</h3>
+<p><strong>Pattern:</strong> <em>Externalize the task.</em></p>
+
+<p>A <em>Process File</em> describes what the agent is supposed to do. It can live alongside your code or documentation, and it should link to all relevant information — source files, goals, constraints, etc.</p>
+
+<p>A good Process File is small and focuses on a single thing.
+It describes the high-level intent at first.
+Then it lists all the steps the agent should follow in order to complete the task.</p>
+
+<p>The natural and very convenient evolution of Process Files are <a href="https://docs.anthropic.com/en/docs/claude-code/slash-commands">slash commands</a>. They don’t fully replace process files, but they can be a convenient entrypoint to a process.</p>
+
+<h4 id="process-file-example-simple-taskmd">Process File example: <code class="language-plaintext highlighter-rouge">simple-task.md</code></h4>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>STARTER_SYMBOL=✅
+
+<span class="gh"># Simple Task</span>
+
+Intent: Work on a small task while making sure the tests keep passing.
+Make sure we don't accidentally add unwanted changes. 
+<span class="p">
+1.</span> Make sure the <span class="sb">`git status`</span> is clean and shows no changes.
+<span class="p">2.</span> Make sure the tests pass before we start. Run <span class="sb">`test.sh`</span>.
+<span class="p">3.</span> Execute the given Task.
+<span class="p">4.</span> Make sure the tests pass again afterwards.
+<span class="p">5.</span> Ask me to commit.
+</code></pre></div></div>
+
+<p>Start this process with the following prompt:</p>
+
+<p><strong>Prompt:</strong> Read and follow <strong>@simple-task.md</strong>; the task is to delete all comments from the code.</p>
+
+<h3 id="-subagent--subtask">🪃 Subagent / Subtask</h3>
+<p><strong>Pattern:</strong> <em>Context engineering via delegation.</em></p>
+
+<p>A Subagent is when the Agent starts another one with a fresh context to reduce the sizes of the context windows. Necessary information is passed through <a href="#-cross-context-memory">Cross-Context Memory</a> or prompt. Once completed, the Subagent summarizes its result and returns it to the initiator.</p>
+
+<h4 id="subagent-example">Subagent example</h4>
+
+<p><strong>Prompt:</strong> Start a subagent that says hello.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>❯ ./agent.sh Start a subagent that says hello
+Starting new session
+
+Agent: I'll create a subagent with a simple task to say hello.
+  🛠️ subagent Say hello to the user in a friendly way.
+
+    Subagent: Let me create a friendly greeting message in a file.
+      🛠️ create-file greeting.txt Hello! 👋
+      Created file: greeting.txt with content
+
+    Subagent: Let me show you the greeting I created.
+      🛠️ cat greeting.txt
+          1    Hello! 👋
+</code></pre></div></div>
+
+<h3 id="️-taskchain">⛓️ Taskchain</h3>
+<p><strong>Pattern:</strong> <em>Link SubTasks together.</em></p>
+
+<p>A Taskchain is a series of <a href="#-subagent--subtask">SubTasks</a> that call one another in sequence. Each task hands off to the next, forming a chain of autonomous steps that proceed even without user intervention. This leads to a long list of summaries in the end, as all tasks close only then.</p>
+
+<h4 id="taskchain-example-test-first">Taskchain example: Test First</h4>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Write a failing Test</span>
+
+STARTER_SYMBOL=🔴
+<span class="p">
+1.</span> Pick the next item from the testlist.
+<span class="p">2.</span> Write the failing test
+<span class="p">3.</span> Run the test and see it fail
+<span class="p">4.</span> Start a subtask with the prompt 
+   "Read and follow <span class="sb">`process/make-it-pass.md`</span>, the test is <span class="nt">&lt;testname&gt;</span>"
+</code></pre></div></div>
+
+<p>See how “Write a failing Test” links to <code class="language-plaintext highlighter-rouge">process/make-it-pass.md</code> in its fourth step.
+It uses the <a href="#-subagent--subtask">Subagent pattern</a> to start a fresh context for this task.</p>
+
+<h5 id="contents-of-processmake-it-passmd">Contents of process/make-it-pass.md</h5>
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Make the failing test pass</span>
+
+STARTER_SYMBOL=🟢
+<span class="p">
+1.</span> Run the tests, there should be exactly one failing test.
+<span class="p">2.</span> Make the smallest possible change to the production code 
+   to make the failing test and all other tests pass
+<span class="p">3.</span> Run the tests, and see them pass
+</code></pre></div></div>
+
+<h3 id="-loop">🔁 Loop</h3>
+<p><strong>Pattern:</strong> <em>Keep going.</em></p>
+
+<p>A Loop is a Task or Task Chain that reinitiates itself. Its nature is recursive in order to maintain longer autonomy while preventing context drift. It typically progresses by changing <a href="#-cross-context-memory">Cross-Context Memory</a> across iterations, refining results or advancing through a workflow.</p>
+
+<h4 id="loop-example-counter">Loop example: Counter</h4>
+
+<h5 id="contents-of-countmd">Contents of count.md</h5>
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> Increment the prompted number by 1 and remember it as RESULT
+<span class="p">-</span> Spawn a subagent with the prompt 
+   "Read and follow <span class="sb">`count.md`</span>, start with the number <span class="nt">&lt;RESULT&gt;</span>"
+</code></pre></div></div>
+
+<h5 id="demo-run">Demo run</h5>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>❯ ./agent.sh read count.md and start with the number 1
+Agent: Let me read the count.md file first.
+Agent: Following the instructions:
+  1. Starting number is 1
+  2. Incrementing by 1: RESULT = 2
+  3. Spawning subagent with the new number
+  🛠️ subagent Read and follow `count.md`, start with the number 2
+
+  Subagent: Let me check the contents of count.md first.
+  Subagent: The instructions tell me to:
+    1. Increment 2 by 1, so RESULT = 3
+    2. Spawn a subagent to continue counting with RESULT (3)
+    🛠️ subagent Read and follow `count.md`, start with the number 3
+
+    Subagent: Let me check the contents of count.md first.
+    Subagent: I'll follow the instructions:
+      1. Starting number is 3
+      2. Increment by 1: RESULT = 4
+      3. Spawn a subagent with the specified prompt
+      🛠️ subagent Read and follow `count.md`, start with the number 4
+...
+Exiting...
+</code></pre></div></div>
+
+<h3 id="-condition">🔀 Condition</h3>
+<p><strong>Pattern:</strong> <em>Fuzzy decision making.</em></p>
+
+<p>Use natural language conditions to guide agent behavior. This can be rigid boolean logic, or very fuzzy. These conditions can be contextual and interpretive. They might be based on a <a href="#-state-indicator">State Indicator</a> or other implicit context state. This allows for a more human-like decision making in an automated processes.</p>
+
+<h4 id="condition-example-stop-when-uncommitted-changes-are-detected">Condition example: Stop when uncommitted changes are detected.</h4>
+<p>Lets take the Simple Task example from above and add a condition with step 2:</p>
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="p">
+1.</span> Make sure the <span class="sb">`git status`</span> is clean and shows no changes
+<span class="p">2.</span> When there are any uncommitted changes, <span class="gs">**STOP**</span> immediately.
+<span class="p">3.</span> Make sure the tests pass before we start. Run <span class="sb">`test.sh`</span>.
+
+...
+</code></pre></div></div>
+
+<h3 id="️-goto">➡️ Goto</h3>
+<p><strong>Pattern:</strong> <em>Exit a loop, or just follow a different path.</em></p>
+
+<p>Use a <a href="#-condition">condition</a> to determine whether to jump out of a <a href="#-loop">loop</a>. A loop may have several exits in different places based on different conditions.</p>
+
+<h4 id="loop-example-count-til-10">Loop example: Count til 10</h4>
+
+<h5 id="contents-of-countmd-1">Contents of count.md</h5>
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> Increment the prompted number by 1 and remember it as RESULT
+<span class="p">-</span> If the RESULT is 10 end.
+<span class="p">-</span> If the RESULT is lower than 10 spawn a subagent with the prompt 
+   "Read and follow <span class="sb">`count.md`</span>, start with the number <span class="nt">&lt;RESULT&gt;</span>"
+</code></pre></div></div>
+
+<h3 id="-orchestrator">🧭 Orchestrator</h3>
+<p><strong>Pattern:</strong> <em>A guiding process launching the correct sub-processes in the right order.</em></p>
+
+<p>An <em>Orchestrator</em> is a Process whose sole purpose is to initiate other processes using <a href="#-subagent--subtask">Subagent</a>, and to do so in the correct order. It acts as a conductor, calling out which <a href="#-process-file">Process File</a> should run next. It may use a State Machine to keep track of what’s been completed and what comes next.</p>
+
+<h4 id="orchestrator-example-basic-refactoring">Orchestrator example: Basic Refactoring</h4>
+<p>Each step is just creating another subagent and feeding the result into the next subagent.</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Refactor</span>
+
+STARTER_SYMBOL=🧹
+<span class="p">
+1.</span> Initiate a new subtask to analyze the given code and 
+   find a small step that improves its design. 
+   Don't implement the change, just report back the 
+   result of the analysis.
+<span class="p">2.</span> Initiate a new subtask to decompose the proposed 
+   design improvement to a plan of many small refactoring steps. 
+   Each step should leave the code working. Don't execute yet, 
+   just close the task reporting back the plan.
+<span class="p">3.</span> Execute the planned refactoring steps, creating a new subtask 
+   for each step where you run the tests before and after 
+   the changes.
+</code></pre></div></div>
+
+<h3 id="-cross-context-memory">💾 Cross-Context Memory</h3>
+<p><strong>Pattern:</strong> <em>Preserve memory between runs.</em></p>
+
+<p>AI agents forget everything between contexts. Use Persistent Cross-Context Memory — a file or shared storage — to explicitly write down and reload facts, goals, decisions, and task progress. Treat this as the agent’s long-term memory.</p>
+
+<h4 id="example-goal-file">Example: Goal File</h4>
+
+<p>When my development process is decomposed into several subagents doing their work, they need to be aligned on the overall goal, and the tasks that need to be done. We could define a <code class="language-plaintext highlighter-rouge">goal.md</code> file that provides at least a high level goal description, and a task list</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Goal: User can create an account</span>
+<span class="p">
+-</span> [x] Add a feature flag for the "create account" feature
+<span class="p">-</span> [ ] Show button "create account" when the feature flag is turned on
+<span class="p">-</span> [ ] When a user clicks on "create account" they see a simple form
+
+...
+
+</code></pre></div></div>
+
+<h3 id="-state-indicator">🚦 State Indicator</h3>
+<p><strong>Pattern:</strong> <em>Build a State Machine by memorizing where you are in the process.</em></p>
+
+<p>We may track process state using a State Indicator and save it to the <a href="#-cross-context-memory">Cross-Context Memory</a>.
+A simple State Indicator consists of a <a href="#-starter-symbol">Starter Symbol</a> and a descriptive keyword.
+A more complicated one could span over many lines and contain structured information.
+This enables resilient restarts from any point without losing that context.
+The process of course needs to include steps to adapt the State Indicator.</p>
+
+<h4 id="example-tdd-phases">Example: TDD Phases</h4>
+
+<p>TDD is too large of a process for me to fit in a single process file.
+So I have at least one <a href="#-subagent--subtask">subagent</a> for each of the phases.
+To let the <a href="#-orchestrator">orchestrator</a> know where we are in the process, I use a state indicator.</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="p">
+1.</span> Look for the current TDD phase indicator in <span class="sb">`development.md`</span>:
+<span class="p">   -</span> <span class="sb">`## TDD Phase: 🔴`</span> - need to write a failing test
+<span class="p">   -</span> <span class="sb">`## TDD Phase: 🟢`</span> - need to make a test pass
+<span class="p">   -</span> <span class="sb">`## TDD Phase: 🧹`</span> - need to refactor
+<span class="p">2.</span> If no indicator is found, 
+   default to 🔴 and add <span class="sb">`## TDD Phase: 🔴`</span> to <span class="sb">`development.md`</span>.
+<span class="p">3.</span> Route to appropriate process:
+<span class="p">   -</span> 🔴: Create a subagent: "Follow <span class="sb">`process/write-a-failing-test.md`</span>"
+<span class="p">   -</span> 🟢: Create a subagent: "Follow <span class="sb">`process/make-it-pass.md`</span>"
+<span class="p">   -</span> 🧹: Create a subagent: "Follow <span class="sb">`process/refactor.md`</span>"
+
+...
+</code></pre></div></div>
+
+<h3 id="-statemachine-as-a-tool">🧰 StateMachine as a Tool</h3>
+<p><strong>Pattern:</strong> <em>Use a tool to drive the process.</em></p>
+
+<p>State does not have to be just text, and a state machine does not have to be just a description of how the state may change. It can be a tool serving commands that describe the next possible actions and transitions, constraining the agent. This makes the tool a control mechanism.</p>
+
+<h3 id="️-dialog">🗣️ Dialog</h3>
+<p><strong>Pattern:</strong> <em>Interactive ideation.</em></p>
+
+<p>For human-in-the-loop ideation, it’s helpful to invite the agent to ask questions or critique ideas. Consider that the LLM has read the whole Internet. It knows things that we don’t, and it is often helpful to leverage that.</p>
+
+<h3 id="-wake">🔔 Wake</h3>
+<p><strong>Pattern:</strong> <em>Signal for attention.</em></p>
+
+<p>Sometimes the Agent needs your input. Maybe it has a question, or it needs a review. Use a Signal step to make it speak up or play a sound — so you can focus on other things in the meantime.</p>
+
+<h4 id="example-using-a-say-script">Example using a say script</h4>
+<p>The say script runs some text to speech tool.
+It is essentially a way for the agent to speak up.</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">    -</span> Proceed only if all tests pass. 
+      If they don't stop and notify me using <span class="sb">`./say.py`</span>
+</code></pre></div></div>
+
+<h2 id="evolving-the-process">Evolving the Process</h2>
+<h3 id="-process-as-code">📦 Process as Code</h3>
+
+<p><strong>Pattern:</strong> <em>Treat process definitions like code.</em>
+Process definitions should be:</p>
+
+<ul>
+  <li>Version controlled</li>
+  <li>Incrementally improved</li>
+  <li>Tested through usage</li>
+  <li>Refactored for clarity and smaller context</li>
+  <li>Composed into larger workflows</li>
+</ul>
+
+<h3 id="️-split-process">✂️ Split Process</h3>
+<p><strong>Pattern:</strong> <em>Divide to prevent drift.</em></p>
+
+<p>Long processes can lead to missing steps. 
+Just as we do, agents seem to have limited cognitive capacity. 
+The more context the agent has to hold in memory, the more likely it is to forget or skip parts of the process. 
+The smaller and more focused the context, the more reliably the agent can follow through and perform. 
+Decompose large processes into smaller ones, and track progress between them with explicit markers or checkpoints. Use <a href="#-cross-context-memory">Cross-Context Memory</a> to remember what’s necessary. 
+This can be achieved by moving steps into another <a href="#-process-file">Process File</a> and using a <a href="#-subagent--subtask">Subtask</a> to invoke it from the original file. 
+Another way to split the process is to put each piece into its own file and coordinate them with an <a href="#-orchestrator">Orchestrator</a>.</p>
+
+<h3 id="️-extract-coordinator">🎛️ Extract Coordinator</h3>
+<p><strong>Pattern:</strong> <em>Pull coordination logic out of individual chain elements.</em></p>
+
+<p>A <a href="#-taskchain">Task Chain</a> is a good starting point, but orchestration provides better control and maintainability.
+The problem with Task Chains is that each element carries dual responsibility: performing its own work and managing the handoff to the next segment. This creates tight coupling and makes recovery complex.
+We can separate these concerns by extracting the coordination responsibility into an <a href="#-orchestrator">Orchestrator</a>.
+The individual segments then focus solely on their core work, while the orchestrator manages the sequence, and recovery logic from a single location.
+Use a <a href="#-state-indicator">State Indicator</a> to track progress through the orchestrated workflow.</p>
+
+<h3 id="-trial-run">🧪 Trial Run</h3>
+<p><strong>Pattern:</strong> <em>Refine the process through practice.</em></p>
+
+<p>Build a feature not for its own sake, but to test and refine the process. Then, throw the feature away. What did you learn? What went well? Adapt small things in the process and restart.</p>
+
+<h3 id="-expose-decision">🧾 Expose Decision</h3>
+<p><strong>Pattern:</strong> <em>Make implicit context explicit.</em></p>
+
+<p>As you evolve your workflows, make hidden, implicit context and decisions visible and explicit. Capture the state it’s based on and make it persistent. Capture the decisions made and describe them. Explicit state and decisions make the process more resilient.</p>
+
+<h2 id="what-works-well">What works well</h2>
+
+<h3 id="-one-problem-at-a-time">🪜 One problem at a time</h3>
+<p><strong>Pattern:</strong> <em>Smaller is better. Refine the refined.</em></p>
+
+<p>The LLM typically wants to perform too many changes and do too many things at once. It also tends to plan this way — no wonder, given the nature of its training data. To achieve better results, break big steps into smaller, clearer ones. And when you’ve done that, take the smallest step and let the agent break it down even further. Always start with the tiniest one, and solve one problem at a time. Vertical slicing and TDD ZOMBIES have proven effective.</p>
+
+<h3 id="-test-first">✅ Test First</h3>
+<p><strong>Pattern:</strong> <em>Start with the end in mind.</em></p>
+
+<p>No production code without a failing test. This is now more obvious than ever. The agent needs all the feedback it can get. Make sure it doesn’t break things, and keep the code running all the time.</p>
+
+<h3 id="-hypothesize">🤔 Hypothesize</h3>
+<p><strong>Pattern:</strong> <em>Have the agent state what it expects to happen.</em></p>
+
+<p>The Agent is often wrong about a code change. When that happens, it will attempt to recover from the situation, taking several tries. These will inevitably contaminate the context. It may even lead to the agent giving up and making things worse by leaving unintended changes — often stating that it indeed solved the problem. I found it helpful to have the agent express its expectations about a code change first, before it runs the code. For example, before it runs a failing test, it can express what it expects to happen. This reinforces the actual intent in the context.</p>
+
+<h3 id="-ask-dont-tell">❓ Ask, don’t tell.</h3>
+<p><strong>Pattern:</strong> <em>Keep the solution space open.</em></p>
+
+<p>Don’t tell the agent what to do, unless you’re confident in the path forward. Consider that you might be wrong, or missing information. By telling it what to do, you’re narrowing the solution space and leading the agent down a failure path.</p>
+
+<p>Instead, leverage its knowledge.
+Ask the right question to withdraw the relevant information into the context. Then use it, or store it in a relevant memory. This not only leads to better results — it creates a learning opportunity.</p>
+
+<h3 id="-constraints">🚧 Constraints</h3>
+<p><strong>Pattern:</strong> <em>Keep it on a short leash.</em></p>
+
+<p>The best way to help the agent avoid mistakes is to constrain what it can do. Instead of changing code freely, we can give it access to refactoring tools. We can lock it out of certain files or commands. Constraints are more than just rules — they shape what the agent can do or not do in its environment, enabling better and more reliable outputs.</p>
+
+<h3 id="️-refactor-guard">🛡️ Refactor Guard</h3>
+<p><strong>Pattern:</strong> <em>Increase confidence in legacy code refactoring with micro ai code reviews.</em></p>
+
+<p>When working in legacy code, make the smallest possible refactoring step, then let the Agent review and make sure that behavior hasn’t changed. If the checks pass, it may even commit automatically. If it finds an issue it warns you.</p>
+
+<h3 id="-stop">🫷 Stop</h3>
+<p><strong>Pattern:</strong> <em>Keep your finger on the stop button.</em></p>
+
+<p>When the agent goes off the rails, for example when it does something it should not do, I like to stop it as quickly as I can.
+The earlier I do that, the better.
+I avoid contamination of the context and am more likely to help it recover without messing up the process.
+I like to use <a href="#-ask-dont-tell">Ask, don’t tell</a> when giving it recovery instructions.</p>
+
+<h3 id="️-algorithmify">⚙️ Algorithmify</h3>
+<p><strong>Pattern:</strong> <em>Automate whatever can be automated.</em></p>
+
+<p>Favor algorithms over stochastic outputs to avoid mistakes and have the agent write its own automation. It’s really good at this. What is automated:</p>
+<ul>
+  <li>is deterministic.</li>
+  <li>preserves cognitive capacity for other things.</li>
+  <li>is often faster.</li>
+</ul>
+
+<p>Therefore, we want to automate as much as possible.</p>
+
+<h3 id="-stdout-distillation">💎 Stdout Distillation</h3>
+<p><strong>Pattern:</strong> <em>Reduce verbose output to essential signals.</em></p>
+
+<p>The Stdout Distillation Pattern reduces verbose script output to only the essential information needed by an agent. Instead of flooding the context with logs, traces, or irrelevant details, the output is distilled into a concise signal—such as a single line indicating success or failure. This minimizes context contamination, improves efficiency, and ensures the agent focuses only on what matters.</p>
+
+<h4 id="example-a-testsh-script">Example: A test.sh script</h4>
+<p>The script makes sure the test results are just a single line.
+Only if the tests fail, more output is shown.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+<span class="nb">set</span> <span class="nt">-euo</span> pipefail
+
+<span class="nb">cd</span> <span class="s2">"</span><span class="si">$(</span><span class="nb">dirname</span> <span class="s2">"</span><span class="nv">$0</span><span class="s2">"</span><span class="si">)</span><span class="s2">"</span>
+
+<span class="k">if</span> <span class="o">!</span> <span class="nv">output</span><span class="o">=</span><span class="si">$(</span>python <span class="nt">-m</span> pytest tests/ <span class="nt">-v</span> 2&gt;&amp;1<span class="si">)</span><span class="p">;</span> <span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$output</span><span class="s2">"</span>
+    <span class="nb">exit </span>1
+<span class="k">fi
+
+</span><span class="nv">passed_tests</span><span class="o">=</span><span class="si">$(</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$output</span><span class="s2">"</span> | <span class="nb">grep</span> <span class="nt">-c</span> <span class="s2">"PASSED"</span> <span class="o">||</span> <span class="nb">echo</span> <span class="s2">"0"</span><span class="si">)</span>
+<span class="nb">echo</span> <span class="s2">"✅ All </span><span class="nv">$passed_tests</span><span class="s2"> tests passed"</span>
+</code></pre></div></div>
+
+<h3 id="️-cli-first">🖥️ CLI First</h3>
+<p><strong>Pattern:</strong> <em>Let the agent thrive on the CLI.</em></p>
+
+<p>Agent tooling should be CLI-first. The LLM’s native medium is chat — text in, text out. This is exactly what the CLI was made for. On top of that, it offers many small, composable Unix-style tools. Agents thrive on the command line — give them tools there.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>I see a lot of “agile” in the things that work well for me. Things like inspect and adapt, continuous improvement, small steps, iterate, TDD. The LLM is trained on and born into a waterfall world. When I look at the tooling people develop around it, and the things people do with it, I often see waterfall, too. And I see a lot of legacy code that will emerge. Maybe we can do better.</p>
+
+<h2 id="influences--inspirations">Influences &amp; Inspirations</h2>
+
+<p>It was LLewellyn Falco who first showed me the starter symbol as well as the output distillation pattern. The idea of <a href="https://tidyfirst.substack.com/p/augmented-coding-beyond-the-vibes">Augmented Coding</a> was at first sparked by Kent Beck. I discovered subtasking through the usage of Roo Code which already had this feature.</p>
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2025/07/12/augmented-coding-pattern-language.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2023/10/21/geecon-prague-summary.html">
+        Takeaways from GeeCon Prague 2023
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">21 Oct 2023</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <p>I recently attended GeeCon Prague, an event I had never been to before. While it wasn’t as grand as the big Krakow event, I still found it a worthwhile decision to attend. Here are some highlights and things that resonated with me:</p>
+
+<h2 id="what-i-discovered-and-deepened-my-understanding-on">What I Discovered and Deepened My Understanding On</h2>
+<ul>
+  <li>
+    <p><strong>Availability Bias</strong>: While I’ve always felt its presence, I now have a formal term and understanding of it.</p>
+  </li>
+  <li>The <strong>Big Rewrite Song</strong> by Dylan Beattie is a beautiful one:
+    <div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/xCGu5Z_vaps" frameborder="0" allowfullscreen=""></iframe></div>
+    <p><br /></p>
+  </li>
+  <li>
+    <p>There is evidence supporting my frequent claim that developers spend more time reading code than writing it. This is further discussed in the book ‘The Programmer’s Brain’.</p>
+
+    <p><img src="/assets/geecon-2023/more-time-reading-code.png" alt="We spend more time reading code" /></p>
+  </li>
+  <li>There’s an insightful talk on <em>How to Teach</em> that isn’t exclusive to programmers. I found it enlightening and recommend it:
+    <div class="embed-container"><iframe width="560" height="315" src="https://www.youtube.com/embed/g1ib43q3uXQ" frameborder="0" allowfullscreen=""></iframe></div>
+    <p><br /></p>
+  </li>
+  <li>
+    <p>Interesting fact: Only 37% of code written five years ago is still in use today.</p>
+
+    <p><img src="/assets/geecon-2023/focus-on-new-code.jpg" alt="Focus On New Code" /></p>
+  </li>
+  <li>
+    <p>The “<strong>First Glance</strong>” technique for reading code is intriguing. It involves group members sharing what stood out to them in the initial minute of reading a piece of code. I now want to try this in an ensemble setting.</p>
+  </li>
+  <li>
+    <p>You don’t really need anything other than Redis 🤣.</p>
+  </li>
+  <li>
+    <p>There is more to Pattern Matching than I had anticipated.</p>
+  </li>
+  <li>
+    <p>Java’s efficiency has notably improved.</p>
+
+    <p><img src="/assets/geecon-2023/java-efficiency.png" alt="Java Efficiency Chart" /></p>
+  </li>
+  <li>
+    <p><strong>On Crafting Better IDs</strong>:
+  While UUIDs are reliable, they’re not the fastest. Creating a custom solution could be more efficient. UUIDs rely on secrandom, which is often unnecessary and slows down the process.</p>
+
+    <p>XUID variations exist that maintain order. If you’re keen on using UTC, consider synchronizing time across services with NTP. A suggestion for EventIds: prefix them with the domain they originate from. To avoid potential issues, implement a processing count to ward off circular flows and employ tracingIds to streamline debugging in microservices.</p>
+  </li>
+</ul>
+
+<h2 id="moments-of-inspiration-and-reflection">Moments of Inspiration and Reflection</h2>
+<ul>
+  <li>
+    <p>It felt good seeing Michael Feather’s Talk, as it provided me with a different perspective on trying to TDD with ChatGPT. Also, it was nice to exchange Ideas on the topic.</p>
+
+    <p><img src="/assets/geecon-2023/tdd-with-gpt.png" alt="TDD with GPT" /></p>
+  </li>
+  <li>
+    <p>Tannaz N. Roshandel highlighted the ethical challenges we face in a rapidly changing world in the digital age. I wholeheartedly agree. As we employ AI for sophisticated classification and recommendation, we amplify division. Can we harness AI to counteract this?</p>
+  </li>
+  <li>
+    <p>Overall, the technological landscape is constantly evolving and increasing in its complexity, overshadowing what is essential. To break the <strong>cycle of creating messes</strong>, we must shift our <strong>focus on the fundamentals</strong>. However, I’ve come to see that serverless might be a promising solution.</p>
+  </li>
+  <li>
+    <p>Meeting <a href="https://talkweb.eu/">Bogo</a> and heading to a pub with him to enjoy some excellent Czech beer was definitely a highlight! 
+Thanks Bogo! 🍻</p>
+  </li>
+</ul>
+
+<h3 id="more-photos">More Photos</h3>
+<p>Bogos Talk.
+<img src="/assets/geecon-2023/no-time-for-fun.png" alt="No Time For Fun" /></p>
+
+<p>He smashed his Phone 🤯
+<img src="/assets/geecon-2023/bogo-smash-phone.png" alt="Bogo smashing his Phone" /></p>
+
+<p>Michael Feathers proposed an idea on how to understand code using ChatGPT.
+<img src="/assets/geecon-2023/gpt-responsibilities-of-code.png" alt="An Idea how to use ChatGPT to read code" /></p>
+
+<p>I had a nice view from the balcony of my hotel.
+<img src="/assets/geecon-2023/view-from-hotel.png" alt="View from hotel" /></p>
+
+<p>Prague at Night.
+<img src="/assets/geecon-2023/prague-at-night.png" alt="Prague at Night" /></p>
+
+<p>Prague at Day.
+<img src="/assets/geecon-2023/prague-at-day.png" alt="Prague at Day" /></p>
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2023/10/21/geecon-prague-summary.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2023/01/30/solo-programming-considered-bad.html">
+        Solo Programming Considered Harmful
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">30 Jan 2023</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <p>I was recently following an interesting discussion of the Vienna software crafts community with the title: “<a href="https://github.com/swkWien/sessions/issues/105">How to facilitate a conversation between people, where the byproduct is code?</a>”. The discussion is in German and contains interesting ideas about how to code well together, and how to facilitate it.
+I tried to give an answer, which got longer and longer.
+In the end, I chose to write this blog post which expands upon the original topic of discussion and covers a broader range of related subjects.</p>
+
+<p>I will continue to use the terms</p>
+
+<ul>
+  <li>coding together</li>
+  <li>collaborative coding</li>
+  <li>Mob Programming, and</li>
+  <li>Ensemble Programming</li>
+</ul>
+
+<p>interchangeably.
+However, when I say <em>coding together</em> or <em>collaborative coding</em> this includes Pair Programming.
+When I say <em>Mob Programming</em> or <em>Ensemble Programming</em> I exclude Pair Programming.
+By the way: Yes, Mob Programming and Ensemble Programming mean the same thing and may be used interchangeably.
+It’s just that the word “Mob” might be associated with something negative, whereas “Ensemble” is a more innocent term.
+However, I like to use “Mob” as a verb because it’s so short and simple:</p>
+
+<ul>
+  <li>“Let’s mob on this problem!”</li>
+  <li>“We have been mobbing on this problem.”</li>
+</ul>
+
+<h2 id="solo-programming-considered-harmful">Solo Programming Considered Harmful</h2>
+
+<p><img src="/assets/mob-programming/solo-programming.png" alt="Solo Programming" title="A Solo Programmer" />
+<em>» A programmer is a person sitting solo in front of their computer, typing rapidly on their keyboard.
+A well known stereotype. You have seen the movies.</em></p>
+
+<p>It turns out that solo programming may not be as good as we think.
+No, I’m serious.
+I think we overestimate our programming skills.
+We tend to overcomplicate things, and we make a lot of mistakes.
+We rarely understand the problem that needs to be solved, and we don’t know our tools well.
+We often end up with crufty code that isn’t as simple as it could be.
+It doesn’t work and often targets the wrong problem.</p>
+
+<p>But hey, don’t worry about it.
+We don’t mean to.
+We try hard to live up to expectations.
+And we work to the best of our ability.
+We’re learning.
+It’s just not that easy. 🤷‍♂️</p>
+
+<h2 id="coding-together-as-an-answer">Coding Together as an Answer</h2>
+<p>Collaborative coding can greatly improve the situation.
+By bringing together multiple people with different skills and perspectives, we can gain a deeper understanding of the problem and develop a better solution.
+We can take on different roles and complement each other.
+We have more eyes to spot mistakes, and together we know our tools better and know more about valuable techniques and practices.
+It’s proven that complex problems can be solved better and faster through collaborative coding.
+Working on simple applications, we encounter such hard-to-solve problems every day.
+But the best thing about coding together is the amplified learning while having a good time.</p>
+
+<p><img src="/assets/mob-programming/remote-mob-programming.png" alt="Remote Mob Programming" title="Image Caption" />
+<em>» A team coding together remotely.</em></p>
+
+<h2 id="the-cost-of-coding-together">The Cost of Coding Together</h2>
+<p>There is a cost, of course, to having many programmers working on the same problem at the same time.
+We understand those costs well, I think.
+What we do not understand so well, however, are the benefits.
+Ultimately, it’s a tradeoff.
+Will the benefits outweigh the costs?
+So let us talk about the benefits.</p>
+
+<h2 id="the-benefits-of-coding-together">The Benefits of Coding Together</h2>
+
+<h3 id="amplified-learning">Amplified Learning</h3>
+<p>The most striking advantage, and I cannot emphasise this enough, is the amplification in learning.
+We need to learn and get better at what we do, desperately so.
+All of us, but especially those of us who are new to it.
+There’s a big gap between what you learn in school and what you need to know on the job.
+We have to make up for that gap somehow.
+The thing that works best in my experience is to work together with the people.
+Coding together isn’t only the best way to onboard new people, but it also succeeds amazingly quickly in raising the level of participants and turning them into valuable contributors.
+I’ve learned so much myself through programming with other people that I honestly believe the learning effect alone makes up for the cost.</p>
+
+<h3 id="reduction-in-cost-for-change">Reduction in Cost for Change</h3>
+<p>We are used to a trade-off between quality and cost, but it does not work that way with software.
+In our business, quality is cheap and cruft is expensive.</p>
+
+<blockquote>
+  <p>💡 Martin Fowler wrote an interesting <a href="https://martinfowler.com/articles/is-quality-worth-cost.html">article</a> on this topic.</p>
+</blockquote>
+
+<p>Code is a liability, and much of the cost is incurred when we need to change and improve it, which happens from day one.
+There is this strange idea that maintenance is something that happens after the project is completed.
+Well, that’s not exactly true.
+We maintain the code starting with the first day.
+It’s a challenge to find the right structure and keep it soft enough to change easily.
+It’s also terribly expensive to work on poorly designed legacy code, as we often see in enterprise software today.
+The cost of this is insidious because there is usually no awareness of it.
+So we should strive for and achieve high <a href="https://wiki.c2.com/?InternalAndExternalQuality">internal quality</a> to save maintenance cost.
+The internal quality of the code can be greatly increased if many people review and revise the code as it’s written.</p>
+
+<h3 id="better-software-for-the-user">Better Software for the User</h3>
+<p>I have seen this repeatedly: Many minds working on the same problem produce more and better ideas, which simply leads to better solutions.
+When I say better, I usually mean simpler.
+It’s those moments when the majority chase a suboptimal solution and then one person proposes a better one.
+We need to think outside the box.
+Different people think in different boxes.
+More boxes mean more opportunities.
+More opportunities lead to a better outcome for the user.</p>
+
+<h3 id="reduced-work-in-progress">Reduced Work in Progress</h3>
+<p>We know that high work in progress causes slow down.
+When we work together on one problem, it’s also the only problem we work on.
+All the people needed to solve the problem are there when they’re needed.
+And then, once we’ve taken all the necessary action, it’s done.
+It’s off the table.
+We can focus entirely on the next problem.
+No juggling of tasks.
+No waiting around.
+No context switching.
+Fewer things to keep everyone busy.
+Better and easier focus.
+A clean one-piece flow.</p>
+
+<h3 id="having-a-good-time">Having a Good Time</h3>
+<p>For many people, it can be rewarding to work in a mob with other people, especially if they’re more experienced.
+When working on software, we’re often thrown in at the deep end.
+Teamwork reduces the stress involved in this.
+It’s also more enjoyable for many.
+Coding together is a great team-building activity because we work as an actual team.
+It may feel awkward at first, but once you get the hang of it, it can be a lot of fun.</p>
+
+<h2 id="mob-programming-is-not-easy">Mob Programming is Not Easy</h2>
+<p>Coding together is challenging.
+It’s not simply a matter of one person typing while others observe in silence.
+In order to make it work, it’s important for all team members to actively engage and collaborate. 
+This enables us to utilize all of our minds and build the shared understanding we strive for.
+Also, we want to reach a flow state and make continuous progress.
+Mob Programming, thus working as an actual team, is a deliberate practice.</p>
+
+<h3 id="shared-understanding">Shared Understanding</h3>
+<p>It’s important to ensure that everyone is on the same page and no one is left behind.
+This requires patience, effective communication, and a willingness to listen and explain ideas.
+Communication is a challenge, but a skill we can improve with practice.
+Speak slowly and use simple language.
+Use metaphors and pick people up where they are.
+When starting out with a new ensemble, it’s common to feel slow at first. 
+This is normal as the ensemble gets to know each other and establishes a shared understanding. 
+After some time you should experience a boost in productivity. 
+The duration of this initial phase can vary, it could be as short as a few minutes or as long as an hour.</p>
+
+<h3 id="so-its-all-about-human-interaction">So, it’s all About Human Interaction</h3>
+<p>Treat each other with kindness, consideration and respect<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>.
+Make people feel safe to contribute, and welcome all forms of contribution, including questions.
+Reward a contribution, especially if it makes the person feel unsure.
+It is perfectly fine not to know something or not to “get it”.
+Be a hero and ask the first question to make others feel confident as well.
+Be open to examining and evaluating potentially disruptive ideas, even if they come up suddenly.
+Creating a supportive environment that encourages people to contribute will help ensure that the best ideas and insights from all team members are incorporated into the code.
+It seems like social skills are the name of the game.
+Has programming been the easy part all along?</p>
+
+<h3 id="agree-on-a-shared-goal">Agree on a Shared Goal</h3>
+<p>With many different ideas being shared, it can be difficult for a team to agree on a common goal.
+This is another team skill to master.
+It’s important to be open to taking a step back and trying someone else’s idea.
+It’s okay to try multiple approaches and see which one works best.
+By being open to different ideas and perspectives, a team can learn and grow together.</p>
+
+<h3 id="knowing-when-to-speak">Knowing when to Speak</h3>
+<p>It’s important for everyone to feel comfortable speaking their mind and sharing their ideas.
+However, it’s also important to know when to hold back and listen to others.
+One way to deal with this is to keep a private backlog of ideas that come to mind but may not be relevant at the moment.
+This can help keep you focused on the task at hand while recording and considering other ideas for later.
+Knowing when to speak up and when to hold back is an important skill for effective collaboration.</p>
+
+<h3 id="bias-to-action">Bias to Action</h3>
+<p>In a group, it’s sometimes easy to get stuck in a discussion that goes on forever without trying anything.
+Most of the time, it’s less stressful to just try.
+Some discussions just are not worth it.
+If you notice people talking for several minutes without writing any code, alarm bells should be ringing.
+For example, if people are puzzling over the behavior of a particular code for an extended period of time.
+It’s time to call to action and suggest that you simply run the code and see.</p>
+
+<h2 id="distributing-roles">Distributing Roles</h2>
+<p>A logical first step is to distribute participants by what they do.
+Someone has to type the code, of course.
+A common name for this role is <em>Driver</em>, as in the <em>Driver/Navigator</em> relationship of <a href="http://llewellynfalco.blogspot.com/2014/06/llewellyns-strong-style-pairing.html">Strong Style Pairing</a>.
+I often find that people confuse the names of these two roles, so I prefer to call them “Typist” and “Talker” instead.
+May also use “Typing” and “Talking”.</p>
+
+<h3 id="the-role-of-the-typist">The Role of the Typist</h3>
+<p>We do not want the Typist to just hack away.
+If they did, other participants could merely descipher the then buggy code and make incorrect assumptions.
+That’s not sustainable.
+We want the Typist to follow the team’s instructions instead.
+Being a Typist is hard.
+They may get overwhelmed with conflicting ideas.
+What should they focus on?
+We can solve this problem by using a designated Talker.
+It’s not the only person who speaks, but they act as the primary input channel for the Typist, filtering all the ideas and making the final decision.
+Even if many things are said, the Typist then knows which voice to focus on.</p>
+
+<h4 id="a-typist-translates">A Typist Translates</h4>
+<p>It is a common misconception that the Typist foolishly types out the code they’ve been told to type, word by word, character by character.
+Actually, the Typist must make many considerations and decisions.
+For example: They may choose to run the tests whenever.
+They translate the Talker’s intention into code so that the Talker can stay at the level of their thinking.
+The Typist takes care of the details.
+That takes a big burden off the Talker.
+I mean, typing in itself is quite a challenge.
+To know your tools well and being good at typing is an art.
+If you are then able to translate the high level intent on top of that, that’s icing on the cake.</p>
+
+<h4 id="typist-wrapups">Typist Wrapups</h4>
+<p>One technique I learned at the Python Approvals Mob that improves feedback and shared understanding is Typist wrapups.
+It means that a Typist gives a brief explanation of what just happened and what they did after each round.
+When a Typist explains this in their own words, misunderstandings are more likely to be uncovered and cleared up.</p>
+
+<h3 id="being-a-talker-is-not-easy-either">Being a Talker is not Easy Either</h3>
+<p>So the Talker is the person who programmes.
+The Typist acts as a kind of intelligent input device for them.
+A Talker should communicate their thinking.
+In other words, they should think out loud.
+There are many stages of thinking that we go through.
+First, we orient ourselves to the current situation - the context.
+Second, we imagine where we want to go from here - a direction.
+Third, we formulate a concrete intention - still at a high level.
+This is already what a Typist could work with.
+Each thought step is shared with the team.
+Only then, if needed, do we move on to low-level details: What code to write on what line, syntax, code formatting, keys to use, buttons to click, etc.
+The Talker instructs the Typist at the level at which they can operate on, the higher, the better.
+Kind of like inverted limbo: How high can you get?</p>
+
+<h3 id="contributing-while-not-talking-nor-typing">Contributing while not Talking nor Typing</h3>
+<p>Not being any of those roles doesn’t mean you’re not contributing.
+You may step out of the mob for a minute, but what you rather want is to be creative in supporting the group.
+Do some research when an opportunity arises.
+Ask, if you don’t understand something.
+Remind people about the protocol if necessary.
+Think ahead and take notes about things we should take care of.
+Review the code as it is being typed.
+Observe how the group behaves and what they are doing.
+Maybe you have an Idea of something the group should be trying that could work well, bring that up. 
+Note down things that worked well so you can bring it up in the retro.</p>
+
+<h2 id="rotation">Rotation</h2>
+<p>Everyone should get to type and talk.
+This keeps everybody engaged.
+When deciding on the rotation interval, consider how long it would take for the same person to become a Typist again.
+Waiting an hour to go back to typing is probably too much.
+It’s hard to maintain attention that long.
+A rotation every 2 or 3 minutes works very well with an experienced mob, but you need to be able to do it swiftly.
+Work hard to shorten your rotation time.
+Rotation time is the time between the start of a rotation and the next Typist/Talker being able to continue.
+The perfect rotation time is 0.</p>
+
+<h3 id="rotations-need-trust">Rotations Need Trust</h3>
+<p>Ending your turn thus giving up control can be difficult.
+As a Talker, you not only want to maintain the direction of the previous Talker, but you must trust the next Talker to do the same.
+Trust them to continue the idea you have been working on.
+Without trust, rotations get bogged down, which hinders the flow.</p>
+
+<h3 id="hard-rotations-vs-finish-your-thought">Hard Rotations vs “Finish Your Thought”</h3>
+<p>When the timer sounds, you have the option to do a hard rotation, where work stops immediately and team members rotate positions.
+Another option is to take some time and finish your current thought, known as “Finish Your Thought” (FYT). 
+FYT is useful for completing something small or finishing a line of code. 
+However, when it takes too long, it can disrupt the flow of the team. 
+People might forget or even ignore that the timer rang at all.
+Based on my experience, in those cases, it’s better to do a hard rotation. 
+Trust in the next person to pick up where you left off and continue the team’s intent.</p>
+
+<h3 id="calling-out-your-role">Calling out your Role</h3>
+<p>Another common practice that helps maintain flow is when everybody calls out their role when the rotation starts.
+It’s practical to also have the person that will be participating in the following rotation to call that out as being “next”.
+This avoids misunderstandings and it makes sure that the “next” person is increasing their attention towards being able and continue the given work.</p>
+
+<p>An example would be:<br />
+Alice: “I’m Alice, and I’m talking!”<br />
+Peter: “I’m Peter, and I’m typing!”<br />
+Sarah: “I’m Sarah, and I’m next!”<br /></p>
+
+<h2 id="find-out-what-works-for-your-mob">Find out what Works for Your Mob</h2>
+<p>As mentioned earlier, Mob Programming is a deliberate practice.
+You want to constantly improve the way you work together.
+There are no pre-existing rules or frameworks for this.
+You need to find your own working agreements.
+Regular retrospectives are key in this regard.
+Conduct them at least daily.
+A two-hour Mob Programming session can lead to a three-hour retrospective, which is great.
+The learning effect can be tremendous.
+But they don’t have to be that long.
+Make them short, maybe a few minutes, but regular.
+Use them to find out what worked well for you, and put that in the spotlight.
+Turn up the good.
+Stay innovative and figure out what you’d like to try.
+Retrospectives are about learning and about change.
+Use it, act on its results.</p>
+
+<h2 id="facilitating-a-mob-programming">Facilitating a Mob Programming</h2>
+<p>Above all, remind the participants to be patient and treat each other with kindness, consideration, and respect<sup id="fnref:1:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>.
+Be a role model in the way you treat them.
+People new to Mob Programming will be overwhelmed just by the conviviality of this way of working.
+Suddenly they have to pitch their ideas to other people.
+They are also not used to being exposed while typing code.
+It will take some time for them to get used to this way of working and still have some room in their head to keep a protocol intact.
+So you want the initial protocol to be minimalist, and you want to guide it.
+Too many rules would throw them off the rails.</p>
+
+<blockquote>
+  <p><strong>Tip:</strong> When you notice someone being distracted, offer a short break.</p>
+</blockquote>
+
+<h3 id="guide-your-protocol">Guide your Protocol</h3>
+<p>There is a fine line between telling everyone what to do all the time and letting them off the hook.
+In the beginning, they won’t remember how to follow your protocol.
+It’s just too much.
+So you should guide them and kindly tell them what to do and when.
+But you also don’t want to fall into the trap of doing everything for them.
+Your goal is for the team to be able to take care of themselves and for you to become redundant.
+Therefore, every time before you remind them, you should also give them some time to follow the protocol themselves.
+Once you become redundant, you may consider joining the mob.</p>
+
+<blockquote>
+  <p><strong>Tip:</strong> Do not join a fresh ensemble as a facilitator unless you are very experienced in this. 
+Facilitation can be complicated, therefor you do not want to particiate in the programming at first.
+Stay out of the ensemble and focus on having them work well together.</p>
+</blockquote>
+
+<h3 id="keep-time-for-a-retrospective">Keep Time for a Retrospective</h3>
+<p>You want to end a Mob Programming session with a retro.
+Give them the chance to express their feelings about what happened, and share it with each other.
+They probably enjoyed it.
+Also, they have probably learned new things in the progress.</p>
+
+<h4 id="microretro">Microretro</h4>
+<p>A minimal but nice format for a retro is a microretro.
+It only takes a few minutes and you could do it at least once a day.
+In this retro, ask these questions:</p>
+
+<ol>
+  <li><strong>How did that feel?</strong></li>
+  <li>
+    <p><strong>What worked well?</strong></p>
+
+    <p>The aim of this question is to highlight the positive aspects and achievements. 
+We want to celebrate what went well and strive to replicate it in the future. 
+It’s easy to get caught up in dwelling on negative aspects, but this can lead to a negative mindset and impact the overall well-being of the team. 
+Therefore, this retro focuses on shifting the perspective entirely towards the positive.</p>
+  </li>
+  <li>
+    <p><strong>Do you have an idea you would like to try?</strong></p>
+
+    <p>The goal of this question is to foster experimentation and innovation.</p>
+  </li>
+</ol>
+
+<h3 id="tools-for-mob-programming">Tools for Mob Programming</h3>
+
+<ul>
+  <li><a href="https://mob.sh">mob.sh</a> is a commandline tool and git wrapper to easily hand over code in a remote mob programming.</li>
+  <li><a href="https://mobti.me/">mobti.me</a> is an online mob timer, and the best that I know.</li>
+  <li><a href="https://gitpod.io/">gitpod</a> is a webapp that is basically vscode in the browser that works well for collaboration as you can share your workspace with others.</li>
+  <li><a href="https://github.com/gregorriegler/remdev-azure">remdev on azure</a> is a script to easily boot up a virtual machine on azure for remote mob programming.</li>
+  <li><a href="https://cyber-dojo.org/">cyber-dojo</a> is a brilliant webapp to practice mob programming on a kata. All you need is a browser.</li>
+  <li><a href="https://tmate.io/">tmate</a> allows you to share your terminal with others to collaborate.</li>
+</ul>
+
+<h3 id="public-mobs">Public Mobs</h3>
+
+<p>If you want to try Mob Programming you may choose an existing community.</p>
+
+<ul>
+  <li><a href="https://github.com/gregorriegler/mob-programming-rpg">MobRPG Mob</a> is a weekly public remote mob on thursdays where we develop a webapp for the mob programming rpg. Read the <a href="https://github.com/gregorriegler/mob-programming-rpg#contribute">Contribute</a> section to find out how to join (It’s dead simple as in “just show up”).</li>
+  <li><a href="https://www.eventbrite.com/o/code-craft-saturdays-and-sundays-15457506392">Code Crafts Saturdays and Sundays</a> is a monthly event where you can try and practice Mob Programming and TDD.</li>
+  <li><a href="https://github.com/approvals/ApprovalTests.Python/blob/main/docs/Contribute.md">Python Approvals Mob</a> is a weekly remote mob that works on the python version of the approvals testing library.</li>
+  <li><a href="https://mobusoperandi.com/">Mobus Operandi</a> has a calendar with a lot of public mobs that you can join.</li>
+</ul>
+
+<h3 id="further-links">Further Links</h3>
+
+<ul>
+  <li><a href="https://www.youtube.com/channel/UCgt1lVMrdwlZKBaerxxp2iQ">Mob Mentality Show</a></li>
+  <li><a href="https://www.youtube.com/watch?v=ZnyBoz7wMD0&amp;list=PLzmKmecq34A9rH7MMUYzFjXdV0jdwQoGh&amp;index=7&amp;ab_channel=TsvetanTsvetanov">Mobbing Discussion</a> (I particularly like this episode because Tim explains very well and shares valuable insights)</li>
+  <li><a href="https://trello.com/b/1lfMkCOh/software-profession-resources">Resource Collection on Mob Programming and Software Profession</a></li>
+  <li><a href="https://jay.bazuzi.com/Mobbing-Pattern-Language/">Mobbing Pattern Language</a></li>
+  <li><a href="https://www.industriallogic.com/blog/scatter-gather/">Scatter Gather (The hidden cost of Solo Programming)</a></li>
+</ul>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="https://www.youtube.com/watch?v=oq42E51Ufnk">Kindness, Consideration and Respect</a> are what make a healthy Mob Programming. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a> <a href="#fnref:1:1" class="reversefootnote" role="doc-backlink">&#8617;<sup>2</sup></a></p>
+    </li>
+  </ol>
+</div>
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2023/01/30/solo-programming-considered-bad.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2022/07/21/Getting-better-at-CI.html">
+        Getting better at CI
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">21 Jul 2022</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <p>I recently felt the urge to experiment with my TDD workflow and improve it.
+It had too many manual steps, like running the tests, starting a commit, writing a commit message, pulling changes, and pushing it. 
+It felt boring and wasteful.
+I want to automate this stuff and eliminate all the waste.</p>
+
+<p>We’re not aiming high enough with the continuous part in CI/CD.<br />
+<em>“Integrate at least daily”</em> … Come on!<br />
+<em>“Hourly”</em> … We can do better than this.<br />
+<em>“Short-lived Feature Branches”</em> … You got to be kidding. It’s rather <em>“short-lived lies”</em>.<br />
+None of this is continuous.
+We need to get better and decrease the risk even further.
+I want to integrate <em>actually continuously</em>.</p>
+
+<p>My inspiration comes mainly from the ideas of <a href="https://martinfowler.com/articles/continuousIntegration.html">continuous integration</a>, continuous testing, <a href="https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864">TCR</a>, and <a href="https://medium.com/@kentbeck_7670/limbo-on-the-cheap-e4cfae840330">limbo on the cheap</a>.</p>
+
+<h2 id="actually-continuously">Actually continuously</h2>
+
+<p>I came up with a way that drastically increased my commit frequency.
+I managed to create <strong>63 commits</strong> in just <strong>25 minutes</strong> practicing this way, where I peaked at <strong>6 commits per minute</strong>. 
+Yes, it was just a kata, but that’s not the important part.
+On many occasions literally every keystroke went live, and it was all working - covered by tests.</p>
+
+<p>What I did is based on the following requirements:</p>
+
+<ul>
+  <li><strong>No manual saving</strong>. The code saves itself automatically.</li>
+  <li><strong>No manual test running</strong>. The tests run continuously. They restart automatically as soon as the code changes. And they are <em>fast</em>.</li>
+  <li><strong>No manual commits</strong>. The code is committed automatically whenever the tests pass.</li>
+  <li><strong>No manual pulling</strong>. Changes are pulled automatically before the tests run.</li>
+  <li><strong>No manual pushing</strong>. Every commit is automatically pushed right away.</li>
+</ul>
+
+<p>Not that hard to achieve actually.
+Just need proper tooling and a little bit of scripting.
+The language I’m trying this with is Java.</p>
+
+<h2 id="the-right-tools-for-the-job">The right tools for the job</h2>
+
+<p>Since I use IntelliJ, which is a great, maybe the best IDE (*<em>cough</em>* it became a little buggy as of recent *<em>cough</em>*), it saves my code automatically. 
+So that problem is already solved.
+For the continuous running of the tests, I know a few options.<br />
+IntelliJ offers a way to trigger the tests automatically, but it’s rather slow.
+Then there is this old-school plugin <a href="https://infinitest.github.io/">infinitest</a>, but I need something for the CLI so I am able to script it. 
+And it should be really fast. <a href="https://en.wikipedia.org/wiki/Incremental_compiler">Incremental compilation</a> would be key.<br />
+<a href="https://blog.gradle.org/introducing-continuous-build">Gradle</a> has it, and it is quite fast.
+With Gradle, I could also make the test report pretty using this <a href="https://github.com/radarsh/gradle-test-logger-plugin">test-logger plugin</a>.</p>
+
+<p><img src="/assets/not-continuous-enough/nice-test-report.png" alt="Nice test report with the gradle test logger" /></p>
+
+<p>I like that!</p>
+
+<p>Another option would be the <a href="https://quarkus.io/guides/continuous-testing">quarkus continuous test runner</a>, which is fairly new, and its test report is so ugly.
+Also, I have no idea how to customize, or script it.
+So I am going with Gradle for now.</p>
+
+<p>On top of the incremental compilation, Gradle ships with a continuous test runner in:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> gradle <span class="nt">-t</span> <span class="nb">test</span>
+</code></pre></div></div>
+<p>But since I need more control I chose to use a little helper tool called <a href="https://github.com/watchexec/watchexec">watchexec</a> instead.
+It watches for file changes and then executes a command.
+Like this:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> watchexec <span class="nt">-e</span> java ./gradlew <span class="nb">test</span>
+</code></pre></div></div>
+<p>I made some tests and it is just as fast as the Gradle continuous test runner.
+If you’d like even more control and a more complicated script, you could also use <a href="https://linux.die.net/man/1/inotifywait">inotifywait</a>.
+However, I like to keep it as simple as possible.</p>
+
+<p>Next, I needed to commit as soon as the tests pass. 
+A simple bash script would do, but I like to use a modern task runner for the job.
+I settled with <a href="https://github.com/casey/just">just</a>. 
+In case you did not know, it is a modern version of <a href="https://savannah.gnu.org/projects/make">Make</a>.
+And it is written in rust for whoever that may concern.
+The way this works is you <em>just</em> create a <code class="language-plaintext highlighter-rouge">justfile</code> and specify your tasks in it.
+The commit command looks like this.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>commit:
+    @git add <span class="nb">.</span> 
+    -@git commit <span class="nt">-am</span> <span class="s2">"wip"</span>
+</code></pre></div></div>
+
+<p>Simple and concise. 
+To execute it you run:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> just commit
+</code></pre></div></div>
+<p>And I do not even have to remember.
+My shell courteously suggests to me the available commands.<br />
+The <code class="language-plaintext highlighter-rouge">@</code> means that the command is not printed.<br />
+By default <code class="language-plaintext highlighter-rouge">just</code> would abort on an error exit code, whereas the <code class="language-plaintext highlighter-rouge">-</code> tells it to ignore that and continue.
+I need this for the case where the tests pass, but I have not changed anything.
+For example when I add something and delete it right away.
+Then there would be nothing to commit, and <code class="language-plaintext highlighter-rouge">git</code> would throw the error, having <code class="language-plaintext highlighter-rouge">just</code> abort the task.
+I could also allow the empty commit using the <a href="https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---allow-empty">allow-empty</a> flag.
+But why allow an empty commit for no reason!?
+That would be inventory, wasteful.</p>
+
+<p>So here are the first commands in a <code class="language-plaintext highlighter-rouge">justfile</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>commit:
+    @git add <span class="nb">.</span> 
+    -@git commit <span class="nt">-am</span> <span class="s2">"wip"</span>
+    
+<span class="nb">test</span>:
+    clear
+    @./gradlew <span class="nb">test
+
+</span>test-commit:
+    just <span class="nb">test 
+    </span>just commit
+
+tdd-commit:
+    watchexec <span class="nt">-e</span> java just test-commit
+</code></pre></div></div>
+
+<p>Nice! I like it.</p>
+
+<h2 id="first-try">First Try</h2>
+<p>Now we are able to give it a try.
+Small steps.</p>
+
+<ul>
+  <li>Run <code class="language-plaintext highlighter-rouge">&gt; just tdd-commit</code> in a terminal that stays visible next to the IDE.</li>
+  <li>Write a very simple failing test; <strong>Tests fail</strong>. -&gt; The test failure is shown in the terminal immediately.</li>
+  <li>Make the <strong>test pass</strong>. -&gt; Nicely formatted test report is shown immediately. Changes commit automatically.</li>
+  <li>Rename the test method; <strong>Tests pass</strong>. -&gt; Changes commit automatically.</li>
+  <li>Add another test; <strong>Tests fail</strong>. -&gt; I am shown the failure report.</li>
+  <li>In a first attempt to make it pass I notice I cannot make it as easily. I need a preparatory refactoring first.</li>
+  <li>So I disable the failing test; <strong>Tests pass again</strong>. -&gt; Changes commit automatically.</li>
+  <li>I do the preparatory refactoring; <strong>Tests pass</strong>. -&gt; Changes commit automatically.</li>
+  <li>I enable the failing test again; <strong>Tests fail</strong>. -&gt; I am shown the failure report.</li>
+  <li>Make it pass this time; <strong>Tests pass</strong>. -&gt; Changes commit automatically.</li>
+</ul>
+
+<p>Wow, this felt smooth.
+During all of this, I had not manually done a single save, test run, or commit.
+The terminal was open on the right-hand side of my screen, and I got that feedback immediately, continuously.</p>
+
+<h2 id="a-meaningless-commit-history">A meaningless commit history</h2>
+<p>Let’s take a look at the resulting git history.</p>
+
+<ul>
+  <li>wip</li>
+  <li>wip</li>
+  <li>wip</li>
+  <li>wip</li>
+  <li>wip</li>
+</ul>
+
+<p>Whoops, that’s not very expressive.
+But the commits are so small and pleasant to review.
+It’s like a playback of every little step that was taken.
+It is the actual history.
+Honestly, I think the flow might have more value than the documentation.
+Still, I would like to improve on that by sneaking in descriptive empty commits every once in a while.</p>
+
+<p>We are used to writing git messages that describe what we did after we did it.
+But for this, I would like to propose a different way.
+I want to use a commit message to describe what is next. In other words: What my current goal is.
+So let’s add a command to create such descriptive empty commits.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>goal +MESSAGE:
+    git commit <span class="nt">--allow-empty</span> <span class="nt">-m</span> <span class="s2">"Goal: {{MESSAGE}}"</span>
+</code></pre></div></div>
+
+<p>Every time I start working on a new goal, I want to write it to my git history first.
+Something like <code class="language-plaintext highlighter-rouge">&gt; just goal make rover turn left</code>.
+The other commit messages would stay ‘wip’ commits and that’s fine.
+One idea would be to use further tooling to decode some of the refactoring commits.
+For example: The <a href="https://plugins.jetbrains.com/plugin/14704-refactorinsight">refactoringinsight</a> plugin.</p>
+
+<p>My commit history would then look something like this:</p>
+
+<ul>
+  <li>wip</li>
+  <li>wip</li>
+  <li>wip</li>
+  <li>Goal: make rover turn left</li>
+  <li>wip</li>
+  <li>wip</li>
+  <li>wip</li>
+  <li>wip</li>
+  <li>Goal: make rover turn right</li>
+</ul>
+
+<h2 id="but-what-about-integration">But what about Integration?</h2>
+<p>Lots of small commits on my computer are nice.
+But if I work in a team I need to integrate my changes to the mainline, too.
+So I want to pull before I run my tests, and I want to push after each commit.
+It’s called Continuous Integration for a reason, right?</p>
+
+<p>Let’s add that to the justfile.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>integrate:     
+    git pull <span class="nt">--rebase</span>
+    just <span class="nb">test    
+    </span>just commit  
+    git push
+</code></pre></div></div>
+<p>And I think we’re done.</p>
+
+<p>This is the complete <a href="https://gist.github.com/gregorriegler/eafaa74250ff166925296dd58d4e62be">file</a>. 
+It also contains a TCR task.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>goal +MESSAGE:
+    git pull <span class="nt">--rebase</span>
+    git commit <span class="nt">--allow-empty</span> <span class="nt">-m</span> <span class="s2">"Goal: {{MESSAGE}}"</span>
+    git push
+
+commit:
+    @git add <span class="nb">.</span> 
+    -@git commit <span class="nt">-am</span> <span class="s2">"wip"</span>
+
+<span class="nb">test</span>:
+    clear
+    @./gradlew <span class="nb">test
+    
+</span>integrate:
+    git pull <span class="nt">--rebase</span>
+    just <span class="nb">test 
+    </span>just commit
+    git push
+    
+tdd:
+    watchexec <span class="nt">-e</span> java just <span class="nb">test
+
+</span>ci:
+    watchexec <span class="nt">-e</span> java just integrate
+
+revert:
+    @git reset <span class="nt">--hard</span> &amp;&gt; /dev/null
+    @git clean <span class="nt">-df</span> &amp;&gt; /dev/null
+    @echo <span class="nt">-e</span> <span class="s2">"</span><span class="se">\0</span><span class="s2">33[0;31m=== REVERTED ==="</span>
+    
+tcr:
+    @just <span class="nb">test</span> <span class="o">&amp;&amp;</span> just commit <span class="o">||</span> just revert
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Notice how I renamed the <code class="language-plaintext highlighter-rouge">tdd-commit</code> task to <code class="language-plaintext highlighter-rouge">ci</code>.
+Continuous Integration is not only about what the build server is doing, it is primarily about what we do.</p>
+
+<p>Coding with this script feels super smooth. 
+It is actually continuous.</p>
+
+<p>Also, it was not that complicated to set up.
+You can probably do even better.</p>
+
+<p>Imagine remote pair- or mob programming with this.
+Hand-overs could not be easier. 
+You just exchange the screen-sharing while the tests pass.
+And that’s it.</p>
+
+<p>Probably some people are already working this way? Let me know!</p>
+
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2022/07/21/Getting-better-at-CI.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  <article class="post-body">
+    <h2 class="post-title">
+      <a href="/2022/01/07/running-a-company-coding-dojo.html">
+        Running a Company Coding Dojo
+      </a>
+    </h2>
+    <div class="post-meta">
+  <span class="post-date">07 Jan 2022</span>
+  <span class="post-categories">
+    
+  </span>
+</div>
+
+
+    
+      <p>Two years ago, in 2019, I ran the first Coding Dojo at my company <a href="http://www.ebcont.com">EBCONT</a>. 
+Corona wasn’t a thing back then, so it happened to be an offline event that lasted 4 hours on a Thursday afternoon. 
+All the brilliant people came together to practice programming and enjoyed it.
+How awesome is that?</p>
+
+<p><img src="/assets/coding-dojo/coding-dojo1-2.jpg" alt="Local Coding Dojo at EBCONT" /></p>
+
+<p>A lot has changed since then. 
+When the pandemic happened, I had to adapt and move it online.
+So I decided to make it a regular remote whole-day event.
+Luckily I had already collected plenty of experience from my friends at the <a href="https://www.softwerkskammer.org/groups/wien">Vienna Software Crafts Community</a> where we also run Coderetreats.</p>
+
+<p>The EBCONT Coding Dojo turned out to be a small success story.
+When I started it, I had approximately ten people join, many of which became regular attendees.
+But lately, there was a small hype around the event.
+People liked it so much that they came up with the idea to create a Coding Dojo T-Shirt and shoot a group photo with it.
+Of course, we did so.
+I had 25 employees join in the latest event, and it was a lot of fun.</p>
+
+<p><img src="/assets/coding-dojo/ebcont_remote_dojo.jpg" alt="Local Coding Dojo at EBCONT" /></p>
+
+<p>Again, take a closer look at these sweet t-shirts! :-)</p>
+
+<p><img src="/assets/coding-dojo/sweet-tshirts.jpg" alt="EBCONT Coding Dojo T-Shirts" /></p>
+
+<h2 id="coding-dojo">Coding Dojo???</h2>
+<p>So what is a Coding Dojo, how do I do it, and what can you take away from my experience?
+The term <a href="https://en.wikipedia.org/wiki/Dojo">Dojo</a> originates in Japan and stands for a training facility where they perform katas, 
+choreographed patterns of martial art movements designed for practice.</p>
+
+<p>A <a href="https://codingdojo.org/WhatIsCodingDojo/">Coding Dojo</a> is a similar thing.
+We just perform coding katas.
+It is a great opportunity to practice technical skills like TDD, design, and refactoring.
+Invaluable fundamentals that are mostly not taught in school.
+They are left behind the things that turn out to have higher demand: Frameworks and tools.</p>
+
+<p>Under pressure, we naturally fall back to old and maybe poor habits, even though it leads to worse results.
+So we take our time to practice and get comfortable with better programming techniques and to be confident to apply them when it counts.
+While the traditional Coding Dojo is a short ~2-hour event, the one I do lasts almost a whole day.</p>
+<blockquote>
+  <p>The Coding Dojo creates space for developers to practice the fundamentals of programming, away from the pressure of getting things done.</p>
+</blockquote>
+
+<h2 id="but-why-not-a-full-day">But why not a full day?</h2>
+<p>An intense full-day practice event can become tiring in my experience.
+Closing just a little bit sooner leaves everybody more energy for the final retrospective and the evening after the event.
+There are similar whole-day events in the name of Coderetreat and Mobretreat.
+The classical Coderetreat has the notion of throwing away your code after a timeboxed session and starting from scratch with a different pair.
+So you don’t finish, but get to see many different perspectives within a short time - quite intense.
+That’s a little different from what I do.
+I like to provide the participants the opportunity to dive deeper into a kata. 
+So we stay within the same teams and kata throughout the day.
+This reduces the relative amount of setup time, which allows us to get more coding done.</p>
+
+<h2 id="the-dojo-plan">The Dojo plan</h2>
+<p>I decide on the topic and kata in advance, taking the attendees’ skill levels into account.
+Before the event, I send them information about what we’ll be working on.
+The Dojo starts with a short welcome where we have a few minutes of small talk before the intro session begins.
+In the intro session, we discuss the topic and kata.
+I like to walk over a minimum of the theory that I believe everybody should know.
+One effective way to do this is to keep asking questions so they provide the answers themselves.
+At the end of the intro session, we form the teams whose be working together in the following coding sessions.</p>
+
+<h3 id="balancing-teams">Balancing teams</h3>
+<p>I want less experienced people to learn from more experienced people.
+But that doesn’t mean more experienced ones won’t learn. 
+They deepen their understanding as they communicate their ideas.
+Curious participants may even challenge their thinking and help them to refresh or even reset.
+So I like to balance the skill levels among the teams while also taking into account their desired programming language. 
+The tool I use <a href="https://www.gather.town/">Gather-Town</a> helps me with that.</p>
+
+<blockquote>
+  <p>Gather-Town is a remote video conference tool that works like a multiplayer version of Zelda.
+You can move around on a 2d map and talk to people in your vicinity.
+It creates that feeling of meeting somebody at a conference in the hallway again, just online.
+And it allows us to split up and go to different rooms.
+Also, it gives me the freedom to customize the map.
+I use an altered version of a map that Christian Haas once made for Viennas Global Day of Coderetreat.</p>
+</blockquote>
+
+<p>I ask the people to assess their abilities and to take a position in the room that matches their confidence to work on the given kata.
+Standing on the right end of the room means <em>“very confident”</em> and the left end means <em>“I’m lost”</em>.
+The rest of the spectrum is in between.
+This creates an overview that makes it fairly easy to form balanced teams.
+In my opinion, the optimal team size is 3, but 4 works too.
+For bigger teams, you might want to assign a designated facilitator.</p>
+
+<h4 id="tip-assign-a-facilitator-for-a-team">Tip: Assign a facilitator for a team</h4>
+<p>It is not possible for me as a single person to facilitate the programming in every team.
+Especially when the people are not used to collaborative coding it makes sense to assign a designated facilitator.
+The responsibility of this person is to provide just enough guidance for the team to work well together.
+This can be anyone who knows a bit of mob programming. 
+The role can be rotated so that everybody gets the chance to contribute.
+When the team is small and most people are already used to this, a facilitator might not be necessary.</p>
+
+<h3 id="coding-sessions--retrospectives">Coding sessions &amp; retrospectives</h3>
+<p>Typically we manage to have three coding sessions, each of which is followed by a short retrospective.
+In these retros, we discuss anything interesting.
+How we feel, what we discovered and learned, and how we approached the exercise.
+We might also share and review the code we had written so far.</p>
+
+<p>The first session always includes setup, which is the time spent until the team starts coding together in some way.
+Somehow, setup always takes a fair amount of time - regardless of how well prepared you are.
+The goal is to minimize this time and maximize coding time.
+There are lots of ways to code together quickly, and you probably already have some in mind.
+However, I would like to share some ways with you I found work well.</p>
+
+<h4 id="1-single-driver-mode">#1 Single Driver Mode</h4>
+<p>A way to get to code quickly is to have just a single person who already has a setup prepared to share their screen.
+The downside of this is the risk of other people falling behind due to inactivity.
+The avoid that, the person sharing should behave as a passive driver while the other people make decisions and rotate the navigator role.
+I prefer when everybody gets to drive, but this usually takes more setup time.</p>
+
+<h4 id="2-cyber-dojo">#2 Cyber-Dojo</h4>
+<p><a href="http://www.cyber-dojo.org">Cyber-Dojo.org</a> works well for TDD katas, as it allows you to create and share a browser-based setup for any language in no time.
+However, it won’t provide you with all the conveniences your IDE does.
+Things like continuous compilation, autocompletion, automated refactoring, and so on are not available.</p>
+
+<h4 id="3-virtual-dev-environment">#3 Virtual dev environment</h4>
+<p>Another way to get to code together quickly is to join the same virtual development environment.
+It could be a virtual machine running in the cloud where everything is already set up. 
+People would connect to it through some remote desktop software.
+I prepared something like this, where I can spawn an immutable Linux dev system on Azure: <a href="https://github.com/gregorriegler/remdev-azure">Remdev on Azure</a></p>
+
+<h3 id="a-typical-schedule">A typical schedule</h3>
+<p>This is what my typical schedule would look like:</p>
+
+<ul>
+  <li><strong>08:50 - 09:10</strong> - Welcome</li>
+  <li><strong>09:10 - 09:40</strong>	- Theory, Details</li>
+  <li><strong>09:40 - 10:50</strong>	- First Coding Session</li>
+  <li><strong>10:50 - 11:00</strong>	- Short Break</li>
+  <li><strong>11:00 - 12:30</strong>	- Second Coding Session</li>
+  <li><strong>12:30 - 13:30</strong>	- Lunch Break</li>
+  <li><strong>13:30 - 14:50</strong>	- Third Coding Session</li>
+  <li><strong>14:50 - 15:30</strong>	- Retro</li>
+</ul>
+
+<p>Coding sessions already include 10-20 minutes of retro time.
+While it’s not a big deal to be a little late in the schedule, I want to nail the 1-hour lunch break.
+This allows people to plan and spend that time with their families.</p>
+
+<h2 id="my-role-as-a-facilitator">My role as a facilitator</h2>
+<p>As a facilitator, I am not there to actively perform katas. 
+Instead, my job is to make sure that every participant gets the chance to learn and practice.
+So I am merely the organizer and enabler.
+I watch out that we keep the schedule (which I’m terrible at) and mostly try to get out of the peoples’ way.
+Also, I’m there to help the participants when they get stuck or have questions.
+But this doesn’t mean I’m not learning.
+Quite the opposite is true.
+I learn a lot as I get to see amazing ideas, experience new tech, observe sociotechnical patterns, discover and rediscover non-obvious details.</p>
+
+<p>During the coding sessions, I switch from team to team and observe what they’re up to. 
+This works well with Gather-Town as I can literally walk from room to room.
+Occasionally I see things I am concerned with and bring that up.
+I try to do this by asking questions, sparking their creativity, and having them come up with their own solutions.
+Or I may see something interesting, for example, a pattern emerge that I find worthy of a discussion, so everybody understands.
+If you want to learn more about facilitation in this regard I recommend Peters <a href="https://coderetreat-facilitation.code-cop.org/">Coderetreat-Facilitation Podcast</a>.
+Many of the things I’m doing are things I learned from him.</p>
+
+<h2 id="choosing-a-katatopic">Choosing a kata/topic</h2>
+<p>The Coding Dojo should be a place to practice the fundamentals.
+The perfect kata is not too hard for the attendees to tackle, is small enough to finish within the event, and is one that you as a facilitator already know well.
+But it doesn’t have to be perfect.
+As a refactoring exercise, I like the <a href="https://github.com/christianhujer/expensereport">Expense Report Kata</a> which is nice and small.
+Or the <a href="https://github.com/gregorriegler/order-dispatch-refactoring-kata">Order Dispatch Kata</a> which is about <a href="https://wiki.c2.com/?TellDontAsk">Tell don’t ask</a>.
+As for TDD katas I liked <a href="https://en.wikipedia.org/wiki/Snake_(video_game_genre)">Snake</a>, <a href="https://codingdojo.org/kata/GameOfLife/">Game of Life</a>, or <a href="https://kata-log.rocks/mars-rover-kata">Mars Rover</a>.
+But I also did completely different things.
+For example, the <a href="https://docs.google.com/document/u/1/d/1TCuuu-8Mm14oxsOnlk8DqfZAA1cvtYu9WGv67Yj_sSk/pub">Elephant Carpaccio Exercise</a> which is about vertical story slicing and iteration.</p>
+
+<h2 id="selling-your-coding-dojo">Selling your Coding Dojo</h2>
+<p>If you want to start a Coding Dojo at your company, let me tell you that I think that’s awesome!
+I’d recommend getting your boss to agree that it will happen during the work-day and that it will be considered work-time.
+Missing know-how is a bottleneck in our industry, where the majority have less than five years of experience.
+Fresh developers have to learn so many things about their tech, tools, and frameworks these days, that there is little room left for programming fundamentals like TDD and refactoring.
+Some of those are mostly not taught in school either.
+When people get to practice these, they become better programmers.
+They get better at writing code that works, is more maintainable, and more secure, in less time.
+What boss wouldn’t want that?</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>The Coding Dojo is a great and fun way to provide developers with the space they need to get better at their job.
+People enjoy learning from one another in a relaxed environment like this.
+I’m proud of the progress participants have made so far at my Dojo.
+Feel free to contact me if you have questions, or if you would like to start a similar event.
+And if you already have something like this at your company, I would love to hear about that, too.</p>
+
+    
+
+    
+      
+      
+      
+
+      
+    
+
+    <p><br class="clear" /><a class="comments_link" href="/2022/01/07/running-a-company-coding-dojo.html#comments">to the comments</a></p>
+  </article>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+<div class="pagination">
+  <a class="pagination-item older"
+     href="/blog/page/2/index.html">
+    Older
+  </a>
+</div>
+
+
+</div>
+
+    </main>
+
+    <!-- Optional footer content -->
+
+  </body>
+</html>
