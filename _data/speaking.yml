@@ -4,8 +4,9 @@
     src: assets/img/craft_conf_2026.jpg
     alt: Craft Conference 2026 talk
   body: >-
-    I spoke at Craft Conference 2026 at the Hungarian Railway Museum in Budapest,
-    making the case for why craft still matters in the age of AI.
+    As we move toward a world where coding agents do more of the work, what does
+    that actually mean for software craft? Do we still need it? Or can we just go
+    with the Vibes?
 
 - title: Extreme AI Augmented Coding
   date: 2025-11-11
