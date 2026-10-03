@@ -7,17 +7,11 @@ tags:
 - TDD
 ---
 
-I've recently seen a lot of folks discussing whether TDD is theatre when coding with LLMs.
+I've recently seen a lot of folks discussing whether TDD is theatre when coding with LLMs:
 
-There is Brigitta's article igniting the discussion: <https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html>
-
-Alex Bolboaca's video blog:
-
-<https://www.youtube.com/watch?v=gcCfNzmk4pI>
-
-Emily Bache's answer:
-
-<https://www.youtube.com/watch?v=wK5WgbqtI50>
+- [Birgitta's article](https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html), which ignited the discussion
+- [Alex Bolboaca's video blog](https://www.youtube.com/watch?v=gcCfNzmk4pI)
+- [Emily Bache's answer](https://www.youtube.com/watch?v=wK5WgbqtI50)
 
 But I also see a lot of posts and discussions on social media, where people often even have different understandings of what TDD means.
 
@@ -25,7 +19,7 @@ So I want to first explain what I found valuable in following TDD before we had 
 
 I don't write code anymore, I let an LLM write my code, at a speed that is adaptive to the importance of the respective code, and allows me to stay on top and interfere.
 
-Now onto the values of TDD
+Now onto the values of TDD.
 
 ## Dense coverage and a stable safety net
 
