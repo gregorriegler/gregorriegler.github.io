@@ -43,7 +43,7 @@ With LLMs this gets stronger. A test written first is also the cheapest and most
 
 TDD leads to testability which has a strong relationship with modularity. And because tests touch the code only through its interface, you can restructure the inside freely while the tests remain unchanged.
 
-This still holds true with LLMs. Models produce tangled code quickly; nothing in them pulls toward seams unless something forces it. TDD and human oversight are that force. Readable tests are now the fastest way for a human to understand what a model built without reading all the code. And refactoring without touching the tests is the main lever for letting a model rework code at all: you can ask for a large internal change and know that when the tests weren't changed and stayed green, nothing broke.
+This still holds true with LLMs. Models produce tangled code quickly; nothing in them pulls toward modularity and seams unless something forces it. TDD and human oversight are that force. Refactoring without touching the tests is the main lever for letting a model rework code at all: you can ask for a large internal change and know that when the tests weren't changed and stayed green, nothing broke.
 
 ## Design questions before, during and after red
 
