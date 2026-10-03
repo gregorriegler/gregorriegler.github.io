@@ -41,7 +41,7 @@ With LLMs this gets stronger. A test written first is also the cheapest and most
 
 ## Testable design
 
-TDD leads to testability which has a strong relationship with modularity.
+TDD leads to testability which has a strong relationship with modularity. Modularity is what makes future change easier and more local.
 
 This still holds true with LLMs. Models produce tangled code quickly; nothing in them pulls toward modularity and seams unless something forces it. TDD and human oversight are that force.
 
