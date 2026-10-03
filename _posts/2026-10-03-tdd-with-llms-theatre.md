@@ -25,7 +25,7 @@ Now onto the values of TDD.
 
 With TDD we end up with more tests than code, where every test is tied to behavior someone actually needs. Running them answers "does everything still work?" That removes fear, and enables continuous refactoring.
 
-So with LLMs we still want the safety net, and the ability to refactor. And we still want the tests to be written first. A suite generated after the fact, to match what the model wrote, proves little; it most likely just tests implementation. And those tests are bad. Bad tests are worse than no tests.
+So with LLMs we still want the safety net, and the ability to refactor. And we still want the tests to be written first. A suite generated after the fact, to match what the model wrote, proves little; it most likely just tests implementation. And those tests are bad. Bad tests are worse than no tests. Refactoring without touching the tests is the main lever for letting a model rework code at all: you can ask for a large internal change and know that when the tests weren't changed and stayed green, nothing broke.
 
 ## Honest feedback and surprises
 
@@ -39,11 +39,11 @@ In TDD, the test is the first user of the code you are going to write, so you de
 
 With LLMs this gets stronger. A test written first is also the cheapest and most exact way to tell a model what is required: it fixes names, arguments, results and behavior, with no room for interpretation. That's why you often have to iterate with the model over a test to land on a good test design. You want to get this right before jumping to implementation. When you can't trust anything, make sure you can trust the tests.
 
-## Testable design, refactoring without touching them
+## Testable design
 
 TDD leads to testability which has a strong relationship with modularity. And because tests touch the code only through its interface, you can restructure the inside freely while the tests remain unchanged.
 
-This still holds true with LLMs. Models produce tangled code quickly; nothing in them pulls toward modularity and seams unless something forces it. TDD and human oversight are that force. Refactoring without touching the tests is the main lever for letting a model rework code at all: you can ask for a large internal change and know that when the tests weren't changed and stayed green, nothing broke.
+This still holds true with LLMs. Models produce tangled code quickly; nothing in them pulls toward modularity and seams unless something forces it. TDD and human oversight are that force.
 
 ## Design questions before, during and after red
 
