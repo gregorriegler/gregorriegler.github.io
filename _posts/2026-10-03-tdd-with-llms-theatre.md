@@ -59,7 +59,7 @@ This still holds, but the LLM will not feel that pain or ask those questions for
 
 TDD caps what we build. If a test didn't ask for it, we don't implement it. Full stop.
 
-As the LLM is not trained on TDD, but on generating large volumes of code based on plans, it still typically writes more code than the test demanded: an extra branch or a safety guard nobody asked for. It takes another iteration after the fact to find those: A review by the LLM, or a human asking why the line is there, or a mutation test that indicates the code is dead. Or we acknowledge that the code will be required and add the missing test.
+In my experience, it tends to write more code than the test demanded: an extra branch or a safety guard nobody asked for. It takes another iteration after the fact to find those: A review by the LLM, or a human asking why the line is there, or a mutation test that indicates the code is dead. Or we acknowledge that the code will be required and add the missing test.
 
 ## Avoiding waste in planning
 
