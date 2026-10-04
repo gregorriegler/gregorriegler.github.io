@@ -443,7 +443,7 @@ After making it green: where could I improve the code? Improve names. Remove dup
 
 <p>TDD caps what we build. If a test didn’t ask for it, we don’t implement it. Full stop.</p>
 
-<p>As the LLM is not trained on TDD, but on generating large volumes of code based on plans, it still typically writes more code than the test demanded: an extra branch or a safety guard nobody asked for. It takes another iteration after the fact to find those: A review by the LLM, or a human asking why the line is there, or a mutation test that indicates the code is dead. Or we acknowledge that the code will be required and add the missing test.</p>
+<p>In my experience, the LLM tends to write more code than the test demanded: an extra branch or a safety guard nobody asked for. It takes another iteration after the fact to find those: A review by the LLM, or a human asking why the line is there, or a mutation test that indicates the code is dead. Or we acknowledge that the code will be required and add the missing test.</p>
 
 <h2 id="avoiding-waste-in-planning">Avoiding waste in planning</h2>
 
