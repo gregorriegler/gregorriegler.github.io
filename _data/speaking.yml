@@ -1,3 +1,16 @@
+- title: Craft Still Matters @ DevFest Vienna 2026
+  date: 2026-11-12
+  display_date: November 2026
+  youtube_id: AgU2lxyZm9o
+  image:
+    src: assets/img/devfest_vienna_2026_craft_still_matters.jpg
+    alt: Craft Still Matters talk at DevFest Vienna 2026
+  body: >-
+    As coding agents take over more and more of the work, what happens to the
+    craft? I took the audience along on my journey towards full agent autonomy,
+    hitting the [complexity wall](/2026/04/12/the-complexity-wall.html) and the lessons
+    that came with it, and shared how I work with agents today.
+
 - title: Craft Still Matters @ Craft Conference 2026
   date: 2026-06-04
   youtube_id: 9TKjyPk9eFA
